@@ -2892,6 +2892,16 @@ router.get(/finalyear-handler/, function (req, res) {
   }
 });
 
+router.get(/overseas-handler/, function (req, res) {
+  if (req.query.finalyear == 'yes') {
+    res.redirect('country');
+  } else if (req.query.finalyear == 'no') {
+    res.redirect('final-year');
+  }
+});
+
+
+
 router.get(/coursefinishdate-handler/, function (req, res) {
   res.redirect('financial-help');
 });
