@@ -2888,7 +2888,7 @@ router.get(/finalyear-handler/, function (req, res) {
   if (req.query.finalyear == 'yes') {
     res.redirect('course-finish-date');
   } else if (req.query.finalyear == 'no') {
-    res.redirect('financial-help');
+    res.redirect('overseas-student');
   }
 });
 
@@ -2901,9 +2901,8 @@ router.get(/overseas-handler/, function (req, res) {
 });
 
 
-
 router.get(/coursefinishdate-handler/, function (req, res) {
-  res.redirect('financial-help');
+  res.redirect('overseas-student');
 });
 
 router.get(/financialhelp-handler/, function (req, res) {
