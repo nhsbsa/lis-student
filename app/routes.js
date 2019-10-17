@@ -2947,7 +2947,7 @@ router.get(/livingcost-handler/, function (req, res) {
   if (req.query.livingcost.includes('loanmaintenance-help')) {
     res.redirect('task-list-complete');
   } else if (req.query.livingcost.includes('HEI-help')) {
-    res.redirect('#');
+    res.redirect('HEI-type');
   } else if (req.query.livingcost.includes('other-help')) {
     res.redirect('#');
   } else if (req.query.livingcost.includes('NHS-help')) {
@@ -2982,7 +2982,16 @@ router.get(/livingcost-handler/, function (req, res) {
 });
 
 
-
+router.get(/HEI-handler/, function (req, res) {
+  if (req.query.HEI.includes ('livingcosts-income')) {
+    res.redirect('#');
+  } else if (req.query.HEI.includes ('study-income')) {
+    res.redirect('cya');
+  }
+ else if (req.query.HEI.includes ('travel-income')) {
+  res.redirect('cya');
+}
+});
 
 
 
