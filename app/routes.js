@@ -2943,7 +2943,43 @@ router.get(/financialhelp-handler/, function (req, res) {
   } 
 });
 
-
+router.get(/livingcost-handler/, function (req, res) {
+  if (req.query.livingcost.includes('loanmaintenance-help')) {
+    res.redirect('task-list-complete');
+  } else if (req.query.livingcost.includes('HEI-help')) {
+    res.redirect('#');
+  } else if (req.query.livingcost.includes('other-help')) {
+    res.redirect('#');
+  } else if (req.query.livingcost.includes('NHS-help')) {
+    res.redirect('#');
+  } else if (req.query.livingcost.includes('none-help')) {
+    res.redirect('who-pays');
+  } else if (req.query.livingcost.toString() == 'loanmaintenance-help,HEI-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'loanmaintenance-help,bursary-help,money-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'loanmaintenance-help,bursary-help,money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'loanmaintenance-help,bursary-help,money-help,scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'bursary-help,money-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'bursary-help,money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'bursary-help,money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'bursary-help,money-help,scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'money-help,scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost.toString() == 'scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.livingcost == 'none-help') {
+    res.redirect('money-from-parents');
+  } 
+});
 
 
 
