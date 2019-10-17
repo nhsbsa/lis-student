@@ -34,38 +34,35 @@ NHSBSA Prototype
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Who pays your tuition fees?</h1>
       </header>
 
-      <form action="financialhelp-handler" class="form" method="get">
+      <form action="whopays-handler" class="form" method="get">
 
         <p style="color:grey">Select all that apply for yourself</p>
 
         <fieldset class="form-group">
 
           <div class="multiple-choice multiple-radio">
-            <input id="SFE" name="financialhelp" value="SFE-help" type="checkbox">
-            <label for="SFE"><span style="font-weight: bold;">Student Finance England (SFE)
+            <input id="loanmaintenance" name="whopays" value="myself-help" type="checkbox">
+            <label for="loanmaintenance"><span style="font-weight: bold;">Myself
           </div>
 
           <div class="multiple-choice multiple-radio">
-            <input id="SAAS" name="financialhelp" value="SAAS-help" type="checkbox">
-            <label for="SAAS"><span style="font-weight: bold;">Student Awards Agency for Scotland (SAAS)</span><br></label>
+            <input id="bursary" name="whopays" value="parents-help" type="checkbox">
+            <label for="bursary"><span style="font-weight: bold;">Parents</span><br></label>
           </div>
 
           <div class="multiple-choice multiple-radio">
-            <input id="SFW" name="financialhelp" value="SFW-help" type="checkbox">
-            <label for="SFW"><span style="font-weight: bold;">Student Finance Wales (SFW)</span><br></label>
+            <input id="bursary" name="whopays" value="relfriends-help" type="checkbox">
+            <label for="bursary"><span style="font-weight: bold;">Relatives or friends</span><br></label>
           </div>
 
           <div class="multiple-choice multiple-radio">
-            <input id="NHS" name="financialhelp" value="NHS-help" type="checkbox">
-            <label for="NHS"><span style="font-weight: bold;">NHS</span><br></label>
+            <input id="bursary" name="whopays" value="none-help" type="checkbox">
+            <label for="bursary"><span style="font-weight: bold;">None of the above</span><br></label>
           </div>
 
         
           <p class="form-block">or</p>
-          <div class="multiple-choice multiple-radio">
-            <input id="none" name="financialhelp" value="none-help" type="checkbox">
-            <label for="none">No, I <span class="bold">do not</span> get any of these </label>
-          </div>
+          
         </fieldset>
         <div class="form-group">
           <input class="button" type="submit" value="Next">

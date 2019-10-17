@@ -2893,10 +2893,10 @@ router.get(/finalyear-handler/, function (req, res) {
 });
 
 router.get(/overseas-handler/, function (req, res) {
-  if (req.query.finalyear == 'yes') {
+  if (req.query.overseas == 'yes') {
     res.redirect('country');
-  } else if (req.query.finalyear == 'no') {
-    res.redirect('final-year');
+  } else if (req.query.overseas == 'no') {
+    res.redirect('financial-help');
   }
 });
 
@@ -2906,17 +2906,17 @@ router.get(/coursefinishdate-handler/, function (req, res) {
 });
 
 router.get(/financialhelp-handler/, function (req, res) {
-  if (req.query.financialhelp.includes('loanmaintenance-help')) {
-    res.redirect('money-from-parents');
-  } else if (req.query.financialhelp.includes('bursary-help')) {
-    res.redirect('money-from-parents');
-  } else if (req.query.financialhelp.includes('money-help')) {
-    res.redirect('money-from-parents');
-  } else if (req.query.financialhelp.includes('scholarships-help')) {
-    res.redirect('money-from-parents');
-  } else if (req.query.financialhelp.includes('overseas-help')) {
-    res.redirect('money-from-parents');
-  } else if (req.query.financialhelp.toString() == 'loanmaintenance-help,bursary-help') {
+  if (req.query.financialhelp.includes('SFE-help')) {
+    res.redirect('cya');
+  } else if (req.query.financialhelp.includes('SAAS-help')) {
+    res.redirect('cya');
+  } else if (req.query.financialhelp.includes('SFW-help')) {
+    res.redirect('cya');
+  } else if (req.query.financialhelp.includes('NHS-help')) {
+    res.redirect('#');
+  } else if (req.query.financialhelp.includes('none-help')) {
+    res.redirect('who-pays');
+  } else if (req.query.financialhelp.toString() == 'SFE-help,SAAS-help') {
     res.redirect('money-from-parents');
   } else if (req.query.financialhelp.toString() == 'loanmaintenance-help,bursary-help,money-help') {
     res.redirect('money-from-parents');
@@ -2942,6 +2942,14 @@ router.get(/financialhelp-handler/, function (req, res) {
     res.redirect('money-from-parents');
   } 
 });
+
+
+
+
+
+
+
+
 
 router.get(/moneyfromparents-handler/, function (req, res) {
   if (req.query.moneyfromparents == 'yes') {
