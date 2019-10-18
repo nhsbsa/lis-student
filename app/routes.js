@@ -3133,7 +3133,7 @@ router.get(/savingssplit-handler/, function (req, res) {
 
 router.get(/educationtrainingsplit-handler/, function (req, res) {
   if (req.query.educationtraining== 'yes') {
-    res.redirect('/kickouts/students-developed');
+    res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
   } else if (req.query.educationtraining== 'no') {
     res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
   } else {
