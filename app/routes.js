@@ -3133,11 +3133,19 @@ router.get(/savingssplit-handler/, function (req, res) {
 
 router.get(/educationtrainingsplit-handler/, function (req, res) {
   if (req.query.educationtraining== 'yes') {
+    res.redirect('/beforeyoustart/A-level-student');
+  } else  {
     res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
-  } else if (req.query.educationtraining== 'no') {
+  
+  }
+});
+
+router.get(/alevel-handler/, function (req, res) {
+  if (req.query.alevel== 'yes') {
+    res.redirect('/beforeyoustart/A-level-student');
+  } else  {
     res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
-  } else {
-    res.redirect('/beforeyoustart/more-than-6000');
+  
   }
 });
 
