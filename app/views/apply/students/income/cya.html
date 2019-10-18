@@ -30,7 +30,7 @@ NHSBSA Prototype
 
       <!-- only add a heading for a list if there is more than one list -->
       <h2 class="heading-medium">
-        Education and Training
+        Income
       </h2>
 
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
@@ -40,11 +40,30 @@ NHSBSA Prototype
       <dl class="govuk-check-your-answers cya-questions-short">
         <div>
           <dt class="cya-question" style="border: 0 !important;">
-            <h2 class="heading-small">Name of school, college or university
+            <h2 class="heading-small">Money you live on
             </h2>
           </dt>
           <dd class="cya-answer" style="border: 0 !important;">
-            <p id="capitalize">University of Durham</p>
+            <p id="capitalize">  
+              if
+              {{ data['loanmaintenance'] }} == "loanmaintenance-help"
+              Student loan grant or maintenance<br>
+            }
+              else if {{ data[‘SAAS’] }} == “HEI-help”
+              Bursary from higher education institution (HEI)<br>
+            }
+              else if {{ data[‘SFW’] }} == “other-help”
+             Other scholarship, sponsorship, award or bursary<br>
+            }
+              else if {{ data['grant'] }} == "overseas-help"
+              Grant or loan from overseas<br>
+            }
+              else if {{ data['NHS'] }} == "NHS-help"
+              NHS Bursary<br>
+            }
+              else {text = "None";
+            }
+            </p>
           </dd>
           <dd class="cya-change" style="border: 0 !important;">
             <a href="name-of-establishment.html">

@@ -2984,13 +2984,21 @@ router.get(/livingcost-handler/, function (req, res) {
 
 router.get(/HEI-handler/, function (req, res) {
   if (req.query.HEI.includes ('livingcosts-income')) {
-    res.redirect('#');
+    res.redirect('HEI-amount');
   } else if (req.query.HEI.includes ('study-income')) {
     res.redirect('cya');
   }
  else if (req.query.HEI.includes ('travel-income')) {
   res.redirect('cya');
 }
+});
+
+router.get(/amount-handler/, function (req, res) {
+  if (req.query.amount) {
+    res.redirect('cya');
+  } else {
+    res.redirect('HEI-amount');
+  }
 });
 
 
