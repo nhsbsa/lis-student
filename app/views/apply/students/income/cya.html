@@ -44,74 +44,42 @@ NHSBSA Prototype
             </h2>
           </dt>
           <dd class="cya-answer" style="border: 0 !important;">
-            <p id="capitalize">  
-              if
-              {{ data['loanmaintenance'] }} == "loanmaintenance-help"
-              Student loan grant or maintenance<br>
-            }
-              else if {{ data[‘SAAS’] }} == “HEI-help”
-              Bursary from higher education institution (HEI)<br>
-            }
-              else if {{ data[‘SFW’] }} == “other-help”
-             Other scholarship, sponsorship, award or bursary<br>
-            }
-              else if {{ data['grant'] }} == "overseas-help"
-              Grant or loan from overseas<br>
-            }
-              else if {{ data['NHS'] }} == "NHS-help"
-              NHS Bursary<br>
-            }
-              else {text = "None";
-            }
+            <p id="capitalize">   
+           
+            {% if "loanmaintenance-help" in data['livingcost'] %}
+            Student loan grant or maintenance<br>
+            {% endif %}
+
+            {% if "HEI-help" in data['livingcost'] %}
+            Bursary from higher education institution (HEI)<br>
+            {% endif %}
+
+            {% if "other-help" in data['livingcost'] %}
+            Other scholarship, sponsorship, award or bursary<br>
+            {% endif %}
+
+            {% if "overseas-help" in data['livingcost'] %}
+            Grant or loan from overseas<br>
+            {% endif %}
+
+            {% if "NHS-help" in data['livingcost'] %}
+            NHS Bursary<br>
+            {% endif %}
+
+            
             </p>
           </dd>
           <dd class="cya-change" style="border: 0 !important;">
-            <a href="name-of-establishment.html">
+            <a href="living-cost.html">
               Change
             </a>
           </dd>
         </div>
-        <div>
-          <dt class="cya-question" style="border: 0 !important;">
-            <h2 class="heading-small">Final year or only year</h2>
-          </dt>
-          <dd class="cya-answer" style="border: 0 !important;">
-            <p id="capitalize">No</p>
-          </dd>
-          <dd class="cya-change" style="border: 0 !important;">
-            <a href="final-year.html">
-              Change
-            </a>
-          </dd>
-        </div>
+   
 
-        <div>
-          <dt class="cya-question" style="border: 0 !important;">
-            <h2 class="heading-small">Overseas student</h2>
-          </dt>
-          <dd class="cya-answer" style="border: 0 !important;">
-            <p id="capitalize">No</p>
-          </dd>
-          <dd class="cya-change" style="border: 0 !important;">
-            <a href="overseas-student.html">
-              Change
-            </a>
-          </dd>
-        </div>
+     
 
-        <div>
-          <dt class="cya-question" style="border: 0 !important;">
-            <h2 class="heading-small">Tuition fee</h2>
-          </dt>
-          <dd class="cya-answer" style="border: 0 !important;">
-            <p id="capitalize">Student Loan England</p>
-          </dd>
-          <dd class="cya-change" style="border: 0 !important;">
-            <a href="financial-help.html">
-              Change
-            </a>
-          </dd>
-        </div>
+      
 
     
 

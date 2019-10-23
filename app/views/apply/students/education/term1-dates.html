@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary">Education and Training</p>
+          <h1 class="heading-large">Course dates</h1>
+          
+        </header>
+
+        <form action="#" class="form" method="get">
+        
+            <span class="heading-medium">
+                Term 1
+              </span>
+              <p class="form-hint">Contact your college or university if you do not know the dates. <br>Terms are normally separated by Christmas and Easter holidays. </p>
+          <fieldset class="form-group">
+
+              <label class="form-label-bold" for="start-date" id="start-date-label">Start date</label>
+             
+            <legend class="visuallyhidden">Start date</legend>
+            <p class="form-hint">For example, 31 3 1980 </p>
+
+
+
+            
+            <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="termstartdateday">Day</label>
+                  <input class="form-control" id="termstartdateday" name="termstartdateday"
+                    type="text" pattern="[0-9]*" min="0" max="31">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="termstartdatemonth">Month</label>
+                  <input class="form-control" id="termstartdatemonth" name="termstartdatemonth"
+                    type="text" pattern="[0-9]*" min="0" max="12">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="termstartdateyear">Year</label>
+                  <input class="form-control" id="termstartdateyear" name="termstartdateyear"
+                    type="text" pattern="[0-9]*" min="0" max="2021">
+                </div>
+              </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+
+              
+              <label class="form-label-bold" for="end-date" id="end-date-label">End date</label>
+             
+              <legend class="visuallyhidden">End date</legend>
+            
+  
+              <div class="form-date">
+									<div class="form-group form-group-day">
+										<label class="form-label" for="termendateday">Day</label>
+										<input class="form-control" id="termendateday" name="termendateday"
+											type="text" pattern="[0-9]*" min="0" max="31">
+									</div>
+  
+                  <div class="form-group form-group-month">
+                      <label class="form-label" for="termendatemonth">Month</label>
+                      <input class="form-control" id="termendatemonth" name="termendatemonth"
+                        type="text" pattern="[0-9]*" min="0" max="12">
+                    </div>
+  
+                    <div class="form-group form-group-year">
+                        <label class="form-label" for="termstartdateyear">Year</label>
+                        <input class="form-control" id="termstartdateyear" name="termenddateyear"
+                          type="text" pattern="[0-9]*" min="0" max="2021">
+                      </div>
+  
+              </div>
+            </fieldset>
+
+          <div class="form-group">
+            <a href="term2-dates.html"><input class="button" type="submit" value="Continue"></a>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+</main>
+
+{% endblock %}
