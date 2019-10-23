@@ -26,7 +26,7 @@
           
         </header>
 
-        <form action="#" class="form" method="get">
+        <form action="term1dates-handler" class="form" method="get"></form>
         
             <span class="heading-medium">
                 Term 1
@@ -44,22 +44,16 @@
             
             <div class="form-date">
                 <div class="form-group form-group-day">
-                  <label class="form-label" for="termstartdateday">Day</label>
-                  <input class="form-control" id="termstartdateday" name="termstartdateday"
-                    type="text" pattern="[0-9]*" min="0" max="31">
+                  <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
                 </div>
 
                 <div class="form-group form-group-month">
-                  <label class="form-label" for="termstartdatemonth">Month</label>
-                  <input class="form-control" id="termstartdatemonth" name="termstartdatemonth"
-                    type="text" pattern="[0-9]*" min="0" max="12">
-                </div>
+                    <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
+                  </div>
 
-                <div class="form-group form-group-year">
-                  <label class="form-label" for="termstartdateyear">Year</label>
-                  <input class="form-control" id="termstartdateyear" name="termstartdateyear"
-                    type="text" pattern="[0-9]*" min="0" max="2021">
-                </div>
+                  <div class="form-group form-group-year">
+                      <label for="dob-year">Year</label> <input class="form-control" id="dob-year" max="2020" min="0" name="dob-year" pattern="[0-9]*" type="number">
+                    </div>
               </div>
           </fieldset>
 
@@ -72,29 +66,23 @@
             
   
               <div class="form-date">
-									<div class="form-group form-group-day">
-										<label class="form-label" for="termendateday">Day</label>
-										<input class="form-control" id="termendateday" name="termendateday"
-											type="text" pattern="[0-9]*" min="0" max="31">
-									</div>
+                  <div class="form-group form-group-day">
+                    <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
+                  </div>
   
                   <div class="form-group form-group-month">
-                      <label class="form-label" for="termendatemonth">Month</label>
-                      <input class="form-control" id="termendatemonth" name="termendatemonth"
-                        type="text" pattern="[0-9]*" min="0" max="12">
+                      <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
                     </div>
   
                     <div class="form-group form-group-year">
-                        <label class="form-label" for="termstartdateyear">Year</label>
-                        <input class="form-control" id="termstartdateyear" name="termenddateyear"
-                          type="text" pattern="[0-9]*" min="0" max="2021">
+                        <label for="dob-year">Year</label> <input class="form-control" id="dob-year" max="2019" min="0" name="dob-year" pattern="[0-9]*" type="number">
                       </div>
   
               </div>
             </fieldset>
 
           <div class="form-group">
-            <a href="term2-dates.html"><input class="button" type="submit" value="Continue"></a>
+            <input class="button" type="submit" value="Continue">
           </div>
 
         </form>

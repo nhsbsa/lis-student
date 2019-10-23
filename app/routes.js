@@ -2905,6 +2905,19 @@ router.get(/coursefinishdate-handler/, function (req, res) {
   res.redirect('term1-dates');
 });
 
+router.get(/term1dates-handler/, function (req, res) {
+  res.redirect('term2-dates');
+});
+
+router.get(/term2dates-handler/, function (req, res) {
+  res.redirect('term3-dates');
+});
+
+router.get(/term3dates-handler/, function (req, res) {
+  res.redirect('overseas-student');
+});
+
+
 router.get(/financialhelp-handler/, function (req, res) {
   if (req.query.financialhelp.includes('SFE-help')) {
     res.redirect('cya');
