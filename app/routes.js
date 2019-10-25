@@ -2998,25 +2998,59 @@ router.get(/livingcost-handler/, function (req, res) {
 
 router.get(/HEI-handler/, function (req, res) {
   if (req.query.HEI.includes ('livingcosts-income')) {
-    res.redirect('HEI-amount');
+    res.redirect('HEI-livcostsamount');
   } else if (req.query.HEI.includes ('study-income')) {
     res.redirect('cya');
   }
   else if (req.query.HEI.includes ('accommodation-income')) {
-    res.redirect('HEI-amount');
+    res.redirect('HEI-accommodation');
   }
  else if (req.query.HEI.includes ('tuition-income')) {
   res.redirect('cya');
 }
+else if (req.query.livingcost.toString() == ('livingcosts-income,study-income')) {
+  res.redirect('HEI-livcostamount');
+}
+else if (req.query.livingcost.toString() == ('livingcosts-income,accommodation-income')) {
+  res.redirect('HEI-livcostamount');
+  res.redirect('HEI-accommodation');
+}
+else if (req.query.livingcost.toString() == ('livingcosts-income,study-income,accommodation-income')) {
+  res.redirect('HEI-livcostamount');
+}
+else if (req.query.livingcost.toString() == ('livingcosts-income,study-income,accommodation-income,tuition-income')) {
+  res.redirect('HEI-livcostamount');
+}
+else if (req.query.livingcost.toString() == (',study-income,accommodation-income')) {
+  res.redirect('HEI-accommodation');
+}
+else if (req.query.livingcost.toString() == ('study-income,accommodation-income,tuition-income')) {
+  res.redirect('HEI-accommodation');
+}
+else if (req.query.livingcost.toString() == ('accommodation-income,tuition-income')) {
+  res.redirect('HEI-accommodation');
+}
 });
 
 router.get(/amountlivcosts-handler/, function (req, res) {
+
+  var HEI = req.session.data['HEI'];
+
+  if (req.query.amount && HEI.includes ('accommodation-income')) {
+    res.redirect('HEI-accommodation');
+  } else if (req.query.amount){
+    res.redirect('cya');
+  }
+});
+
+router.get(/accommodation-handler/, function (req, res) {
   if (req.query.amount) {
     res.redirect('cya');
   } else {
-    res.redirect('HEI-amount');
+    res.redirect('HEI-accommodation');
   }
 });
+
 
 
 
