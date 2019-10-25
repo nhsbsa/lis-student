@@ -2917,6 +2917,12 @@ router.get(/term3dates-handler/, function (req, res) {
   res.redirect('overseas-student');
 });
 
+router.get(/downloadreports/, function (req, res) {
+  res.redirect('financial-help');
+});
+
+
+
 
 router.get(/financialhelp-handler/, function (req, res) {
   if (req.query.financialhelp.includes('SFE-help')) {
