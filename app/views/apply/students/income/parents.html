@@ -31,19 +31,19 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Income and other money</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you receive from HEI for 'accommodation'?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you receive from your parents per month?</h1>
       </header>
       
       
       
-      <form action="accommodation-handler" method="get" class="form">
+      <form action="moneyfromparents-handler" method="get" class="form">
     
    
         <div class="form-group">
             <fieldset class ="inline"> 
                 <span class="heading-medium">£</span>
           
-          <input class="form-control form-control-1-4" id="amount" name="amount" type="number" step=".01" value="{{ data['accommodation'] }}">
+          <input class="form-control form-control-1-4" id="amount" name="amount" type="number" step=".01" value="{{ data['parent'] }}">
         </fieldset> 
         </div>
 

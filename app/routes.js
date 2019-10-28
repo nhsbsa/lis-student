@@ -2964,8 +2964,12 @@ router.get(/financialhelp-handler/, function (req, res) {
 
 router.get(/livingcost-handler/, function (req, res) {
   
-   if (req.query.livingcost.includes('HEI-help')) {
+
+  if (req.query.livingcost.includes('parents-help')) {
+    res.redirect('parents');
+  } else  if (req.query.livingcost.includes('HEI-help')) {
     res.redirect('HEI-type');
+  
   } else if (req.query.livingcost.includes('loanmaintenance-help')) {
     res.redirect('cya');
   } else if (req.query.livingcost.includes('other-help')) {
@@ -2984,11 +2988,19 @@ router.get(/livingcost-handler/, function (req, res) {
     res.redirect('cya');
   }else if (req.query.livingcost.toString() == 'loanmaintenance-help,overseas-help') {
     res.redirect('cya');
+  }else if (req.query.livingcost.toString() == 'loanmaintenance-help,parents-help') {
+    res.redirect('parents');
   } else if (req.query.livingcost.toString() == 'loanmaintenance-help,HEI-help,other-help') {
     res.redirect('HEI-type');
   } else if (req.query.livingcost.toString() == 'loanmaintenance-help,HEI-help,other-help,NHS-help') {
     res.redirect('HEI-type');
+  } else if (req.query.livingcost.toString() == 'loanmaintenance-help,HEI-help,other-help,parents-help,NHS-help') {
+    res.redirect('parents');
+    res.redirect('HEI-type');
   } else if (req.query.livingcost.toString() == 'HEI-help,other-help') {
+    res.redirect('HEI-type');
+  } else if (req.query.livingcost.toString() == 'HEI-help,parents-help') {
+    res.redirect('parents');
     res.redirect('HEI-type');
   } else if (req.query.livingcost.toString() == 'HEI-help,other-help,NHS-help') {
     res.redirect('HEI-type');
@@ -2999,43 +3011,18 @@ router.get(/livingcost-handler/, function (req, res) {
 router.get(/HEI-handler/, function (req, res) {
   if (req.query.HEI.includes ('livingcosts-income')) {
     res.redirect('HEI-livcostsamount');
-  } else if (req.query.HEI.includes ('study-income')) {
-    res.redirect('cya');
-  }
-  else if (req.query.HEI.includes ('accommodation-income')) {
+  } else if (req.query.HEI.includes ('accommodation-income')) {
     res.redirect('HEI-accommodation');
-  }
- else if (req.query.HEI.includes ('tuition-income')) {
-  res.redirect('cya');
-}
-else if (req.query.livingcost.toString() == ('livingcosts-income,study-income')) {
+  } else if (req.query.HEI.includes ('none-income')) {
+    res.redirect('cya');
+  } else if (req.query.livingcost.toString() == ('livingcosts-income,accommodation-income')) {
   res.redirect('HEI-livcostamount');
-}
-else if (req.query.livingcost.toString() == ('livingcosts-income,accommodation-income')) {
-  res.redirect('HEI-livcostamount');
-  res.redirect('HEI-accommodation');
-}
-else if (req.query.livingcost.toString() == ('livingcosts-income,study-income,accommodation-income')) {
-  res.redirect('HEI-livcostamount');
-}
-else if (req.query.livingcost.toString() == ('livingcosts-income,study-income,accommodation-income,tuition-income')) {
-  res.redirect('HEI-livcostamount');
-}
-else if (req.query.livingcost.toString() == (',study-income,accommodation-income')) {
-  res.redirect('HEI-accommodation');
-}
-else if (req.query.livingcost.toString() == ('study-income,accommodation-income,tuition-income')) {
-  res.redirect('HEI-accommodation');
-}
-else if (req.query.livingcost.toString() == ('accommodation-income,tuition-income')) {
   res.redirect('HEI-accommodation');
 }
 });
 
 router.get(/amountlivcosts-handler/, function (req, res) {
-
   var HEI = req.session.data['HEI'];
-
   if (req.query.amount && HEI.includes ('accommodation-income')) {
     res.redirect('HEI-accommodation');
   } else if (req.query.amount){
@@ -3052,16 +3039,14 @@ router.get(/accommodation-handler/, function (req, res) {
 });
 
 
-
-
-
 router.get(/moneyfromparents-handler/, function (req, res) {
-  if (req.query.moneyfromparents == 'yes') {
-    res.redirect('parents-income-assessed');
-  } else if (req.query.moneyfromparents == 'no') {
-    res.redirect('...');
+  var livingcost = req.session.data['livingcost'];
+  if (req.query.moneyfromparents && livingcost.includes('HEI-help')) {
+    res.redirect('HEI-type');
+  } else if (req.query.amount){
+    res.redirect('cya');
   }
-});
+}); 
 
 // ************************
 // ASSESS

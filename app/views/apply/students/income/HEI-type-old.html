@@ -31,7 +31,7 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Income and other money</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you get any of these as part of your HEI bursary?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What do you receive part of your bursary from HEI?</h1>
       </header>
 
       <form action="HEI-handler" class="form" method="get">
@@ -43,17 +43,19 @@ NHSBSA Prototype
                       <input id="wages" name="HEI" value="livingcosts-income" type="checkbox">
                       <label for="wages">Cash for living costs</label>
                   </div>
-                
+                  <div class="multiple-choice multiple-radio">
+                      <input id="benefits" name="HEI" value="study-income" type="checkbox">
+                      <label for="benefits">Books</label>
+                  </div>
       
                   <div class="multiple-choice multiple-radio">
                       <input id="accommodation" name="HEI" value="accommodation-income" type="checkbox">
                       <label for="accommodation">Accommodation</label>
                   </div>
-                  <p class="form-block">or</p>
                   
                   <div class="multiple-choice multiple-radio">
-                    <input id="none" name="HEI" value="none-income" type="checkbox">
-                    <label for="none">None of the above</label>
+                    <input id="tuition" name="HEI" value="tuition-income" type="checkbox">
+                    <label for="tuition">Tuition fees</label>
                 </div>
               </fieldset>
       

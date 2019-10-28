@@ -67,6 +67,9 @@ NHSBSA Prototype
                     NHS Bursary<br>
                     {% endif %}
 
+                    {% if "parents" in data['livingcost'] %}
+                    Parents<br>
+                    {% endif %}
                 </p>
 
               </dd>
@@ -77,12 +80,6 @@ NHSBSA Prototype
               </dd>
             </div>
 
-
-
-
-
-
-       
    
 
         <div>
@@ -92,7 +89,7 @@ NHSBSA Prototype
             <dd class="cya-answer">
               <p>Living costs <br>
               Accommodation <br>
-              Books</p>
+              
             </dd>
             <dd class="cya-change">
               <a class="link-right" href="#">
@@ -121,7 +118,7 @@ NHSBSA Prototype
 <br>
       <div class="form-group">
        
-        <a href="task-list"><input class="button" type="submit" value="Next"></a>
+        <a href="task-list-complete"><input class="button" type="submit" value="Next"></a>
         
       </div>
 
