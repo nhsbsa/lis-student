@@ -30,7 +30,7 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Contact details</p>
+        <p class="page-header--sub heading-secondary">Income and other money</p>
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you receive from HEI for 'living costs'?</h1>
       </header>
 
@@ -38,8 +38,8 @@ NHSBSA Prototype
 
       <form action="amountlivcosts-handler" method="get" class="form">        
          
-        
-        <input class="form-control" id="amount" name="amount" type="number" value="{{ data['amountlc'] }}">
+          <div class="form-group">
+        <input class="form-control" id="amount" name="amount" type="number" value="{{ data['amountlivcosts'] }}">
           
         </div>
 

@@ -38,48 +38,87 @@ NHSBSA Prototype
       <!--   * `cya-questions-long` for long questions -->
       <!--   * none for single group of q&a -->
       <dl class="govuk-check-your-answers cya-questions-short">
-        <div>
-          <dt class="cya-question" style="border: 0 !important;">
-            <h2 class="heading-small">Money you live on
-            </h2>
-          </dt>
-          <dd class="cya-answer" style="border: 0 !important;">
-            <p id="capitalize">   
-           
-            {% if "loanmaintenance-help" in data['livingcost'] %}
-            Student loan grant or maintenance<br>
-            {% endif %}
 
-            {% if "HEI-help" in data['livingcost'] %}
-            Bursary from higher education institution (HEI)<br>
-            {% endif %}
 
-            {% if "other-help" in data['livingcost'] %}
-            Other scholarship, sponsorship, award or bursary<br>
-            {% endif %}
 
-            {% if "overseas-help" in data['livingcost'] %}
-            Grant or loan from overseas<br>
-            {% endif %}
+          <div>
+              <dt class="cya-question">
+                Money you live on
+              </dt>
+              <dd class="cya-answer">
+                <p>
+                    {% if "loanmaintenance-help" in data['livingcost'] %}
+                    Student loan grant or maintenance<br>
+                    {% endif %}
+        
+                    {% if "HEI-help" in data['livingcost'] %}
+                    Bursary from higher education institution (HEI)<br>
+                    {% endif %}
+        
+                    {% if "other-help" in data['livingcost'] %}
+                    Other scholarship, sponsorship, award or bursary<br>
+                    {% endif %}
+        
+                    {% if "overseas-help" in data['livingcost'] %}
+                    Grant or loan from overseas<br>
+                    {% endif %}
+        
+                    {% if "NHS-help" in data['livingcost'] %}
+                    NHS Bursary<br>
+                    {% endif %}
 
-            {% if "NHS-help" in data['livingcost'] %}
-            NHS Bursary<br>
-            {% endif %}
+                </p>
 
-            
-            </p>
-          </dd>
-          <dd class="cya-change" style="border: 0 !important;">
-            <a href="living-cost.html">
-              Change
-            </a>
-          </dd>
-        </div>
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="#">
+                  Change<span class="visually-hidden">Income</span>
+                </a>
+              </dd>
+            </div>
+
+
+
+
+
+
+       
    
 
-     
-      <br>
+        <div>
+            <dt class="cya-question">
+              Bursary - HEI 
+            </dt>
+            <dd class="cya-answer">
+              <p>Living costs <br>
+              Accommodation <br>
+              Books</p>
+            </dd>
+            <dd class="cya-change">
+              <a class="link-right" href="#">
+                Change<span class="visually-hidden">HEI type</span>
+              </a>
+            </dd>
+          </div>
 
+          <div>
+              <dt class="cya-question">
+                HEI amount
+              </dt>
+              <dd class="cya-answer">
+                <p>Living costs  : £ 123<br>
+                Accommodation    : £ 213 </p>
+                
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="#">
+                  Change<span class="visually-hidden">HEI amount</span>
+                </a>
+              </dd>
+            </div>
+     
+      </dl>
+<br>
       <div class="form-group">
        
         <a href="task-list"><input class="button" type="submit" value="Next"></a>
