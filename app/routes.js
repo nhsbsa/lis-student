@@ -203,7 +203,7 @@ router.get(/asylumsingle-handler/, function (req, res) {
   if (req.query.asylumsingle == 'yes') {
     res.redirect('/beforeyoustart/asylum/asylum-decision');
   } else if (req.query.asylumsingle == 'no') {
-    res.redirect('../../beforeyoustart/money-coming-in-single');
+    res.redirect('../../beforeyoustart/education-or-training');
   }
 });
 
@@ -274,6 +274,37 @@ router.get(/ukvi-handler/, function (req, res) {
     res.redirect('/beforeyoustart/money-coming-in-single');
   }
 });
+
+router.get(/fulltimeedu-handler/, function (req, res) {
+  if (req.query.fulltimeedu == 'yes') {
+    res.redirect('/beforeyoustart/type-of-course');
+  } else if (req.query.fulltimeedu == 'no') {
+    res.redirect('#');
+  } else {
+    res.redirect('/beforeyoustart/full-time-edu');
+  }
+});
+
+router.get(/qualification-handler-handler/, function (req, res) {
+  if (req.query.qualification.includes('ug-course')) {
+    res.redirect('#');
+  } else if (req.query.qualification.includes('pg-course')) {
+    res.redirect('#');
+  } else if (req.query.qualification.includes('pgce-course')) {
+    res.redirect('#');
+  } else if (req.query.qualification.includes('hnc-course')) {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.qualification.includes('hnd-course')) {
+    res.redirect('#');
+  } else if (req.query.qualification.includes('nvq-course')) {
+    res.redirect('#');
+  } else if (req.query.qualification == 'none-course') {
+    res.redirect('#');
+  } 
+});
+
+
+
 
 
 // ************************
@@ -2963,8 +2994,6 @@ router.get(/financialhelp-handler/, function (req, res) {
 });
 
 router.get(/livingcost-handler/, function (req, res) {
-  
-
   if (req.query.livingcost.includes('parents-help')) {
     res.redirect('parents');
   } else  if (req.query.livingcost.includes('HEI-help')) {
@@ -3169,16 +3198,16 @@ router.get(/savingssplit-handler/, function (req, res) {
 
 router.get(/educationtrainingsplit-handler/, function (req, res) {
   if (req.query.educationtraining== 'yes') {
-    res.redirect('/beforeyoustart/A-level-student');
+    res.redirect('/beforeyoustart/full-time-edu');
   } else  {
-    res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   
   }
 });
 
 router.get(/alevel-handler/, function (req, res) {
   if (req.query.alevel== 'yes') {
-    res.redirect('/beforeyoustart/A-level-student');
+    res.redirect('/beforeyoustart/full-time-edu');
   } else  {
     res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
   
