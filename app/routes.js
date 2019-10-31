@@ -101,15 +101,61 @@ router.get(/applyonlineiteration1-handler/, function (req, res) {
 // BEFORE YOU START
 // ************************
 
+
+// ** router.get(/partner-handler/, function (req, res) {
+  //** if (req.query.partner == 'yes') {
+    //**   applicant.partner = true;
+    //** res.redirect('/beforeyoustart/asylum/claimed-asylum-partner');
+ //**  } else if (req.query.partner == 'no') {
+   //**  applicant.partner = false;
+  //**   res.redirect('/beforeyoustart/asylum/claimed-asylum-single');
+ //**  }
+//**    }); 
+
+
+
 router.get(/partner-handler/, function (req, res) {
   if (req.query.partner == 'yes') {
     applicant.partner = true;
-    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner');
+    res.redirect('/beforeyoustart/student/edu-or-training');
   } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/edu-or-training');
+  }
+});
+
+
+
+
+router.get(/educationtraining-handler/, function (req, res) {
+  if (req.query.educationtraining == 'yes') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner');
+  } else if (req.query.educationtraining == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/kickout/students-developed');
+  } else if (req.query.educationtraining == 'no') {
     applicant.partner = false;
     res.redirect('/beforeyoustart/asylum/claimed-asylum-single');
   }
 });
+
+router.get(/fulltimeedu-handler/, function (req, res) {
+  if (req.query.fulltimeedu == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.fulltimeedu == 'no') {
+    res.redirect('/beforeyoustart/student/tuition fee');
+  } else {
+    res.redirect('/beforeyoustart/full-time-edu');
+  }
+});
+
+
+
+
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
   if (req.query.incomepartner.includes('maintenance-income')) {
@@ -275,15 +321,7 @@ router.get(/ukvi-handler/, function (req, res) {
   }
 });
 
-router.get(/fulltimeedu-handler/, function (req, res) {
-  if (req.query.fulltimeedu == 'yes') {
-    res.redirect('/beforeyoustart/type-of-course');
-  } else if (req.query.fulltimeedu == 'no') {
-    res.redirect('#');
-  } else {
-    res.redirect('/beforeyoustart/full-time-edu');
-  }
-});
+
 
 router.get(/qualification-handler-handler/, function (req, res) {
   if (req.query.qualification.includes('ug-course')) {
@@ -3196,10 +3234,10 @@ router.get(/savingssplit-handler/, function (req, res) {
   }
 });
 
-router.get(/educationtrainingsplit-handler/, function (req, res) {
-  if (req.query.educationtraining== 'yes') {
-    res.redirect('/beforeyoustart/full-time-edu');
-  } else  {
+ router.get(/educationtrainingsplit-handler/, function (req, res) {
+if (req.query.educationtraining== 'yes') {
+   res.redirect('/beforeyoustart/full-time-edu');
+ } else  {
     res.redirect('/beforeyoustart/money-coming-in-single');
   
   }
