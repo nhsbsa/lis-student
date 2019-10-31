@@ -128,18 +128,16 @@ router.get(/partner-handler/, function (req, res) {
 
 
 router.get(/educationtraining-handler/, function (req, res) {
-  if (req.query.educationtraining == 'yes') {
-    applicant.partner = false;
+  var partner = req.session.data['partner'];
+
+  if (req.query.educationtraining == 'yes' && partner == 'no') {
     res.redirect('/beforeyoustart/student/full-time-edu');
-  } else if (req.query.educationtraining == 'no') {
-    applicant.partner = true;
-    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner');
-  } else if (req.query.educationtraining == 'yes') {
-    applicant.partner = true;
-    res.redirect('/beforeyoustart/kickout/students-developed');
-  } else if (req.query.educationtraining == 'no') {
-    applicant.partner = false;
+  } else if (req.query.educationtraining == 'yes' && partner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.educationtraining == 'no' && partner == 'no') {
     res.redirect('/beforeyoustart/asylum/claimed-asylum-single');
+  } else if (req.query.educationtraining == 'no' && partner == 'yes') {
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner')
   }
 });
 
@@ -2020,6 +2018,15 @@ router.get(/anyotherbenefitsiteration5-handler/, function (req, res) {
     res.redirect('carers-allowance');
   }
 });
+
+
+
+
+
+
+
+
+
 
 router.get(/otherbenefits1iteration5-handler/, function (req, res) {
 
