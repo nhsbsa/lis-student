@@ -125,8 +125,6 @@ router.get(/partner-handler/, function (req, res) {
 });
 
 
-
-
 router.get(/educationtraining-handler/, function (req, res) {
   var partner = req.session.data['partner'];
 
@@ -151,6 +149,21 @@ router.get(/fulltimeedu-handler/, function (req, res) {
   }
 });
 
+router.get(/tuition-handler/, function (req, res) {
+  if (req.query.tuition == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.tuition == 'no') {
+    res.redirect('/beforeyoustart/student/parental-cont');
+  }
+});
+
+router.get(/parentcontribution-handler/, function (req, res) {
+  if (req.query.parentcontribution == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.parentcontribution == 'no') {
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-single');;
+  }
+});
 
 
 
