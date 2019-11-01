@@ -260,7 +260,7 @@ router.get(/asylumsingle-handler/, function (req, res) {
   if (req.query.asylumsingle == 'yes') {
     res.redirect('/beforeyoustart/asylum/asylum-decision');
   } else if (req.query.asylumsingle == 'no') {
-    res.redirect('../../beforeyoustart/education-or-training');
+    res.redirect('../../beforeyoustart/money-coming-in-single');
   }
 });
 
