@@ -150,9 +150,9 @@ router.get(/fulltimeedu-handler/, function (req, res) {
 });
 
 router.get(/tuition-handler/, function (req, res) {
-  if (req.query.tuition == 'yes') {
+  if (req.query.tuition == 'no') {
     res.redirect('/kickouts/students-developed');
-  } else if (req.query.tuition == 'no') {
+  } else if (req.query.tuition == 'yes') {
     res.redirect('/beforeyoustart/student/parental-cont');
   }
 });
@@ -3248,7 +3248,7 @@ router.get(/savingssplit-handler/, function (req, res) {
   if (req.query.savings== 'yes') {
     res.redirect('/kickouts/developed');
   } else if (req.query.savings== 'no') {
-    res.redirect('/beforeyoustart/education-or-training');
+    res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
   } else {
     res.redirect('/beforeyoustart/more-than-6000');
   }
