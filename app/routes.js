@@ -139,15 +139,55 @@ router.get(/educationtraining-handler/, function (req, res) {
   }
 });
 
-router.get(/fulltimeedu-handler/, function (req, res) {
+
+router.get(/qualification-handler/, function (req, res) {
   var whatissingleincome = req.session.data['incomesingle'];
+
+  if (req.query.qualification.includes('gcse') && whatissingleincome =='nil-income') {
+    res.redirect('/beforeyoustart/student/parental-cont');
+  } else if (req.query.qualification.includes('gcse') && whatissingleincome !=='nil-income') {
+    res.redirect('/beforeyoustart/student/tuition fee');
+  } else if (req.query.qualification.includes('btec1') && whatissingleincome =='nil-income') {
+    res.redirect('/beforeyoustart/student/parental-cont');
+  } else if (req.query.qualification.includes('btec1') && whatissingleincome !=='nil-income') {
+    res.redirect('/beforeyoustart/student/tuition fee');
+  } else if (req.query.qualification.includes('btec2')) {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.includes('nvq')) {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.includes('ug')) {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification == 'pg') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification == 'phd') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification == 'nil') {
+      res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug,pg,phd,nil') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug,pg,phd') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug,pg') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq') {
+    res.redirect('../kickouts/students-developed');
+  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2') {
+    res.redirect('../kickouts/students-developed');
+
+    res.redirect('/beforeyoustart/student/qualification');
+  }
+});
+
+
+router.get(/fulltimeedu-handler/, function (req, res) {
+ 
 
   if (req.query.fulltimeedu == 'yes') {
     res.redirect('/kickouts/students-developed');
-  } else if (req.query.fulltimeedu == 'no' && whatissingleincome =='nil-income') {
-    res.redirect('/beforeyoustart/student/parental-cont');
   } else if  (req.query.fulltimeedu == 'no') {
-    res.redirect('/beforeyoustart/student/tuition fee');
+    res.redirect('/beforeyoustart/student/qualification');
   } else {
     res.redirect('/beforeyoustart/full-time-edu');
   }
