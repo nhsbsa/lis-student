@@ -133,9 +133,9 @@ router.get(/educationtraining-handler/, function (req, res) {
   } else if (req.query.educationtraining == 'yes' && partner == 'yes') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.educationtraining == 'no' && partner == 'no') {
-    res.redirect('/beforeyoustart/asylum/claimed-asylum-single');
+    res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
   } else if (req.query.educationtraining == 'no' && partner == 'yes') {
-    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner')
+    res.redirect('/beforeyoustart/check-your-answers-check-eligibility')
   }
 });
 
@@ -3254,7 +3254,7 @@ router.get(/savingssplit-handler/, function (req, res) {
   if (req.query.savings== 'yes') {
     res.redirect('/kickouts/developed');
   } else if (req.query.savings== 'no') {
-    res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
+    res.redirect('/beforeyoustart/student/edu-or-training');
   } else {
     res.redirect('/beforeyoustart/more-than-6000');
   }
