@@ -117,10 +117,10 @@ router.get(/applyonlineiteration1-handler/, function (req, res) {
 router.get(/partner-handler/, function (req, res) {
   if (req.query.partner == 'yes') {
     applicant.partner = true;
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner');
   } else if (req.query.partner == 'no') {
     applicant.partner = false;
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-single');
   }
 });
 
@@ -161,11 +161,17 @@ router.get(/parentcontribution-handler/, function (req, res) {
   if (req.query.parentcontribution == 'yes') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.parentcontribution == 'no') {
-    res.redirect('/beforeyoustart/asylum/claimed-asylum-single');;
+    res.redirect('/beforeyoustart/student/student-funding');;
   }
 });
 
-
+router.get(/funding-handler/, function (req, res) {
+  if (req.query.funding == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding == 'no') {
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-single');;
+  }
+});
 
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
