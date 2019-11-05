@@ -151,33 +151,11 @@ router.get(/qualification-handler/, function (req, res) {
     res.redirect('/beforeyoustart/student/parental-cont');
   } else if (req.query.qualification.includes('btec1') && whatissingleincome !=='nil-income') {
     res.redirect('/beforeyoustart/student/tuition fee');
-  } else if (req.query.qualification.includes('btec2')) {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.includes('nvq')) {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.includes('ug')) {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification == 'pg') {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification == 'phd') {
-    res.redirect('../kickouts/students-developed');
   } else if (req.query.qualification == 'nil') {
-      res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug,pg,phd,nil') {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug,pg,phd') {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug,pg') {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq,ug') {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2,nvq') {
-    res.redirect('../kickouts/students-developed');
-  } else if (req.query.qualification.toString() == 'gcse,btec1,btec2') {
-    res.redirect('../kickouts/students-developed');
-
+      res.redirect('/kickouts/students-developed');
+   } else 
     res.redirect('/beforeyoustart/student/qualification');
-  }
+  
 });
 
 
