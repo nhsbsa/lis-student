@@ -133,15 +133,15 @@ router.get(/educationtraining-handler/, function (req, res) {
   }
 });
 
-router.get(/educationtrainingpartner-handler/, function (req, res) {
+
+router.get(/educationtrainingPartner-handler/, function (req, res) {
  
-  if (req.query.educationtrainingpartner == 'yes') {
-    res.redirect('/kickouts/students-developed');
-  } else if (req.query.educationtrainingpartner == 'no') {
-    res.redirect('/beforeyoustart/money-coming-in-partner');
+  if (req.query.educationtrainingPartner == 'yes') {
+    res.redirect('../../kickouts/students-developed');
+  } else if (req.query.educationtrainingPartner == 'no') {
+    res.redirect('../../beforeyoustart/money-coming-in-partner');
   }
 });
-
 
 
 router.get(/qualification-handler/, function (req, res) {
