@@ -124,44 +124,41 @@ router.get(/partner-handler/, function (req, res) {
   }
 });
 
-
 router.get(/educationtraining-handler/, function (req, res) {
-  var partner = req.session.data['partner'];
-
-  if (req.query.educationtraining == 'yes' && partner == 'no') {
+ 
+  if (req.query.educationtraining == 'yes') {
     res.redirect('/beforeyoustart/student/full-time-edu');
-  } else if (req.query.educationtraining == 'yes' && partner == 'yes') {
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  }
+});
+
+router.get(/educationtrainingpartner-handler/, function (req, res) {
+ 
+  if (req.query.educationtrainingpartner == 'yes') {
     res.redirect('/kickouts/students-developed');
-  } else if (req.query.educationtraining == 'no' && partner == 'no') {
-    res.redirect('/beforeyoustart/more-than-6000');
-  } else if (req.query.educationtraining == 'no' && partner == 'yes') {
-    res.redirect('/beforeyoustart/more-than-6000')
+  } else if (req.query.educationtrainingpartner == 'no') {
+    res.redirect('/beforeyoustart/money-coming-in-partner');
   }
 });
 
 
-router.get(/qualification-handler/, function (req, res) {
-  var whatissingleincome = req.session.data['incomesingle'];
 
-  if (req.query.qualification.includes('gcse') && whatissingleincome =='nil-income') {
-    res.redirect('/beforeyoustart/student/parental-cont');
-  } else if (req.query.qualification.includes('gcse') && whatissingleincome !=='nil-income') {
+router.get(/qualification-handler/, function (req, res) {
+  
+  if (req.query.qualification.includes('gcse')) {
     res.redirect('/beforeyoustart/student/tuition fee');
-  } else if (req.query.qualification.includes('btec1') && whatissingleincome =='nil-income') {
-    res.redirect('/beforeyoustart/student/parental-cont');
-  } else if (req.query.qualification.includes('btec1') && whatissingleincome !=='nil-income') {
+  } else if (req.query.qualification.includes('btec1')) {
     res.redirect('/beforeyoustart/student/tuition fee');
   } else if (req.query.qualification == 'nil') {
       res.redirect('/kickouts/students-developed');
    } else 
     res.redirect('/beforeyoustart/student/qualification');
-  
 });
 
 
 router.get(/fulltimeedu-handler/, function (req, res) {
  
-
   if (req.query.fulltimeedu == 'yes') {
     res.redirect('/kickouts/students-developed');
   } else if  (req.query.fulltimeedu == 'no') {
@@ -173,9 +170,9 @@ router.get(/fulltimeedu-handler/, function (req, res) {
 
 router.get(/tuition-handler/, function (req, res) {
   
-  if (req.query.tuition == 'no') {
+  if (req.query.tuition == 'yes') {
     res.redirect('/kickouts/students-developed');
-  } else if (req.query.tuition == 'yes') {
+  } else if (req.query.tuition == 'no') {
     res.redirect('/beforeyoustart/student/parental-cont');
   }
 });
@@ -192,7 +189,7 @@ router.get(/funding-handler/, function (req, res) {
   if (req.query.funding == 'yes') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding == 'no') {
-    res.redirect('/beforeyoustart/more-than-6000');;
+    res.redirect('/beforeyoustart/money-coming-in-single');;
   }
 });
 
@@ -253,33 +250,33 @@ router.get(/whatissingleincome-handler/, function (req, res) {
   } else if (req.query.incomesingle.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle == 'pension-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle == 'earned-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart//more-than-6000');
   } else if (req.query.incomesingle == 'benefits-income') {
-      res.redirect('/beforeyoustart/student/edu-or-training');
+      res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle == 'nil-income') {
-      res.redirect('/beforeyoustart/student/edu-or-training');
+      res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
-    res.redirect('/beforeyoustart//beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
-    res.redirect('/beforeyoustart/student/edu-or-training');
+    res.redirect('/beforeyoustart/more-than-6000');
   } else {
     res.redirect('/beforeyoustart/money-coming-in-single');
   }
@@ -289,7 +286,7 @@ router.get(/asylumsingle-handler/, function (req, res) {
   if (req.query.asylumsingle == 'yes') {
     res.redirect('/beforeyoustart/asylum/asylum-decision');
   } else if (req.query.asylumsingle == 'no') {
-    res.redirect('../../beforeyoustart/money-coming-in-single');
+    res.redirect('../../beforeyoustart/student/edu-or-training');
   }
 });
 
@@ -297,7 +294,7 @@ router.get(/asylumPartner-handler/, function (req, res) {
   if (req.query.asylumPartner == 'yes') {
     res.redirect('../../kickouts/developed');
   } else if (req.query.asylumPartner == 'no') {
-    res.redirect('../../beforeyoustart/money-coming-in-partner');
+    res.redirect('../../beforeyoustart/student/edu-or-training-partner');
   }
 });
 
