@@ -3177,39 +3177,17 @@ router.get(/taxcreditincomeiteration6-handler/, function (req, res) {
 });
 
 router.get(/otherbenefitsiteration6-handler/, function (req, res) {
+  res.redirect('additional-benefits.html') 
+  
+});
+
+router.get(/additionalbenefitsiteration6-handler/, function (req, res) {
   
   if (req.query.additionalbenefits.includes('incomesupport')) {
-  res.redirect('passport-incomesupport');
+    res.redirect('passport-incomesupport')
    } else 
     res.redirect('#');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
