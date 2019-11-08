@@ -697,6 +697,13 @@ router.get(/pensioncredittypeiteration6-handler/, function (req, res) {
     }
 });
 
+router.get(/pensioncredithowoften-handler/, function (req, res) {
+  if (req.query.pensioncredithowoften == 'every week' || req.query.pensioncredithowoften == 'every 2 weeks' || req.query.pensioncredithowoften == 'every 4 weeks' || req.query.pensioncredithowoften == 'every 13 weeks (quarterly)' || req.query.pensioncredithowoften == 'once a year') {
+    res.redirect('../pension/pension-credit-how-much');
+  } else {
+    res.redirect('../pension/pension-credit-how-often');
+  }
+});
 
 
 
