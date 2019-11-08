@@ -648,7 +648,7 @@ router.get(/statepensionanother-handler/, function (req, res) {
   if (req.query.statepensionanother == 'yes') {
     res.redirect('../pension/pension-name');
   } else if (req.query.statepensionanother == 'no') {
-    res.redirect('answers');
+    res.redirect('../pension/pension-credit-receive');
   }
 });
 
@@ -672,9 +672,33 @@ router.get(/personalpensionanother-handler/, function (req, res) {
   if (req.query.personalpensionanother == 'yes') {
     res.redirect('pension-name');
   } else if (req.query.personalpensionanother == 'no') {
+    res.redirect('pension-credit-receive');
+  }
+});
+
+router.get(/pensioncredit-handler/, function (req, res) {
+  if (req.query.pensioncredit == 'yes') {
+    res.redirect('pension-credit-type');
+  } else if (req.query.pensioncredit == 'no') {
     res.redirect('answers');
   }
 });
+
+router.get(/pensioncredittypeiteration6-handler/, function (req, res) {
+
+    if (req.query.pensioncredittype == 'GC') {
+    res.redirect('passport-pensioncredit');
+    } else if (req.query.pensioncredittype == 'GCwithSC') {
+      res.redirect('passport-pensioncredit');
+    } else if (req.query.pensioncredittype == 'SC') {
+      res.redirect('#');
+    } else {
+      res.redirect('pension-credit-type');
+    }
+});
+
+
+
 
 // ************************
 // MAINTENANCE PAYMENTS
@@ -3407,53 +3431,6 @@ router.get(/employmentsupporttypeiteration-5-handler/, function (req, res) {
     }
 });
 
-router.get(/pensioncredittypeiteration6-handler/, function (req, res) {
-
-  var benefitList = req.session.data['benefitList'];
-
-  // Other benefits
-
-    if (req.query.pensioncredittype == 'GC' || req.query.pensioncredittype == 'GCwithSC') {
-    res.redirect('passport-pensioncredit');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('PIP (Personal independence payment)')) {
-      res.redirect('personal-independence-payment');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Disability living allowance')) {
-      res.redirect('disability-living-allowance');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Attendance allowance')) {
-      res.redirect('attendance-allowance-rate');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Industrial injuries disablement benefit')) {
-      res.redirect('industrial-injuries-disablement-benefit');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Carer\'s allowance')) {
-      res.redirect('carers-allowance');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Incapacity Benefit')) {
-      res.redirect('incapacity-benefit');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Severe disablement allowance')) {
-      res.redirect('severe-disablement-allowance');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Armed Forces Compensation Scheme')) {
-      res.redirect('armed-forces-compensation');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('War disablement pension')) {
-      res.redirect('war-disablement-pension');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Bereavement allowance (previously Widow\'s Pension)')) {
-      res.redirect('bereavement-allowance-amount');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Widowed parent\'s allowance')) {
-      res.redirect('widowed-parents-allowance');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Bereavement support payment')) {
-      res.redirect('bereavement-support-rate');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('War widow\'s or widower\'s pension')) {
-      res.redirect('war-widow-pension');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Industrial death benefit')) {
-      res.redirect('industrial-death-benefit');
-    } else if (req.query.pensioncredittype == 'SC' && benefitList.includes('Maternity allowance')) {
-      res.redirect('maternity-allowance');
-    } else if (req.query.pensioncredittype == 'SC') {
-      res.redirect('carers-allowance-other-benefit');
-  
-  // Refresh page in all other circumstances
-  
-    } else {
-      res.redirect('pension-credit-type');
-    }
-});
 
 router.get(/piptypeiteration6-handler/, function (req, res) {
 
