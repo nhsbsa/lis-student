@@ -1,0 +1,132 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Benefits</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How often is your War Disablement Pension paid?</h1>
+      </header>
+
+      <form action="wardisablementtypeiteration6-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice" data-target="week-reveal">
+                <input id="wardisablement-week" name="wardisablement" value="wardisablement" type="radio">
+                <label for="wardisablement-week"><p style="margin-bottom: 7px;">Every week</p></label>
+              </div>
+    
+              <div class="panel panel-border-narrow js-hidden" id="week-reveal" style="padding-top: 0; padding-bottom: 10px; margin: 10px 0px 30px 20px">
+                <h2 class="heading-small" style="padding-bottom: 5px;">How much War Disablement Pension do you get every week?</h2>
+                <div class="form-hint">
+				
+                    The amount must include pence. For example, £146.20
+                
+                      </div>
+                <div class="form-group">
+                    <label class="form-label" for="wardisablementweek"></label>
+                    <input class="form-control" id="wardisablementweek" name="wardisablementweek" type="text">
+                </div>
+              </div>
+    
+              <div class="multiple-choice" data-target="4week-reveal">
+                  <input id="wardisablement-4weeks" name="wardisablement" value="wardisablement" type="radio">
+                  <label for="wardisablement-4weeks"><p style="margin-bottom: 7px;">Every 4 weeks</p></label>
+                </div>
+      
+                <div class="panel panel-border-narrow js-hidden" id="4week-reveal" style="padding-top: 0; padding-bottom: 10px; margin: 10px 0px 30px 20px">
+                  <h2 class="heading-small" style="padding-bottom: 5px;">How much War Disablement Pension do you get every 4 weeks?</h2>
+                  <div class="form-hint">
+				
+                      The amount must include pence. For example, £146.20
+                  
+                        </div>
+                  <div class="form-group">
+                      <label class="form-label" for="wardisablement4weeks"></label>
+                      <input class="form-control" id="wardisablement4weeks" name="wardisablement4weeks" type="text">
+                  </div>
+                </div>
+
+                <div class="multiple-choice" data-target="13week-reveal">
+                    <input id="wardisablement-13weeks" name="wardisablement" value="wardisablement" type="radio">
+                    <label for="wardisablement-13weeks"><p style="margin-bottom: 7px;">Every 13 weeks (quarterly)</p></label>
+                  </div>
+        
+                  <div class="panel panel-border-narrow js-hidden" id="13week-reveal" style="padding-top: 0; padding-bottom: 10px; margin: 10px 0px 30px 20px">
+                    <h2 class="heading-small" style="padding-bottom: 5px;">How much War Disablement Pension do you get every 13 weeks (quarterly)?</h2>
+                    <div class="form-hint">
+          
+                        The amount must include pence. For example, £146.20
+                    
+                          </div>
+                    <div class="form-group">
+                        <label class="form-label" for="wardisablement13weeks"></label>
+                        <input class="form-control" id="wardisablement13weeks" name="wardisablement13weeks" type="text">
+                    </div>
+                  </div>
+
+                  <div class="multiple-choice" data-target="calendarmonth-reveal">
+                      <input id="wardisablement-calendarmonth" name="wardisablement" value="wardisablement" type="radio">
+                      <label for="wardisablement-calendarmonth"><p style="margin-bottom: 7px;">Every calendar month (officers only)</p></label>
+                    </div>
+          
+                    <div class="panel panel-border-narrow js-hidden" id="calendarmonth-reveal" style="padding-top: 0; padding-bottom: 10px; margin: 10px 0px 30px 20px">
+                      <h2 class="heading-small" style="padding-bottom: 5px;">How much War Disablement Pension do you get every calendar month?</h2>
+                      <div class="form-hint">
+            
+                          The amount must include pence. For example, £146.20
+                      
+                            </div>
+                      <div class="form-group">
+                          <label class="form-label" for="wardisablementcalendarmonth"></label>
+                          <input class="form-control" id="wardisablementcalendarmonth" name="wardisablementcalendarmonth" type="text">
+                      </div>
+                    </div>
+                
+
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

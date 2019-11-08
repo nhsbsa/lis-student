@@ -1,0 +1,82 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Benefits</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which parts of Personal Independence Payment (PIP) do you get?</h1>
+      </header>
+
+      <form action="piptypeiteration6-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice multiple-radio" data-target="pip-reveal">
+                <input id="daily-living" name="dailyliving" value="daily-living" type="checkbox">
+                <label for="daily-living">Daily living part</label>
+              </div>
+    
+              <div class="panel panel-border-narrow js-hidden" id="pip-reveal" style="padding-top: 0; padding-bottom: 10px; margin: 10px 0px 30px 20px">
+                <h2 class="heading-small" style="padding-bottom: 5px;">Which daily living rate do you get?</h2>
+                <div class="multiple-choice">
+                    <input id="enhanced" type="radio" name="dailylivingtype" value="enhanced">
+                    <label for="enhanced"><p style="margin: 5px 0px;">Enhanced rate</p></label>
+                  </div>
+      
+                  <div class="multiple-choice">
+                    <input id="standard" type="radio" name="dailylivingtype" value="standard">
+                    <label for="standard"><p style="margin: 5px 0px;">Standard rate</p></label>
+                  </div>
+              </div>
+    
+              <div class="multiple-choice multiple-radio">
+                <input id="mobility" name="mobility" value="mobility" type="checkbox">
+                <label for="mobility">Mobility part</label>
+              </div>       
+
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

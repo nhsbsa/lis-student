@@ -1,0 +1,197 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Benefits</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which type of Employment and Support Allowance (ESA) do you get?</h1>
+      </header>
+
+      <p>There are 2 types of ESA, income-related and contribution-based.</p>
+
+      <details role="group" class="form-group">
+          <summary role="button" aria-controls="reveal-1" aria-expanded="false">
+              <span class="summary">
+                  
+    
+        
+      
+      I'm not sure which type I get
+  
+      
+      
+  
+              </span>
+          </summary>
+          <div class="panel panel-border-narrow" id="reveal-1" aria-hidden="true">
+            
+    
+        
+      
+    
+      
+    
+  
+      
+  
+      
+        <h2 class="heading-medium">
+          
+      Check your benefit payment letter
+  
+        </h2>
+      
+    
+  
+    
+      
+    
+  
+      
+  
+      
+        <p>
+          
+      On the last page of your benefit letter, look under the heading <strong>'Income and Benefits'</strong>.
+  
+        </p>
+      
+    
+  
+    
+      
+    
+  
+      
+  
+      
+        <p>
+          
+      It will say either:
+  
+        </p>
+      
+    
+  
+    
+      
+    
+      <ul class="list list-bullet">
+      
+  
+        
+          <li>
+            
+      'your <strong>income-related</strong> entitlement is'
+  
+          </li>
+          <li>
+            
+      'you are entitled to <strong>contribution-based</strong>'
+  
+          </li>
+        
+  
+        
+      
+      </ul>
+  
+  
+    
+      
+    
+  
+      
+  
+      
+        <p>
+          
+      Find out more about the <a href="https://www.gov.uk/employment-support-allowance/types-of-esa" target="_blank" rel="noopener">different types of ESA<span class="visuallyhidden"> (Opens in a new window)</span></a>.
+  
+        </p>
+      
+    
+  
+    
+      
+    
+  
+      
+  
+      
+        <p>
+          
+      If you're still unsure, contact the <a href="https://www.gov.uk/contact-jobcentre-plus/existing-benefit-claims" target="_blank" rel="noopener">Jobcentre Plus Helpline<span class="visuallyhidden"> (Opens in a new window)</span></a>.
+  
+        </p>
+      
+    
+  
+    
+  
+      
+      
+  
+          </div>
+      </details>
+
+      <form action="employmentsupporttypeiteration-5-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="employmentsupporttype" value="income">
+              <label for="yes"><p style="margin-bottom: 7px;">Income-related ESA</p></label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="employmentsupporttype" value="contribution">
+              <label for="no"><p style="margin-bottom: 7px;">Contribution-based ESA</p></label>
+            </div> 
+
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
