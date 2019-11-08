@@ -3177,7 +3177,7 @@ router.get(/taxcreditincomeiteration6-handler/, function (req, res) {
 });
 
 router.get(/otherbenefitsiteration6-handler/, function (req, res) {
-    res.redirect('TEST');
+    res.redirect('any-other-benefits');
 });
 
 
