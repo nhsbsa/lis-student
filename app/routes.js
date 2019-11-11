@@ -723,7 +723,7 @@ router.get(/pensionhowofteniteration2-handler/, function (req, res) {
 });
 
 router.get(/scpensionhowofteniteration2-handler/, function (req, res) {
-  if (req.query.pensionhowoften == 'every week' ||  req.query.pensionhowoften == 'every 4 weeks' || req.query.pensionhowoften == 'every calendar month' || req.query.pensionhowoften == 'every 13 weeks (quarterly)' || req.query.pensionhowoften == 'once a year') {
+  if (req.query.scpensionhowoften == 'every week' ||  req.query.scpensionhowoften == 'every 4 weeks') {
     res.redirect('../iteration2/SCpension-how-much');
   } else {
     res.redirect('../iteration2/SCpension-how-often');
