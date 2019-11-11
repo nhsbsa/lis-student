@@ -730,17 +730,9 @@ router.get(/personalpensionanotheriteration2-handler/, function (req, res) {
   if (req.query.personalpensionanother == 'yes') {
     res.redirect('../iteration2/pension-name');
   } else if (req.query.personalpensionanother == 'no') {
-    res.redirect('../iteration2/apension-credit-receive');
+    res.redirect('../iteration2/pension-credit-receive');
   }
 });
-
-
-
-
-
-
-
-
 
 router.get(/pensioncredititeration2-handler/, function (req, res) {
   if (req.query.pensioncredit == 'yes') {
