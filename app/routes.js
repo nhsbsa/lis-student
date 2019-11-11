@@ -676,32 +676,98 @@ router.get(/personalpensionanother-handler/, function (req, res) {
   }
 });
 
-router.get(/pensioncredit-handler/, function (req, res) {
-  if (req.query.pensioncredit == 'yes') {
-    res.redirect('pension-credit-type');
-  } else if (req.query.pensioncredit == 'no') {
-    res.redirect('answers');
+
+// ************************
+// PENSIONS Iteration 2
+// ************************
+
+
+router.get(/statepensioniteration2-handler/, function (req, res) {
+  if (req.query.statepension== 'yes') {
+    res.redirect('../iteration2/state-pension-how-often');
+  } else if (req.query.statepension == 'no') {
+    res.redirect('../iteration2/pension-name');
   }
 });
 
-router.get(/pensioncredittypeiteration6-handler/, function (req, res) {
+router.get(/statepensionhowofteniteration2-handler/, function (req, res) {
+  if (req.query.statepensionhowoften == 'every week' || req.query.statepensionhowoften == 'every 2 weeks' || req.query.statepensionhowoften == 'every 4 weeks' || req.query.statepensionhowoften == 'every 13 weeks (quarterly)' || req.query.statepensionhowoften == 'once a year') {
+    res.redirect('../iteration2/state-pension-how-much');
+  } else {
+    res.redirect('../iteration2/state-pension-how-often');
+  }
+});
+
+router.get(/statepensionhowmuchiteration2-handler/, function (req, res) {
+  res.redirect('../iteration2/pension-another-1');
+});
+
+router.get(/statepensionanotheriteration2-handler/, function (req, res) {
+  if (req.query.statepensionanother == 'yes') {
+    res.redirect('../iteration2/pension-name');
+  } else if (req.query.statepensionanother == 'no') {
+    res.redirect('../iteration2/pension-credit-receive');
+  }
+});
+
+router.get(/pensiontitleiteration2-handler/, function (req, res) {
+  res.redirect('../iteration2/pension-how-often');
+});
+
+router.get(/pensionhowofteniteration2-handler/, function (req, res) {
+  if (req.query.pensionhowoften == 'every week' || req.query.pensionhowoften == 'every 2 weeks' || req.query.pensionhowoften == 'every 4 weeks' || req.query.pensionhowoften == 'every calendar month' || req.query.pensionhowoften == 'every 13 weeks (quarterly)' || req.query.pensionhowoften == 'once a year') {
+    res.redirect('../iteration2/pension-how-much');
+  } else {
+    res.redirect('../iteration2/pension-how-often');
+  }
+});
+
+router.get(/personalpensionhowmuchiteration2-handler/, function (req, res) {
+  res.redirect('../iteration2/pension-another-2');
+});
+
+router.get(/personalpensionanotheriteration2-handler/, function (req, res) {
+  if (req.query.personalpensionanother == 'yes') {
+    res.redirect('../iteration2/pension-name');
+  } else if (req.query.personalpensionanother == 'no') {
+    res.redirect('../iteration2/apension-credit-receive');
+  }
+});
+
+
+
+
+
+
+
+
+
+router.get(/pensioncredititeration2-handler/, function (req, res) {
+  if (req.query.pensioncredit == 'yes') {
+    res.redirect('../iteration2/pension-credit-type');
+  } else if (req.query.pensioncredit == 'no') {
+    res.redirect('../iteration2/answers');
+  }
+});
+
+router.get(/pensioncredittypeiteration2-handler/, function (req, res) {
 
     if (req.query.pensioncredittype == 'GC') {
-    res.redirect('passport-pensioncredit');
+    res.redirect('../iteration2/passport-pensioncredit');
     } else if (req.query.pensioncredittype == 'GCwithSC') {
-      res.redirect('passport-pensioncredit');
+      res.redirect('../iteration2/passport-pensioncredit');
     } else if (req.query.pensioncredittype == 'SC') {
       res.redirect('#');
     } else {
-      res.redirect('pension-credit-type');
+      res.redirect('../iteration2/pension-credit-type');
     }
 });
 
-router.get(/pensioncredithowoften-handler/, function (req, res) {
+router.get(/pensioncredithowofteniteration2-handler/, function (req, res) {
   if (req.query.pensioncredithowoften == 'every week' || req.query.pensioncredithowoften == 'every 2 weeks' || req.query.pensioncredithowoften == 'every 4 weeks' || req.query.pensioncredithowoften == 'every 13 weeks (quarterly)' || req.query.pensioncredithowoften == 'once a year') {
-    res.redirect('../pension/pension-credit-how-much');
+    res.redirect('../iteration2/pension-credit-how-much');
   } else {
-    res.redirect('../pension/pension-credit-how-often');
+    res.redirect('../iteration2/pension-credit-how-often');
   }
 });
 
