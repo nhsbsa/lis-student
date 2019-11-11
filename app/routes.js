@@ -722,7 +722,7 @@ router.get(/pensionhowofteniteration2-handler/, function (req, res) {
   }
 });
 
-router.get(/scpensionhowofteniteration2-handler/, function (req, res) {
+router.get(/SCpensionhowoften-handler/, function (req, res) {
   if (req.query.scpensionhowoften == 'every week' ||  req.query.scpensionhowoften == 'every 4 weeks') {
     res.redirect('../iteration2/SCpension-how-much');
   } else {
