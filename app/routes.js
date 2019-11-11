@@ -722,6 +722,18 @@ router.get(/pensionhowofteniteration2-handler/, function (req, res) {
   }
 });
 
+router.get(/scpensionhowofteniteration2-handler/, function (req, res) {
+  if (req.query.pensionhowoften == 'every week' ||  req.query.pensionhowoften == 'every 4 weeks' || req.query.pensionhowoften == 'every calendar month' || req.query.pensionhowoften == 'every 13 weeks (quarterly)' || req.query.pensionhowoften == 'once a year') {
+    res.redirect('../iteration2/SCpension-how-much');
+  } else {
+    res.redirect('../iteration2/SCpension-how-often');
+  }
+});
+
+router.get(/scpersonalpensionhowmuchiteration2-handler/, function (req, res) {
+  res.redirect('../iteration2/answers');
+});
+
 router.get(/personalpensionhowmuchiteration2-handler/, function (req, res) {
   res.redirect('../iteration2/pension-another-2');
 });
@@ -749,7 +761,7 @@ router.get(/pensioncredittypeiteration2-handler/, function (req, res) {
     } else if (req.query.pensioncredittype == 'GCwithSC') {
       res.redirect('../iteration2/passport-pensioncredit');
     } else if (req.query.pensioncredittype == 'SC') {
-      res.redirect('#');
+      res.redirect('../iteration2/SCpension-how-often');
     } else {
       res.redirect('../iteration2/pension-credit-type');
     }
