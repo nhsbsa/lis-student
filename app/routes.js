@@ -722,10 +722,10 @@ router.get(/pensionhowofteniteration2-handler/, function (req, res) {
   }
 });
 
-router.get(/SCpensionhowofteniteration2-handler/, function (req, res) {
-  if (req.query.SCpensionhowofteniteration2 == 'every week') {
+router.get(/savingscredititeration2-handler/, function (req, res) {
+  if (req.query.savingscredititeration2 == 'every week') {
     res.redirect('../iteration2/Savings-credit-how-much');
-  } else if (req.query.SCpensionhowofteniteration2 == 'every 4 weeks'){
+  } else if (req.query.savingscredititeration2 == 'every 4 weeks'){
     res.redirect('../iteration2/Savings-credit-how-much');
   } else {
     res.redirect('../iteration2/Savings-credit-how-often');
@@ -3292,11 +3292,6 @@ router.get(/additionalbenefitsiteration6-handler/, function (req, res) {
    } else 
     res.redirect('#');
 });
-
-
-
-
-
 
 
 
