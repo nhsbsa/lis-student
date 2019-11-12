@@ -3286,7 +3286,8 @@ router.get(/otherbenefitsiteration6-handler/, function (req, res) {
 });
 
 router.get(/additionalbenefitsiteration6-handler/, function (req, res) {
-  
+
+
   if (req.query.additionalbenefits.includes('incomesupport')) {
     res.redirect('passport-incomesupport')
    } else 
