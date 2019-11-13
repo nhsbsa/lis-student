@@ -4037,3 +4037,18 @@ router.get(/someoneelsecarertypeiteration6-handler/, function (req, res) {
       res.redirect('someone-else-carer-benefit');
     }
 });
+
+
+// ************************
+// Education and Training Iteration 2
+// ************************
+
+
+router.get(/tuitioniteration2-handler/, function (req, res) {
+  
+  if (req.query.tuition == 'yes') {
+    res.redirect('../iteration-2/tuition-fee-how-often');
+  } else if (req.query.tuition == 'no') {
+    res.redirect('cya');
+  }
+});
