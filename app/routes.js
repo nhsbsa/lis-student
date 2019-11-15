@@ -764,7 +764,7 @@ router.get(/pensioncredittypeiteration2-handler/, function (req, res) {
     } else if (req.query.pensioncredittype == 'GCwithSC') {
       res.redirect('../iteration2/passport-pensioncredit');
     } else if (req.query.pensioncredittype == 'SC') {
-      res.redirect('../iteration2/Savings-credit-how-often');
+      res.redirect('../iteration2/answers');
     } else {
       res.redirect('../iteration2/pension-credit-type');
     }
