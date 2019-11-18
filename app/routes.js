@@ -3262,7 +3262,7 @@ router.get(/taxcredittypeiteration6-handler/, function (req, res) {
   } else if (req.query.taxcredittype == 'WTCDisability') {
     res.redirect('tax-credit-income');
   } else if (req.query.taxcredittype == 'WTC') {
-    res.redirect('other-benefits');
+    res.redirect('income-support');
   } else if (req.query.taxcredittype == 'CTC') {
     res.redirect('tax-credit-income');
   } else {
@@ -3274,7 +3274,7 @@ router.get(/taxcreditincomeiteration6-handler/, function (req, res) {
   if (req.query.taxcreditincome == 'yes') {
     res.redirect('passport-taxcredits');
   } else if (req.query.taxcreditincome == 'no') {
-    res.redirect('other-benefits');
+    res.redirect('income-support');
   } else {
     res.redirect('tax-credit-income');
   }
