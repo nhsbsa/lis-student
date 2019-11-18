@@ -378,9 +378,41 @@ router.get(/qualification-handler-handler/, function (req, res) {
   } 
 });
 
+// *****************************************
+// BEFORE YOU START - STUDENT - ITERATION 2
+// *****************************************
 
+router.get(/educationtrainingiteration2-handler/, function (req, res) {
+ 
+  if (req.query.educationtraining == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-2/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  }
+});
 
+router.get(/fulltimeeduiteration2-handler/, function (req, res) {
+ 
+  if (req.query.fulltimeedu == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if  (req.query.fulltimeedu == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-2/qualification');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-2/full-time-edu');
+  }
+});
 
+router.get(/qualificationiteration2-handler/, function (req, res) {
+  
+  if (req.query.qualification.includes('nil')) {
+  res.redirect('/kickouts/students-developed');
+  } else if (req.query.qualification.includes('gcse')) {
+    res.redirect('/beforeyoustart/student/iteration-2/parental-cont');
+  } else if (req.query.qualification.includes('btec1')) {
+    res.redirect('/beforeyoustart/student/iteration-2/parental-cont');
+   } else 
+    res.redirect('/beforeyoustart/student/iteration-2/qualification');
+});
 
 // ************************
 // PAYE
