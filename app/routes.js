@@ -3252,7 +3252,7 @@ router.get(/taxcreditsiteration6-handler/, function (req, res) {
   if (req.query.taxcredits == 'yes') {
     res.redirect('tax-credits-type');
   } else if (req.query.taxcredits == 'no') {
-    res.redirect('other-benefits');
+    res.redirect('income-support');
   }
 });
 
@@ -3279,6 +3279,19 @@ router.get(/taxcreditincomeiteration6-handler/, function (req, res) {
     res.redirect('tax-credit-income');
   }
 });
+
+router.get(/incomesupportiteration6-handler/, function (req, res) {
+  if (req.query.incomesupport == 'yes') {
+    res.redirect('passport-incomesupport');
+  } else if (req.query.incomesupport == 'no') {
+    res.redirect('other-benefits');
+  } else {
+    res.redirect('income-support');
+  }
+});
+
+
+
 
 router.get(/otherbenefitsiteration6-handler/, function (req, res) {
   res.redirect('additional-benefits.html') 
