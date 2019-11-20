@@ -45,7 +45,7 @@ NHSBSA Prototype
             Tuition fee
           </dt>
           <dd class="cya-answer">
-            <p>No
+            <p> {{ data['tuition'] }}
           </dd>
           <dd class="cya-change">
             <a class="link-right" href="tuition fee.html">
@@ -54,7 +54,20 @@ NHSBSA Prototype
           </dd>
         </div>
 
-
+        {% if data['tuition'] == "yes" %}
+        <div>
+          <dt class="cya-question">
+            Tuition fee
+          </dt>
+          <dd class="cya-answer">
+            <p> {{ data['tuitionfeehowmuch'] }}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="tuition-fee-how-much.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
         <br>
 
         <div class="form-group">
