@@ -4092,8 +4092,16 @@ router.get(/someoneelsecarertypeiteration6-handler/, function (req, res) {
 router.get(/tuitioniteration2-handler/, function (req, res) {
   
   if (req.query.tuition == 'yes') {
-    res.redirect('../iteration-2/tuition-fee-how-often');
+    res.redirect('../iteration-2/tuition-fee-how-much');
   } else if (req.query.tuition == 'no') {
     res.redirect('cya');
+  }
+});
+
+router.get(/tuitionfeehowmuchiteration2-handler/, function (req, res) {
+  if (req.query.tuitionfeehowmuch) {
+    res.redirect('cya');
+  } else {
+    res.redirect('../iteration-2/tuition-fee-how-much');
   }
 });
