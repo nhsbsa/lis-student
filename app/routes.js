@@ -4112,7 +4112,7 @@ router.get(/parents-handler/, function (req, res) {
   if (req.query.parents == 'yes') {
     res.redirect('../iteration-3/parents-how-often');
   } else if (req.query.parents == 'no') {
-    res.redirect('#');
+    res.redirect('relatives');
   }
 });
 
@@ -4122,5 +4122,38 @@ router.get(/parentshowoften-handler/, function (req, res) {
     res.redirect('../iteration-3/parents-how-much');
   } else {
     res.redirect('../iteration-3/parents-how-often');
+  }
+});
+
+router.get(/parentshowmuch-handler/, function (req, res) {
+  if (req.query.parentshowmuch) {
+    res.redirect('relatives');
+  } else {
+    res.redirect('../iteration-3/parents-how-much');
+  }
+});
+
+router.get(/relatives-handler/, function (req, res) {
+  
+  if (req.query.relatives == 'yes') {
+    res.redirect('../iteration-3/relatives-how-often');
+  } else if (req.query.relatives == 'no') {
+    res.redirect('relatives');
+  }
+});
+
+router.get(/relativeshowoften-handler/, function (req, res) {
+  if (req.query.relativeshowoften == 'every week' || req.query.relativeshowoften == 'every month' || req.query.relativeshowoften == 'every term') {
+    res.redirect('../iteration-3/relatives-how-much');
+  } else {
+    res.redirect('../iteration-3/relatives-how-often');
+  }
+});
+
+router.get(/relativeshowmuch-handler/, function (req, res) {
+  if (req.query.relativeshowmuch) {
+    res.redirect('friends');
+  } else {
+    res.redirect('../iteration-3/relatives-how-much');
   }
 });
