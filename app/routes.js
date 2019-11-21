@@ -4084,9 +4084,9 @@ router.get(/someoneelsecarertypeiteration6-handler/, function (req, res) {
 });
 
 
-// ************************
-// Education and Training Iteration 2
-// ************************
+// ***********************
+// Education and Training 
+// ***********************
 
 
 router.get(/tuitioniteration2-handler/, function (req, res) {
@@ -4103,5 +4103,24 @@ router.get(/tuitionfeehowmuchiteration2-handler/, function (req, res) {
     res.redirect('cya');
   } else {
     res.redirect('../iteration-2/tuition-fee-how-much');
+  }
+});
+
+
+router.get(/parents-handler/, function (req, res) {
+  
+  if (req.query.parents == 'yes') {
+    res.redirect('../iteration-3/parents-how-often');
+  } else if (req.query.parents == 'no') {
+    res.redirect('#');
+  }
+});
+
+
+router.get(/parentshowoften-handler/, function (req, res) {
+  if (req.query.parentshowoften == 'every week' || req.query.parentshowoften == 'every month' || req.query.parentshowoften == 'every term') {
+    res.redirect('../iteration-3/parents-how-much');
+  } else {
+    res.redirect('../iteration-3/parents-how-often');
   }
 });
