@@ -4126,10 +4126,16 @@ router.get(/parentshowoften-handler/, function (req, res) {
 });
 
 router.get(/parentshowmuch-handler/, function (req, res) {
-  if (req.query.parentshowmuch) {
-    res.redirect('relatives');
-  } else {
-    res.redirect('../iteration-3/parents-how-much');
+  var contributiontype = req.session.data['contributiontype'];
+
+    if (req.query.parentshowmuch && contributiontype.includes('relatives')) {
+    res.redirect('relatives-how-often');
+  } else if (req.query.parentshowmuch && contributiontype.includes('friends')) {
+    res.redirect('friends-how-often');
+  } else if (req.query.parentshowmuch) {
+    res.redirect('cya');
+   } else {
+    res.redirect('parents-how-much');
   }
 });
 
@@ -4151,12 +4157,17 @@ router.get(/relativeshowoften-handler/, function (req, res) {
 });
 
 router.get(/relativeshowmuch-handler/, function (req, res) {
-  if (req.query.relativeshowmuch) {
-    res.redirect('money-another-1');
+  var contributiontype = req.session.data['contributiontype'];
+
+  if (req.query.relativeshowmuch && contributiontype.includes('friends')) {
+    res.redirect('friends-how-often');
+  } else  if (req.query.relativeshowmuch){
+    res.redirect('cya');
   } else {
-    res.redirect('../iteration-3/relatives-how-much');
+    res.redirect('relatives-how-much');
   }
 });
+
 
 router.get(/moneyanother-handler/, function (req, res) {
   
@@ -4177,8 +4188,30 @@ router.get(/friendshowoften-handler/, function (req, res) {
 
 router.get(/friendshowmuch-handler/, function (req, res) {
   if (req.query.friendshowmuch) {
-    res.redirect('cya');
+    res.redirect('money-another-1');
   } else {
     res.redirect('../iteration-3/friends-how-much');
+  }
+});
+
+router.get(/contributiontype-handler/, function (req, res) {
+  if (req.query.contributiontype.includes('parents')) {
+    res.redirect('parents-how-often');
+  } else if (req.query.contributiontype.includes('relatives')) {
+    res.redirect('relatives-how-often');
+  } else if (req.query.contributiontype.includes('friends')) {
+    res.redirect('friends-how-often');
+  } else if (req.query.contributiontype.includes('none')) {
+    res.redirect('money-another-1');
+  } else if (req.query.contributiontype.toString() == 'parents,relatives,friends') {
+    res.redirect('parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'parents,relatives') {
+    res.redirect('parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'parents,friends') {
+    res.redirect('parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'relatives,friends') {
+    res.redirect('relatives-how-often');
+  }  else {
+    res.redirect('contribution-type');
   }
 });

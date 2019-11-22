@@ -31,7 +31,7 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Money to support your education</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you receive money to support your day to day living while being a student?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you receive money from any of these to support your day to day living while being a student?</h1>
       </header>
 
 
@@ -43,23 +43,25 @@ NHSBSA Prototype
             <legend class="visually-hidden">
             </legend>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="parents" value="parents">
-              <label for="yes"><p style="margin-bottom: 7px;">Parents</p></label>
+            <p style="color:grey">Select all that apply for yourself</p> 
+
+            <div class="multiple-choice multiple-radio">
+              <input id="no" type="checkbox" name="contributiontype" value="parents">
+              <label for="no"><p style="margin-bottom: 7px;">Parents</p></label>
             </div>
             
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="relatives" value="relatives">
+            <div class="multiple-choice multiple-radio">
+              <input id="no" type="checkbox" name="contributiontype" value="relatives">
               <label for="no"><p style="margin-bottom: 7px;">Relatives</p></label>
             </div>
 
-            <div class="multiple-choice">
-                <input id="not-yet" type="radio" name="friends" value="friends">
+            <div class="multiple-choice multiple-radio">
+                <input id="not-yet" type="checkbox" name="contributiontype" value="friends">
                 <label for="not-yet"><p style="margin-bottom: 7px;">Friends</p></label>
             </div>           
 
-            <div class="multiple-choice">
-              <input id="none" type="radio" name="none" value="none">
+            <div class="multiple-choice multiple-radio">
+              <input id="none" type="checkbox" name="contributiontype" value="none">
               <label for="none"><p style="margin-bottom: 7px;">None of the above</p></label>
           </div>  
 
