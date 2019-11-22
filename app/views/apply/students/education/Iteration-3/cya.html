@@ -30,7 +30,7 @@ NHSBSA Prototype
 
       <!-- only add a heading for a list if there is more than one list -->
       <h2 class="heading-medium">
-        Education and Training
+        Money to support your education
       </h2>
 
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
@@ -42,25 +42,39 @@ NHSBSA Prototype
 
         <div>
           <dt class="cya-question">
-            Tuition fees
+            Receive money from
           </dt>
           <dd class="cya-answer">
-            <p> {{ data['tuition'] }}
+            <p> 
+                {% if data['contributiontype'] == "parents" %}
+                Parents
+                {% endif %}
+                {% if data['contributiontype'] == "relatives" %}
+                Any other family member
+                {% endif %}
+                {% if data['contributiontype'] == "friends" %}
+                Friends
+                {% endif %}
+                {% if data['contributiontype'] == "none" %}
+                None
+                {% endif %}
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="tuition fee.html">
+            <a class="link-right" href="contribution-type.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
         </div>
 
-        {% if data['tuition'] == "yes" %}
+        {% if data['contributiontype'] == "parents" %}
         <div>
+            
           <dt class="cya-question">
-            Fees per year
+            Parents
           </dt>
           <dd class="cya-answer">
-            <p> £{{ data['tuitionfeehowmuch'] }}
+              {{ data['parentshowoften'] }} <br>
+            <p> £{{ data['parentshowmuch'] }}
           </dd>
           <dd class="cya-change">
             <a class="link-right" href="tuition-fee-how-much.html">
@@ -68,8 +82,45 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        <br>
+       
+
+        {% if data['contributiontype'] == "relatives" %}
+        <div>
+            
+          <dt class="cya-question">
+              Any other family member
+          </dt>
+          <dd class="cya-answer">
+              {{ data['relativeshowoften'] }} <br>
+            <p> £{{ data['relativeshowmuch'] }}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="tuition-fee-how-much.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
+        
+
+        {% if data['contributiontype'] == "friends" %}
+        <div>
+            Friends
+          <dt class="cya-question">
+            
+          </dt>
+          <dd class="cya-answer">
+              {{ data['friendshowoften'] }}
+            <p> £{{ data['friendshowmuch'] }}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="tuition-fee-how-much.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
         {% endif %}
+        <br>
+        
         <div class="form-group">
 
             <a href="../income/task-list"><input class="button" type="submit" value="Next"></a>

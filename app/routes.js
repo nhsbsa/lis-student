@@ -4133,7 +4133,7 @@ router.get(/parentshowmuch-handler/, function (req, res) {
   } else if (req.query.parentshowmuch && contributiontype.includes('friends')) {
     res.redirect('friends-how-often');
   } else if (req.query.parentshowmuch) {
-    res.redirect('cya');
+    res.redirect('money-another-1');
    } else {
     res.redirect('parents-how-much');
   }
@@ -4162,7 +4162,7 @@ router.get(/relativeshowmuch-handler/, function (req, res) {
   if (req.query.relativeshowmuch && contributiontype.includes('friends')) {
     res.redirect('friends-how-often');
   } else  if (req.query.relativeshowmuch){
-    res.redirect('cya');
+    res.redirect('money-another-1');
   } else {
     res.redirect('relatives-how-much');
   }
@@ -4178,6 +4178,14 @@ router.get(/moneyanother-handler/, function (req, res) {
   }
 });
 
+router.get(/moneyanothername-handler/, function (req, res) {
+  
+  if (req.query.moneyanothername) {
+    res.redirect('cya');
+  } else {
+    res.redirect('money-another-name');
+  }
+});
 router.get(/friendshowoften-handler/, function (req, res) {
   if (req.query.friendshowoften == 'every week' || req.query.friendshowoften == 'every month' || req.query.friendshowoften == 'every term') {
     res.redirect('friends-how-much');
