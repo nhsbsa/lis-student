@@ -4092,7 +4092,7 @@ router.get(/someoneelsecarertypeiteration6-handler/, function (req, res) {
 router.get(/tuitioniteration2-handler/, function (req, res) {
   
   if (req.query.tuition == 'yes') {
-    res.redirect('../iteration-2/tuition-fee-how-much');
+    res.redirect('../Iteration-2/tuition-fee-how-much');
   } else if (req.query.tuition == 'no') {
     res.redirect('cya');
   }
@@ -4102,7 +4102,7 @@ router.get(/tuitionfeehowmuchiteration2-handler/, function (req, res) {
   if (req.query.tuitionfeehowmuch) {
     res.redirect('cya');
   } else {
-    res.redirect('../iteration-2/tuition-fee-how-much');
+    res.redirect('../Iteration-2/tuition-fee-how-much');
   }
 });
 
@@ -4110,7 +4110,7 @@ router.get(/tuitionfeehowmuchiteration2-handler/, function (req, res) {
 router.get(/parents-handler/, function (req, res) {
   
   if (req.query.parents == 'yes') {
-    res.redirect('../iteration-3/parents-how-often');
+    res.redirect('../Iteration-3/parents-how-often');
   } else if (req.query.parents == 'no') {
     res.redirect('relatives');
   }
@@ -4119,9 +4119,9 @@ router.get(/parents-handler/, function (req, res) {
 
 router.get(/parentshowoften-handler/, function (req, res) {
   if (req.query.parentshowoften == 'every week' || req.query.parentshowoften == 'every month' || req.query.parentshowoften == 'every term') {
-    res.redirect('../iteration-3/parents-how-much');
+    res.redirect('../Iteration-3/parents-how-much');
   } else {
-    res.redirect('../iteration-3/parents-how-often');
+    res.redirect('../Iteration-3/parents-how-often');
   }
 });
 
@@ -4142,7 +4142,7 @@ router.get(/parentshowmuch-handler/, function (req, res) {
 router.get(/relatives-handler/, function (req, res) {
   
   if (req.query.relatives == 'yes') {
-    res.redirect('../iteration-3/relatives-how-often');
+    res.redirect('../Iteration-3/relatives-how-often');
   } else if (req.query.relatives == 'no') {
     res.redirect('friends');
   }
@@ -4150,9 +4150,9 @@ router.get(/relatives-handler/, function (req, res) {
 
 router.get(/relativeshowoften-handler/, function (req, res) {
   if (req.query.relativeshowoften == 'every week' || req.query.relativeshowoften == 'every month' || req.query.relativeshowoften == 'every term') {
-    res.redirect('../iteration-3/relatives-how-much');
+    res.redirect('../Iteration-3/relatives-how-much');
   } else {
-    res.redirect('../iteration-3/relatives-how-often');
+    res.redirect('../Iteration-3/relatives-how-often');
   }
 });
 
@@ -4172,7 +4172,7 @@ router.get(/relativeshowmuch-handler/, function (req, res) {
 router.get(/moneyanother-handler/, function (req, res) {
   
   if (req.query.moneyanother == 'yes') {
-    res.redirect('../iteration-3/money-another-name');
+    res.redirect('money-another-name');
   } else if (req.query.moneyanother == 'no') {
     res.redirect('cya');
   }
@@ -4180,9 +4180,9 @@ router.get(/moneyanother-handler/, function (req, res) {
 
 router.get(/friendshowoften-handler/, function (req, res) {
   if (req.query.friendshowoften == 'every week' || req.query.friendshowoften == 'every month' || req.query.friendshowoften == 'every term') {
-    res.redirect('../iteration-3/friends-how-much');
+    res.redirect('friends-how-much');
   } else {
-    res.redirect('../iteration-3/friends-how-often');
+    res.redirect('friends-how-often');
   }
 });
 
@@ -4190,7 +4190,7 @@ router.get(/friendshowmuch-handler/, function (req, res) {
   if (req.query.friendshowmuch) {
     res.redirect('money-another-1');
   } else {
-    res.redirect('../iteration-3/friends-how-much');
+    res.redirect('friends-how-much');
   }
 });
 
