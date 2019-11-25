@@ -46,97 +46,89 @@ NHSBSA Prototype
           </dt>
           <dd class="cya-answer">
             <p> 
-                Parents <br>
-                Other family member
+                {% if data['contributiontype'] == "parents" %}
+                  Parents
+                  {% endif %}
+                {% if data['contributiontype'] == "relatives" %}
+                    Any other family member
+                    {% endif %}
+                {% if data['contributiontype'] == "friends" %}
                 Friends
+                {% endif %}
+                {% if data['contributiontype'] == "none" %}
+                  None
+                {% endif %}
+                
+  
           </dd>
           <dd class="cya-change">
             <a class="link-right" href="contribution-type.html">
-              Change<span class="visually-hidden">Uni</span>
+              Change<span class="visually-hidden">moneyfrom</span>
             </a>
           </dd>
         </div>
         
         
+        {% if data['contributiontype'] == "parents" %}
         <div>
             
           <dt class="cya-question">
               Parents
           </dt>
           <dd class="cya-answer">
-              Every week <br>
-            <p> £50
+              {{ data['parentshowoften'] }} <br>
+            <p> £{{ data['parentshowmuch'] }}
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="#">
+            <a class="link-right" href="tuition-fee-how-much.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
-        
         </div>
-       
-   
-        <div>
-            
-            <dt class="cya-question">
-                Other family member
-            </dt>
-            <dd class="cya-answer">
-                Every week <br>
-              <p> £50
-            </dd>
-            <dd class="cya-change">
-              <a class="link-right" href="#">
-                Change<span class="visually-hidden">Uni</span>
-              </a>
-            </dd>
-          </div>
-        
-          <div>
-            
-              <dt class="cya-question">
-                  Friends
-              </dt>
-              <dd class="cya-answer">
-                  Every week <br>
-                <p> £10
-              </dd>
-              <dd class="cya-change">
-                <a class="link-right" href="#">
-                  Change<span class="visually-hidden">Uni</span>
-                </a>
-              </dd>
-            
-            </div>
-           
+        {% endif %}
 
-
-
-
+        {% if data['contributiontype'] == "relatives" %}
         <div>
             
           <dt class="cya-question">
-             Other source
+             Other family member
           </dt>
           <dd class="cya-answer">
-              None 
+              {{ data['relativeshowoften'] }} <br>
+            <p> £{{ data['relativeshowmuch'] }}
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="#">
+            <a class="link-right" href="tuition-fee-how-much.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
         </div>
-    
-       
+        {% endif %}
+
+        {% if data['contributiontype'] == "friends" %}
+        <div>
+            
+          <dt class="cya-question">
+              Friends
+          </dt>
+          <dd class="cya-answer">
+              {{ data['friendshowoften'] }}
+            <p> £{{ data['friendshowmuch'] }}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="tuition-fee-how-much.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
         <br>
         
         <div class="form-group">
 
-            <a href="../income/task-list" style="border-bottom: none"> <input class="button" type="submit" value="Next"></a>
+            <a href="../income/task-list" style="border-bottom: none"><input class="button" type="submit" value="Next"></a>
 
     </div>
   </div>
 </main>
-
 {% endblock %}
