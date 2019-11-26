@@ -156,11 +156,11 @@ router.get(/educationtrainingPartner-handler/, function (req, res) {
   //  res.redirect('/beforeyoustart/student/qualification');
 //});
 
-router.get(/qualificationnew-handler/, function (req, res) {
+router.get(/qualification-handler/, function (req, res) {
  
-  if (req.query.educationtrainingPartner == 'yes') {
+  if (req.query.qualification == 'yes') {
     res.redirect('/beforeyoustart/student/tuition fee.html');
-  } else if (req.query.educationtrainingPartner == 'no') {
+  } else if (req.query.qualification== 'no') {
     res.redirect('/kickouts/students-developed');
   }
 });
