@@ -31,40 +31,46 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What qualification are you doing?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you studying any of these?</h1>
       </header>
 
-      <form action="qualification-handler" class="form" method="get">
-
-        <!-- <p style="color:grey">Select all that apply for yourself</p>  -->
-
-        <fieldset class="form-group">
-            <div class="multiple-choice multiple-radio">
-                <input id="gcse" name="qualification" value="gcse" type="checkbox">
-                <label for="gcse">GCSE, A-Level, AS Level</label>
-              </div>
-              
-          <div class="multiple-choice multiple-radio">
-            <input id="btec1" name="qualification" value="btec1" type="checkbox">
-            <label for="wages">BTEC, NVQ Level 1-3</label>
-          </div>
+      <ul class="list list-bullet">
           
-          <p class="form-block">or</p>
-          <div class="multiple-choice multiple-radio">
-            <input id="none" name="qualification" value="nil" type="checkbox">
-            <label for="none"><span class="bold">None</span> of the above</label>
-          </div>
-        </fieldset>
+          <li>GCSE, A-Level, AS Level</li>
+          <li>BTEC Level 1-3</li>
+          <li>NVQ Level 1-3</li>
+        </ul>
+
+      <form action="qualificationnew-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="taxcredits" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="taxcredits" value="no">
+              <label for="no">No</label>
+            </div>
+
+          </fieldset>
+
+        </div>
+
         <div class="form-group">
           <input class="button" type="submit" value="Next">
         </div>
 
-
-
       </form>
-
     </div>
   </div>
+</main>
 </main>
 
 {% endblock %}

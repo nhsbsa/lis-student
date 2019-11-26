@@ -144,18 +144,26 @@ router.get(/educationtrainingPartner-handler/, function (req, res) {
 });
 
 
-router.get(/qualification-handler/, function (req, res) {
+//router.get(/qualification-handler/, function (req, res) {
   
-  if (req.query.qualification.includes('nil')) {
-  res.redirect('/kickouts/students-developed');
-  } else if (req.query.qualification.includes('gcse')) {
-    res.redirect('/beforeyoustart/student/tuition fee');
-  } else if (req.query.qualification.includes('btec1')) {
-    res.redirect('/beforeyoustart/student/tuition fee');
-   } else 
-    res.redirect('/beforeyoustart/student/qualification');
-});
+//if (req.query.qualification.includes('nil')) {
+ // res.redirect('/kickouts/students-developed');
+ // } else if (req.query.qualification.includes('gcse')) {
+ //   res.redirect('/beforeyoustart/student/tuition fee');
+  //} else if (req.query.qualification.includes('btec1')) {
+  //  res.redirect('/beforeyoustart/student/tuition fee');
+  // } else 
+  //  res.redirect('/beforeyoustart/student/qualification');
+//});
 
+router.get(/qualificationnew-handler/, function (req, res) {
+ 
+  if (req.query.educationtrainingPartner == 'yes') {
+    res.redirect('/beforeyoustart/student/tuition fee.html');
+  } else if (req.query.educationtrainingPartner == 'no') {
+    res.redirect('/kickouts/students-developed');
+  }
+});
 
 router.get(/fulltimeedu-handler/, function (req, res) {
  
