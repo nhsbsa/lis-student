@@ -193,14 +193,51 @@ router.get(/parentcontribution-handler/, function (req, res) {
   }
 });
 
-router.get(/funding-handler/, function (req, res) {
-  if (req.query.funding == 'yes') {
-    res.redirect('/kickouts/students-developed');
-  } else if (req.query.funding == 'no') {
-    res.redirect('/beforeyoustart/money-coming-in-single');;
-  }
-});
 
+
+router.get(/funding-handler/, function (req, res) {
+  if (req.query.funding.includes('SL-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding == 'none-help') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } 
+});
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
   if (req.query.incomepartner.includes('maintenance-income')) {

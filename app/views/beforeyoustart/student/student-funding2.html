@@ -1,0 +1,85 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you receive any financial support towards your education? </h1>
+      </header>
+
+      <details role="group">
+        <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">What is financial support?</span></summary> 
+
+    
+        <ul class="list list-bullet">
+             <li>Student Finance England (SFE), Student Finance Wales (SFW), Student Awards Agency for Scotland (SAAS)</li>
+        <li>NHS Bursary</li>
+       
+        <li>Other scholarship, sponsorship, award or bursary</li>
+        <li>Grant or loan from overseas</li>
+      </ul>
+ 
+            
+    </details>
+      <form action="funding-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          
+            <br>
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="funding" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="funding" value="no">
+              <label for="no">No</label>
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

@@ -31,46 +31,45 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you receive any financial support towards your education? </h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you receive financial support from any of these?  </h1>
       </header>
 
-      <details role="group">
-        <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">What is financial support?</span></summary> 
-
-    
-        <ul class="list list-bullet">
-             <li>Student Finance England (SFE), Student Finance Wales (SFW), Student Awards Agency for Scotland (SAAS)</li>
-        <li>NHS Bursary</li>
-       
-        <li>Other scholarship, sponsorship, award or bursary</li>
-        <li>Grant or loan from overseas</li>
-      </ul>
- 
-            
-    </details>
       <form action="funding-handler" method="get" class="form">
 
-        <div class="form-group">
+       
+        <fieldset class="form-group">
 
-          
-            <br>
-          <fieldset class="inline">
-            <legend class="visually-hidden">
-            </legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="SFE" name="financialhelp" value="SFE-help" type="checkbox">
+            <label for="SFE"><span style="font-weight: bold;">Support from Student Finance England (SFE), Student Finance Wales (SFW), or the Student Awards Agency for Scotland (SAAS)</span><br></label>
+          </div>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="funding" value="yes">
-              <label for="yes">Yes</label>
-            </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="SAAS" name="financialhelp" value="SAAS-help" type="checkbox">
+            <label for="SAAS"><span style="font-weight: bold;">NHS Bursary</span><br></label>
+          </div>
 
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="funding" value="no">
-              <label for="no">No</label>
-            </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="SFW" name="financialhelp" value="SFW-help" type="checkbox">
+            <label for="SFW"><span style="font-weight: bold;">Bursary from your higher education instituition (HEI)</span><br></label>
+          </div>
 
-          </fieldset>
+          <div class="multiple-choice multiple-radio">
+            <input id="NHS" name="financialhelp" value="NHS-help" type="checkbox">
+            <label for="NHS"><span style="font-weight: bold;">Other scholarship, sponsorship, award or bursary</span><br></label>
+          </div>
 
-        </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="NHS" name="financialhelp" value="NHS-help" type="checkbox">
+            <label for="NHS"><span style="font-weight: bold;">Grant or loan from overseas</span><br></label>
+          </div>
+        
+          <p class="form-block">or</p>
+          <div class="multiple-choice multiple-radio">
+            <input id="none" name="financialhelp" value="none-help" type="checkbox">
+            <label for="none">No, I <span class="bold">do not</span> get any of these </label>
+          </div>
+        </fieldset>
 
         <div class="form-group">
           <input class="button" type="submit" value="Next">
