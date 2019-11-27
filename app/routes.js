@@ -83,7 +83,7 @@ var benificiary = {
 
 router.get(/applyonline-handler/, function (req, res) {
   if (req.query.applyonline == 'yes') {
-    res.redirect('/apply/what-you-will-need');
+    res.redirect('/apply/what-you-will-need-split');
   } else if (req.query.applyonline == 'no') {
     res.redirect('/kickouts/apply-offline');
   }
