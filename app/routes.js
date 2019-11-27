@@ -234,9 +234,7 @@ router.get(/funding-handler/, function (req, res) {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
     res.redirect('/kickouts/students-developed');
-  } else if (req.query.funding == 'none-help') {
-    res.redirect('/beforeyoustart/money-coming-in-single');
-  } 
+  }
 });
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
@@ -449,14 +447,63 @@ router.get(/fulltimeeduiteration2-handler/, function (req, res) {
 
 router.get(/qualificationiteration2-handler/, function (req, res) {
   
-  if (req.query.qualification.includes('nil')) {
-  res.redirect('/kickouts/students-developed');
-  } else if (req.query.qualification.includes('gcse')) {
+  if (req.query.qualification == 'yes') {
     res.redirect('/beforeyoustart/student/iteration-2/parental-cont');
-  } else if (req.query.qualification.includes('btec1')) {
-    res.redirect('/beforeyoustart/student/iteration-2/parental-cont');
-   } else 
+  } else if  (req.query.qualification == 'no') {
+    res.redirect('/kickouts/students-developed');
+  } else {
     res.redirect('/beforeyoustart/student/iteration-2/qualification');
+  }
+});
+
+router.get(/parentcontributioniteration2-handler/, function (req, res) {
+  if (req.query.parentcontri == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.parentcontri == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-2/student-funding');;
+  }
+});
+
+router.get(/fundingiteration2-handler/, function (req, res) {
+  if (req.query.funding.includes('SL-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } 
 });
 
 // ************************
