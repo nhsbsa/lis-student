@@ -506,6 +506,89 @@ router.get(/fundingiteration2-handler/, function (req, res) {
   } 
 });
 
+// *****************************************
+// BEFORE YOU START - STUDENT - ITERATION 3
+// *****************************************
+
+router.get(/fulltimeeduiteration3-handler/, function (req, res) {
+ 
+  if (req.query.fulltimeedu == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/qualification');
+  } else if  (req.query.fulltimeedu == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3/qualification');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-2/full-time-edu');
+  }
+});
+
+router.get(/qualificationiteration3-handler/, function (req, res) {
+  
+  if (req.query.qualification == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/student-funding');
+  } else if  (req.query.qualification == 'no') {
+    res.redirect('/kickouts/students-developed');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/qualification');
+  }
+});
+
+
+router.get(/fundingiteration3-handler/, function (req, res) {
+  if (req.query.funding.includes('SL-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ************************
 // PAYE
 // ************************
@@ -4221,9 +4304,9 @@ router.get(/parentshowmuch-handler/, function (req, res) {
   var contributiontype = req.session.data['contributiontype'];
 
     if (req.query.parentshowmuch && contributiontype.includes('relatives')) {
-    res.redirect('relatives-how-often');
+    res.redirect('relatives-how-much');
   } else if (req.query.parentshowmuch && contributiontype.includes('friends')) {
-    res.redirect('friends-how-often');
+    res.redirect('friends-how-much');
   } else if (req.query.parentshowmuch) {
     res.redirect('money-another-1');
    } else {
@@ -4252,7 +4335,7 @@ router.get(/relativeshowmuch-handler/, function (req, res) {
   var contributiontype = req.session.data['contributiontype'];
 
   if (req.query.relativeshowmuch && contributiontype.includes('friends')) {
-    res.redirect('friends-how-often');
+    res.redirect('friends-how-much');
   } else  if (req.query.relativeshowmuch){
     res.redirect('money-another-1');
   } else {
@@ -4296,21 +4379,21 @@ router.get(/friendshowmuch-handler/, function (req, res) {
 
 router.get(/contributiontype-handler/, function (req, res) {
   if (req.query.contributiontype.includes('parents')) {
-    res.redirect('parents-how-often');
+    res.redirect('parents-how-much');
   } else if (req.query.contributiontype.includes('relatives')) {
-    res.redirect('relatives-how-often');
+    res.redirect('relatives-how-much');
   } else if (req.query.contributiontype.includes('friends')) {
-    res.redirect('friends-how-often');
+    res.redirect('friends-how-much');
   } else if (req.query.contributiontype.includes('none')) {
     res.redirect('money-another-1');
   } else if (req.query.contributiontype.toString() == 'parents,relatives,friends') {
-    res.redirect('parents-how-often');
+    res.redirect('parents-how-much');
   } else if (req.query.incomepartner.toString() == 'parents,relatives') {
-    res.redirect('parents-how-often');
+    res.redirect('parents-how-much');
   } else if (req.query.incomepartner.toString() == 'parents,friends') {
-    res.redirect('parents-how-often');
+    res.redirect('parents-how-much');
   } else if (req.query.incomepartner.toString() == 'relatives,friends') {
-    res.redirect('relatives-how-often');
+    res.redirect('relatives-how-much');
   }  else {
     res.redirect('contribution-type');
   }

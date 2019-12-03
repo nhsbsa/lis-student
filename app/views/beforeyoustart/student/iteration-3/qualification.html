@@ -30,19 +30,35 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Money to support your education</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you receive from your relatives per month?</h1>
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you studying any of these?</h1>
       </header>
 
-      <form action="relativeshowmuch-handler" method="get" class="form">
+      <ul class="list list-bullet">
+          
+          <li>GCSE, A-Level, AS Level</li>
+          <li>Scottish Highers and Advanced Highers</li>
+          <li>BTEC Level 1-3</li>
+          <li>NVQ, SVQ Level 1-3</li>
+        </ul>
+
+      <form action="qualificationiteration3-handler" method="get" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
 
-              
-              <span class="heading-medium">£</span>
-              <input class="form-control form-control-1-4" id="pay" name="relativeshowmuch" type="text">
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="qualification" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="qualification" value="no">
+              <label for="no">No</label>
+            </div>
 
           </fieldset>
 

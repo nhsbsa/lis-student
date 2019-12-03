@@ -30,19 +30,29 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Money to support your education</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you receive from your relatives per month?</h1>
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you or your partner in education or training?</h1>
       </header>
 
-      <form action="relativeshowmuch-handler" method="get" class="form">
+      <form action="educationtrainingPartner-handler" method="get" class="form">
 
         <div class="form-group">
 
+          
+            <br>
           <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
 
-              
-              <span class="heading-medium">£</span>
-              <input class="form-control form-control-1-4" id="pay" name="relativeshowmuch" type="text">
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="educationtrainingPartner" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="educationtrainingPartner" value="no">
+              <label for="no">No</label>
+            </div>
 
           </fieldset>
 
