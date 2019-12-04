@@ -512,9 +512,9 @@ router.get(/fundingiteration2-handler/, function (req, res) {
 
 router.get(/fulltimeeduiteration3-handler/, function (req, res) {
  
-  if (req.query.fulltimeedu == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-3/qualification');
-  } else if  (req.query.fulltimeedu == 'no') {
+  if (req.query.fulltimeedu == 'ft') {
+    res.redirect('/kickouts/students-developed');
+  } else if  (req.query.fulltimeedu == 'pt') {
     res.redirect('/beforeyoustart/student/iteration-3/qualification');
   } else {
     res.redirect('/beforeyoustart/student/iteration-2/full-time-edu');
@@ -577,7 +577,9 @@ router.get(/fundingiteration3-handler/, function (req, res) {
 
 
 
-
+// *****************************************
+// BEFORE YOU START - STUDENT - ITERATION 4
+// *****************************************
 
 
 

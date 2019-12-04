@@ -31,27 +31,35 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you in full-time or part time education?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you receive any funding from any of these ? </h1>
       </header>
 
-      <form action="fulltimeeduiteration3-handler" method="get" class="form">
+      <ul class="list list-bullet">
+          
+        <li>Student Finance England (SFE), Student Finance Wales (SFW), Student Awards Agency for Scotland (SAAS)</li>
+        <li>NHS Bursary</li>
+        <li>Bursary from higher education Instituition (HEI)</li>
+        <li>Other scholarship, sponsorship, award or bursary</li>
+        <li>Grant or loan from overseas</li>
+      </ul>
+      <form action="funding-handler" method="get" class="form">
 
         <div class="form-group">
 
           
             <br>
-          
+          <fieldset class="inline">
             <legend class="visually-hidden">
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="fulltimeedu" value="ft">
-              <label for="yes">Full time</label>
+              <input id="yes" type="radio" name="funding" value="yes">
+              <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="fulltimeedu" value="pt">
-              <label for="no">Part time</label>
+              <input id="no" type="radio" name="funding" value="no">
+              <label for="no">No</label>
             </div>
 
           </fieldset>
