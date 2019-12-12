@@ -167,9 +167,9 @@ router.get(/qualification-handler/, function (req, res) {
 
 router.get(/fulltimeedu-handler/, function (req, res) {
  
-  if (req.query.fulltimeedu == 'yes') {
+  if (req.query.fulltimeedu == 'Full time') {
     res.redirect('/kickouts/students-developed');
-  } else if  (req.query.fulltimeedu == 'no') {
+  } else if  (req.query.fulltimeedu == 'Part time') {
     res.redirect('/beforeyoustart/student/qualification');
   } else {
     res.redirect('/beforeyoustart/full-time-edu');
