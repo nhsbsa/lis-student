@@ -30,7 +30,7 @@ NHSBSA Prototype
 
       <!-- only add a heading for a list if there is more than one list -->
       <h2 class="heading-medium">
-        Education and Training
+        Money to support your education
       </h2>
 
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
@@ -39,28 +39,28 @@ NHSBSA Prototype
       <!--   * none for single group of q&a -->
       <dl class="govuk-check-your-answers cya-questions-short">
 
-
         <div>
           <dt class="cya-question">
-            Tuition fees
+            Who pays
           </dt>
           <dd class="cya-answer">
-            <p> {{ data['tuition'] }}
+            <p> {{ data['tuitionfee'] }}
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="tuition fee.html">
+            <a class="link-right" href="who-pays.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
         </div>
 
-        {% if data['tuition'] == "yes" %}
+
+
         <div>
           <dt class="cya-question">
-            Fees per year
+            Fees this academic year 
           </dt>
           <dd class="cya-answer">
-            <p> £{{ data['tuitionfeehowmuch'] }}
+            <p>£ {{ data['tuitionfeehowmuch'] }}
           </dd>
           <dd class="cya-change">
             <a class="link-right" href="tuition-fee-how-much.html">
@@ -68,8 +68,10 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
+        
+        
         <br>
-        {% endif %}
+       
         <div class="form-group">
 
             <a href="task-list-complete" style="border-bottom: none"><input class="button" type="submit" value="Next"></a>
