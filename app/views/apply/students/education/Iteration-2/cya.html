@@ -44,7 +44,31 @@ NHSBSA Prototype
             Who pays
           </dt>
           <dd class="cya-answer">
-            <p> {{ data['tuitionfee'] }}
+            <p> 
+                {% if "myself-pay" in data['tuitionfee'] %}
+                Myself / Self-finance<br>
+                {% endif %}
+                
+                {% if "sfe-pay" in data['tuitionfee'] %}
+                Student Finance England (SFE)<br>
+                {% endif %}
+
+                {% if "sfw-pay" in data['tuitionfee'] %}
+                Student Finance Wales (SFW)<br>
+                {% endif %}
+
+                {% if "saas-pay" in data['tuitionfee'] %}
+                Student Awards Agency for Scotland (SAAS)<br>
+                {% endif %}
+
+                {% if "nhs-pay" in data['tuitionfee'] %}
+                National Health Service (NHS)<br>
+                {% endif %}
+
+                {% if "none-pay" in data['tuitionfee'] %}
+                No tuition fees<br>
+                {% endif %}
+
           </dd>
           <dd class="cya-change">
             <a class="link-right" href="who-pays.html">
@@ -53,8 +77,9 @@ NHSBSA Prototype
           </dd>
         </div>
 
-
-
+        
+        {% if data['tuitionfee'] != "none-pay" %}
+        
         <div>
           <dt class="cya-question">
             Fees this academic year 
@@ -68,7 +93,7 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        
+        {% endif %}
         
         <br>
        

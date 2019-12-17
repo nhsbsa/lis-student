@@ -4280,7 +4280,7 @@ router.get(/whopays-handler/, function (req, res) {
   } else if (req.query.tuitionfee.includes('nhs-pay')) {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.tuitionfee.includes('none-pay')) {
-    res.redirect('tuition-fee-how-much');
+    res.redirect('cya');
   } else if (req.query.tuitionfee.includes('myself-pay')) {
       res.redirect('tuition-fee-how-much');
   } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
