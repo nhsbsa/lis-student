@@ -4459,3 +4459,65 @@ router.get(/contributiontype-handler/, function (req, res) {
     res.redirect('contribution-type');
   }
 });
+
+// ***********************
+// Iteration 3
+// ***********************
+
+
+router.get(/whopaysiteration3-handler/, function (req, res) {
+  
+  if (req.query.tuitionfee.includes('sfe-pay')) {
+   res.redirect('/kickouts/students-developed');
+ } else if (req.query.tuitionfee.includes('sfw-pay')) {
+   res.redirect('/kickouts/students-developed');
+ } else if (req.query.tuitionfee.includes('saas-pay')) {
+   res.redirect('/kickouts/students-developed');
+ } else if (req.query.tuitionfee.includes('nhs-pay')) {
+   res.redirect('/kickouts/students-developed');
+ } else if (req.query.tuitionfee.includes('none-pay')) {
+   res.redirect('contribution-type');
+ } else if (req.query.tuitionfee.includes('myself-pay')) {
+     res.redirect('tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'saas-pay,nhs-pay,') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ }  else {
+   res.redirect('who-pays');
+ }
+});
+
+router.get(/tuitionfeehowmuchiteration3-handler/, function (req, res) {
+  if (req.query.tuitionfeehowmuch) {
+    res.redirect('contribution-type');
+  } else {
+    res.redirect('../Iteration-2/tuition-fee-how-much');
+  }
+});
