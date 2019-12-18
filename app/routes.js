@@ -650,10 +650,20 @@ router.get(/finalyeariteration4-handler/, function (req, res) {
   if (req.query.finalyear == 'yes') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.finalyear == 'no') {
-    res.redirect('#');
+    res.redirect('live-with-parents');
   }
 });
 
+
+router.get(/livewithparents-handler/, function (req, res) {
+
+
+  if (req.query.liveparents == 'yes') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.liveparents == 'no') {
+    res.redirect('/kickouts/students-developed');
+  }
+});
 
 
 // ************************
