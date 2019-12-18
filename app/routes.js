@@ -656,12 +656,16 @@ router.get(/finalyeariteration4-handler/, function (req, res) {
 
 
 router.get(/livewithparents-handler/, function (req, res) {
+  
   var fulltimeedu = req.session.data['fulltimeedu'];
+
   if (req.query.liveparents == 'yes' ) {
-    res.redirect('beforeyoustart/money-coming-in-single');
-  } else if (req.query.liveparents == 'no' && fulltime == 'ft'){
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.liveparents == 'no' && fulltimeedu == 'ft'){
     res.redirect('/kickouts/students-developed');
-  }
+
+  } else 
+  res.redirect('/beforeyoustart/money-coming-in-single')
 });
 
 
