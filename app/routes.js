@@ -582,12 +582,77 @@ router.get(/fundingiteration3-handler/, function (req, res) {
 // *****************************************
 
 
+router.get(/fulltimeeduiteration4-handler/, function (req, res) {
+ 
+  if (req.query.fulltimeedu == 'ft') {
+    res.redirect('/beforeyoustart/student/iteration-4/qualification');
+  } else if  (req.query.fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/iteration-4/qualification');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-4/full-time-edu');
+  }
+});
 
+router.get(/qualificationiteration4-handler/, function (req, res) {
+  
+  if (req.query.qualification == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-4/student-funding');
+  } else if  (req.query.qualification == 'no') {
+    res.redirect('/kickouts/students-developed');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-4/qualification');
+  }
+});
 
+router.get(/fundingiteration4-handler/, function (req, res) {
+  if (req.query.funding.includes('SL-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/student/Iteration-4/final-year.html');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } 
+});
 
-
-
-
+router.get(/finalyeariteration4-handler/, function (req, res) {
+  if (req.query.finalyear == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.finalyear == 'no') {
+    res.redirect('#');
+  }
+});
 
 
 
@@ -3119,13 +3184,7 @@ router.get(/coursetype-handler/, function (req, res) {
   }
 });
 
-router.get(/finalyear-handler/, function (req, res) {
-  if (req.query.finalyear == 'yes') {
-    res.redirect('course-finish-date');
-  } else if (req.query.finalyear == 'no') {
-    res.redirect('term1-dates');
-  }
-});
+
 
 router.get(/overseas-handler/, function (req, res) {
   if (req.query.overseas == 'yes') {
