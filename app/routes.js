@@ -581,7 +581,14 @@ router.get(/fundingiteration3-handler/, function (req, res) {
 // BEFORE YOU START - STUDENT - ITERATION 4
 // *****************************************
 
-
+router.get(/educationtrainingiteration4-handler/, function (req, res) {
+ 
+  if (req.query.educationtraining == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-4/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  }
+});
 router.get(/fulltimeeduiteration4-handler/, function (req, res) {
  
   if (req.query.fulltimeedu == 'ft') {

@@ -14,6 +14,17 @@ NHSBSA Prototype
 
 {% block content %}
 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
 <main id="content" role="main">
 
   <div class="phase-banner">
@@ -66,7 +77,7 @@ NHSBSA Prototype
           <p class="form-block">or</p>
 
           <div class="multiple-choice multiple-radio">
-            <input id="none" name="tuitionfee" value="none-pay" type="checkbox">
+            <input id="NONE" name="tuitionfee" value="none-pay" type="checkbox">
             <label for="none"><span style="font-weight:100;">There are no tuition fees for my course</span><br></label>
           </div>
 
@@ -84,5 +95,24 @@ NHSBSA Prototype
     </div>
   </div>
 </main>
+
+<script>
+  var $others = $('input[name="benefits"]').not('#NONE')
+  
+  $('#NONE').change(function () {
+      if (this.checked) {
+      $others.prop('checked', false)
+      }
+  });
+  
+  $others.change(function () {
+      if (this.checked) {
+      $('#NONE').prop('checked', false)
+      }
+  })
+  </script>
+
+
+
 
 {% endblock %}
