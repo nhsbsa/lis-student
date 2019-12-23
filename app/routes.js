@@ -4400,10 +4400,6 @@ router.get(/whopays-handler/, function (req, res) {
 
 
 
-
-
-
-
 router.get(/tuitioniteration2-handler/, function (req, res) {
   
   if (req.query.tuition == 'yes') {
@@ -4599,4 +4595,26 @@ router.get(/tuitionfeehowmuchiteration3-handler/, function (req, res) {
   } else {
     res.redirect('../Iteration-2/tuition-fee-how-much');
   }
+});
+
+// ************************************
+// Education and Training (Iteration 5)
+// ************************************
+
+router.get(/finalyeariteration5-handler/, function (req, res) {
+  if (req.query.finalyear == 'yes') {
+    res.redirect('#');
+  } else if (req.query.finalyear == 'no') {
+    res.redirect('christmas-dates');
+  }
+});
+
+
+
+router.get(/easterdates-handler/, function (req, res) {
+  res.redirect('summer-dates');
+});
+
+router.get(/christmasdates-handler/, function (req, res) {
+  res.redirect('easter-dates');
 });
