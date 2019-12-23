@@ -4610,11 +4610,12 @@ router.get(/finalyeariteration5-handler/, function (req, res) {
 });
 
 
+router.get(/christmasdates-handler/, function (req, res) {
+  res.redirect('easter-dates');
+});
 
 router.get(/easterdates-handler/, function (req, res) {
   res.redirect('summer-dates');
 });
 
-router.get(/christmasdates-handler/, function (req, res) {
-  res.redirect('easter-dates');
-});
+
