@@ -4611,7 +4611,7 @@ router.get(/finalyeariteration5-handler/, function (req, res) {
 
 
 router.get(/christmasdates-handler/, function (req, res) {
-  res.redirect('easter-dates');
+  res.redirect('/students/education/Iteration-5/easter-dates.html');
 });
 
 router.get(/easterdates-handler/, function (req, res) {
