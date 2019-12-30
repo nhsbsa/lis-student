@@ -4609,7 +4609,7 @@ router.get(/finalyeariteration5-handler/, function (req, res) {
   }
 });
 
-router.get(/coursefinishdateitearion5-handler/, function (req, res) {
+router.get(/coursefinishdateiteration5-handler/, function (req, res) {
   res.redirect('christmas-dates.html');
 });
 
@@ -4622,6 +4622,3 @@ router.get(/easterdates-handler/, function (req, res) {
   res.redirect('summer-dates.html');
 });
 
-outer.get(/asylumhowmuch-handler/, function (req, res) {
-  res.redirect('/beforeyoustart/answers-asylum');
-});
