@@ -4610,16 +4610,18 @@ router.get(/finalyeariteration5-handler/, function (req, res) {
 });
 
 router.get(/coursefinishdate-handler/, function (req, res) {
-  res.redirect('christmas-dates');
+  res.redirect('christmas-dates.html');
 });
 
 
 router.get(/christmasdates-handler/, function (req, res) {
-  res.redirect('easter-dates');
+  res.redirect('easter-dates.html');
 });
 
 router.get(/easterdates-handler/, function (req, res) {
-  res.redirect('summer-dates');
+  res.redirect('summer-dates.html');
 });
 
-
+outer.get(/asylumhowmuch-handler/, function (req, res) {
+  res.redirect('/beforeyoustart/answers-asylum');
+});
