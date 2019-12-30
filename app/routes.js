@@ -4601,7 +4601,7 @@ router.get(/tuitionfeehowmuchiteration3-handler/, function (req, res) {
 // Education and Training (Iteration 5)
 // ************************************
 
-router.get(/finalyeariteration5-handler/, function (req, res) {
+router.get(/finalyear-iteration5-handler/, function (req, res) {
   if (req.query.finalyear == 'yes') {
     res.redirect('course-finish-date');
   } else if (req.query.finalyear == 'no') {
@@ -4609,16 +4609,19 @@ router.get(/finalyeariteration5-handler/, function (req, res) {
   }
 });
 
-router.get(/coursefinishdateiteration5-handler/, function (req, res) {
+router.get(/coursefinishdate-iteration5-handler/, function (req, res) {
   res.redirect('christmas-dates.html');
 });
 
 
-router.get(/christmasdates-handler/, function (req, res) {
+router.get(/christmasdates-iteration5-handler/, function (req, res) {
   res.redirect('easter-dates.html');
 });
 
-router.get(/easterdates-handler/, function (req, res) {
+router.get(/easterdates-iteration5-handler/, function (req, res) {
   res.redirect('summer-dates.html');
 });
 
+router.get(/summerdates-iteration5-handler/, function (req, res) {
+  res.redirect('#');
+});
