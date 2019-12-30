@@ -4623,7 +4623,7 @@ router.get(/easterdates-iteration5-handler/, function (req, res) {
 });
 
 router.get(/summerdates-iteration5-handler/, function (req, res) {
-  res.redirect('#');
+  res.redirect('cya');
 });
 
 // ************************************
@@ -4644,4 +4644,16 @@ router.get(/finalyear-iteration6-handler/, function (req, res) {
 
 router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
   res.redirect('christmas-dates.html');
+});
+
+router.get(/christmasdates-iteration6-handler/, function (req, res) {
+  res.redirect('easter-dates.html');
+});
+
+router.get(/easterdates-iteration6-handler/, function (req, res) {
+  res.redirect('summer-dates.html');
+});
+
+router.get(/summerdates-iteration6-handler/, function (req, res) {
+  res.redirect('cya');
 });
