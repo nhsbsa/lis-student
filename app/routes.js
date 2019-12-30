@@ -4603,15 +4603,19 @@ router.get(/tuitionfeehowmuchiteration3-handler/, function (req, res) {
 
 router.get(/finalyeariteration5-handler/, function (req, res) {
   if (req.query.finalyear == 'yes') {
-    res.redirect('#');
+    res.redirect('course-finish-date');
   } else if (req.query.finalyear == 'no') {
     res.redirect('christmas-dates');
   }
 });
 
+router.get(/coursefinishdate-handler/, function (req, res) {
+  res.redirect('christmas-dates');
+});
+
 
 router.get(/christmasdates-handler/, function (req, res) {
-  res.redirect('/students/education/Iteration-5/easter-dates.html');
+  res.redirect('easter-dates');
 });
 
 router.get(/easterdates-handler/, function (req, res) {
