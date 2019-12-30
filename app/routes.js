@@ -4609,7 +4609,7 @@ router.get(/finalyeariteration5-handler/, function (req, res) {
   }
 });
 
-router.get(/coursefinishdate-handler/, function (req, res) {
+router.get(/coursefinishdateitearion5-handler/, function (req, res) {
   res.redirect('christmas-dates.html');
 });
 
