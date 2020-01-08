@@ -4540,6 +4540,68 @@ router.get(/contributiontype-handler/, function (req, res) {
 // ***********************
 
 
+router.get(/applyonlineiteration3-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/what-you-will-need.html');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplititeration3-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/country-split');
+  }
+});
+
+router.get(/carehomesplititeration3-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3/partner');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  }
+});
+
+router.get(/carehomesupportsplititeration3-handler/, function (req, res) {
+  if (req.query.carehomesupport == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-name-split');
+  } else if (req.query.carehomesupport == 'no') {
+    res.redirect('/kickouts/developed');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  }
+});
+
+router.get(/partneriteration3-handler/, function (req, res) {
+  if (req.query.partner == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/student/iteration-3/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/iteration-3/claimed-asylum-single');
+  }
+});
+
+router.get(/asylumsingleiteration3-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3/edu-or-training');
+  }
+});
+
+
+
 router.get(/whopaysiteration3-handler/, function (req, res) {
   
   if (req.query.tuitionfee.includes('sfe-pay')) {
