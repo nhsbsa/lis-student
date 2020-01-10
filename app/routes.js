@@ -533,7 +533,7 @@ router.get(/qualificationiteration3-handler/, function (req, res) {
 });
 
 
-router.get(/fundingiteration3-handler/, function (req, res) {
+router.get(/studentfundingiteration3-handler/, function (req, res) {
   if (req.query.funding.includes('SL-help')) {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('NHS-help')) {
@@ -575,7 +575,49 @@ router.get(/fundingiteration3-handler/, function (req, res) {
   } 
 });
 
-
+router.get(/whatissingleincomeiteration3-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle == 'earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle == 'benefits-income') {
+      res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle == 'nil-income') {
+      res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-3/more-than-6000');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/money-coming-in-single');
+  }
+});
 
 // *****************************************
 // BEFORE YOU START - STUDENT - ITERATION 4
