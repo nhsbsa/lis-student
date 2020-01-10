@@ -841,8 +841,11 @@ router.get(/fundingiteration4-handler/, function (req, res) {
 });
 
 router.get(/finalyeariteration4-handler/, function (req, res) {
-  if (req.query.finalyear == 'yes') {
+  var fulltimeedu = req.session.data['fulltimeedu'];
+  if (req.query.finalyear == 'yes' && fulltimeedu == 'ft') {
     res.redirect('/kickouts/students-developed');
+  } else if (req.query.finalyear == 'yes' && fulltimeedu == 'pt') {
+    res.redirect('live-with-parents');
   } else if (req.query.finalyear == 'no') {
     res.redirect('live-with-parents');
   }
