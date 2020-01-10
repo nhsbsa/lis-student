@@ -1,0 +1,96 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you have money
+          coming in from any of these?</h1>
+      </header>
+
+      <form action="whatissingleincomeiteration4-handler" class="form" method="get">
+
+        <p style="color:grey">Select all that apply for yourself</p>
+
+        <fieldset class="form-group">
+            <div class="multiple-choice multiple-radio">
+                <input id="pension" name="incomesingle" value="pension-income" type="checkbox">
+                <label for="pension">Pensions (state, work, private)</label>
+              </div>
+              
+          <div class="multiple-choice multiple-radio">
+            <input id="wages" name="incomesingle" value="earned-income" type="checkbox">
+            <label for="wages">Wages from a job</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+              <input id="selfemployed" name="incomesingle" value="selfemployed-income" type="checkbox">
+              <label for="selfemployed">Self-employment<br><span style="font-size: 16px; margin-top: 5px; display: block; ">(includes
+                  subcontractors & directors of limited companies)</span></label>
+            </div>
+            <div class="multiple-choice multiple-radio">
+              <input id="apprenticeship" name="incomesingle" value="apprenticeship-income" type="checkbox">
+              <label for="apprenticeship">Apprenticeships</label>
+            </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="benefits" name="incomesingle" value="benefits-income" type="checkbox">
+            <label for="benefits">State benefits</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="maintenance" name="incomesingle" value="maintenance-income" type="checkbox">
+            <label for="maintenance">Maintenance payments from an ex-partner</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="maternitypaternity" name="incomesingle" value="maternitypaternity-income" type="checkbox">
+            <label for="maternitypaternity">Statutory Maternity Pay or Statutory Paternity Pay</label>
+          </div>
+          <div class="multiple-choice multiple-radio">
+            <input id="trustfunds" name="incomesingle" value="trustfunds-income" type="checkbox">
+            <label for="trustfunds">Trust funds</label>
+          </div>
+          <p class="form-block">or</p>
+          <div class="multiple-choice multiple-radio">
+            <input id="none" name="incomesingle" value="nil-income" type="checkbox">
+            <label for="none">No, I <span class="bold">do not</span> get paid any of these </label>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
