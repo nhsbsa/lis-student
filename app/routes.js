@@ -510,12 +510,74 @@ router.get(/fundingiteration2-handler/, function (req, res) {
 // BEFORE YOU START - STUDENT - ITERATION 3
 // *****************************************
 
+router.get(/applyonlineiteration3-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/what-you-will-need.html');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplititeration3-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/country-split');
+  }
+});
+
+router.get(/carehomesplititeration3-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3/partner');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  }
+});
+
+router.get(/carehomesupportsplititeration3-handler/, function (req, res) {
+  if (req.query.carehomesupport == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-name-split');
+  } else if (req.query.carehomesupport == 'no') {
+    res.redirect('/kickouts/developed');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
+  }
+});
+
+router.get(/partneriteration3-handler/, function (req, res) {
+  if (req.query.partner == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/student/iteration-3/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/iteration-3/claimed-asylum-single');
+  }
+});
+
+router.get(/asylumsingleiteration3-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3/edu-or-training');
+  }
+});
+
+
+
 router.get(/educationtrainingiteration3-handler/, function (req, res) {
  
   if (req.query.educationtraining == 'yes') {
     res.redirect('/beforeyoustart/student/iteration-3/full-time-edu');
   } else if (req.query.educationtraining == 'no') {
-    res.redirect('/beforeyoustart/student/iteration-3money-coming-in-single');
+    res.redirect('/beforeyoustart/student/iteration-3/money-coming-in-single');
   }
 });
 
@@ -633,14 +695,87 @@ router.get(/whatissingleincomeiteration3-handler/, function (req, res) {
 // BEFORE YOU START - STUDENT - ITERATION 4
 // *****************************************
 
+
+router.get(/applyonlineiteration4-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-4/what-you-will-need.html');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplititeration4-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/student/iteration-4/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/student/iteration-4/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/student/iteration-4/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-4/country-split');
+  }
+});
+
+
+router.get(/carehomesplititeration4-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-4/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-4/partner');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-4/care-home-split');
+  }
+});
+
+router.get(/partneriteration4-handler/, function (req, res) {
+  if (req.query.partner == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/student/iteration-4/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/iteration-4/claimed-asylum-single');
+  }
+});
+
+
+router.get(/asylumsingleiteration4-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-4/edu-or-training');
+  }
+});
+
+router.get(/asylumPartneriteration4-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-4/edu-or-training-partner');
+  }
+});
+
+
 router.get(/educationtrainingiteration4-handler/, function (req, res) {
  
   if (req.query.educationtraining == 'yes') {
     res.redirect('/beforeyoustart/student/iteration-4/full-time-edu');
   } else if (req.query.educationtraining == 'no') {
-    res.redirect('/beforeyoustart/money-coming-in-single');
+    res.redirect('/beforeyoustart/student/iteration-4/money-coming-in-single');
   }
 });
+
+router.get(/educationtrainingPartneriteration4-handler/, function (req, res) {
+ 
+  if (req.query.educationtrainingPartner == 'yes') {
+    res.redirect('../../kickouts/students-developed');
+  } else if (req.query.educationtrainingPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-4/money-coming-in-partner');
+  }
+});
+
+
 router.get(/fulltimeeduiteration4-handler/, function (req, res) {
  
   if (req.query.fulltimeedu == 'ft') {
@@ -4476,67 +4611,6 @@ router.get(/tuitionfeehowmuchiteration2-handler/, function (req, res) {
 // ***********************
 
 
-router.get(/applyonlineiteration3-handler/, function (req, res) {
-  if (req.query.applyonline == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-3/what-you-will-need.html');
-  } else if (req.query.applyonline == 'no') {
-    res.redirect('/kickouts/apply-offline');
-  }
-});
-
-router.get(/countrysplititeration3-handler/, function (req, res) {
-  if (req.query.country == 'England') {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
-  } else if (req.query.country == 'Scotland') {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
-  } else if (req.query.country == 'Wales') {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
-  } else if (req.query.country == 'Northern Ireland') {
-    res.redirect('/kickouts/northern-ireland-split');
-  } else {
-    res.redirect('/beforeyoustart/student/iteration-3/country-split');
-  }
-});
-
-router.get(/carehomesplititeration3-handler/, function (req, res) {
-  if (req.query.carehome == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-support-split');
-  } else if (req.query.carehome == 'no') {
-    res.redirect('/beforeyoustart/student/iteration-3/partner');
-  } else {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
-  }
-});
-
-router.get(/carehomesupportsplititeration3-handler/, function (req, res) {
-  if (req.query.carehomesupport == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-name-split');
-  } else if (req.query.carehomesupport == 'no') {
-    res.redirect('/kickouts/developed');
-  } else {
-    res.redirect('/beforeyoustart/student/iteration-3/care-home-split');
-  }
-});
-
-router.get(/partneriteration3-handler/, function (req, res) {
-  if (req.query.partner == 'yes') {
-    applicant.partner = true;
-    res.redirect('/beforeyoustart/student/iteration-3/claimed-asylum-partner');
-  } else if (req.query.partner == 'no') {
-    applicant.partner = false;
-    res.redirect('/beforeyoustart/student/iteration-3/claimed-asylum-single');
-  }
-});
-
-router.get(/asylumsingleiteration3-handler/, function (req, res) {
-  if (req.query.asylumsingle == 'yes') {
-    res.redirect('/beforeyoustart/asylum/asylum-decision');
-  } else if (req.query.asylumsingle == 'no') {
-    res.redirect('/beforeyoustart/student/iteration-3/edu-or-training');
-  }
-});
-
-
 
 router.get(/whopaysiteration3-handler/, function (req, res) {
   
@@ -4729,6 +4803,9 @@ router.get(/friendshowmuch-handler/, function (req, res) {
 // ************************************
 // Education and Training (Iteration 5)
 // ************************************
+
+
+
 
 router.get(/finalyear-iteration5-handler/, function (req, res) {
   if (req.query.finalyear == 'yes') {

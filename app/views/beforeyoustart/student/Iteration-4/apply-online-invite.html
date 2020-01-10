@@ -1,0 +1,112 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+{% set universalcredit = 'false' %}
+
+<style>
+.callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+}
+.form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+@media (min-width: 641px) {
+.form-group {
+    margin-bottom: 30px;
+}
+}
+</style>
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+        <header class="page-header">
+            <p class="page-header--sub heading-secondary">Based on what you've told us</p>
+            <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-xlarge">You could {% if serviceName %} {{ serviceName }} {% endif %}</h1>
+            <p class="lede">This is a new online service and we're only inviting a limited number of people to apply.</p>
+        </header>      
+
+      <p>If you apply online you will:</p>
+
+      <ul class="list list-bullet">
+        <li>complete your application in around 20 minutes</li>
+        <li>be asked personalised questions based on your circumstances</li>
+        <li>get instant confirmation that we've received your application</li>
+        <li>get a reference number that you can use if you have any queries</li>
+      </uL>
+
+      <div class="callout form-group">
+          <h2 class="heading-small"> How we use your information </h2>
+          <p> If you apply online, we’ll use the information you have already provided to help complete your application
+              form. You can find out more about <a target="_blank" href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme/nhs-low-income-scheme-privacy-notice">how
+                  we use your information</a>. </p>
+        </div>
+
+    <h2 class="heading-medium">Do you want to apply online?</h2>
+
+      <form action="applyonlineiteration4-handler" method="get" class="form">
+
+          <div class="form-group">
+
+            <fieldset class="inline">
+              <legend class="visually-hidden">
+              </legend>
+
+              <div class="multiple-choice">
+                <input id="yes" type="radio" name="applyonline" value="yes">
+                <label for="yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="no" type="radio" name="applyonline" value="no">
+                <label for="no">No</label>
+              </div>
+
+          </fieldset>  
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+
+        </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
