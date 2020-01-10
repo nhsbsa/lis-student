@@ -510,6 +510,16 @@ router.get(/fundingiteration2-handler/, function (req, res) {
 // BEFORE YOU START - STUDENT - ITERATION 3
 // *****************************************
 
+router.get(/educationtrainingiteration3-handler/, function (req, res) {
+ 
+  if (req.query.educationtraining == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-3/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3money-coming-in-single');
+  }
+});
+
+
 router.get(/fulltimeeduiteration3-handler/, function (req, res) {
  
   if (req.query.fulltimeedu == 'ft') {
@@ -517,7 +527,7 @@ router.get(/fulltimeeduiteration3-handler/, function (req, res) {
   } else if  (req.query.fulltimeedu == 'pt') {
     res.redirect('/beforeyoustart/student/iteration-3/qualification');
   } else {
-    res.redirect('/beforeyoustart/student/iteration-2/full-time-edu');
+    res.redirect('/beforeyoustart/student/iteration-3/full-time-edu');
   }
 });
 
@@ -4691,6 +4701,16 @@ router.get(/whopaysiteration3-handler/, function (req, res) {
  }  else {
    res.redirect('who-pays');
  }
+});
+
+router.get(/savingssplititeration3-handler/, function (req, res) {
+  if (req.query.savings== 'yes') {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.savings== 'no') {
+    res.redirect('/beforeyoustart/student/iteration-3/check-your-answers-check-eligibility.html');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration3/more-than-6000');
+  }
 });
 
 router.get(/tuitionfeehowmuchiteration3-handler/, function (req, res) {
