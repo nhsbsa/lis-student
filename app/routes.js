@@ -545,7 +545,7 @@ router.get(/fundingiteration3-handler/, function (req, res) {
   }else if (req.query.funding.includes('grant-help')) {
       res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('none-help')) {
-    res.redirect('/beforeyoustart/money-coming-in-single');
+    res.redirect('/beforeyoustart/student/iteration-3/money-coming-in-single');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
