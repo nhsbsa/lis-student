@@ -4470,122 +4470,6 @@ router.get(/tuitionfeehowmuchiteration2-handler/, function (req, res) {
 });
 
 
-router.get(/parents-handler/, function (req, res) {
-  
-  if (req.query.parents == 'yes') {
-    res.redirect('../Iteration-3/parents-how-often');
-  } else if (req.query.parents == 'no') {
-    res.redirect('relatives');
-  }
-});
-
-
-router.get(/parentshowoften-handler/, function (req, res) {
-  if (req.query.parentshowoften == 'every week' || req.query.parentshowoften == 'every month' || req.query.parentshowoften == 'every term') {
-    res.redirect('../Iteration-3/parents-how-much');
-  } else {
-    res.redirect('../Iteration-3/parents-how-often');
-  }
-});
-
-router.get(/parentshowmuch-handler/, function (req, res) {
-  var contributiontype = req.session.data['contributiontype'];
-
-    if (req.query.parentshowmuch && contributiontype.includes('relatives')) {
-    res.redirect('relatives-how-much');
-  } else if (req.query.parentshowmuch && contributiontype.includes('friends')) {
-  
-  } else if (req.query.parentshowmuch) {
-    res.redirect('money-another-1');
-   } else {
-    res.redirect('parents-how-much');
-  }
-});
-
-router.get(/relatives-handler/, function (req, res) {
-  
-  if (req.query.relatives == 'yes') {
-    res.redirect('../Iteration-3/relatives-how-often');
-  } else if (req.query.relatives == 'no') {
-    res.redirect('friends');
-  }
-});
-
-router.get(/relativeshowoften-handler/, function (req, res) {
-  if (req.query.relativeshowoften == 'every week' || req.query.relativeshowoften == 'every month' || req.query.relativeshowoften == 'every term') {
-    res.redirect('../Iteration-3/relatives-how-much');
-  } else {
-    res.redirect('../Iteration-3/relatives-how-often');
-  }
-});
-
-router.get(/relativeshowmuch-handler/, function (req, res) {
-  var contributiontype = req.session.data['contributiontype'];
-
-  if (req.query.relativeshowmuch && contributiontype.includes('friends')) {
-    res.redirect('friends-how-much');
-  } else  if (req.query.relativeshowmuch){
-    res.redirect('money-another-1');
-  } else {
-    res.redirect('relatives-how-much');
-  }
-});
-
-
-router.get(/moneyanother-handler/, function (req, res) {
-  
-  if (req.query.moneyanother == 'yes') {
-    res.redirect('money-another-name');
-  } else if (req.query.moneyanother == 'no') {
-    res.redirect('cya');
-  }
-});
-
-router.get(/moneyanothername-handler/, function (req, res) {
-  
-  if (req.query.moneyanothername) {
-    res.redirect('cya');
-  } else {
-    res.redirect('money-another-name');
-  }
-});
-router.get(/friendshowoften-handler/, function (req, res) {
-  if (req.query.friendshowoften == 'every week' || req.query.friendshowoften == 'every month' || req.query.friendshowoften == 'every term') {
-    res.redirect('friends-how-much');
-  } else {
-    res.redirect('friends-how-often');
-  }
-});
-
-router.get(/friendshowmuch-handler/, function (req, res) {
-  if (req.query.friendshowmuch) {
-    res.redirect('money-another-1');
-  } else {
-    res.redirect('friends-how-much');
-  }
-});
-
-router.get(/contributiontype-handler/, function (req, res) {
-  if (req.query.contributiontype.includes('parents')) {
-    res.redirect('parents-how-much');
-  } else if (req.query.contributiontype.includes('relatives')) {
-    res.redirect('relatives-how-much');
-  } else if (req.query.contributiontype.includes('friends')) {
-    res.redirect('friends-how-much');
-  } else if (req.query.contributiontype.includes('none')) {
-    res.redirect('money-another-1');
-  } else if (req.query.contributiontype.toString() == 'parents,relatives,friends') {
-    res.redirect('parents-how-much');
-  } else if (req.query.incomepartner.toString() == 'parents,relatives') {
-    res.redirect('parents-how-much');
-  } else if (req.query.incomepartner.toString() == 'parents,friends') {
-    res.redirect('parents-how-much');
-  } else if (req.query.incomepartner.toString() == 'relatives,friends') {
-    res.redirect('relatives-how-much');
-  }  else {
-    res.redirect('contribution-type');
-  }
-});
 
 // ***********************
 // Iteration 3
@@ -4717,9 +4601,130 @@ router.get(/tuitionfeehowmuchiteration3-handler/, function (req, res) {
   if (req.query.tuitionfeehowmuch) {
     res.redirect('contribution-type');
   } else {
-    res.redirect('../Iteration-2/tuition-fee-how-much');
+    res.redirect('../Iteration-3/tuition-fee-how-much');
   }
 });
+
+
+router.get(/contributiontype-handler/, function (req, res) {
+  if (req.query.contributiontype.includes('parents')) {
+    res.redirect('parents-how-often');
+  } else if (req.query.contributiontype.includes('relatives')) {
+    res.redirect('relatives-how-often');
+  } else if (req.query.contributiontype.includes('friends')) {
+    res.redirect('friends-how-often');
+  } else if (req.query.contributiontype.includes('none')) {
+    res.redirect('money-another-1');
+  } else if (req.query.contributiontype.toString() == 'parents,relatives,friends') {
+    res.redirect('parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'parents,relatives') {
+    res.redirect('parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'parents,friends') {
+    res.redirect('parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'relatives,friends') {
+    res.redirect('relatives-how-often');
+  }  else {
+    res.redirect('contribution-type');
+  }
+});
+
+
+
+router.get(/parents-handler/, function (req, res) {
+  
+  if (req.query.parents == 'yes') {
+    res.redirect('../Iteration-3/parents-how-often');
+  } else if (req.query.parents == 'no') {
+    res.redirect('relatives');
+  }
+});
+
+
+router.get(/parentshowoften-handler/, function (req, res) {
+  if (req.query.parentshowoften == 'every week' || req.query.parentshowoften == 'every month' || req.query.parentshowoften == 'every term') {
+    res.redirect('../Iteration-3/parents-how-much');
+  } else {
+    res.redirect('../Iteration-3/parents-how-often');
+  }
+});
+
+router.get(/parentshowmuch-handler/, function (req, res) {
+  var contributiontype = req.session.data['contributiontype'];
+
+    if (req.query.parentshowmuch && contributiontype.includes('relatives')) {
+    res.redirect('relatives-how-often');
+  } else if (req.query.parentshowmuch && contributiontype.includes('friends')) {
+    res.redirect('friends-how-often');
+  } else if (req.query.parentshowmuch) {
+    res.redirect('money-another-1');
+   } else {
+    res.redirect('parents-how-much');
+  }
+});
+router.get(/relatives-handler/, function (req, res) {
+  
+  if (req.query.relatives == 'yes') {
+    res.redirect('../Iteration-3/relatives-how-often');
+  } else if (req.query.relatives == 'no') {
+    res.redirect('friends');
+  }
+});
+
+router.get(/relativeshowoften-handler/, function (req, res) {
+  if (req.query.relativeshowoften == 'every week' || req.query.relativeshowoften == 'every month' || req.query.relativeshowoften == 'every term') {
+    res.redirect('../Iteration-3/relatives-how-much');
+  } else {
+    res.redirect('../Iteration-3/relatives-how-often');
+  }
+});
+
+router.get(/relativeshowmuch-handler/, function (req, res) {
+  var contributiontype = req.session.data['contributiontype'];
+
+  if (req.query.relativeshowmuch && contributiontype.includes('friends')) {
+    res.redirect('friends-how-often');
+  } else  if (req.query.relativeshowmuch){
+    res.redirect('money-another-1');
+  } else {
+    res.redirect('relatives-how-much');
+  }
+});
+
+
+router.get(/moneyanother-handler/, function (req, res) {
+  
+  if (req.query.moneyanother == 'yes') {
+    res.redirect('money-another-name');
+  } else if (req.query.moneyanother == 'no') {
+    res.redirect('cya');
+  }
+});
+
+router.get(/moneyanothername-handler/, function (req, res) {
+  
+  if (req.query.moneyanothername) {
+    res.redirect('cya');
+  } else {
+    res.redirect('money-another-name');
+  }
+});
+router.get(/friendshowoften-handler/, function (req, res) {
+  if (req.query.friendshowoften == 'every week' || req.query.friendshowoften == 'every month' || req.query.friendshowoften == 'every term') {
+    res.redirect('friends-how-much');
+  } else {
+    res.redirect('friends-how-often');
+  }
+});
+
+router.get(/friendshowmuch-handler/, function (req, res) {
+  if (req.query.friendshowmuch) {
+    res.redirect('money-another-1');
+  } else {
+    res.redirect('friends-how-much');
+  }
+});
+
+
 
 // ************************************
 // Education and Training (Iteration 5)
