@@ -9,6 +9,9 @@ NHSBSA Prototype
   #capitalize::first-letter {
     text-transform: uppercase;
   }
+  .no-border {
+    border-bottom: 0 !important;
+  }
 </style>
 <main id="content" role="main">
   <div class="phase-banner">
@@ -44,27 +47,27 @@ NHSBSA Prototype
               </dt>
               <dd class="cya-answer">
                 <p> 
-                    {% if "myself-pay" in data['tuitionfee'] %}
+                    {% if 'myself-pay' in data['tuitionfee'] %}
                     I pay for my tuition fees<br>
                     {% endif %}
                     
-                    {% if "sfe-pay" in data['tuitionfee'] %}
+                    {% if 'sfe-pay' in data['tuitionfee'] %}
                     Student Finance England (SFE)<br>
                     {% endif %}
     
-                    {% if "sfw-pay" in data['tuitionfee'] %}
+                    {% if 'sfw-pay' in data['tuitionfee'] %}
                     Student Finance Wales (SFW)<br>
                     {% endif %}
     
-                    {% if "saas-pay" in data['tuitionfee'] %}
+                    {% if 'saas-pay' in data['tuitionfee'] %}
                     Student Awards Agency for Scotland (SAAS)<br>
                     {% endif %}
     
-                    {% if "nhs-pay" in data['tuitionfee'] %}
+                    {% if 'nhs-pay' in data['tuitionfee'] %}
                     National Health Service (NHS)<br>
                     {% endif %}
     
-                    {% if "none-pay" in data['tuitionfee'] %}
+                    {% if 'none-pay' in data['tuitionfee'] %}
                     No tuition fees<br>
                     {% endif %}
     
@@ -100,17 +103,17 @@ NHSBSA Prototype
 
 
 
-        <div>
-          <dt class="cya-question">
+        <div class="no-border">
+          <dt class="cya-question no-border">
             Receive money from
           </dt>
-          <dd class="cya-answer">
+          <dd class="cya-answer no-border">
             <p> 
                 Parents <br>
                 Relatives <br>
                 Friends
           </dd>
-          <dd class="cya-change">
+          <dd class="cya-change no-border">
             <a class="link-right" href="contribution-type.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
@@ -118,16 +121,16 @@ NHSBSA Prototype
         </div>
         
         
-        <div>
+        <div class="no-border">
             
-          <dt class="cya-question">
+          <dt class="cya-question no-border">
               Parents
           </dt>
-          <dd class="cya-answer">
+          <dd class="cya-answer no-border">
               Every week <br>
             <p> £50
           </dd>
-          <dd class="cya-change">
+          <dd class="cya-change no-border">
             <a class="link-right" href="#">
               Change<span class="visually-hidden">Uni</span>
             </a>
@@ -136,16 +139,16 @@ NHSBSA Prototype
         </div>
        
    
-        <div>
+        <div class="no-border">
             
-            <dt class="cya-question">
+            <dt class="cya-question no-border">
                 Other family member
             </dt>
-            <dd class="cya-answer">
+            <dd class="cya-answer no-border">
                 Every week <br>
               <p> £50
             </dd>
-            <dd class="cya-change">
+            <dd class="cya-change no-border">
               <a class="link-right" href="#">
                 Change<span class="visually-hidden">Uni</span>
               </a>
