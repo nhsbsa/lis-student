@@ -810,7 +810,7 @@ router.get(/fundingiteration4-handler/, function (req, res) {
   }else if (req.query.funding.includes('grant-help')) {
       res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('none-help')) {
-    res.redirect('/beforeyoustart/student/Iteration-4/final-year.html');
+    res.redirect('/beforeyoustart/student/iteration-4/final-year.html');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
