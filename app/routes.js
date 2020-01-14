@@ -919,9 +919,224 @@ router.get(/savingssplititeration4-handler/, function (req, res) {
     res.redirect('/beforeyoustart/student/Iteration-4/more-than-6000');
   }
 });
+
+// *****************************************
+// BEFORE YOU START - STUDENT - ITERATION 5
+// *****************************************
+
+router.get(/applyonlineiteration5-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-5/what-you-will-need.html');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplititeration5-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/student/iteration-5/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/student/iteration-5/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/student/iteration-5/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-5/country-split');
+  }
+});
+
+
+router.get(/carehomesplititeration5-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-5/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-5/partner');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-5/care-home-split');
+  }
+});
+
+router.get(/partneriteration5-handler/, function (req, res) {
+  if (req.query.partner == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/student/iteration-5/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/iteration-5/claimed-asylum-single');
+  }
+});
+
+
+router.get(/asylumsingleiteration5-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-5/edu-or-training');
+  }
+});
+
+router.get(/asylumPartneriteration5-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-5/edu-or-training-partner');
+  }
+});
+
+router.get(/educationtrainingiteration5-handler/, function (req, res) {
+ 
+  if (req.query.educationtraining == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-5/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-5/money-coming-in-single');
+  }
+});
+
+router.get(/educationtrainingPartneriteration5-handler/, function (req, res) {
+ 
+  if (req.query.educationtrainingPartner == 'yes') {
+    res.redirect('../../kickouts/students-developed');
+  } else if (req.query.educationtrainingPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-5/money-coming-in-partner');
+  }
+});
+
+
+router.get(/fulltimeeduiteration5-handler/, function (req, res) {
+ 
+  if (req.query.fulltimeedu == 'ft') {
+    res.redirect('/beforeyoustart/student/iteration-5/qualification');
+  } else if  (req.query.fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/iteration-5/qualification');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-5/full-time-edu');
+  }
+});
+
+
+router.get(/qualificationiteration5-handler/, function (req, res) {
+  
+  if (req.query.qualification == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-5/student-funding');
+  } else if  (req.query.qualification == 'no') {
+    res.redirect('/kickouts/students-developed');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-5/qualification');
+  }
+});
+
+router.get(/fundingiteration5-handler/, function (req, res) {
+  if (req.query.funding.includes('SL-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/student/iteration-5/live-with-parents.html');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } 
+});
+
+router.get(/livewithparentsiteration5-handler/, function (req, res) {
+  
+  var fulltimeedu = req.session.data['fulltimeedu'];
+
+  if (req.query.liveparents == 'yes' ) {
+    res.redirect('/beforeyoustart/student/iteration-5/money-coming-in-single');
+  } else if (req.query.liveparents == 'no' && fulltimeedu == 'ft'){
+    res.redirect('/kickouts/students-developed');
+
+  } else 
+  res.redirect('/beforeyoustart/student/iteration-5/money-coming-in-single')
+});
+
+
+router.get(/whatissingleincomeiteration5-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle == 'earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle == 'benefits-income') {
+      res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle == 'nil-income') {
+      res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-5/money-coming-in-single');
+  }
+});
+
+router.get(/savingssplititeration5-handler/, function (req, res) {
+  if (req.query.savings== 'yes') {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.savings== 'no') {
+    res.redirect('/beforeyoustart/student/iteration-5/check-your-answers-check-eligibility.html');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-5/more-than-6000');
+  }
+});
 // ************************
 // PAYE
-
 // ************************
 
 router.get(/jobtitle-handler/, function (req, res) {
