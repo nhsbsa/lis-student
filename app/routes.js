@@ -799,6 +799,9 @@ router.get(/qualificationiteration4-handler/, function (req, res) {
 });
 
 router.get(/fundingiteration4-handler/, function (req, res) {
+
+  var fulltimeedu = req.session.data['fulltimeedu'];
+
   if (req.query.funding.includes('SL-help')) {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('NHS-help')) {
@@ -809,7 +812,9 @@ router.get(/fundingiteration4-handler/, function (req, res) {
     res.redirect('/kickouts/students-developed');
   }else if (req.query.funding.includes('grant-help')) {
       res.redirect('/kickouts/students-developed');
-  } else if (req.query.funding.includes('none-help')) {
+  } else if (req.query.funding == 'none-help' && fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/Iteration-4/live-with-parents.html');
+  } else if (req.query.funding == 'none-help' && fulltimeedu == 'ft') {
     res.redirect('/beforeyoustart/student/Iteration-4/final-year.html');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
