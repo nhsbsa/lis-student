@@ -5083,26 +5083,50 @@ router.get(/finalyear-iteration5-handler/, function (req, res) {
   if (req.query.finalyear == 'yes') {
     res.redirect('course-finish-date');
   } else if (req.query.finalyear == 'no') {
-    res.redirect('christmas-dates');
+    res.redirect('academic-start');
   }
 });
 
 router.get(/coursefinishdate-iteration5-handler/, function (req, res) {
-  res.redirect('christmas-dates.html');
+  res.redirect('cya1.html');
 });
 
-
-router.get(/christmasdates-iteration5-handler/, function (req, res) {
-  res.redirect('easter-dates.html');
+router.get(/academic-iteration5-handler/, function (req, res) {
+  res.redirect('christmas-break.html');
 });
 
-router.get(/easterdates-iteration5-handler/, function (req, res) {
-  res.redirect('summer-dates.html');
+router.get(/christmasbreak-iteration5-handler/, function (req, res) {
+  res.redirect('christmas-end.html');
 });
 
-router.get(/summerdates-iteration5-handler/, function (req, res) {
+router.get(/christmasend-iteration5-handler/, function (req, res) {
+  res.redirect('easter-break.html');
+});
+
+router.get(/easterbreak-iteration5-handler/, function (req, res) {
+  res.redirect('easter-end.html');
+});
+
+router.get(/easterend-iteration5-handler/, function (req, res) {
+  res.redirect('summer-break.html');
+});
+
+router.get(/summerbreak-iteration5-handler/, function (req, res) {
   res.redirect('cya');
 });
+
+//** router.get(/christmasdates-iteration5-handler/, function (req, res) {
+ //**  res.redirect('easter-dates.html');
+//** });
+
+
+//** router.get(/easterdates-iteration5-handler/, function (req, res) {
+ //**  res.redirect('summer-dates.html');
+//** });
+
+//** router.get(/summerdates-iteration5-handler/, function (req, res) {
+  //** res.redirect('cya');
+//** });
 
 // ************************************
 // Education and Training (Iteration 6)
