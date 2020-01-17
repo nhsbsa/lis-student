@@ -5040,7 +5040,7 @@ router.get(/relativeshowmuch-handler/, function (req, res) {
 router.get(/moneyanother-handler/, function (req, res) {
   
   if (req.query.moneyanother == 'yes') {
-    res.redirect('money-another-name');
+    res.redirect('cya');
   } else if (req.query.moneyanother == 'no') {
     res.redirect('cya');
   }
