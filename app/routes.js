@@ -5084,17 +5084,19 @@ router.get(/friendshowmuch-handler/, function (req, res) {
 
 
 
+//** router.get(/finalyear-iteration5-handler/, function (req, res) {
+  //** if (req.query.finalyear == 'yes') {
+  //**   res.redirect('course-finish-date');
+  //** } else if (req.query.finalyear == 'no') {
+  //**   res.redirect('academic-start');
+  //** }
+//** });
+
 router.get(/finalyear-iteration5-handler/, function (req, res) {
-  if (req.query.finalyear == 'yes') {
-    res.redirect('course-finish-date');
-  } else if (req.query.finalyear == 'no') {
-    res.redirect('academic-start');
-  }
+  res.redirect('cya.html');
 });
 
-router.get(/coursefinishdate-iteration5-handler/, function (req, res) {
-  res.redirect('cya1.html');
-});
+
 
 router.get(/academic-iteration5-handler/, function (req, res) {
   res.redirect('christmas-break.html');
@@ -5117,7 +5119,7 @@ router.get(/easterend-iteration5-handler/, function (req, res) {
 });
 
 router.get(/summerbreak-iteration5-handler/, function (req, res) {
-  res.redirect('cya');
+  res.redirect('final-year');
 });
 
 //** router.get(/christmasdates-iteration5-handler/, function (req, res) {
