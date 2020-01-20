@@ -5138,29 +5138,59 @@ router.get(/summerbreak-iteration5-handler/, function (req, res) {
 // ************************************
 
 router.get(/nameofcourse-iteration6-handler/, function (req, res) {
-  res.redirect('name-of-establishment.html');
+  res.redirect('overseas-student.html');
 });
 
-router.get(/finalyear-iteration6-handler/, function (req, res) {
-  if (req.query.finalyear == 'yes') {
-    res.redirect('course-finish-date');
-  } else if (req.query.finalyear == 'no') {
-    res.redirect('christmas-dates');
+router.get(/overseasiteration6-handler/, function (req, res) {
+  var fulltimeedu = req.session.data['fulltimeedu'];
+
+  if (req.query.overseas == 'yes' && fulltime == 'ft') {
+    res.redirect('final-year');
+  } else if (req.query.overseas == 'yes' && fulltime == 'pt') {
+    res.redirect('academic-start');
+  } else if (req.query.overseas == 'no' && fulltime == 'pt') {
+    res.redirect('academic-start');
+  } else if (req.query.overseas == 'no'&& fulltime == 'ft') {
+    res.redirect('final-year');
   }
 });
 
-router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
-  res.redirect('christmas-dates.html');
+
+
+
+router.get(/finalyear-iteration6-handler/, function (req, res) {
+  
+  if (req.query.finalyear == 'yes') {
+    res.redirect('course-finish-date');
+  } else if (req.query.finalyear == 'no') {
+    res.redirect('academic-start');
+  }
 });
 
-router.get(/christmasdates-iteration6-handler/, function (req, res) {
-  res.redirect('easter-dates.html');
+router.get(/academiciteration6-handler/, function (req, res) {
+  res.redirect('christmas-break.html');
 });
 
-router.get(/easterdates-iteration6-handler/, function (req, res) {
-  res.redirect('summer-dates.html');
+router.get(/christmasbreak-iteration6-handler/, function (req, res) {
+  res.redirect('christmas-end.html');
 });
 
-router.get(/summerdates-iteration6-handler/, function (req, res) {
+router.get(/christmasend-iteration6-handler/, function (req, res) {
+  res.redirect('easter-break.html');
+});
+
+router.get(/easterbreak-iteration6-handler/, function (req, res) {
+  res.redirect('easter-end.html');
+});
+
+router.get(/easterend-iteration6-handler/, function (req, res) {
+  res.redirect('summer-break.html');
+});
+
+router.get(/summerbreak-iteration6-handler/, function (req, res) {
   res.redirect('cya');
+});
+
+router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
+  res.redirect('christmas-break.html');
 });
