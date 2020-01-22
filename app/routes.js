@@ -5357,6 +5357,9 @@ router.get(/summerbreak-iteration5-handler/, function (req, res) {
 // Education and Training (Iteration 6)
 // ************************************
 
+
+//Education and training//
+
 router.get(/nameofcourse-iteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/overseas-student.html');
 });
@@ -5401,4 +5404,146 @@ router.get(/summerbreak-iteration6-handler/, function (req, res) {
 
 router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/christmas-break.html');
+});
+
+//Money to support your education//
+
+router.get(/whopaysiteration6-handler/, function (req, res) {
+  
+  if (req.query.tuitionfee.includes('sfe-pay')) {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.includes('sfw-pay')) {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.includes('saas-pay')) {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.includes('nhs-pay')) {
+   res.redirect('/kickouts/students-developed');
+ } else if (req.query.tuitionfee.includes('none-pay')) {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.includes('myself-pay')) {
+     res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay') {
+   res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay') {
+   res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay') {
+   res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay') {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay') {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay') {
+   res.redirect('../money-support-edu/contribution-type');
+ } else if (req.query.tuitionfee.toString() == 'nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'saas-pay,nhs-pay,') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ }  else {
+   res.redirect('who-pays');
+ }
+});
+
+router.get(/tuitionfeehowmuchiteration6-handler/, function (req, res) {
+  if (req.query.tuitionfeehowmuch) {
+    res.redirect('../money-support-edu/contribution-type');
+  } else {
+    res.redirect('../iteration-6/tuition-fee-how-much');
+  }
+});
+
+router.get(/contributiontypeiteration6-handler/, function (req, res) {
+  if (req.query.contributiontype.includes('parents')) {
+    res.redirect('../money-support-edu/parents-how-often');
+  } else if (req.query.contributiontype.includes('relatives')) {
+    res.redirect('../money-support-edu/relatives-how-often');
+  } else if (req.query.contributiontype.includes('friends')) {
+    res.redirect('../money-support-edu/friends-how-often');
+  } else if (req.query.contributiontype.includes('none')) {
+    res.redirect('../money-support-edu/money-another-1');
+  } else if (req.query.contributiontype.toString() == 'parents,relatives,friends') {
+    res.redirect('../money-support-edu/parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'parents,relatives') {
+    res.redirect('../money-support-edu/parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'parents,friends') {
+    res.redirect('../money-support-edu/parents-how-often');
+  } else if (req.query.incomepartner.toString() == 'relatives,friends') {
+    res.redirect('../money-support-edu/relatives-how-often');
+  }  else {
+    res.redirect('../money-support-edu/contribution-type');
+  }
+});
+
+
+router.get(/parentshowofteniteration6-handler/, function (req, res) {
+  if (req.query.parentshowoften == 'every week' || req.query.parentshowoften == 'every month' || req.query.parentshowoften == 'every term') {
+    res.redirect('../money-support-edu/parents-how-much');
+  } else {
+    res.redirect('../money-support-edu/parents-how-often');
+  }
+});
+
+router.get(/parentshowmuchiteration6-handler/, function (req, res) {
+  var contributiontype = req.session.data['contributiontype'];
+
+    if (req.query.parentshowmuch && contributiontype.includes('relatives')) {
+    res.redirect('../money-support-edu/relatives-how-often');
+  } else if (req.query.parentshowmuch && contributiontype.includes('friends')) {
+    res.redirect('../money-support-edu/friends-how-often');
+  } else if (req.query.parentshowmuch) {
+    res.redirect('../money-support-edu/money-another-1');
+   } else {
+    res.redirect('../money-support-edu/parents-how-much');
+  }
+});
+router.get(/relativesiteration6-handler/, function (req, res) {
+  
+  if (req.query.relatives == 'yes') {
+    res.redirect('../money-support-edu/relatives-how-often');
+  } else if (req.query.relatives == 'no') {
+    res.redirect('../money-support-edu/friends');
+  }
+});
+
+router.get(/relativeshowofteniteration6-handler/, function (req, res) {
+  if (req.query.relativeshowoften == 'every week' || req.query.relativeshowoften == 'every month' || req.query.relativeshowoften == 'every term') {
+    res.redirect('../money-support-edu/relatives-how-much');
+  } else {
+    res.redirect('../money-support-edu/relatives-how-often');
+  }
+});
+
+router.get(/relativeshowmuchiteration6-handler/, function (req, res) {
+  var contributiontype = req.session.data['contributiontype'];
+
+  if (req.query.relativeshowmuch && contributiontype.includes('friends')) {
+    res.redirect('../money-support-edu/friends-how-often');
+  } else  if (req.query.relativeshowmuch){
+    res.redirect('../money-support-edu/money-another-1');
+  } else {
+    res.redirect('../money-support-edu/relatives-how-much');
+  }
+});
+
+
+router.get(/moneyanotheriteration6-handler/, function (req, res) {
+  
+  if (req.query.moneyanother == 'yes') {
+    res.redirect('../money-support-edu/cya');
+  } else if (req.query.moneyanother == 'no') {
+    res.redirect('../money-support-edu/cya');
+  }
 });

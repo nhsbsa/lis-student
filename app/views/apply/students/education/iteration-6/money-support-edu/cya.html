@@ -1,0 +1,205 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+  #capitalize::first-letter {
+    text-transform: uppercase;
+  }
+  .no-border {
+    border-bottom: 0 !important;
+  }
+</style>
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Money to support your education
+      </h2>
+<br>
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+              <dt class="cya-question">
+                Who pays your tuition fees
+              </dt>
+              <dd class="cya-answer">
+                <p> 
+                    {% if 'myself-pay' in data['tuitionfee'] %}
+                    I pay for my tuition fees<br>
+                    {% endif %}
+                    
+                    {% if 'sfe-pay' in data['tuitionfee'] %}
+                    Student Finance England (SFE)<br>
+                    {% endif %}
+    
+                    {% if 'sfw-pay' in data['tuitionfee'] %}
+                    Student Finance Wales (SFW)<br>
+                    {% endif %}
+    
+                    {% if 'saas-pay' in data['tuitionfee'] %}
+                    Student Awards Agency for Scotland (SAAS)<br>
+                    {% endif %}
+    
+                    {% if 'nhs-pay' in data['tuitionfee'] %}
+                    National Health Service (NHS)<br>
+                    {% endif %}
+    
+                    {% if 'none-pay' in data['tuitionfee'] %}
+                    My course is free<br>
+                    {% endif %}
+    
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="who-pays.html">
+                  Change<span class="visually-hidden">Uni</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['tuitionfee'] == "myself-pay" %}
+        
+            <div>
+              <dt class="cya-question">
+                Fees this academic year 
+              </dt>
+              <dd class="cya-answer">
+                <p>£ {{ data['tuitionfeehowmuch'] }}
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="tuition-fee-how-much.html">
+                  Change<span class="visually-hidden">Uni</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+
+
+
+
+
+
+        <div class="no-border">
+          <dt class="cya-question no-border">
+            Receive money from
+          </dt>
+          <dd class="cya-answer no-border">
+            <p> 
+                Parents <br>
+                Relatives <br>
+                Friends
+          </dd>
+          <dd class="cya-change no-border">
+            <a class="link-right" href="contribution-type.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
+        
+        
+        <div class="no-border">
+            
+          <dt class="cya-question no-border">
+              Parents
+          </dt>
+          <dd class="cya-answer no-border">
+              Every week <br>
+            <p> £50
+          </dd>
+          <dd class="cya-change no-border">
+            <a class="link-right" href="#">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        
+        </div>
+       
+   
+        <div class="no-border">
+            
+            <dt class="cya-question no-border">
+                Relatives
+            </dt>
+            <dd class="cya-answer no-border">
+                Every week <br>
+              <p> £50
+            </dd>
+            <dd class="cya-change no-border">
+              <a class="link-right" href="#">
+                Change<span class="visually-hidden">Uni</span>
+              </a>
+            </dd>
+          </div>
+        
+          <div>
+            
+              <dt class="cya-question">
+                  Friends
+              </dt>
+              <dd class="cya-answer">
+                  Every week <br>
+                <p> £10
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="#">
+                  Change<span class="visually-hidden">Uni</span>
+                </a>
+              </dd>
+            
+            </div>
+           
+
+
+
+
+        <div>
+            
+          <dt class="cya-question">
+             Other source
+          </dt>
+          <dd class="cya-answer">
+              None 
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="#">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
+    
+       
+        <br>
+        
+        <div class="form-group">
+
+            <a href="../income/task-list" style="border-bottom: none"> <input class="button" type="submit" value="Next"></a>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
