@@ -5358,47 +5358,47 @@ router.get(/summerbreak-iteration5-handler/, function (req, res) {
 // ************************************
 
 router.get(/nameofcourse-iteration6-handler/, function (req, res) {
-  res.redirect('overseas-student.html');
+  res.redirect('../education-and-training/overseas-student.html');
 });
 
 router.get(/overseasiteration6-handler/, function (req, res) {
-  res.redirect('academic-start.html');
+  res.redirect('../education-and-training/academic-start.html');
 });
 
 
 router.get(/finalyear-iteration6-handler/, function (req, res) {
   
   if (req.query.finalyear == 'yes') {
-    res.redirect('course-finish-date');
+    res.redirect('../education-and-training/course-finish-date');
   } else if (req.query.finalyear == 'no') {
-    res.redirect('academic-start');
+    res.redirect('../education-and-training/academic-start');
   }
 });
 
 router.get(/academiciteration6-handler/, function (req, res) {
-  res.redirect('christmas-break.html');
+  res.redirect('../education-and-training/christmas-break.html');
 });
 
 router.get(/christmasbreak-iteration6-handler/, function (req, res) {
-  res.redirect('christmas-end.html');
+  res.redirect('../education-and-training/christmas-end.html');
 });
 
 router.get(/christmasend-iteration6-handler/, function (req, res) {
-  res.redirect('easter-break.html');
+  res.redirect('../education-and-training/easter-break.html');
 });
 
 router.get(/easterbreak-iteration6-handler/, function (req, res) {
-  res.redirect('easter-end.html');
+  res.redirect('../education-and-training/easter-end.html');
 });
 
 router.get(/easterend-iteration6-handler/, function (req, res) {
-  res.redirect('summer-break.html');
+  res.redirect('../education-and-training/summer-break.html');
 });
 
 router.get(/summerbreak-iteration6-handler/, function (req, res) {
-  res.redirect('cya');
+  res.redirect('../education-and-training/cya');
 });
 
 router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
-  res.redirect('christmas-break.html');
+  res.redirect('../education-and-training/christmas-break.html');
 });
