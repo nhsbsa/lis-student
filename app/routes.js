@@ -5406,8 +5406,9 @@ router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/christmas-break.html');
 });
 
-//Money to support your education//
-
+//*********************************************//
+//Iteration 6 - Money to support your education//
+//*********************************************//
 router.get(/whopaysiteration6-handler/, function (req, res) {
   
   if (req.query.tuitionfee.includes('sfe-pay')) {
@@ -5545,5 +5546,42 @@ router.get(/moneyanotheriteration6-handler/, function (req, res) {
     res.redirect('../money-support-edu/cya');
   } else if (req.query.moneyanother == 'no') {
     res.redirect('../money-support-edu/cya');
+  }
+});
+
+//*********************************************//
+//Iteration 6 - Money to support your education//
+//*********************************************//
+
+router.get(/hospital-iteration6-handler/, function (req, res) {
+  if (req.query.hospital== 'yes') {
+    res.redirect('../where-you-live/live-with-parents');
+  } else if (req.query.hospital == 'no') {
+    res.redirect('../where-you-live/live-with-parents');
+  }
+});
+
+router.get(/liveparentsiteration6-handler/, function (req, res) {
+  if (req.query.livewithparents== 'yes') {
+    res.redirect('../where-you-live/cya');
+  } else if (req.query.livewithparents == 'no') {
+    res.redirect('../where-you-live/type-of-property');
+  }
+});
+
+
+router.get(/typepropertyiteration6-handler/, function (req, res) {
+  if (req.query.typeproperty == 'someoneelse-prop') {
+    res.redirect('../where-you-live/cya');
+  } else if (req.query.typeproperty.includes('rentprop')) {
+    res.redirect('#');
+  } else if (req.query.typeproperty.includes('own-prop')) {
+    res.redirect('#');
+  } else if (req.query.typeproperty.includes('shared-prop')) {
+    res.redirect('#');
+  } else if (req.query.typeproperty.toString() == 'noadd-prop') {
+    res.redirect('#');
+  }  else {
+    res.redirect('../money-support-edu/contribution-type');
   }
 });
