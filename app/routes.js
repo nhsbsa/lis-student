@@ -1223,33 +1223,23 @@ router.get(/educationtrainingPartneriteration6-handler/, function (req, res) {
 });
 
 
-router.get(/fulltimeeduiteration5-handler/, function (req, res) {
+router.get(/fulltimeeduiteration6-handler/, function (req, res) {
  
   if (req.query.fulltimeedu == 'ft') {
-    res.redirect('/beforeyoustart/student/iteration-6/qualification');
+    res.redirect('/beforeyoustart/student/iteration-6/student-funding');
   } else if  (req.query.fulltimeedu == 'pt') {
-    res.redirect('/beforeyoustart/student/iteration-6/qualification');
+    res.redirect('/beforeyoustart/student/iteration-6/student-funding');
   } else {
     res.redirect('/beforeyoustart/student/iteration-6/full-time-edu');
   }
 });
 
 
-router.get(/qualificationiteration5-handler/, function (req, res) {
-  
-  if (req.query.qualification == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-6/student-funding');
-  } else if  (req.query.qualification == 'no') {
-    res.redirect('/kickouts/students-developed');
-  } else {
-    res.redirect('/beforeyoustart/student/iteration-6/qualification');
-  }
-});
 
-router.get(/fundingiteration5-handler/, function (req, res) {
-  if (req.query.funding.includes('SL-help')) {
-    res.redirect('/kickouts/students-developed');
-  } else if (req.query.funding.includes('NHS-help')) {
+
+router.get(/fundingiteration6-handler/, function (req, res) {
+  
+ if (req.query.funding.includes('NHS-help')) {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('HEI-help')) {
     res.redirect('/kickouts/students-developed');
@@ -1259,6 +1249,8 @@ router.get(/fundingiteration5-handler/, function (req, res) {
       res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('none-help')) {
     res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
+  }else if (req.query.funding.includes('SL-help')) {
+      res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
@@ -1266,6 +1258,8 @@ router.get(/fundingiteration5-handler/, function (req, res) {
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,grant-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
     res.redirect('/kickouts/students-developed');
@@ -1302,7 +1296,7 @@ router.get(/livewithparentsiteration6-handler/, function (req, res) {
 });
 
 
-router.get(/whatissingleincomeiteration5-handler/, function (req, res) {
+router.get(/whatissingleincomeiteration6-handler/, function (req, res) {
   if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
