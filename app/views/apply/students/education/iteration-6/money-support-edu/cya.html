@@ -74,10 +74,34 @@ NHSBSA Prototype
               </dd>
               <dd class="cya-change">
                 <a class="link-right" href="who-pays.html">
+                  Change<span class="visually-hidden">who</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if data['tuitionfee'] == "sfe-pay" %}
+           
+            <div>
+              <dt class="cya-question">
+               Award Notice 
+              </dt>
+              <dd class="cya-answer">
+                <p> {{ data['awardnotice'] }}
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="student-loan-copy.html">
                   Change<span class="visually-hidden">Uni</span>
                 </a>
               </dd>
             </div>
+            {% endif %}
+
+
+
+
+
+
+
 
             {% if data['tuitionfee'] == "myself-pay" %}
         
