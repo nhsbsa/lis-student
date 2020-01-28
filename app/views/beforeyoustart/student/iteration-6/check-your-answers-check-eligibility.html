@@ -126,7 +126,14 @@ NHSBSA Prototype
                     <h2 class="heading-small">Full or part time education</h2>
                   </dt>
                   <dd class="cya-answer">
-                      <p>Part time education</p>
+                      <p>
+                      {% if data['fulltimeedu'] == "ft" %}
+                      Full-time education
+                      {% endif %}
+                      {% if data['fulltimeedu'] == "pt" %}
+                      Part-time education
+                      {% endif %}
+                      </p>
                   </dd>
                   <dd class="cya-change">
                     <a href="/beforeyoustart/student/iteration-6/full-time-edu">
@@ -142,7 +149,26 @@ NHSBSA Prototype
                                         <h2 class="heading-small">Financial support to support your education</h2>
                                       </dt>
                                       <dd class="cya-answer">
-                                          <p style="text-transform: capitalize;">No</p>
+                                          <p style="text-transform: capitalize;">
+                                          {% if data['funding'] == "SL-help" %}
+                                          Support from Student Finance England (SFE), Student Finance Wales (SFW), or the Student Awards Agency for Scotland (SAAS)
+                                          {% endif %}
+                                          {% if data['funding'] == "NHS-help" %}
+                                          NHS Bursary
+                                          {% endif %}
+                                          {% if data['funding'] == "HEI-help" %}
+                                          Bursary from your higher education institution (HEI)
+                                          {% endif %}
+                                          {% if data['funding'] == "scholarship-help" %}
+                                          Other scholarship, sponsorship, award or bursary
+                                          {% endif %}
+                                          {% if data['funding'] == "grant-help" %}
+                                          Grant or loan from overseas
+                                          {% endif %}
+                                          {% if data['funding'] == "none-help" %}
+                                          No
+                                          {% endif %}
+                                          </p>
                                       </dd>
                                       <dd class="cya-change">
                                         <a href="/beforeyoustart/student/iteration-6/student-funding">
@@ -158,7 +184,7 @@ NHSBSA Prototype
                                             <h2 class="heading-small">You live with your parents, relatives or friends </h2>
                                           </dt>
                                           <dd class="cya-answer">
-                                              <p style="text-transform: capitalize;">Yes</p>
+                                              <p style="text-transform: capitalize;">{{ data['liveparents'] }}</p>
                                           </dd>
                                           <dd class="cya-change">
                                             <a href="/beforeyoustart/student/iteration-6/live-with-parents">
@@ -254,7 +280,7 @@ NHSBSA Prototype
       <br>
 
       <div class="form-group">
-        <a href="/apply/task-list/task-list-r3"><input class="button" type="submit" value="Next"></a>
+        <a href="/../../../apply/students/education/iteration-6/education-and-training/task-list"><input class="button" type="submit" value="Next"></a>
       </div>
 
 

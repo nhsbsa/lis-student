@@ -65,10 +65,33 @@ NHSBSA Prototype
           </dt>
           <dd class="cya-answer">
              
-            <p> Durham University
+            <p> University of Northumbria At Newcastle
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="#">
+            <a class="link-right" href="name-of-establishment.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        
+        </div>
+
+                <div>
+            
+          <dt class="cya-question">
+             overseas student
+          </dt>
+          <dd class="cya-answer">
+             
+            <p>
+            {% if data['overseas'] == "no" %}
+            No
+            {% endif %}
+            {% if data['overseas'] == "yes" %}
+            Yes
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="name-of-establishment.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
@@ -82,8 +105,13 @@ NHSBSA Prototype
                 Final year
             </dt>
             <dd class="cya-answer">
-                No
-              <p> 
+            <p>
+            {% if data['finalyear'] == "no" %}
+            No
+            {% endif %}
+            {% if data['finalyear'] == "yes" %}
+            Yes
+            {% endif %} 
             </dd>
             <dd class="cya-change">
               <a class="link-right" href="#">
@@ -98,12 +126,12 @@ NHSBSA Prototype
                   Christmas holidays
               </dt>
               <dd class="cya-answer">
-                  Breaks on  : 12.12.2019 <br>
-                  Return on  : 6.1.2020
+                  Breaks on  : {{ data['xmas-br-day'] }}.{{ data['xmas-br-month'] }}.{{ data['xmas-br-year'] }} <br>
+                  Return on  : {{ data['xmas-end-day'] }}.{{ data['xmas-end-month'] }}.{{ data['xmas-end-year'] }}
                 <p> 
               </dd>
               <dd class="cya-change">
-                <a class="link-right" href="#">
+                <a class="link-right" href="christmas-break.html">
                   Change<span class="visually-hidden">Uni</span>
                 </a>
               </dd>
@@ -117,12 +145,12 @@ NHSBSA Prototype
                     Easter holidays
                 </dt>
                 <dd class="cya-answer">
-                    Breaks on :  27.3.2020 <br>
-                    Return on : 25.4.2020
+                  Breaks on  : {{ data['east-br-day'] }}.{{ data['east-br-month'] }}.{{ data['east-br-year'] }} <br>
+                  Return on  : {{ data['east-end-day'] }}.{{ data['east-end-month'] }}.{{ data['east-end-year'] }}
                   <p> 
                 </dd>
                 <dd class="cya-change">
-                  <a class="link-right" href="#">
+                  <a class="link-right" href="easter-break.html">
                     Change<span class="visually-hidden">Uni</span>
                   </a>
                 </dd>
@@ -136,12 +164,13 @@ NHSBSA Prototype
                       Summer holidays
                   </dt>
                   <dd class="cya-answer">
-                      Breaks on : 14.6.2020 <br>
-                      Return on : 5.9.2020
-                    <p> 
+                  Breaks on  : {{ data['sum-br-day'] }}.{{ data['sum-br-month'] }}.{{ data['sum-br-year'] }} <br>
+                  Return on  : {{ data['sum-end-day'] }}.{{ data['sum-end-month'] }}.2020
+                    <p>
+                  <!-- Should overseas question be displayed? --> 
                   </dd>
                   <dd class="cya-change">
-                    <a class="link-right" href="#">
+                    <a class="link-right" href="academic-start.html">
                       Change<span class="visually-hidden">Uni</span>
                     </a>
                   </dd>

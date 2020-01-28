@@ -1216,7 +1216,7 @@ router.get(/educationtrainingiteration6-handler/, function (req, res) {
 router.get(/educationtrainingPartneriteration6-handler/, function (req, res) {
  
   if (req.query.educationtrainingPartner == 'yes') {
-    res.redirect('../../kickouts/students-developed');
+    res.redirect('/kickouts/students-developed');
   } else if (req.query.educationtrainingPartner == 'no') {
     res.redirect('/beforeyoustart/student/iteration-6/money-coming-in-partner');
   }
@@ -5369,13 +5369,17 @@ router.get(/overseasiteration6-handler/, function (req, res) {
 });
 
 
+//router.get(/finalyear-iteration6-handler/, function (req, res) {
+// 
+//  if (req.query.finalyear == 'yes') {
+//   res.redirect('../education-and-training/course-finish-date');
+//  } else if (req.query.finalyear == 'no') {
+//    res.redirect('../education-and-training/academic-start');
+//  }
+//});
+
 router.get(/finalyear-iteration6-handler/, function (req, res) {
-  
-  if (req.query.finalyear == 'yes') {
-    res.redirect('../education-and-training/course-finish-date');
-  } else if (req.query.finalyear == 'no') {
-    res.redirect('../education-and-training/academic-start');
-  }
+  res.redirect('../education-and-training/cya.html');
 });
 
 router.get(/academiciteration6-handler/, function (req, res) {
@@ -5399,7 +5403,7 @@ router.get(/easterend-iteration6-handler/, function (req, res) {
 });
 
 router.get(/summerbreak-iteration6-handler/, function (req, res) {
-  res.redirect('../education-and-training/cya');
+  res.redirect('../education-and-training/final-year.html');
 });
 
 router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
