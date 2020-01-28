@@ -86,7 +86,13 @@ NHSBSA Prototype
                Award Notice 
               </dt>
               <dd class="cya-answer">
-                <p> {{ data['awardnotice'] }}
+                <p> 
+                {% if data['awardnotice'] == "no" %}
+                No
+                {% endif %}
+                {% if data['awardnotice'] == "yes" %}
+                Yes
+                {% endif %}
               </dd>
               <dd class="cya-change">
                 <a class="link-right" href="student-loan-copy.html">
