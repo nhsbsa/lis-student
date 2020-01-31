@@ -140,7 +140,7 @@ NHSBSA Prototype
           <dd class="cya-answer no-border">
             <p> 
                 <!-- Parents <br> -->
-                Relatives <br>
+                Other family members <br>
                 <!-- Friends -->
           </dd>
           <dd class="cya-change no-border">
@@ -172,14 +172,20 @@ NHSBSA Prototype
         <div class="no-border">
             
             <dt class="cya-question">
-                Relatives
+                Other family members
             </dt>
             <dd class="cya-answer">
-                Every week <br>
-              <p> £50
+                {% if data['relativeshowoften'] == "every week" %}
+                Every week
+                {% endif %}
+                {% if data['relativeshowoften'] == "every month" %}
+                Every month
+                {% endif %}
+                <br>
+                <p> £{{ data['relativeshowmuch']}}
             </dd>
             <dd class="cya-change">
-              <a class="link-right" href="#">
+              <a class="link-right" href="relatives-how-often.html">
                 Change<span class="visually-hidden">Uni</span>
               </a>
             </dd>
@@ -215,7 +221,7 @@ NHSBSA Prototype
               None 
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="#">
+            <a class="link-right" href="money-another-1.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
