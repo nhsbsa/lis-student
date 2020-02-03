@@ -14,8 +14,7 @@ NHSBSA Prototype
   <div class="phase-banner">
     <p>
       <strong class="phase-tag">BETA</strong>
-      This is a new service
-      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      This is a new service - your <a target="" href="#">feedback</a> will help us to improve it.
     </p>
   </div>
 
@@ -28,6 +27,9 @@ NHSBSA Prototype
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
       </header>
 
+<!-- PUT MONTH SPELLING IN DATES -->
+
+
       <!-- only add a heading for a list if there is more than one list -->
       <h2 class="heading-medium">
         Education and training
@@ -39,10 +41,29 @@ NHSBSA Prototype
       <!--   * none for single group of q&a -->
       <dl class="govuk-check-your-answers cya-questions-short">
 
-
+        <!-- What qualification -->
         <div>
           <dt class="cya-question">
             Name of course
+          </dt>
+          <dd class="cya-answer">
+            <p> University of Northumbria</p>
+                
+             <!--{{ data['course'] }} -->
+            
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="name-of-establishment.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
+        <!-- /. -->
+
+        <!-- What qualification -->
+        <div>
+          <dt class="cya-question">
+            Qualification 
           </dt>
           <dd class="cya-answer">
             <p> 
@@ -56,26 +77,10 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        
-        
-        <div>
-            
-          <dt class="cya-question">
-             Name of school, college or university
-          </dt>
-          <dd class="cya-answer">
-             
-            <p> University of Northumbria At Newcastle
-          </dd>
-          <dd class="cya-change">
-            <a class="link-right" href="name-of-establishment.html">
-              Change<span class="visually-hidden">Uni</span>
-            </a>
-          </dd>
-        
-        </div>
+        <!-- /. -->
+      
 
-                <div>
+          <div>
             
           <dt class="cya-question">
              Overseas student
@@ -91,36 +96,34 @@ NHSBSA Prototype
             {% endif %}
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="name-of-establishment.html">
+            <a class="link-right" href="overseas-student.html">
               Change<span class="visually-hidden">Uni</span>
             </a>
           </dd>
         
         </div>
        
-   
+        <!-- start date -->
         <div>
             
-            <dt class="cya-question">
-                Final year
-            </dt>
-            <dd class="cya-answer">
-            <p>
-            {% if data['finalyear'] == "no" %}
-            No
-            {% endif %}
-            {% if data['finalyear'] == "yes" %}
-            Yes
-            {% endif %} 
-            </dd>
-            <dd class="cya-change">
-              <a class="link-right" href="#">
-                Change<span class="visually-hidden">Uni</span>
-              </a>
-            </dd>
-          </div>
+          <dt class="cya-question">
+              Start date
+          </dt>
+          <dd class="cya-answer">
+          <p>
+            {{ data['sum-end-day'] }}.{{ data['sum-end-month'] }}.{{ data['sum-end-year'] }}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="academic-start.html">
+              Change<span class="visually-hidden">Uni</span>
+            </a>
+          </dd>
+        </div>
+        <!-- /. -->
+
         
-          <div>
+        <div>
+
             
               <dt class="cya-question">
                   Christmas holidays
@@ -176,6 +179,29 @@ NHSBSA Prototype
                   </dd>
                 
                 </div>
+
+                <div>
+            
+                  <dt class="cya-question">
+                      Final year
+                  </dt>
+                  <dd class="cya-answer">
+                  <p>
+                  {% if data['finalyear'] == "no" %}
+                  No
+                  {% endif %}
+                  {% if data['finalyear'] == "yes" %}
+                  Yes
+                  {% endif %} 
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="#">
+                      Change<span class="visually-hidden">Uni</span>
+                    </a>
+                  </dd>
+                </div>
+              
+               
 
         
     
