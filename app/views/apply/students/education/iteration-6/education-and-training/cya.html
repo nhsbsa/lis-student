@@ -103,7 +103,7 @@ NHSBSA Prototype
         
         </div>
        
-        <!-- start date -->
+        <!-- start date
         <div>
             
           <dt class="cya-question">
@@ -119,7 +119,7 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        <!-- /. -->
+         -->
 
         
         <div>
@@ -129,8 +129,8 @@ NHSBSA Prototype
                   Christmas holidays
               </dt>
               <dd class="cya-answer">
-                  Breaks on  : {{ data['xmas-br-day'] }}.{{ data['xmas-br-month'] }}.{{ data['xmas-br-year'] }} <br>
-                  Return on  : {{ data['xmas-end-day'] }}.{{ data['xmas-end-month'] }}.{{ data['xmas-end-year'] }}
+                  Breaks on  : {{ data['xmas-br-day'] }} <span class="cya-month">{{ data['xmas-br-month'] }}</span> {{ data['xmas-br-year'] }} <br>
+                  Return on  : {{ data['xmas-end-day'] }} January {{ data['xmas-end-year'] }}
                 <p> 
               </dd>
               <dd class="cya-change">
@@ -145,11 +145,11 @@ NHSBSA Prototype
             <div>
             
                 <dt class="cya-question">
-                    Easter holidays
+                    <span class="cya-month">Easter holidays</span>
                 </dt>
                 <dd class="cya-answer">
-                  Breaks on  : {{ data['east-br-day'] }}.{{ data['east-br-month'] }}.{{ data['east-br-year'] }} <br>
-                  Return on  : {{ data['east-end-day'] }}.{{ data['east-end-month'] }}.{{ data['east-end-year'] }}
+                  Breaks on  : {{ data['east-br-day'] }} <span class="cya-month">{{ data['east-br-month'] }}</span> {{ data['east-br-year'] }} <br>
+                  Return on  : {{ data['east-end-day'] }} <span class="cya-month">{{ data['east-end-month'] }}</span> {{ data['east-end-year'] }}
                   <p> 
                 </dd>
                 <dd class="cya-change">
@@ -167,8 +167,8 @@ NHSBSA Prototype
                       Summer holidays
                   </dt>
                   <dd class="cya-answer">
-                  Breaks on  : {{ data['sum-br-day'] }}.{{ data['sum-br-month'] }}.{{ data['sum-br-year'] }} <br>
-                  Return on  : {{ data['sum-end-day'] }}.{{ data['sum-end-month'] }}.2020
+                  Breaks on  : {{ data['sum-br-day'] }} <span class="cya-month">{{ data['sum-br-month']}}</span> {{ data['sum-br-year'] }} <br>
+                  Return on  : {{ data['sum-end-day'] }} <span class="cya-month">{{ data['sum-end-month'] }}</span> 2020
                     <p>
                   <!-- Should overseas question be displayed? --> 
                   </dd>
@@ -213,7 +213,80 @@ NHSBSA Prototype
             <a href="task-list-r6.html" style="border-bottom: none"> <input class="button" type="submit" value="Next"></a>
 
     </div>
+
+
   </div>
+
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script>
+$(".cya-month").text(function () {
+    return $(this).text().replace("10", "October");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("11", "November");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("12", "December");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("01", "January");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("02", "February");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("03", "March");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("04", "April");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("05", "May");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("06", "June");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("07", "July");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("08", "August");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("09", "September");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("1", "January");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("2", "February");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("3", "March");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("4", "April");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("5", "May");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("6", "June");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("7", "July");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("8", "August");
+});
+$(".cya-month").text(function () {
+    return $(this).text().replace("9", "September");
+});
+
+</script>
 </main>
 
 {% endblock %}
