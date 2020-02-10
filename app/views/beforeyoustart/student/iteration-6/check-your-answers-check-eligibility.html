@@ -10,8 +10,7 @@ NHSBSA Prototype
   <div class="phase-banner">
     <p>
       <strong class="phase-tag">BETA</strong>
-      This is a new service
-      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
     </p>
   </div>
 
@@ -45,7 +44,7 @@ NHSBSA Prototype
               </dd>
               <dd class="cya-change">
                 <a href="/beforeyoustart/student/iteration-6/country-split">
-                  Change
+                  Change<span class="visually-hidden"> country you live in</span>
                 </a>
               </dd>
             </div>
@@ -58,7 +57,7 @@ NHSBSA Prototype
               </dd>
               <dd class="cya-change">
                 <a href="/beforeyoustart/student/iteration-6/care-home-split">
-                  Change
+                  Change<span class="visually-hidden"> if you live in a care home</span>
                 </a>
               </dd>
             </div>
@@ -72,7 +71,7 @@ NHSBSA Prototype
               </dd>
               <dd class="cya-change">
                 <a href="/beforeyoustart/student/iteration-6/partner">
-                  Change
+                  Change<span class="visually-hidden"> if you live with a partner</span>
                 </a>
               </dd>
             </div>
@@ -93,12 +92,12 @@ NHSBSA Prototype
               <dd class="cya-change">
                   {% if data['partner'] == "yes" %}
                   <a href="/beforeyoustart/asylum/claimed-asylum-partner">
-                    Change
+                    Change <span class="visually-hidden"> if you and your partner claimed asylum</span>
                   </a>
                   {% endif %}
                   {% if data['partner'] == "no" %}
                   <a href="/beforeyoustart/student/iteration-6/claimed-asylum-single">
-                    Change
+                    Change<span class="visually-hidden"> if you claimed asylum</span>
                   </a>
                   {% endif %}
               </dd>
@@ -116,14 +115,14 @@ NHSBSA Prototype
                 </dd>
                 <dd class="cya-change">
                   <a href="/beforeyoustart/student/iteration-6/edu-or-training">
-                    Change
+                    Change<span class="visually-hidden"> education or training</span>
                   </a>
                 </dd>
               </div>
     
               <div>
                   <dt class="cya-question">
-                    <h2 class="heading-small">Full or part time education</h2>
+                    <h2 class="heading-small">Full-time or part-time education</h2>
                   </dt>
                   <dd class="cya-answer">
                       <p>
@@ -137,7 +136,7 @@ NHSBSA Prototype
                   </dd>
                   <dd class="cya-change">
                     <a href="/beforeyoustart/student/iteration-6/full-time-edu">
-                      Change
+                      Change<span class="visually-hidden"> full-time or part-time education</span>
                     </a>
                   </dd>
                 </div>
@@ -172,7 +171,7 @@ NHSBSA Prototype
                                       </dd>
                                       <dd class="cya-change">
                                         <a href="/beforeyoustart/student/iteration-6/student-funding">
-                                          Change
+                                          Change<span class="visually-hidden"> financial support</span>
                                         </a>
                                       </dd>
                                     </div>
@@ -188,7 +187,7 @@ NHSBSA Prototype
                                           </dd>
                                           <dd class="cya-change">
                                             <a href="/beforeyoustart/student/iteration-6/live-with-parents">
-                                              Change
+                                              Change<span class="visually-hidden"> if you live with parents, relatives or friends</span>
                                             </a>
                                           </dd>
                                         </div>
@@ -221,7 +220,7 @@ NHSBSA Prototype
                         </dd>
                         <dd class="cya-change">
                           <a href="/beforeyoustart/student/iteration-6/money-coming-in-single">
-                            Change
+                            Change<span class="visually-hidden"> where you get money from</span>
                           </a>
                         </dd>
                       </div>
@@ -251,7 +250,7 @@ NHSBSA Prototype
                           </dd>
                           <dd class="cya-change">
                             <a href="/beforeyoustart/student/iteration-6/money-coming-in-single">
-                              Change
+                              Change<span class="visually-hidden"> your partner's income</span>
                             </a>
                           </dd>
                         </div>
@@ -259,14 +258,14 @@ NHSBSA Prototype
     
                       <div>
                           <dt class="cya-question">
-                            <h2 class="heading-small">Have more than £6000 in savings</h2>
+                            <h2 class="heading-small">Have more than &pound;6000 in savings</h2>
                           </dt>
                           <dd class="cya-answer">
                               <p style="text-transform: capitalize;">{{ data['savings'] }}</p>
                           </dd>
                           <dd class="cya-change">
                             <a href="/beforeyoustart/student/iteration-6/more-than-6000">
-                              Change
+                              Change<span class="visually-hidden"> if you have more than &pound;6000 in savings</span>
                             </a>
                           </dd>
                         </div>
@@ -280,7 +279,7 @@ NHSBSA Prototype
       <br>
 
       <div class="form-group">
-        <a href="/../../../apply/students/education/iteration-6/education-and-training/task-list"><input class="button" type="submit" value="Next"></a>
+        <a class="button" href="/../../../apply/students/education/iteration-6/education-and-training/task-list">Next</a>
       </div>
 
 
