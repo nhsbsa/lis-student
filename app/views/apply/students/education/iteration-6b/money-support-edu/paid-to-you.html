@@ -1,0 +1,116 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<style>
+.heading-no-margin{
+  margin-top:0em;
+}
+    .column-half {
+            border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+    padding: 1em;
+    margin: 1em 0em 1em 1em;
+    width: 47%;
+    }
+    @media (max-width: 641px) {
+  .column-half {
+    width: 92%;
+    margin: 1em 1em 0em 1em;
+      padding:15px;
+      height:auto;
+  }
+}
+    .student-statement{
+        width:100%;
+            display: block;
+    margin-left: auto;
+    margin-right: auto }
+    }
+
+    @media (max-width: 641px) {
+  .student-statement {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+  }
+}
+</style>
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Money to support your education</p>
+
+            <h1 class="page-header--lede heading-large">What is the total amount of student finance paid to you for this academic year?</h1>
+
+            </header>
+</div>
+</div>
+<details>
+
+  <summary style="margin-bottom: 1.5em"><span class="summary">Where to find your total amount of student finance</span></summary>
+  <div class="grid-row">
+   <div class="column-half">
+  <h2 class="heading-medium heading-no-margin">
+    Your student finance letter
+  </h2>
+       <p>Your total amount of student finance is shown on your student finance entitlement letter.</p>
+       <p>It's within the blue box saying <span class="strong">'Total student finance we'll pay to you'</span>.</p>
+        <img class="student-statement" src="/public/images/bsa/student-eng.png" alt="an image showing that your total amount of student finance is shown within a blue box on the first page of your entitlement letter" >
+             </div>
+              <div class="column-half">
+  <h2 class="heading-medium heading-no-margin">
+    Your student finance online account
+  </h2>
+                  <p>Your total amount of student finance is shown in the payments section of your online account.</p>
+                  <p>It's shown under the heading <span class="strong">'Maintenance loan- paid to you'</span>.</p>
+        <img class="student-statement" src="/public/images/bsa/student-engonline-02.png" style="" alt="an image showing that your take-home pay is on page 2 of your Universal Credit monthly payment letter, under the heading'3. We then take account of your take-home pay'">
+
+            </details>
+
+      <form action="paidtoyouiteration6b-handler" method="get" class="form">
+          
+          <fieldset>
+            <div class="form-group">
+            <p class="form-hint" style="margin-bottom:0em">The amount must include pence. For example, £8,430.00</p>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px" id="pay" type="text" name="paidtoyou">
+            </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

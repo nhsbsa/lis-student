@@ -1,0 +1,908 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<style>
+  .ui-autocomplete {
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    border: 2px solid #6f777b;
+    max-height: 350px;
+    overflow-x: hidden;
+  }
+
+  .ui-autocomplete .ui-menu-item {
+    border-top: 1px solid #bfc1c3;
+    display: block;
+    padding: 4px 6px;
+    color: #0b0c0c;
+    cursor: pointer;
+  }
+
+  .ui-autocomplete .ui-menu-item:first-child {
+    border-top: none;
+  }
+
+  .ui-autocomplete .ui-menu-item.ui-state-focus {
+    font-weight: bold;
+    background-color: #6f777b;
+    color: #fff;
+  }
+
+  .ui-autocomplete {
+    width: 100%;
+  }
+
+  @media (min-width: 641px) {
+    .ui-autocomplete {
+      width: 66.66%;
+    }
+  }
+
+  .added-country .form-control {
+    padding: 0.5em;
+  }
+
+  .typeahead,
+  .tt-query,
+  .tt-hint {
+    font-size: 19px;
+    font-weight: 300;
+    text-transform: none;
+    margin: 0;
+    /* padding: 0.5em; */
+  }
+
+  .tt-hint {
+    display: none;
+  }
+
+  .tt-dropdown-menu {
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+
+  .tt-suggestion {
+    padding: 0.5em;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .tt-suggestion p {
+    margin: 0;
+  }
+
+  .tt-suggestion.tt-is-under-cursor {
+    color: #fff;
+    background-color: #0097cf;
+  }
+
+  .twitter-typeahead {
+    width: 100%;
+  }
+
+  .validation-wrapper .optional-section .twitter-typeahead input {
+    margin-bottom: 0;
+  }
+
+  .test-case {
+    overflow: visible;
+  }
+
+  .visually-hidden,
+  .visuallyhidden,
+  .hidden-hint .screenreader-punctuation,
+  .hidden-hint .form-hint {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+
+  .added-country .form-control {
+    padding: 0.5em;
+  }
+
+  .tt-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 65%;
+    max-height: 220px;
+    overflow-y: scroll;
+  }
+
+  .tt-suggestion {
+    padding: 0.5em;
+  }
+
+  .tt-suggestion:hover,
+  .tt-suggestion.tt-cursor {
+    color: #fff;
+    background-color: #0097cf;
+  }
+
+  .tt-suggestion:hover {
+    cursor: pointer;
+  }
+
+  .twitter-typeahead {
+    width: 100%;
+  }
+
+  .test-case {
+    overflow: visible;
+  }
+
+  dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin: auto;
+    border: solid;
+    padding: 1em;
+    background: white;
+    color: black;
+    display: none;
+  }
+
+  dialog[open] {
+    display: block;
+  }
+
+  dialog+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* for small devices, modal dialogs go full-screen */
+  @media screen and (max-width: 540px) {
+    dialog[_polyfill_modal] {
+      /* TODO: implement */
+      top: 0;
+      width: auto;
+      margin: 1em;
+    }
+  }
+
+  ._dialog_overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  dialog {
+    display: block;
+    position: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  dialog h1 {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 24px;
+    line-height: 1.0416666667;
+  }
+
+  @media (min-width: 641px) {
+    dialog h1 {
+      font-size: 36px;
+      line-height: 1.1111111111;
+    }
+  }
+
+  dialog[open] {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 15px;
+    width: 90%;
+    border: 5px solid black;
+  }
+
+  @media (min-width: 641px) {
+    dialog[open] {
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 500px;
+    }
+  }
+
+  dialog[open]+.backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  dialog[open]::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .dialog-button {
+    display: none;
+  }
+
+  .js-enabled .dialog-button {
+    display: block;
+  }
+
+  .js-enabled dialog {
+    display: none;
+  }
+
+  .js-enabled dialog[open] {
+    display: block;
+    position: absolute;
+  }
+
+  .dialog-is-open {
+    overflow: hidden;
+  }
+
+  .disclosure-control {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #005ea5;
+    background: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    text-decoration: underline;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  @media (min-width: 641px) {
+    .disclosure-control {
+      font-size: 19px;
+      line-height: 1.3157894737;
+    }
+  }
+
+  .disclosure-control__icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url("/public/images/disclosure/icon-closed.png") no-repeat;
+    position: absolute;
+    left: 0;
+    top: 4px;
+  }
+
+  .disclosure-control[aria-expanded="true"] .disclosure-control__icon {
+    background: url("/public/images/disclosure/icon-open.png") no-repeat;
+  }
+
+  .js-enabled div[aria-hidden="true"] {
+    display: none;
+  }
+
+  .js-enabled div[aria-hidden="false"] {
+    display: block;
+  }
+
+  .grid-row:after,
+  #content:after,
+  .notice:after,
+  .panel:after,
+  fieldset:after,
+  .form-section:after,
+  .form-group:after,
+  .form-block:after,
+  .breadcrumbs ol:after,
+  .accordion-with-descriptions-01 .subsection-controls:after,
+  .accordion-with-descriptions-02 .subsection-controls:after,
+  .accordion-with-descriptions-03 .subsection-controls:after,
+  .question:after,
+  .question-first:after,
+  div.test-case-overflow-allowed:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .hint-underneath,
+  .hint {
+    display: block;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0 0 5px 0;
+    color: #6f777b;
+    clear: both;
+  }
+
+  @media (min-width: 641px) {
+
+    .hint-underneath,
+    .hint {
+      font-size: 19px;
+      line-height: 1.3157894737;
+    }
+  }
+</style>
+
+<style>
+  .callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+  }
+
+  .form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 641px) {
+    .form-group {
+      margin-bottom: 30px;
+    }
+  }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Education and training</p>
+        <h1 id="name-school" class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is the name of your school, college or university?</h1>
+      </header>
+
+      <form action="../education-and-training/name-of-course.html" method="get" class="form">
+        <div class="form-group">
+
+
+          <div class="test-case" style="overflow: visible">
+            <div>
+              <select id="establishment" class="typeahead js-hidden" name="establishment" aria-required="true" aria-labelledby="name-school">
+                <option value=""></option>
+                <!-- Start of Universities -->
+                <option value="Leeds College of Music">Leeds College of Music</option>
+                <option value="Leeds College of Art">Leeds College of Art</option>
+                <option value="Plymouth College of Art">Plymouth College of Art</option>
+                <option value="Falmouth University">Falmouth University</option>
+                <option value="University of Hertfordshire">University of Hertfordshire</option>
+                <option value="University of Birmingham">University of Birmingham</option>
+                <option value="University College Birmingham">University College Birmingham</option>
+                <option value="Newman University, Birmingham">Newman University, Birmingham</option>
+                <option value="Aston University">Aston University</option>
+                <option value="Birmingham City University">Birmingham City University</option>
+                <option value="University of Bath">University of Bath</option>
+                <option value="Bath Spa University">Bath Spa University</option>
+                <option value="University of Bradford">University of Bradford</option>
+                <option value="Bournemouth University">Bournemouth University</option>
+                <option value="The Arts University College At Bournemouth">The Arts University College At Bournemouth
+                </option>
+                <option value="University of Bolton">University of Bolton</option>
+                <option value="University of Sussex">University of Sussex</option>
+                <option value="University of Brighton">University of Brighton</option>
+                <option value="Ravensbourne">Ravensbourne</option>
+                <option value="University of the West of England, Bristol">University of the West of England, Bristol
+                </option>
+                <option value="University of Bristol">University of Bristol</option>
+                <option value="University of Cambridge">University of Cambridge</option>
+                <option value="University of Chester">University of Chester</option>
+                <option value="Anglia Ruskin University">Anglia Ruskin University</option>
+                <option value="Writtle University College">Writtle University College</option>
+                <option value="University of Essex">University of Essex</option>
+                <option value="Canterbury Christ Church University">Canterbury Christ Church University</option>
+                <option value="University of Kent">University of Kent</option>
+                <option value="Coventry University">Coventry University</option>
+                <option value="University of Warwick">University of Warwick</option>
+                <option value="Rose Bruford College">Rose Bruford College</option>
+                <option value="University of Derby">University of Derby</option>
+                <option value="University of Durham">University of Durham</option>
+                <option value="Queen Mary and Westfield College">Queen Mary and Westfield College</option>
+                <option value="University of East London">University of East London</option>
+                <option value="City University">City University</option>
+                <option value="London Metropolitan University">London Metropolitan University</option>
+                <option value="University of Exeter">University of Exeter</option>
+                <option value="University of Gloucestershire">University of Gloucestershire</option>
+                <option value="Royal Agricultural University">Royal Agricultural University</option>
+                <option value="University of Surrey">University of Surrey</option>
+                <option value="University College for the Creative Arts">University College for the Creative Arts
+                </option>
+                <option value="University of Huddersfield">University of Huddersfield</option>
+                <option value="Buckinghamshire New University">Buckinghamshire New University</option>
+                <option value="University of Hull">University of Hull</option>
+                <option value="Kingston University">Kingston University</option>
+                <option value="Liverpool Hope University">Liverpool Hope University</option>
+                <option value="Liverpool John Moores University">Liverpool John Moores University</option>
+                <option value="Edge Hill University">Edge Hill University</option>
+                <option value="University of Liverpool">University of Liverpool</option>
+                <option value="University of Lancaster">University of Lancaster</option>
+                <option value="University of Leicester">University of Leicester</option>
+                <option value="De Montfort University">De Montfort University</option>
+                <option value="Loughborough University">Loughborough University</option>
+                <option value="Bishop Grosseteste University">Bishop Grosseteste University</option>
+                <option value="University of Lincoln">University of Lincoln</option>
+                <option value="Leeds Beckett University">Leeds Beckett University</option>
+                <option value="Leeds Trinity University">Leeds Trinity University</option>
+                <option value="University of Leeds">University of Leeds</option>
+                <option value="Northern School of Contemporary Dance">Northern School of Contemporary Dance</option>
+                <option value="University of Bedfordshire">University of Bedfordshire</option>
+                <option value="University of Manchester">University of Manchester</option>
+                <option value="Royal Northern College of Music">Royal Northern College of Music</option>
+                <option value="The Manchester Metropolitan University">The Manchester Metropolitan University</option>
+                <option value="University of Salford">University of Salford</option>
+                <option value="Cranfield University">Cranfield University</option>
+                <option value="The Open University">The Open University</option>
+                <option value="Middlesex University">Middlesex University</option>
+                <option value="University of Newcastle Upon Tyne">University of Newcastle Upon Tyne</option>
+                <option value="University of East Anglia">University of East Anglia</option>
+                <option value="University of Northumbria">University of Northumbria</option>
+                <option value="The Nottingham Trent University">The Nottingham Trent University</option>
+                <option value="University of Nottingham">University of Nottingham</option>
+                <option value="University of Northampton">University of Northampton</option>
+                <option value="Norwich University of the Arts">Norwich University of the Arts</option>
+                <option value="The Royal Veterinary College">The Royal Veterinary College</option>
+                <option value="London Business School">London Business School</option>
+                <option value="Royal Academy of Music">Royal Academy of Music</option>
+                <option value="Central School of Speech and Drama">Central School of Speech and Drama</option>
+                <option value="University of Oxford">University of Oxford</option>
+                <option value="Oxford Brookes University">Oxford Brookes University</option>
+                <option value="University of Plymouth">University of Plymouth</option>
+                <option value="College of St Mark & St John">College of St Mark & St John</option>
+                <option value="University of Portsmouth">University of Portsmouth</option>
+                <option value="University of Chichester">University of Chichester</option>
+                <option value="University of Central Lancashire">University of Central Lancashire</option>
+                <option value="University of Reading">University of Reading</option>
+                <option value="Sheffield Hallam University">Sheffield Hallam University</option>
+                <option value="University of Sheffield">University of Sheffield</option>
+                <option value="London South Bank University">London South Bank University</option>
+                <option value="King's College London">King's College London</option>
+                <option value="Trinity Laban">Trinity Laban</option>
+                <option value="University of Greenwich">University of Greenwich</option>
+                <option value="Goldsmiths College, University of London">Goldsmiths College, University of London
+                </option>
+                <option value="Southampton Solent University">Southampton Solent University</option>
+                <option value="University of Southampton">University of Southampton</option>
+                <option value="University of Winchester">University of Winchester</option>
+                <option value="University of Sunderland">University of Sunderland</option>
+                <option value="Staffordshire University">Staffordshire University</option>
+                <option value="University of Keele">University of Keele</option>
+                <option value="Roehampton University">Roehampton University</option>
+                <option value="St George's Hospital Medical School">St George's Hospital Medical School</option>
+                <option value="Imperial College of Science, Technology and Medicine">Imperial College of Science,
+                  Technology and Medicine</option>
+                <option value="Royal College of Music">Royal College of Music</option>
+                <option value="Royal College of Art">Royal College of Art</option>
+                <option value="Institute of Cancer Research">Institute of Cancer Research</option>
+                <option value="Harper Adams University">Harper Adams University</option>
+                <option value="Teesside University">Teesside University</option>
+                <option value="St Mary's University, Twickenham">St Mary's University, Twickenham</option>
+                <option value="Royal Holloway and Bedford New College">Royal Holloway and Bedford New College</option>
+                <option value="Brunel University">Brunel University</option>
+                <option value="University of Westminster">University of Westminster</option>
+                <option value="The Royal College of Nursing">The Royal College of Nursing</option>
+                <option value="University of the Arts London">University of the Arts London</option>
+                <option value="University of West London">University of West London</option>
+                <option value="University College London">University College London</option>
+                <option value="London School of Hygiene & Tropical Medicine">London School of Hygiene & Tropical
+                  Medicine</option>
+                <option value="University of London">University of London</option>
+                <option value="Birkbeck College">Birkbeck College</option>
+                <option value="Institute of Education">Institute of Education</option>
+                <option value="School of Oriental and African Studies">School of Oriental and African Studies</option>
+                <option value="Conservatoire for Dance and Drama">Conservatoire for Dance and Drama</option>
+                <option value="London School of Economics and Political Science">London School of Economics and
+                  Political Science</option>
+                <option value="University of Worcester">University of Worcester</option>
+                <option value="University of Wolverhampton">University of Wolverhampton</option>
+                <option value="University of York">University of York</option>
+                <option value="York St John University">York St John University</option>
+                <option value="Courtauld Institute of Art">Courtauld Institute of Art</option>
+                <option value="University of Cumbria">University of Cumbria</option>
+                <option value="Heythrop College">Heythrop College</option>
+                <option value="Guildhall School of Music and Drama">Guildhall School of Music and Drama</option>
+                <option value="Liverpool Institute of Performing Arts">Liverpool Institute of Performing Arts</option>
+                <option value="University of Buckingham">University of Buckingham</option>
+                <!-- Start of Colleges -->
+                <option value="Grimsby Institute Group of Further and Higher Education">Grimsby Institute Group of
+                  Further and Higher Education</option>
+                <option value="National College for Creative and Cultural Industries">National College for Creative and
+                  Cultural Industries</option>
+                <option value="North Warwickshire and South Leicestershire College">North Warwickshire and South
+                  Leicestershire College</option>
+                <option value="South Essex College of Further and Higher Education">South Essex College of Further and
+                  Higher Education</option>
+                <option value="Herefordshire, Ludlow and North Shropshire College">Herefordshire, Ludlow and North
+                  Shropshire College</option>
+                <option value="Richmond and Hillcroft Adult and Community College">Richmond and Hillcroft Adult and
+                  Community College</option>
+                <option value="Guildford College of Further and Higher Education">Guildford College of Further and
+                  Higher Education</option>
+                <option value="Havering College of Further and Higher Education">Havering College of Further and Higher
+                  Education</option>
+                <option value="Northern College for Residential Adult Education">Northern College for Residential Adult
+                  Education</option>
+                <option value="Adult Learning Wales (Addysg Oedolion Cymru)">Adult Learning Wales (Addysg Oedolion
+                  Cymru)</option>
+                <option value="Brighton, Hove and Sussex Sixth Form College">Brighton, Hove and Sussex Sixth Form
+                  College</option>
+                <option value="Newcastle and Stafford Colleges Group (NSCG)">Newcastle and Stafford Colleges Group
+                  (NSCG)</option>
+                <option value="College of Richard Collyer in Horsham (The)">College of Richard Collyer in Horsham (The)
+                </option>
+                <option value="Ealing, Hammersmith and West London College">Ealing, Hammersmith and West London College
+                </option>
+                <option value="Ada, National College for Digital Skills">Ada, National College for Digital Skills
+                </option>
+                <option value="Prospects College of Advanced Technology">Prospects College of Advanced Technology
+                </option>
+                <option value="South Gloucestershire and Stroud College">South Gloucestershire and Stroud College
+                </option>
+                <option value="Hartlepool College of Further Education">Hartlepool College of Further Education</option>
+                <option value="North East Surrey College of Technology">North East Surrey College of Technology</option>
+                <option value="Wiltshire College and University Centre">Wiltshire College and University Centre</option>
+                <option value="Notre Dame Catholic Sixth Form College">Notre Dame Catholic Sixth Form College</option>
+                <option value="St Charles Catholic Sixth Form College">St Charles Catholic Sixth Form College</option>
+                <option value="Cheadle and Marple Sixth Form College">Cheadle and Marple Sixth Form College</option>
+                <option value="Greater Brighton Metropolitan College">Greater Brighton Metropolitan College</option>
+                <option value="Hereward College of Further Education">Hereward College of Further Education</option>
+                <option value="Joseph Chamberlain Sixth Form College">Joseph Chamberlain Sixth Form College</option>
+                <option value="Sixth Form College Brooke House (The)">Sixth Form College Brooke House (The)</option>
+                <option value="Unified Seevic Palmer's College (USP)">Unified Seevic Palmer's College (USP)</option>
+                <option value="Ashton-under-Lyne Sixth Form College">Ashton-under-Lyne Sixth Form College</option>
+                <option value="National College for High Speed Rail">National College for High Speed Rail</option>
+                <option value="Saint David's Roman Catholic College">Saint David's Roman Catholic College</option>
+                <option value="Sixth Form College, Colchester (The)">Sixth Form College, Colchester (The)</option>
+                <option value="Solihull College & University Centre">Solihull College & University Centre</option>
+                <option value="St Francis Xavier Sixth Form College">St Francis Xavier Sixth Form College</option>
+                <option value="Burton and South Derbyshire College">Burton and South Derbyshire College</option>
+                <option value="Fircroft College of Adult Education">Fircroft College of Adult Education</option>
+                <option value="King Edward VI College, Stourbridge">King Edward VI College, Stourbridge</option>
+                <option value="Newham College of Further Education">Newham College of Further Education</option>
+                <option value="Vision West Nottinghamshire College">Vision West Nottinghamshire College</option>
+                <option value="Christ the King Sixth Form College">Christ the King Sixth Form College</option>
+                <option value="Queen Elizabeth Sixth Form College">Queen Elizabeth Sixth Form College</option>
+                <option value="Accrington and Rossendale College">Accrington and Rossendale College</option>
+                <option value="Basingstoke College of Technology">Basingstoke College of Technology</option>
+                <option value="Capital City College Group (CCCG)">Capital City College Group (CCCG)</option>
+                <option value="Farnborough College of Technology">Farnborough College of Technology</option>
+                <option value="London South East Colleges (LSEC)">London South East Colleges (LSEC)</option>
+                <option value="Marine Society College of the Sea">Marine Society College of the Sea</option>
+                <option value="South and City College Birmingham">South and City College Birmingham</option>
+                <option value="The Windsor Forest Colleges Group">The Windsor Forest Colleges Group</option>
+                <option value="Warrington and Vale Royal College">Warrington and Vale Royal College</option>
+                <option value="Berkshire College of Agriculture">Berkshire College of Agriculture</option>
+                <option value="King Edward VI College, Nuneaton">King Edward VI College, Nuneaton</option>
+                <option value="Workers' Educational Association">Workers' Educational Association</option>
+                <option value="Birmingham Metropolitan College">Birmingham Metropolitan College</option>
+                <option value="Blackpool and The Fylde College">Blackpool and The Fylde College</option>
+                <option value="Bracknell and Wokingham College">Bracknell and Wokingham College</option>
+                <option value="Cheshire College South and West">Cheshire College South and West</option>
+                <option value="Heart of Worcestershire College">Heart of Worcestershire College</option>
+                <option value="John Leggott Sixth Form College">John Leggott Sixth Form College</option>
+                <option value="Lancaster and Morecambe College">Lancaster and Morecambe College</option>
+                <option value="St Brendan's Sixth Form College">St Brendan's Sixth Form College</option>
+                <option value="St Dominic's Sixth Form College">St Dominic's Sixth Form College</option>
+                <option value="Bridgwater and Taunton College">Bridgwater and Taunton College</option>
+                <option value="Havant and South Downs College">Havant and South Downs College</option>
+                <option value="Kensington and Chelsea College">Kensington and Chelsea College</option>
+                <option value="Scarborough Sixth Form College">Scarborough Sixth Form College</option>
+                <option value="South Eastern Regional College">South Eastern Regional College</option>
+                <option value="The South Thames College Group">The South Thames College Group</option>
+                <option value="Buckinghamshire College Group">Buckinghamshire College Group</option>
+                <option value="City Literary Institute (The)">City Literary Institute (The)</option>
+                <option value="City of Wolverhampton College">City of Wolverhampton College</option>
+                <option value="Hills Road Sixth Form College">Hills Road Sixth Form College</option>
+                <option value="Peterborough Regional College">Peterborough Regional College</option>
+                <option value="The City of Liverpool College">The City of Liverpool College</option>
+                <option value="West Kent and Ashford College">West Kent and Ashford College</option>
+                <option value="WQE and Regent Colleges Group">WQE and Regent Colleges Group</option>
+                <option value="Barking and Dagenham College">Barking and Dagenham College</option>
+                <option value="Barnet and Southgate College">Barnet and Southgate College</option>
+                <option value="Belfast Metropolitan College">Belfast Metropolitan College</option>
+                <option value="Blackpool Sixth Form College">Blackpool Sixth Form College</option>
+                <option value="Central Bedfordshire College">Central Bedfordshire College</option>
+                <option value="College of West Anglia (The)">College of West Anglia (The)</option>
+                <option value="Highbury College, Portsmouth">Highbury College, Portsmouth</option>
+                <option value="Long Road Sixth Form College">Long Road Sixth Form College</option>
+                <option value="Richmond upon Thames College">Richmond upon Thames College</option>
+                <option value="Sparsholt College, Hampshire">Sparsholt College, Hampshire</option>
+                <option value="St Mary's College, Blackburn">St Mary's College, Blackburn</option>
+                <option value="Worcester Sixth Form College">Worcester Sixth Form College</option>
+                <option value="Abingdon and Witney College">Abingdon and Witney College</option>
+                <option value="Bournemouth & Poole College">Bournemouth & Poole College</option>
+                <option value="Dumfries & Galloway College">Dumfries & Galloway College</option>
+                <option value="Havering Sixth Form College">Havering Sixth Form College</option>
+                <option value="Lakes College, West Cumbria">Lakes College, West Cumbria</option>
+                <option value="North East Scotland College">North East Scotland College</option>
+                <option value="North Hertfordshire College">North Hertfordshire College</option>
+                <option value="North West Regional College">North West Regional College</option>
+                <option value="South Staffordshire College">South Staffordshire College</option>
+                <option value="Wirral Metropolitan College">Wirral Metropolitan College</option>
+                <option value="Cadbury Sixth Form College">Cadbury Sixth Form College</option>
+                <option value="Cambridge Regional College">Cambridge Regional College</option>
+                <option value="Gateway Sixth Form College">Gateway Sixth Form College</option>
+                <option value="North Highland College UHI">North Highland College UHI</option>
+                <option value="Stockton Riverside College">Stockton Riverside College</option>
+                <option value="The Northern School of Art">The Northern School of Art</option>
+                <option value="The Northern School of Art">The Northern School of Art</option>
+                <option value="Warwickshire College Group">Warwickshire College Group</option>
+                <option value="Bolton Sixth Form College">Bolton Sixth Form College</option>
+                <option value="East Sussex College Group">East Sussex College Group</option>
+                <option value="Hertford Regional College">Hertford Regional College</option>
+                <option value="Kingston Maurward College">Kingston Maurward College</option>
+                <option value="Leeds College of Building">Leeds College of Building</option>
+                <option value="Leyton Sixth Form College">Leyton Sixth Form College</option>
+                <option value="Newham Sixth Form College">Newham Sixth Form College</option>
+                <option value="Northern Regional College">Northern Regional College</option>
+                <option value="Shrewsbury Colleges Group">Shrewsbury Colleges Group</option>
+                <option value="Sir George Monoux College">Sir George Monoux College</option>
+                <option value="South Lanarkshire College">South Lanarkshire College</option>
+                <option value="Southern Regional College">Southern Regional College</option>
+                <option value="The Bedford College Group">The Bedford College Group</option>
+                <option value="Truro and Penwith College">Truro and Penwith College</option>
+                <option value="West Highland College UHI">West Highland College UHI</option>
+                <option value="Cardiff and Vale College">Cardiff and Vale College</option>
+                <option value="Chichester College Group">Chichester College Group</option>
+                <option value="Dundee and Angus College">Dundee and Angus College</option>
+                <option value="Easton and Otley College">Easton and Otley College</option>
+                <option value="Hereford College of Arts">Hereford College of Arts</option>
+                <option value="Huddersfield New College">Huddersfield New College</option>
+                <option value="Luton Sixth Form College">Luton Sixth Form College</option>
+                <option value="Nelson and Colne College">Nelson and Colne College</option>
+                <option value="North Shropshire College">North Shropshire College</option>
+                <option value="Southampton City College">Southampton City College</option>
+                <option value="Sunderland College Group">Sunderland College Group</option>
+                <option value="Bishop Auckland College">Bishop Auckland College</option>
+                <option value="Brooksby Melton College">Brooksby Melton College</option>
+                <option value="Cardinal Newman College">Cardinal Newman College</option>
+                <option value="City of Bristol College">City of Bristol College</option>
+                <option value="City of Glasgow College">City of Glasgow College</option>
+                <option value="Gloucestershire College">Gloucestershire College</option>
+                <option value="Lews Castle College UHI">Lews Castle College UHI</option>
+                <option value="Newcastle College (NCG)">Newcastle College (NCG)</option>
+                <option value="New College Lanarkshire">New College Lanarkshire</option>
+                <option value="Newbattle Abbey College">Newbattle Abbey College</option>
+                <option value="Sheffield College (The)">Sheffield College (The)</option>
+                <option value="Wigan and Leigh College">Wigan and Leigh College</option>
+                <option value="Wyke Sixth Form College">Wyke Sixth Form College</option>
+                <option value="Barton Peveril College">Barton Peveril College</option>
+                <option value="Cornwall College Group">Cornwall College Group</option>
+                <option value="Glasgow Kelvin College">Glasgow Kelvin College</option>
+                <option value="Merthyr Tydfil College">Merthyr Tydfil College</option>
+                <option value="Northumberland College">Northumberland College</option>
+                <option value="Peter Symonds' College">Peter Symonds' College</option>
+                <option value="Stoke-on-Trent College">Stoke-on-Trent College</option>
+                <option value="Trafford College Group">Trafford College Group</option>
+                <option value="Waltham Forest College">Waltham Forest College</option>
+                <option value="Bishop Burton College">Bishop Burton College</option>
+                <option value="City College Plymouth">City College Plymouth</option>
+                <option value="Glasgow Clyde College">Glasgow Clyde College</option>
+                <option value="Gower College Swansea">Gower College Swansea</option>
+                <option value="Grwp Llandrillo Menai">Grwp Llandrillo Menai</option>
+                <option value="Inverness College UHI">Inverness College UHI</option>
+                <option value="Isle of Wight College">Isle of Wight College</option>
+                <option value="Middlesbrough College">Middlesbrough College</option>
+                <option value="Milton Keynes College">Milton Keynes College</option>
+                <option value="Moulton College F.E.C">Moulton College F.E.C</option>
+                <option value="Pembrokeshire College">Pembrokeshire College</option>
+                <option value="Richard Huish College">Richard Huish College</option>
+                <option value="Sabhal Mòr Ostaig UHI">Sabhal Mòr Ostaig UHI</option>
+                <option value="St John Rigby College">St John Rigby College</option>
+                <option value="United Colleges Group">United Colleges Group</option>
+                <option value="West College Scotland">West College Scotland</option>
+                <option value="Working Men's College">Working Men's College</option>
+                <option value="Askham Bryan College">Askham Bryan College</option>
+                <option value="Brockenhurst College">Brockenhurst College</option>
+                <option value="Chesterfield College">Chesterfield College</option>
+                <option value="City College Norwich">City College Norwich</option>
+                <option value="Colchester Institute">Colchester Institute</option>
+                <option value="Forth Valley College">Forth Valley College</option>
+                <option value="Hadlow College Group">Hadlow College Group</option>
+                <option value="Henley College (The)">Henley College (The)</option>
+                <option value="Hopwood Hall College">Hopwood Hall College</option>
+                <option value="Loughborough College">Loughborough College</option>
+                <option value="Macclesfield College">Macclesfield College</option>
+                <option value="New College Stamford">New College Stamford</option>
+                <option value="New College, Swindon">New College, Swindon</option>
+                <option value="Oldham College (The)">Oldham College (The)</option>
+                <option value="Salford City College">Salford City College</option>
+                <option value="Shetland College UHI">Shetland College UHI</option>
+                <option value="West Lothian College">West Lothian College</option>
+                <option value="West Suffolk College">West Suffolk College</option>
+                <option value="Capel Manor College">Capel Manor College</option>
+                <option value="Cirencester College">Cirencester College</option>
+                <option value="Derwentside College">Derwentside College</option>
+                <option value="East Durham College">East Durham College</option>
+                <option value="East Riding College">East Riding College</option>
+                <option value="East Surrey College">East Surrey College</option>
+                <option value="John Ruskin College">John Ruskin College</option>
+                <option value="New College, Durham">New College, Durham</option>
+                <option value="Northampton College">Northampton College</option>
+                <option value="South Devon College">South Devon College</option>
+                <option value="Suffolk New College">Suffolk New College</option>
+                <option value="West Thames College">West Thames College</option>
+                <option value="Wilberforce College">Wilberforce College</option>
+                <option value="Argyll College UHI">Argyll College UHI</option>
+                <option value="Bilborough College">Bilborough College</option>
+                <option value="Brooklands College">Brooklands College</option>
+                <option value="Calderdale College">Calderdale College</option>
+                <option value="Chelmsford College">Chelmsford College</option>
+                <option value="Darlington College">Darlington College</option>
+                <option value="East Coast College">East Coast College</option>
+                <option value="Holy Cross College">Holy Cross College</option>
+                <option value="Hugh Baird College">Hugh Baird College</option>
+                <option value="Leeds City College">Leeds City College</option>
+                <option value="Myerscough College">Myerscough College</option>
+                <option value="North Kent College">North Kent College</option>
+                <option value="Nottingham College">Nottingham College</option>
+                <option value="Orkney College UHI">Orkney College UHI</option>
+                <option value="Portsmouth College">Portsmouth College</option>
+                <option value="Reaseheath College">Reaseheath College</option>
+                <option value="South West College">South West College</option>
+                <option value="Stephenson College">Stephenson College</option>
+                <option value="Tyne Coast College">Tyne Coast College</option>
+                <option value="West Herts College">West Herts College</option>
+                <option value="Winstanley College">Winstanley College</option>
+                <option value="Activate Learning">Activate Learning</option>
+                <option value="Barnfield College">Barnfield College</option>
+                <option value="Blackburn College">Blackburn College</option>
+                <option value="DN Colleges Group">DN Colleges Group</option>
+                <option value="Eastleigh College">Eastleigh College</option>
+                <option value="Edinburgh College">Edinburgh College</option>
+                <option value="Gateshead College">Gateshead College</option>
+                <option value="Greenhead College">Greenhead College</option>
+                <option value="Halesowen College">Halesowen College</option>
+                <option value="Leicester College">Leicester College</option>
+                <option value="Moray College UHI">Moray College UHI</option>
+                <option value="Perth College UHI">Perth College UHI</option>
+                <option value="Riverside College">Riverside College</option>
+                <option value="Southport College">Southport College</option>
+                <option value="Wakefield College">Wakefield College</option>
+                <option value="Woodhouse College">Woodhouse College</option>
+                <option value="Ayrshire College">Ayrshire College</option>
+                <option value="Barnsley College">Barnsley College</option>
+                <option value="Bradford College">Bradford College</option>
+                <option value="Bridgend College">Bridgend College</option>
+                <option value="Coleg Ceredigion">Coleg Ceredigion</option>
+                <option value="Coulsdon College">Coulsdon College</option>
+                <option value="Coventry College">Coventry College</option>
+                <option value="Franklin College">Franklin College</option>
+                <option value="Grantham College">Grantham College</option>
+                <option value="Hartpury College">Hartpury College</option>
+                <option value="Kirklees College">Kirklees College</option>
+                <option value="Mary Ward Centre">Mary Ward Centre</option>
+                <option value="Mid-Kent College">Mid-Kent College</option>
+                <option value="New City College">New City College</option>
+                <option value="Oaklands College">Oaklands College</option>
+                <option value="Plumpton College">Plumpton College</option>
+                <option value="Sandwell College">Sandwell College</option>
+                <option value="Stanmore College">Stanmore College</option>
+                <option value="Tameside College">Tameside College</option>
+                <option value="Varndean College">Varndean College</option>
+                <option value="Weymouth College">Weymouth College</option>
+                <option value="Worthing College">Worthing College</option>
+                <option value="Xaverian College">Xaverian College</option>
+                <option value="Aquinas College">Aquinas College</option>
+                <option value="Bexhill College">Bexhill College</option>
+                <option value="Borders College">Borders College</option>
+                <option value="Burnley College">Burnley College</option>
+                <option value="Coleg Y Cymoedd">Coleg Y Cymoedd</option>
+                <option value="Croydon College">Croydon College</option>
+                <option value="Fareham College">Fareham College</option>
+                <option value="Furness College">Furness College</option>
+                <option value="Lambeth College">Lambeth College</option>
+                <option value="Lincoln College">Lincoln College</option>
+                <option value="Newbury College">Newbury College</option>
+                <option value="Preston College">Preston College</option>
+                <option value="Runshaw College">Runshaw College</option>
+                <option value="Shipley College">Shipley College</option>
+                <option value="Swindon College">Swindon College</option>
+                <option value="Telford College">Telford College</option>
+                <option value="Walsall College">Walsall College</option>
+                <option value="Bolton College">Bolton College</option>
+                <option value="Boston College">Boston College</option>
+                <option value="Carmel College">Carmel College</option>
+                <option value="Craven College">Craven College</option>
+                <option value="Dudley College">Dudley College</option>
+                <option value="Exeter College">Exeter College</option>
+                <option value="Harlow College">Harlow College</option>
+                <option value="Itchen College">Itchen College</option>
+                <option value="Kendal College">Kendal College</option>
+                <option value="Loreto College">Loreto College</option>
+                <option value="Morley College">Morley College</option>
+                <option value="Ruskin College">Ruskin College</option>
+                <option value="Strode College">Strode College</option>
+                <option value="Weston College">Weston College</option>
+                <option value="Yeovil College">Yeovil College</option>
+                <option value="Alton College">Alton College</option>
+                <option value="Coleg Cambria">Coleg Cambria</option>
+                <option value="Coleg Sir Gar">Coleg Sir Gar</option>
+                <option value="Esher College">Esher College</option>
+                <option value="Selby College">Selby College</option>
+                <option value="Bath College">Bath College</option>
+                <option value="Bury College">Bury College</option>
+                <option value="Fife College">Fife College</option>
+                <option value="Hull College">Hull College</option>
+                <option value="York College">York College</option>
+                <option value="Coleg Gwent">Coleg Gwent</option>
+                <option value="NPTC Group">NPTC Group</option>
+                <option value="EKC Group">EKC Group</option>
+                <option value="LTE Group">LTE Group</option>
+                <option value="RNN Group">RNN Group</option>
+                <option value="SK Group">SK Group</option>
+                <option value="Petroc">Petroc</option>
+                <option value="HCUC">HCUC</option>
+                <option value="DCG">DCG</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="form-group">
+        <a class="button" href="../education-and-training/name-of-course.html">Next</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Javascript -->
+  <script src="/public/javascripts/details.polyfill.js"></script>
+  <script src="/public/javascripts/jquery-1.11.3.js"></script>
+  <script src="/public/javascripts/application.js"></script>
+
+
+  <!-- selector -->
+  <script src="/public/javascripts/typeahead-aria.js"></script>
+  <script src="/public/javascripts/init-autocomplete.js"></script>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,229 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<style>
+.heading-no-margin{
+  margin-top:0em;
+}
+    .column-half {
+            border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+    padding: 1em;
+    margin: 1em 0em 1em 1em;
+    width: 47%;
+    }
+    @media (max-width: 641px) {
+  .column-half {
+    width: 92%;
+    margin: 1em 1em 0em 1em;
+      padding:15px;
+      height:auto;
+  }
+}
+    .student-statement{
+        width:100%;
+            display: block;
+    margin-left: auto;
+    margin-right: auto }
+    }
+
+    @media (max-width: 641px) {
+  .student-statement {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+  }
+  label { 
+    float: left;
+    margin: 0 20px 0 0;
+  }
+  span { 
+    display: block; 
+    margin: 0 0 3px; 
+  }
+  .block {
+    display: block;
+    float: left;
+  }
+}
+</style>
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Money to support your education</p>
+
+            <h1 class="page-header--lede heading-large">What are the term dates for your current academic year?</h1>
+
+            </header>
+</div>
+</div>
+
+      <form action="termdatesiteration6b-handler" method="get" class="form">
+          
+          <fieldset>
+            <div class="form-group">
+            <p class="form-hint" style="margin-bottom:0em">Terms are usually separated by Christmas and Easter holidays.</p>
+            <br>
+            <!-- Term1 -->
+            <div class="block">
+            <h2 class="heading-medium" style="margin-top:0em; padding-top: 0em; margin-bottom: 0.2em;">Term 1<!-- - usually autumn term  --></h2>
+            <label for="company">
+              <span class="">Start date</span>
+              <span class="form-hint">For example 10/09/2018</span>
+                          <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="term1-start-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="term1-start-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year"  min="0" name="term1-start-year" pattern="[0-9]*" type="number">
+              </div>
+            </div>
+            </label>
+            <label for="company">
+              <span class="">End date</span>
+              <span class="form-hint">For example 12/12/2018</span>
+                          <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="term1-end-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="term1-end-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year"  min="0" name="term1-end-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+            </label>
+            </div>
+            
+            <!-- Term2 -->
+            <div class="block">
+            <br>
+            <br>
+            <h2 class="heading-medium" style="margin-top:0em; padding-top: 0em; margin-bottom: 0.2em;">Term 2<!-- - usually autumn term  --></h2>
+            <label for="company">
+              <span class="">Start date</span>
+              <span class="form-hint">For example 07/01/2019</span>
+                          <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="term2-start-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="term2-start-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year"  min="0" name="term2-start-year" pattern="[0-9]*" type="number">
+              </div>
+            </div>
+            </label>
+            <label for="company">
+              <span class="">End date</span>
+              <span class="form-hint">For example 18/03/2019</span>
+                          <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="term2-end-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="term2-end-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year"  min="0" name="term2-end-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+            </label>
+            </div>
+            <!-- Term3 -->
+            <div class="block">
+            <br>
+            <br>
+            <h2 class="heading-medium" style="margin-top:0em; padding-top: 0em; margin-bottom: 0.2em;">Term 3<!-- - usually autumn term  --></h2>
+            <label for="company">
+              <span class="">Start date</span>
+              <span class="form-hint">For example 12/04/2019</span>
+                          <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="term3-start-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="term3-start-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year"  min="0" name="term3-start-year" pattern="[0-9]*" type="number">
+              </div>
+            </div>
+            </label>
+            <label for="company">
+              <span class="">End date</span>
+              <span class="form-hint">For example 24/05/2019</span>
+                          <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="term3-end-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="term3-end-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year"  min="0" name="term3-end-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+            </label>
+            </div>
+            </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

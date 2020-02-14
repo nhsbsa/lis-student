@@ -1,0 +1,87 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Money to support your education</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Who pays your tuition fees?</h1>
+      </header>
+
+      <form action="whopaysiteration6b-handler" class="form" method="get">
+
+        <fieldset class="form-group">
+          <legend class="visually-hidden">Who pays your tuition fees?</legend>
+          <div class="multiple-choice multiple-radio">
+            <input id="selfinance" name="tuitionfee" value="myself-pay" type="checkbox">
+            <label for="selfinance"><span style="font-weight:100;">I pay my tuition fees
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="SFE" name="tuitionfee" value="sfe-pay" type="checkbox">
+            <label for="SFE"><span style="font-weight:100;">Student Finance England (SFE)</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="SFW" name="tuitionfee" value="sfw-pay" type="checkbox">
+            <label for="SFW"><span style="font-weight:100;">Student Finance Wales (SFW)</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="SAAS" name="tuitionfee" value="saas-pay" type="checkbox">
+            <label for="SAAS"><span style="font-weight:100;">Student Awards Agency for Scotland (SAAS)</span><br></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="NHS" name="tuitionfee" value="nhs-pay" type="checkbox">
+            <label for="NHS"><span style="font-weight:100;">National Health Service (NHS)</span><br></label>
+          </div>
+
+          <p class="form-block">or</p>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="none" name="tuitionfee" value="none-pay" type="checkbox">
+            <label for="none"><span style="font-weight:100;">There are no tuition fees for my course</span><br></label>
+          </div>
+
+        
+        </fieldset>
+        
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

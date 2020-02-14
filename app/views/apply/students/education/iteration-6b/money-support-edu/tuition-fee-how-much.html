@@ -19,7 +19,7 @@ NHSBSA Prototype
   <div class="phase-banner">
     <p>
       <strong class="phase-tag">BETA</strong>
-      This is a new service - your <a href="#">feedback</a> will help us to improve it.ß
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
     </p>
   </div>
 
@@ -30,27 +30,18 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Money to support your education</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you have a copy of your student finance award notice?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much are your tuition fees for this academic year?</h1>
       </header>
 
-      <form action="awarditeration6b-handler" method="get" class="form">
+      <form action="tuitionfeehowmuchiteration6-handler" method="get" class="form">
 
         <div class="form-group">
 
-          
-            <br>
           <fieldset class="inline">
-            <legend class="visually-hidden">Do you have a copy of your student finance award notice?</legend>
-
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="awardnotice" value="yes">
-              <label for="yes">Yes</label>
-            </div>
-
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="awardnotice" value="no">
-              <label for="no">No</label>
-            </div>
+            <legend class="visually-hidden">How much are your tuition fees for this academic year?</legend>
+              
+              <span class="heading-medium">£</span>
+              <input class="form-control form-control-1-4" id="pay" name="tuitionfeehowmuch" type="text" aria-label="how much do you get?">
 
           </fieldset>
 

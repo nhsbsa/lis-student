@@ -1251,6 +1251,8 @@ router.get(/fundingiteration6-handler/, function (req, res) {
     res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
   }else if (req.query.funding.includes('SL-help')) {
       res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
+}else if (req.query.funding.includes('family-help')) {
+      res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
@@ -1352,6 +1354,216 @@ router.get(/savingssplititeration6-handler/, function (req, res) {
 
 
 
+// *****************************************
+// BEFORE YOU START - STUDENT - ITERATION 6b
+// *****************************************
+
+router.get(/applyonlineiteration6b-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-6b/what-you-will-need.html');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplititeration6b-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/student/iteration-6b/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/student/iteration-6b/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/student/iteration-6b/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-6b/country-split');
+  }
+});
+
+router.get(/carehomesplititeration6b-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-6b/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-6b/partner');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-6b/care-home-split');
+  }
+});
+
+router.get(/partneriteration6b-handler/, function (req, res) {
+  if (req.query.partner == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/student/iteration-6b/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/iteration-6b/claimed-asylum-single');
+  }
+});
+
+
+router.get(/asylumsingleiteration6b-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-6b/edu-or-training');
+  }
+});
+
+router.get(/asylumPartneriteration6b-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-6b/edu-or-training-partner');
+  }
+});
+
+router.get(/educationtrainingiteration6b-handler/, function (req, res) {
+ 
+  if (req.query.educationtraining == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-6b/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-6b/money-coming-in-single');
+  }
+});
+
+router.get(/educationtrainingPartneriteration6b-handler/, function (req, res) {
+ 
+  if (req.query.educationtrainingPartner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.educationtrainingPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-6b/money-coming-in-partner');
+  }
+});
+
+
+router.get(/fulltimeeduiteration6b-handler/, function (req, res) {
+ 
+  if (req.query.fulltimeedu == 'ft') {
+    res.redirect('/beforeyoustart/student/iteration-6b/student-funding');
+  } else if  (req.query.fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/iteration-6b/student-funding');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-6b/full-time-edu');
+  }
+});
+
+
+
+
+router.get(/fundingiteration6b-handler/, function (req, res) {
+  
+ if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/student/iteration-6b/live-with-parents.html');
+  }else if (req.query.funding.includes('SL-help')) {
+      res.redirect('/beforeyoustart/student/iteration-6b/live-with-parents.html');
+}else if (req.query.funding.includes('family-help')) {
+      res.redirect('/beforeyoustart/student/iteration-6b/live-with-parents.html');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } 
+});
+
+router.get(/livewithparentsiteration6b-handler/, function (req, res) {
+  
+  var fulltimeedu = req.session.data['fulltimeedu'];
+
+  if (req.query.liveparents == 'yes' ) {
+    res.redirect('/beforeyoustart/student/iteration-6b/money-coming-in-single');
+  } else if (req.query.liveparents == 'no' && fulltimeedu == 'ft'){
+    res.redirect('/kickouts/students-developed');
+
+  } else 
+  res.redirect('/beforeyoustart/student/iteration-6b/money-coming-in-single')
+});
+
+
+router.get(/whatissingleincomeiteration6b-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle == 'earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle == 'benefits-income') {
+      res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle == 'nil-income') {
+      res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-6b/money-coming-in-single');
+  }
+});
+
+router.get(/savingssplititeration6b-handler/, function (req, res) {
+  if (req.query.savings== 'yes') {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.savings== 'no') {
+    res.redirect('/beforeyoustart/student/iteration-6b/check-your-answers-check-eligibility.html');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-6b/more-than-6000');
+  }
+});
 
 
 
@@ -5369,6 +5581,8 @@ router.get(/overseasiteration6-handler/, function (req, res) {
 });
 
 
+
+
 //router.get(/finalyear-iteration6-handler/, function (req, res) {
 // 
 //  if (req.query.finalyear == 'yes') {
@@ -5408,6 +5622,27 @@ router.get(/summerbreak-iteration6-handler/, function (req, res) {
 
 router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/christmas-break.html');
+});
+
+// ************************************
+// Education and Training (Iteration 6b)
+// ************************************
+
+router.get(/overseasiteration6b-handler/, function (req, res) {
+  res.redirect('../education-and-training/final-year.html');
+});
+
+router.get(/finalyear-iteration6b-handler/, function (req, res) {
+  if (req.query.finalyear == 'yes') {
+    res.redirect('../education-and-training/course-finish-date.html');
+  } else if (req.query.finalyear == 'no') {
+    res.redirect('../education-and-training/cya.html');
+  }
+});
+
+
+router.get(/coursefinishdate-iteration6b-handler/, function (req, res) {
+  res.redirect('../education-and-training/cya.html');
 });
 
 //*********************************************//
@@ -5470,6 +5705,15 @@ router.get(/awarditeration6-handler/, function (req, res) {
     res.redirect('../money-support-edu/contribution-type');
   } else if (req.query.awardnotice == 'no') {
     res.redirect('../money-support-edu/contribution-type');
+  }
+});
+
+router.get(/awarditeration6b-handler/, function (req, res) {
+  var funding = req.session.data['funding'];
+  if (req.query.awardnotice && funding.includes('family-help')) {
+    res.redirect('../money-support-edu/contribution-type');
+  } else {
+    res.redirect('../money-support-edu/money-another-1');
   }
 });
 
@@ -5557,11 +5801,11 @@ router.get(/relativeshowmuchiteration6-handler/, function (req, res) {
 
 
 router.get(/moneyanotheriteration6-handler/, function (req, res) {
-  
-  if (req.query.moneyanother == 'yes') {
+  var funding = req.session.data['funding'];
+  if (funding.includes('family-help')) {
     res.redirect('../money-support-edu/cya');
-  } else if (req.query.moneyanother == 'no') {
-    res.redirect('../money-support-edu/cya');
+  } else {
+    res.redirect('../money-support-edu/cya-no-family-friends');
   }
 });
 
@@ -5600,4 +5844,83 @@ router.get(/typepropertyiteration6-handler/, function (req, res) {
   }  else {
     res.redirect('../where-you-live/type-of-property');
   }
+});
+
+//*********************************************//
+//Iteration 6b - Money to support your education//
+//*********************************************//
+router.get(/whopaysiteration6b-handler/, function (req, res) {
+  
+  if (req.query.tuitionfee.includes('sfe-pay')) {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.includes('sfw-pay')) {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.includes('saas-pay')) {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.includes('nhs-pay')) {
+   res.redirect('/kickouts/students-developed');
+ } else if (req.query.tuitionfee.includes('none-pay')) {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.includes('myself-pay')) {
+     res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay') {
+   res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay') {
+   res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay') {
+   res.redirect('../money-support-edu/tuition-fee-how-much');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay') {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay') {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay') {
+   res.redirect('../money-support-edu/paid-to-you');
+ } else if (req.query.tuitionfee.toString() == 'nhs-pay,none-help') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'saas-pay,nhs-pay,') {
+   res.redirect('kickouts/students-developed');
+ } else if (req.query.tuitionfee.toString() == 'sfw-pay,nhs-pay') {
+   res.redirect('kickouts/students-developed');
+ }  else {
+   res.redirect('who-pays');
+ }
+});
+
+
+
+router.get(/paidtoyouiteration6b-handler/, function (req, res) {
+
+  if (req.query.paidtoyou == '8430.00') {
+    res.redirect('../money-support-edu/contribution-type.html');
+  } else {
+    res.redirect('../money-support-edu/3-terms.html');
+  }
+});
+
+router.get(/3termsiteration6b-handler/, function (req, res) {
+  if (req.query.terms == 'yes') {
+    res.redirect('../money-support-edu/term-dates.html');
+  } else {
+    res.redirect('../money-support-edu/evidenceneeded.html');
+  }
+});
+
+router.get(/termdatesiteration6b-handler/, function (req, res) {
+res.redirect('../money-support-edu/contribution-type.html');
+});
+
+router.get(/moneyanotheriteration6b-handler/, function (req, res) {
+    res.redirect('../money-support-edu/cya');
 });
