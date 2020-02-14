@@ -40,7 +40,7 @@ NHSBSA Prototype
    vertical-align: middle;
    margin-bottom: 0;
    }
-   .list--check, {
+   .list--check {
    list-style: none;
    padding-left: 32px;
    }
@@ -137,93 +137,87 @@ NHSBSA Prototype
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Money to support your education</p>
-            
-            </header>
-</div>
-</div>
-            <div class="column-two-thirds">
-              <div class="done-panel" style="margin-bottom: 0; background: #6f777b !important;">
-                <h1 class="heading-xlarge">
-                    <i class="icon icon-important"
-                        style="background-image: url('/public/images/bsa/icon-important-white.svg'); background-size: 100%;">
-                        <span class="visually-hidden" style="">Warning</span>
-                    </i>
-                    Information needed</h1>
-                <h2 class="heading-large"><span class="heading-secondary" style="color: white !important">Reference
-                        number</span> K5G-V78</h2>
-              </div>
-            </div>
-            <h3 class="heading-medium" style="margin-top: 1em !important; clear: both;"><br>What do we need</h3>
+      </header>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="done-panel" style="margin-bottom: 0; background: #6f777b !important;">
+        <h1 class="heading-xlarge">
+          <i class="icon icon-important" style="background-image: url('/public/images/bsa/icon-important-white.svg'); background-size: 100%;">
+            <span class="visually-hidden">Warning</span>
+          </i>
+          Information needed</h1>
+          <h2 class="heading-large"><span class="heading-secondary" style="color: white !important">Reference number</span> K5G-V78</h2>
+      </div>
+      <h2 class="heading-medium" style="margin-top: 1em !important; clear: both;">What do we need</h2>
 
       <p>We need you to send us more information about your Student Finance income.</p>
 
       <p>We need your Student Finance Breakdown from [<span class="financesupplier">{{ data['tuitionfee']}}</span>].</p>
    
       <p>We will accept the digital copy and the letter.</p>
-
       
-      <h3 class="heading-medium" style="margin-top: 1em !important; clear: both;">How to send your information</h3>
-
+      <h2 class="heading-medium" style="margin-top: 1em !important; clear: both;">How to send your information</h2>
+      
       <p> You can send your Student Finance Breakdown by either email or post</p>
 
-      <h4 class="heading-small">Send your information by email</h4> <!-- This could be dropdown boxes? -->
+      <h3 class="heading-small">Send your information by email</h3> <!-- This could be dropdown boxes? -->
+      
+      <ol class="standard">
+        <li style="border-top: none;">
+          <span class="circle circle-step">1</span>
+          <div class="point">
+            <p>Take a photo of your Student Finance Breakdown using a mobile phone or digital camera.</p>
+            <p>It is important that the details are clearly shown in the photo.</p>
+          </div>
+        </li>
+        <li>
+          <span class="circle circle-step">2</span>
+          <div class="point">
+            <p>Check the image is clear and you can read the information.</p>
+          </div>
+        </li>
+        <li>
+          <span class="circle circle-step">3</span>
+          <div class="point">
+            <p>Send the photo as an email attachment to: <a href="mailto:nhsbsa.decs@nhsbsa.nhs.uk">nhsbsa.decs@nhsbsa.nhs.uk</a></p>
 
-          <ol class="standard">
-            <li style="border-top: none;">
-              <span class="circle circle-step">1</span>
-              <div class="point">
-                  <p>Take a photo of your Student Finance Breakdown using a mobile phone or digital camera.</p>
-                  <p>It is important that the details are clearly shown in the photo.</p>
-              </div>
-            </li>
-            <li>
-              <span class="circle circle-step" style="">2</span>
-            <div class="point">
-                  <p>Check the image is clear and you can read the information.</p>
-            </div>
-            </li>
-            <li>
-              <span class="circle circle-step" style="">3</span>
-                <div class="point">
-                  <p>Send the photo as an email attachment to: <a href="mailto:nhsbsa.decs@nhsbsa.nhs.uk">nhsbsa.decs@nhsbsa.nhs.uk </a><br><br> 
-                  You must include your Application Reference number <span class="strong">01234567890</span>. </p>
-                  <p>We need to be able to confirm your identity, so your email must also include your: </p>
-                  <ul class="list list-bullet">
-                      <li>first name and surname (family name)</li>
-                      <li>date of birth</li>
-                      <li>address including postcode </li>
-                  </ul>
-                </div>
-            </li>
-                        <li>
-               <span class="circle circle-step">4</span>
-               <div class="point">
-                  <p>Once we receive your email with your proof, we will check it and contact you within 2 working days.
-                     <br>
-                  </p>
-               </div>
-            </li>
-          </ol>
+            <p>You must include your Application Reference number <span class="strong">01234567890</span>.</p>
+            
+            <p>We need to be able to confirm your identity, so your email must also include your: </p>
+              <ul class="list list-bullet">
+                <li>first name and surname (family name)</li>
+                <li>date of birth</li>
+                <li>address including postcode </li>
+              </ul>
+          </div>
+        </li>
+        <li>
+          <span class="circle circle-step">4</span>
+          <div class="point">
+            <p>Once we receive your email with your proof, we will check it and contact you within 2 working days.</p>
+          </div>
+        </li>
+      </ol>
 
-          <h4 class="heading-small">Send your information by post</h4>
+      <h2 class="heading-small">Send your information by post</h2>
 
-          <p>Take a photocopy of your student finance breakdown and send it to us at:</p>
+      <p>Take a photocopy of your student finance breakdown and send it to us at:</p>
 
-          <p class="panel" style="border:none; padding-top:0">
+      <p class="panel panel-border-wide">
             Low Income Scheme Team<br>
             NHSBSA, Bridge House<br>
             152 Pilgrim Street<br>
             Newcastle Upon Tyne <br>
             NE1 6SN
-         </p>
+      </p>
 
       <p>If you are not sure what to send us, please phone our customer enquiry line on 0300 3301343.</p><!-- In the paper form -->
-
-        <a href="../money-support-edu/contribution-type.html"><input class="button" type="submit"
-                                    value="Next"></a>
+      
+      <a class="button" href="../money-support-edu/contribution-type.html">Next</a>
 
 
       </form>
