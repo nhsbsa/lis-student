@@ -4113,17 +4113,6 @@ router.get(/coursefinishdate-handler/, function (req, res) {
   res.redirect('term1-dates');
 });
 
-router.get(/term1dates-handler/, function (req, res) {
-  res.redirect('term2-dates');
-});
-
-router.get(/term2dates-handler/, function (req, res) {
-  res.redirect('term3-dates');
-});
-
-router.get(/term3dates-handler/, function (req, res) {
-  res.redirect('overseas-student');
-});
 
 router.get(/downloadreports/, function (req, res) {
   res.redirect('financial-help');
@@ -5565,6 +5554,46 @@ router.get(/summerbreak-iteration5-handler/, function (req, res) {
   //** res.redirect('cya');
 //** });
 
+
+// ***********************************************
+// Education and Training Iteration - 5 (Term dates)
+// ***********************************************
+
+
+router.get(/academic-iteration5b-handler/, function (req, res) {
+  res.redirect('how-many-terms.html');
+});
+
+
+router.get(/howmanyterms-handler/, function (req, res) {
+  if (req.query.terms == 'one') {
+    res.redirect('term1-dates');
+  } else if (req.query.terms == 'two') {
+    res.redirect('term1-dates');
+  } else if (req.query.terms == 'three') {
+    res.redirect('term1-dates');
+  } else {
+  res.redirect('/kickouts/students-developed.html');
+}
+});
+
+router.get(/term1dates-handler/, function (req, res) {
+  var terms = req.session.data['terms'];
+
+  if (req.query.term1dates && terms.includes('one')) {
+    res.redirect('final-year');
+  } else if (req.query.term1dates && terms.includes('two')) {
+    res.redirect('term2-dates');
+  } else if (req.query.term1dates && terms.includes('three')) {
+    res.redirect('term3-dates');
+}  
+});
+
+
+
+
+
+
 // ************************************
 // Education and Training (Iteration 6)
 // ************************************
@@ -5579,8 +5608,6 @@ router.get(/nameofcourse-iteration6-handler/, function (req, res) {
 router.get(/overseasiteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/academic-start.html');
 });
-
-
 
 
 //router.get(/finalyear-iteration6-handler/, function (req, res) {
@@ -5623,6 +5650,8 @@ router.get(/summerbreak-iteration6-handler/, function (req, res) {
 router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/christmas-break.html');
 });
+
+
 
 // ************************************
 // Education and Training (Iteration 6b)
