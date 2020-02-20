@@ -5580,17 +5580,17 @@ router.get(/howmanyterms-handler/, function (req, res) {
 router.get(/term1dates-handler/, function (req, res) {
   var terms = req.session.data['terms'];
 
-  if (req.query.term1dates && req.query.terms == 'one') {
+  if (req.query.term1-day  && req.query.term1-month  && req.query.term1-year && req.query.terms == 'one') {
     res.redirect('final-year');
-  } else if (req.query.term1dates && req.query.terms == 'two') {
+  } else if (req.query.term1-day  && req.query.term1-month  && req.query.term1-year && req.query.terms == 'two') {
     res.redirect('term2-dates');
-  } else if (req.query.term1dates && req.query.terms == 'three') {
+  } else if (req.query.term1-day  && req.query.term1-month  && req.query.term1-year && req.query.terms == 'three') {
     res.redirect('term3-dates');
 }  
 });
 
 
-
+ 
 
 
 
