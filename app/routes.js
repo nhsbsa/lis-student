@@ -5580,13 +5580,13 @@ router.get(/howmanyterms-handler/, function (req, res) {
 router.get(/term1dates-handler/, function (req, res) {
   var terms = req.session.data['terms'];
 
-  if (req.query.term1-day  && req.query.term1-month  && req.query.term1-year && req.query.terms == 'one') {
+  if (terms.includes('one')) {
     res.redirect('final-year');
-  } else if (req.query.term1-day  && req.query.term1-month  && req.query.term1-year && req.query.terms == 'two') {
+  } else if (terms.includes('two')) {
     res.redirect('term2-dates');
-  } else if (req.query.term1-day  && req.query.term1-month  && req.query.term1-year && req.query.terms == 'three') {
-    res.redirect('term3-dates');
-}  
+  } else if (terms.includes('three')) {
+    res.redirect('term2-dates');
+  }  
 });
 
 
