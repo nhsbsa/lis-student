@@ -48,78 +48,141 @@ NHSBSA Prototype
           <div>
             
             <dt class="cya-question">
-                Course start date
+                Terms this academic year
             </dt>
             <dd class="cya-answer">
-                6.9.2019
+              {{ data['terms'] }}
               <p> 
             </dd>
             <dd class="cya-change">
-              <a class="link-right" href="academic-start.html">
+              <a class="link-right" href="how-many-terms.html">
                 Change<span class="visually-hidden">Uni</span>
               </a>
             </dd>
           </div>
 
-
+          {% if data['terms'] == "one" %}
 
 
           <div>
             
               <dt class="cya-question">
-                  Christmas holidays
+                  Term date
               </dt>
               <dd class="cya-answer">
-                  Breaks on : 12.12.2019 <br>
-                  Return on : 6.1.2020
+                  Start date : 28 September 2019 <br>
+                  End date : 18 December 2019
                 <p> 
               </dd>
               <dd class="cya-change">
-                <a class="link-right" href="#">
+                <a class="link-right" href="term1-dates.html">
                   Change<span class="visually-hidden">Uni</span>
                 </a>
               </dd>
             
             </div>
-           
+            {% endif %}
   
+            {% if data['terms'] == "two" %}
             <div>
             
                 <dt class="cya-question">
-                    Easter holidays
+                   Term 1 dates
                 </dt>
                 <dd class="cya-answer">
-                    Breaks on   :  27.3.2020 <br>
-                    Return on   : 25.4.2020
-                  <p> 
+                    
+                    Start date : 28 September 2019 <br>
+                    End date : 18 December 2019   
+                 
                 </dd>
                 <dd class="cya-change">
-                  <a class="link-right" href="#">
+                  <a class="link-right" href="term1-dates.html">
                     Change<span class="visually-hidden">Uni</span>
                   </a>
                 </dd>
               
               </div>
 
-  
               <div>
             
                   <dt class="cya-question">
-                      Summer holidays
+                     Term 2 dates
                   </dt>
                   <dd class="cya-answer">
-                      Breaks on : 14.6.2020 <br>
                       
-                    <p> 
+                      Start date   :  11 January 2020 <br>
+                    End date : 26 March 2020    
+                   
                   </dd>
                   <dd class="cya-change">
-                    <a class="link-right" href="#">
+                    <a class="link-right" href="term2-dates.html">
+                      Change<span class="visually-hidden">Uni</span>
+                    </a>
+                  </dd>
+                
+                </div>
+              {% endif %}
+
+
+              {% if data['terms'] == "three" %}
+              <div>
+            
+                  <dt class="cya-question">
+                      Term 1 dates
+                  </dt>
+                  <dd class="cya-answer">
+                      
+                      Start date : 28 September 2019 <br>
+                  End date : 18 December 2019   
+                 
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="term1-dates.html">
                       Change<span class="visually-hidden">Uni</span>
                     </a>
                   </dd>
                 
                 </div>
 
+                <div>
+            
+                    <dt class="cya-question">
+                        Term 2 dates
+                    </dt>
+                    <dd class="cya-answer">
+                        
+                        Start date   :  11 January 2020 <br>
+                        End date : 26 March 2020  
+            
+                      
+                    </dd>
+                    <dd class="cya-change">
+                      <a class="link-right" href="term2-dates.html">
+                        Change<span class="visually-hidden">Uni</span>
+                      </a>
+                    </dd>
+                  
+                  </div>
+                  <div>
+            
+                      <dt class="cya-question">
+                          Term 3 dates
+                      </dt>
+                      <dd class="cya-answer">
+                          
+                        Start date   :  26 April 2020 <br>
+                        End date : 18 June 2020   
+                     
+                    
+                      </dd>
+                      <dd class="cya-change">
+                        <a class="link-right" href="term3-dates.html">
+                          Change<span class="visually-hidden">Uni</span>
+                        </a>
+                      </dd>
+                    
+                    </div>
+                  {% endif %}
 
         <div>
             
@@ -127,7 +190,7 @@ NHSBSA Prototype
               Final year
           </dt>
           <dd class="cya-answer">
-              No
+              {{ data['finalyear'] }}
             <p> 
           </dd>
           <dd class="cya-change">
