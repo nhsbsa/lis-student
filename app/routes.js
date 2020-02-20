@@ -5589,9 +5589,20 @@ router.get(/term1dates-handler/, function (req, res) {
   }  
 });
 
+router.get(/term2dates-handler/, function (req, res) {
+  var terms = req.session.data['terms'];
 
+  
+ if (terms.includes('two')) {
+    res.redirect('final-year');
+  } else if (terms.includes('three')) {
+    res.redirect('term3-dates');
+  }  
+});
  
-
+router.get(/term3dates-handler/, function (req, res) {
+  res.redirect('final-year');
+}); 
 
 
 // ************************************
