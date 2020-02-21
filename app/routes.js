@@ -5670,21 +5670,21 @@ router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
 //Edu and training//
 
 router.get(/nameofcourse-iteration6b2-handler/, function (req, res) {
-  res.redirect('../edu-and-training/overseas-student.html');
+  res.redirect('../edu-and-train-iteration2/overseas-student.html');
 });
 
 router.get(/overseasiteration6b2-handler/, function (req, res) {
-  res.redirect('../edu-and-training/how-many-terms.html');
+  res.redirect('../edu-and-train-iteration2/how-many-terms.html');
 });
 
 
 router.get(/howmanyterms-iteration6b2-handler/, function (req, res) {
   if (req.query.terms == 'one') {
-    res.redirect('../edu-and-training/term1-dates');
+    res.redirect('../edu-and-train-iteration2/term1-dates');
   } else if (req.query.terms == 'two') {
-    res.redirect('../edu-and-training/term1-dates');
+    res.redirect('../edu-and-train-iteration2/term1-dates');
   } else if (req.query.terms == 'three') {
-    res.redirect('../edu-and-training/term1-dates');
+    res.redirect('../edu-and-train-iteration2/term1-dates');
   } else {
   res.redirect('/kickouts/students-developed.html');
 }
@@ -5694,11 +5694,11 @@ router.get(/term1dates-iteration6b2-handler/, function (req, res) {
   var terms = req.session.data['terms'];
 
   if (terms.includes('one')) {
-    res.redirect('../edu-and-training/final-year');
+    res.redirect('../edu-and-train-iteration2/final-year');
   } else if (terms.includes('two')) {
-    res.redirect('../edu-and-training/term2-dates');
+    res.redirect('../edu-and-train-iteration2/term2-dates');
   } else if (terms.includes('three')) {
-    res.redirect('../edu-and-training/term2-dates');
+    res.redirect('../edu-and-train-iteration2/term2-dates');
   }  
 });
 
@@ -5707,19 +5707,19 @@ router.get(/term2dates-iteration6b2-handler/, function (req, res) {
 
   
  if (terms.includes('two')) {
-    res.redirect('../edu-and-training/final-year');
+    res.redirect('../edu-and-train-iteration2/final-year');
   } else if (terms.includes('three')) {
-    res.redirect('../edu-and-training/term3-dates');
+    res.redirect('../edu-and-train-iteration2/term3-dates');
   }  
 });
  
 router.get(/term3dates-iteration6b2-handler/, function (req, res) {
-  res.redirect('../edu-and-training/final-year');
+  res.redirect('../edu-and-train-iteration2/final-year');
 }); 
 
 
 router.get(/finalyear-iteration6b2-handler/, function (req, res) {
-  res.redirect('../edu-and-training/cya.html');
+  res.redirect('../edu-and-train-iteration2/cya.html');
 });
 
 
