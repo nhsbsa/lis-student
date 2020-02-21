@@ -5663,11 +5663,11 @@ router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
 });
 
 // ************************************
-// Education and Training (Iteration 6) - NEW with Term dates
+// Education and Training (Iteration/ Release 6) - NEW with Term dates
 // ************************************
 
 
-//Edu and training//
+//Edu and training - Iteration 2
 
 router.get(/nameofcourse-iteration6b2-handler/, function (req, res) {
   res.redirect('../edu-and-train-iteration2/overseas-student.html');
