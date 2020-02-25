@@ -5662,12 +5662,12 @@ router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
   res.redirect('../education-and-training/christmas-break.html');
 });
 
-// ************************************
+// *******************************************************************
 // Education and Training (Iteration/ Release 6) - NEW with Term dates
-// ************************************
+// ********************************************************************
 
 
-//Edu and training - Iteration 2
+//Edu and training - Iteration 2 with Term dates
 
 router.get(/nameofcourse-iteration6b2-handler/, function (req, res) {
   res.redirect('../edu-and-train-iteration2/overseas-student.html');

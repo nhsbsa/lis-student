@@ -65,7 +65,6 @@ NHSBSA Prototype
             Qualification 
           </dt>
           <dd class="cya-answer">
-            <p> 
                 
              {{ data['course'] }} 
             
@@ -106,7 +105,7 @@ NHSBSA Prototype
         <div>
             
             <dt class="cya-question">
-                Number of terms this year
+                Number of terms this academic year
             </dt>
             <dd class="cya-answer">
                 {% if data['terms'] == "one" %}
@@ -117,7 +116,7 @@ NHSBSA Prototype
                 {% endif %} 
                 {% if data['terms'] == "three" %}
                 3 terms
-              <p> 
+                {% endif %} 
             </dd>
             <dd class="cya-change">
               <a class="link-right" href="../edu-and-train-iteration2/how-many-terms.html">
@@ -125,7 +124,7 @@ NHSBSA Prototype
               </a>
             </dd>
           </div>
-       
+          
       
           {% if data['terms'] == "one" %}
 
@@ -138,7 +137,7 @@ NHSBSA Prototype
               <dd class="cya-answer">
                   Start date : 28 September 2019 <br>
                   End date : 18 December 2019
-                <p> 
+                
               </dd>
               <dd class="cya-change">
                 <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
@@ -273,7 +272,9 @@ NHSBSA Prototype
                   </dd>
                 </div>
     
-                {% endif %}
+                
+                </dl>
+            </div>
   </div>
 
     <div class="column-two-thirds">
