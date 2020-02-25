@@ -19,8 +19,7 @@ NHSBSA Prototype
   <div class="phase-banner">
     <p>
       <strong class="phase-tag">BETA</strong>
-      This is a new service
-      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
     </p>
   </div>
 
@@ -31,38 +30,26 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Education and training</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How many terms do you have for this academic year?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you an overseas student?</h1>
+        <p>Select 'No' if you are from Northern Ireland.</p>
       </header>
 
-      <form action="howmanyterms-handler" method="get" class="form">
+      <form action="overseasiteration6b2-handler" method="get" class="form">
 
         <div class="form-group">
 
-          
-            <legend class="visually-hidden">
-            </legend>
+          <fieldset class="inline">
+            <legend class="visually-hidden">Are you an overseas student?</legend>
 
             <div class="multiple-choice">
-              <input id="one" type="radio" name="terms" value="one">
-              <label for="one">1 term</label>
+              <input id="yes" type="radio" name="overseas" value="yes">
+              <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="two" type="radio" name="terms" value="two">
-              <label for="two">2 terms</label>
+              <input id="no" type="radio" name="overseas" value="no">
+              <label for="no">No</label>
             </div>
-
-            <div class="multiple-choice">
-              <input id="three" type="radio" name="terms" value="three">
-              <label for="three">3 terms</label>
-            </div>
-
-            <div class="multiple-choice">
-              <input id="none" type="radio" name="terms" value="none">
-              <label for="none">I do not have a fixed term</label>
-            </div>
-
-
 
           </fieldset>
 

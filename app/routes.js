@@ -5556,53 +5556,20 @@ router.get(/summerbreak-iteration5-handler/, function (req, res) {
 
 
 // ***********************************************
-// Education and Training Iteration - 5 (Term dates)
+// Education and Training Iteration - 5b
 // ***********************************************
 
+router.get(/finalyear-iteration5b-handler/, function (req, res) {
+   if (req.query.finalyear == 'yes') {
+    res.redirect('course-finish-date');
+  } else if (req.query.finalyear == 'no') {
+   res.redirect('cya');
+ }
+ });
 
-router.get(/academic-iteration5b-handler/, function (req, res) {
-  res.redirect('how-many-terms.html');
+ router.get(/coursefinishdate-iteration5b-handler/, function (req, res) {
+  res.redirect('cya');
 });
-
-
-router.get(/howmanyterms-handler/, function (req, res) {
-  if (req.query.terms == 'one') {
-    res.redirect('term1-dates');
-  } else if (req.query.terms == 'two') {
-    res.redirect('term1-dates');
-  } else if (req.query.terms == 'three') {
-    res.redirect('term1-dates');
-  } else {
-  res.redirect('/kickouts/students-developed.html');
-}
-});
-
-router.get(/term1dates-handler/, function (req, res) {
-  var terms = req.session.data['terms'];
-
-  if (terms.includes('one')) {
-    res.redirect('final-year');
-  } else if (terms.includes('two')) {
-    res.redirect('term2-dates');
-  } else if (terms.includes('three')) {
-    res.redirect('term2-dates');
-  }  
-});
-
-router.get(/term2dates-handler/, function (req, res) {
-  var terms = req.session.data['terms'];
-
-  
- if (terms.includes('two')) {
-    res.redirect('final-year');
-  } else if (terms.includes('three')) {
-    res.redirect('term3-dates');
-  }  
-});
- 
-router.get(/term3dates-handler/, function (req, res) {
-  res.redirect('final-year');
-}); 
 
 
 // ************************************

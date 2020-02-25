@@ -1,0 +1,292 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+  #capitalize::first-letter {
+    text-transform: uppercase;
+  }
+</style>
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Education and training
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+        <!-- What qualification -->
+        <div>
+          <dt class="cya-question">
+            Name of school, college or university
+          </dt>
+          <dd class="cya-answer">
+            <p> 
+                
+            University of Northumbria
+            </p>
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="../edu-and-train-iteration2/name-of-establishment.html">
+              Change<span class="visually-hidden"> university</span>
+            </a>
+          </dd>
+        </div>
+    
+        <!-- What qualification -->
+        <div>
+          <dt class="cya-question">
+            Qualification 
+          </dt>
+          <dd class="cya-answer">
+                
+             {{ data['course'] }} 
+            
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="../edu-and-train-iteration2/name-of-course.html">
+              Change<span class="visually-hidden"> qualification</span>
+            </a>
+          </dd>
+        </div>
+        
+      
+
+          <div>
+            
+          <dt class="cya-question">
+             Overseas student
+          </dt>
+          <dd class="cya-answer">
+             
+            <p>
+            {% if data['overseas'] == "no" %}
+            No
+            {% endif %}
+            {% if data['overseas'] == "yes" %}
+            Yes
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="../edu-and-train-iteration2/overseas-student.html">
+              Change<span class="visually-hidden"> studying overseas</span>
+            </a>
+          </dd>
+        
+        </div>
+       
+
+        <div>
+            
+            <dt class="cya-question">
+                Number of terms this academic year
+            </dt>
+            <dd class="cya-answer">
+                {% if data['terms'] == "one" %}
+                1 term
+                {% endif %}
+                {% if data['terms'] == "two" %}
+                2 terms
+                {% endif %} 
+                {% if data['terms'] == "three" %}
+                3 terms
+                {% endif %} 
+            </dd>
+            <dd class="cya-change">
+              <a class="link-right" href="../edu-and-train-iteration2/how-many-terms.html">
+                Change<span class="visually-hidden">Uni</span>
+              </a>
+            </dd>
+          </div>
+          
+      
+          {% if data['terms'] == "one" %}
+
+
+          <div>
+            
+              <dt class="cya-question">
+                  Term date
+              </dt>
+              <dd class="cya-answer">
+                  Start date : 28 September 2019 <br>
+                  End date : 18 December 2019
+                
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
+                  Change<span class="visually-hidden">Uni</span>
+                </a>
+              </dd>
+            
+            </div>
+            {% endif %}
+  
+            {% if data['terms'] == "two" %}
+            <div>
+            
+                <dt class="cya-question">
+                   Term 1 dates
+                </dt>
+                <dd class="cya-answer">
+                    
+                    Start date : 28 September 2019 <br>
+                    End date : 18 December 2019   
+                 
+                </dd>
+                <dd class="cya-change">
+                  <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
+                    Change<span class="visually-hidden">Uni</span>
+                  </a>
+                </dd>
+              
+              </div>
+
+              <div>
+            
+                  <dt class="cya-question">
+                     Term 2 dates
+                  </dt>
+                  <dd class="cya-answer">
+                      
+                    Start date   :  11 January 2020 <br>
+                    End date : 26 March 2020    
+                   
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="../edu-and-train-iteration2/term2-dates.html">
+                      Change<span class="visually-hidden">Uni</span>
+                    </a>
+                  </dd>
+                
+                </div>
+              {% endif %}
+
+
+              {% if data['terms'] == "three" %}
+              <div>
+            
+                  <dt class="cya-question">
+                      Term 1 dates
+                  </dt>
+                  <dd class="cya-answer">
+                      
+                 Start date : 28 September 2019 <br>
+                  End date : 18 December 2019   
+                 
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
+                      Change<span class="visually-hidden">Uni</span>
+                    </a>
+                  </dd>
+                
+                </div>
+
+                <div>
+            
+                    <dt class="cya-question">
+                        Term 2 dates
+                    </dt>
+                    <dd class="cya-answer">
+                        
+                        Start date   :  11 January 2020 <br>
+                        End date : 26 March 2020  
+            
+                      
+                    </dd>
+                    <dd class="cya-change">
+                      <a class="link-right" href="../edu-and-train-iteration2/term2-dates.html">
+                        Change<span class="visually-hidden">Uni</span>
+                      </a>
+                    </dd>
+                  
+                  </div>
+                  <div>
+            
+                      <dt class="cya-question">
+                          Term 3 dates
+                      </dt>
+                      <dd class="cya-answer">
+                          
+                        Start date   :  26 April 2020 <br>
+                        End date : 18 June 2020   
+                     
+                    
+                      </dd>
+                      <dd class="cya-change">
+                        <a class="link-right" href="../edu-and-train-iteration2/term3-dates.html">
+                          Change<span class="visually-hidden">Uni</span>
+                        </a>
+                      </dd>
+                    
+                    </div>
+                  {% endif %}
+
+        
+
+                <div>
+            
+                  <dt class="cya-question">
+                      Final or only year of course
+                  </dt>
+                  <dd class="cya-answer">
+                  <p>
+                  {% if data['finalyear'] == "no" %}
+                  No
+                  {% endif %}
+                  {% if data['finalyear'] == "yes" %}
+                  Yes
+                  {% endif %} 
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="#">
+                      Change<span class="visually-hidden"> if it's your final year</span>
+                    </a>
+                  </dd>
+                </div>
+    
+                
+                </dl>
+            </div>
+  </div>
+
+    <div class="column-two-thirds">
+      <div class="form-group" style="margin-top:50px;">
+        <a class="button" href="task-list-r6.html">Next</a>
+      </div>
+    </div>
+ 
+
+    
+
+
+</main>
+
+{% endblock %}

@@ -30,29 +30,30 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Education or Training</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you in the final year or only year of your course?</h1>
+        <p class="page-header--sub heading-secondary">Education and training</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you have 3 terms for this academic year?</h1>
       </header>
-
-      
-
-      <form action="finalyear-iteration5b-handler" method="get" class="form">
+   <p>These are not the same as semesters. <br> <br>
+    A list of term dates can usually be found online in your course portal or university or college’s academic calendar. 
+    </p>
+      <form action="howmanyterms-iteration6b3-handler" method="get" class="form">
 
         <div class="form-group">
 
-          <fieldset class="inline">
+          
             <legend class="visually-hidden">
             </legend>
-
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="finalyear" value="yes">
-              <label for="yes">Yes</label>
-            </div>
+                <input id="yes" type="radio" name="yes" value="yes">
+                <label for="yes">Yes</label>
+              </div>
+  
+              <div class="multiple-choice">
+                <input id="no" type="radio" name="no" value="no">
+                <label for="no">No</label>
+              </div>
 
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="finalyear" value="no">
-              <label for="no">No</label>
-            </div>
+
 
           </fieldset>
 
