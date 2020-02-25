@@ -5710,7 +5710,7 @@ router.get(/howmanyterms-iteration6b3-handler/, function (req, res) {
   if (req.query.howmanyterms == 'yes') {
     res.redirect('term1-dates');
   } else if  (req.query.howmanyterms == 'no') {
-    res.redirect('cya');
+    res.redirect('/kickouts/students-developed');
   }
 });
 
