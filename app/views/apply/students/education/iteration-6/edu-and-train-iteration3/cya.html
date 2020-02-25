@@ -94,7 +94,7 @@ NHSBSA Prototype
             {% endif %}
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="../edu-and-train-iteration2/overseas-student.html">
+            <a class="link-right" href="../edu-and-train-iteration3/overseas-student.html">
               Change<span class="visually-hidden"> studying overseas</span>
             </a>
           </dd>
@@ -105,91 +105,27 @@ NHSBSA Prototype
         <div>
             
             <dt class="cya-question">
-                Number of terms this academic year
+                3 terms
             </dt>
             <dd class="cya-answer">
-                {% if data['terms'] == "one" %}
-                1 term
+                {% if data['howmanyterms'] == "no" %}
+                No
                 {% endif %}
-                {% if data['terms'] == "two" %}
-                2 terms
-                {% endif %} 
-                {% if data['terms'] == "three" %}
-                3 terms
-                {% endif %} 
+                {% if data['howmanyterms'] == "yes" %}
+                Yes
+                {% endif %}
             </dd>
             <dd class="cya-change">
-              <a class="link-right" href="../edu-and-train-iteration2/how-many-terms.html">
+              <a class="link-right" href="../edu-and-train-iteration3/">
                 Change<span class="visually-hidden">Uni</span>
               </a>
             </dd>
           </div>
           
       
-          {% if data['terms'] == "one" %}
+          {% if data['howmanyterms'] == "yes" %}
 
 
-          <div>
-            
-              <dt class="cya-question">
-                  Term date
-              </dt>
-              <dd class="cya-answer">
-                  Start date : 28 September 2019 <br>
-                  End date : 18 December 2019
-                
-              </dd>
-              <dd class="cya-change">
-                <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
-                  Change<span class="visually-hidden">Uni</span>
-                </a>
-              </dd>
-            
-            </div>
-            {% endif %}
-  
-            {% if data['terms'] == "two" %}
-            <div>
-            
-                <dt class="cya-question">
-                   Term 1 dates
-                </dt>
-                <dd class="cya-answer">
-                    
-                    Start date : 28 September 2019 <br>
-                    End date : 18 December 2019   
-                 
-                </dd>
-                <dd class="cya-change">
-                  <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
-                    Change<span class="visually-hidden">Uni</span>
-                  </a>
-                </dd>
-              
-              </div>
-
-              <div>
-            
-                  <dt class="cya-question">
-                     Term 2 dates
-                  </dt>
-                  <dd class="cya-answer">
-                      
-                    Start date   :  11 January 2020 <br>
-                    End date : 26 March 2020    
-                   
-                  </dd>
-                  <dd class="cya-change">
-                    <a class="link-right" href="../edu-and-train-iteration2/term2-dates.html">
-                      Change<span class="visually-hidden">Uni</span>
-                    </a>
-                  </dd>
-                
-                </div>
-              {% endif %}
-
-
-              {% if data['terms'] == "three" %}
               <div>
             
                   <dt class="cya-question">

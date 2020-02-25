@@ -5689,7 +5689,46 @@ router.get(/finalyear-iteration6b2-handler/, function (req, res) {
   res.redirect('../edu-and-train-iteration2/cya.html');
 });
 
+// *******************************************************************
+// Education and Training (Iteration/ Release 6) - NEW with Term dates
+// ********************************************************************
 
+
+//Edu and training - Iteration 3 with Term dates
+
+router.get(/nameofcourse-iteration6b3-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration3/overseas-student.html');
+});
+
+router.get(/overseas6b3-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration3/how-many-terms.html');
+  
+});
+
+
+router.get(/howmanyterms-iteration6b3-handler/, function (req, res) {
+  if (req.query.howmanyterms == 'yes') {
+    res.redirect('term1-dates');
+  } else if  (req.query.howmanyterms == 'no') {
+    res.redirect('cya');
+  }
+});
+
+router.get(/term1dates-iteration6b3-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration3/term2-dates.html');
+});
+
+router.get(/term2dates-iteration6b3-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration3/term3-dates.html');
+});
+
+router.get(/term3dates-iteration6b3-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration3/final-year.html');
+});
+
+router.get(/finalyear-iteration6b3-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration3/cya.html');
+});
 
 
 
