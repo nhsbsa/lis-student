@@ -1253,7 +1253,13 @@ router.get(/fulltimeeduiteration6-handler/, function (req, res) {
 
 router.get(/fundingiteration6-handler/, function (req, res) {
   
- if (req.query.funding.includes('NHS-help')) {
+  var fulltimeedu = req.session.data['fulltimeedu'];
+
+  if (req.query.funding == 'friendsfamily-help' && fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/iteration-6/money-coming-in-single');
+  } else if (req.query.funding == 'none-help' && fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/iteration-6/money-coming-in-single');
+} else if (req.query.funding.includes('NHS-help')) {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('HEI-help')) {
     res.redirect('/kickouts/students-developed');
@@ -5770,18 +5776,25 @@ router.get(/coursefinishdate-iteration6b-handler/, function (req, res) {
 //*********************************************//
 //Iteration 6 - Money to support your education//
 //*********************************************//
+
 router.get(/whopaysiteration6-handler/, function (req, res) {
   
-  if (req.query.tuitionfee.includes('sfe-pay')) {
-   res.redirect('../money-support-edu/student-loan-copy');
+ if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay') {
+  res.redirect('../money-support-edu/tuition-fee-how-much');
+} else if (req.query.tuitionfee.toString() == 'myself-pay,sfw-pay') {
+  res.redirect('../money-support-edu/tuition-fee-how-much');
+} else if (req.query.tuitionfee.toString() == 'myself-pay,saas-pay') {
+  res.redirect('../money-support-edu/tuition-fee-how-much');
+}else  if (req.query.tuitionfee.includes('sfe-pay')) {
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.includes('sfw-pay')) {
-   res.redirect('../money-support-edu/student-loan-copy');
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.includes('saas-pay')) {
-   res.redirect('../money-support-edu/student-loan-copy');
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.includes('nhs-pay')) {
    res.redirect('/kickouts/students-developed');
  } else if (req.query.tuitionfee.includes('none-pay')) {
-   res.redirect('../money-support-edu/student-loan-copy');
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.includes('myself-pay')) {
      res.redirect('../money-support-edu/tuition-fee-how-much');
  } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
@@ -5792,22 +5805,20 @@ router.get(/whopaysiteration6-handler/, function (req, res) {
    res.redirect('../money-support-edu/tuition-fee-how-much');
  } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay,sfw-pay') {
    res.redirect('../money-support-edu/tuition-fee-how-much');
- } else if (req.query.tuitionfee.toString() == 'myself-pay,sfe-pay') {
-   res.redirect('../money-support-edu/tuition-fee-how-much');
  } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
    res.redirect('kickouts/students-developed');
  } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay') {
    res.redirect('kickouts/students-developed');
  } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay,saas-pay') {
-   res.redirect('../money-support-edu/student-loan-copy');
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.toString() == 'sfe-pay,sfw-pay') {
-   res.redirect('../money-support-edu/student-loan-copy');
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay,none-help') {
    res.redirect('kickouts/students-developed');
  } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay,nhs-pay') {
    res.redirect('kickouts/students-developed');
  } else if (req.query.tuitionfee.toString() == 'sfw-pay,saas-pay') {
-   res.redirect('../money-support-edu/student-loan-copy');
+   res.redirect('../money-support-edu/contribution-type');
  } else if (req.query.tuitionfee.toString() == 'nhs-pay,none-help') {
    res.redirect('kickouts/students-developed');
  } else if (req.query.tuitionfee.toString() == 'saas-pay,nhs-pay,') {
@@ -5829,16 +5840,6 @@ router.get(/awarditeration6-handler/, function (req, res) {
     res.redirect('../money-support-edu/contribution-type');
   }
 });
-
-router.get(/awarditeration6b-handler/, function (req, res) {
-  var funding = req.session.data['funding'];
-  if (req.query.awardnotice && funding.includes('family-help')) {
-    res.redirect('../money-support-edu/contribution-type');
-  } else {
-    res.redirect('../money-support-edu/money-another-1');
-  }
-});
-
 
 router.get(/tuitionfeehowmuchiteration6-handler/, function (req, res) {
   if (req.query.tuitionfeehowmuch) {
@@ -5923,16 +5924,11 @@ router.get(/relativeshowmuchiteration6-handler/, function (req, res) {
 
 
 router.get(/moneyanotheriteration6-handler/, function (req, res) {
-  var funding = req.session.data['funding'];
-  if (funding.includes('family-help')) {
-    res.redirect('../money-support-edu/cya');
-  } else {
-    res.redirect('../money-support-edu/cya-no-family-friends');
-  }
+  res.redirect('../money-support-edu/cya');
 });
 
 //*********************************************//
-//Iteration 6 - Money to support your education//
+//Iteration 6 - Where you live //
 //*********************************************//
 
 router.get(/hospital-iteration6-handler/, function (req, res) {
