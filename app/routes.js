@@ -5927,12 +5927,12 @@ router.get(/moneyanotheriteration6-handler/, function (req, res) {
   res.redirect('../money-support-edu/cya');
 });
 
-//*********************************************//
+//**********************************//
 //Iteration 6 - Where you live //
-//*********************************************//
+//**********************************//
 
 router.get(/hospital-iteration6-handler/, function (req, res) {
-  if (req.query.hospital== 'yes') {
+  if (req.query.hospital == 'yes') {
     res.redirect('../where-you-live/live-with-parents');
   } else if (req.query.hospital == 'no') {
     res.redirect('../where-you-live/live-with-parents');
@@ -5940,7 +5940,7 @@ router.get(/hospital-iteration6-handler/, function (req, res) {
 });
 
 router.get(/liveparentsiteration6-handler/, function (req, res) {
-  if (req.query.livewithparents== 'yes') {
+  if (req.query.livewithparents == 'yes') {
     res.redirect('../where-you-live/cya');
   } else if (req.query.livewithparents == 'no') {
     res.redirect('../where-you-live/type-of-property');
@@ -5949,6 +5949,8 @@ router.get(/liveparentsiteration6-handler/, function (req, res) {
 
 
 router.get(/typepropertyiteration6-handler/, function (req, res) {
+
+
   if (req.query.typeproperty == 'someoneelse-prop') {
     res.redirect('../where-you-live/cya');
   } else if (req.query.typeproperty.includes('rentprop')) {
