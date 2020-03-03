@@ -1271,7 +1271,7 @@ router.get(/fundingiteration6-handler/, function (req, res) {
     res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
   }else if (req.query.funding.includes('SL-help')) {
       res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
-}else if (req.query.funding.includes('family-help')) {
+}else if (req.query.funding.includes('friendsfamily-help')) {
       res.redirect('/beforeyoustart/student/iteration-6/live-with-parents.html');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
