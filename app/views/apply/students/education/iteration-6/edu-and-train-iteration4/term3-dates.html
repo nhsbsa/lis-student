@@ -1,0 +1,94 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary">Education and training</p>
+          <h1 class="heading-large">When does your third term start and end?</h1>
+          
+        </header>
+
+        <form action="term3dates-iteration6b3-handler" class="form" method="get">
+        
+            
+              <p>If you’re not sure what your term dates are, visit your student portal or college or university website.  </p>
+          <fieldset class="form-group">
+
+              <label class="form-label-bold" for="start-date" id="start-date-label">Term 3 start date</label>
+             
+            <legend class="visuallyhidden">Term 3 start date</legend>
+            <p class="form-hint">For example, 20 4 2020 </p>
+
+
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="dob-year">Year</label> <input class="form-control" id="dob-year" max="" min="0" name="dob-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+
+              
+              <label class="form-label-bold" for="end-date" id="end-date-label">Term 3 end date</label>
+             
+              <legend class="visuallyhidden">Term 3 end date</legend>
+              <p class="form-hint">For example, 5 6 2020 </p>
+  
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="dob-day" pattern="[0-9]*" type="number">
+                </div>
+  
+                <div class="form-group form-group-month">
+                  <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="dob-month" pattern="[0-9]*" type="number">
+                </div>
+  
+                <div class="form-group form-group-year">
+                  <label for="dob-year">Year</label> <input class="form-control" id="dob-year" max="" min="0" name="dob-year" pattern="[0-9]*" type="number">
+                </div>
+  
+              </div>
+            </fieldset>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+</main>
+
+{% endblock %}

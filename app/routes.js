@@ -5650,7 +5650,7 @@ router.get(/coursefinishdate-iteration6-handler/, function (req, res) {
 });
 
 // *******************************************************************
-// Education and Training (Iteration/ Release 6) - NEW with Term dates
+// Education and Training-2 (Iteration/ Release 6) - NEW with Term dates
 // ********************************************************************
 
 
@@ -5710,7 +5710,7 @@ router.get(/finalyear-iteration6b2-handler/, function (req, res) {
 });
 
 // *******************************************************************
-// Education and Training (Iteration/ Release 6) - NEW with Term dates
+// Education and Training -3 (Iteration/ Release 6) - NEW with Term dates
 // ********************************************************************
 
 
@@ -5749,6 +5749,25 @@ router.get(/term3dates-iteration6b3-handler/, function (req, res) {
 router.get(/finalyear-iteration6b3-handler/, function (req, res) {
   res.redirect('../edu-and-train-iteration3/cya.html');
 });
+
+
+// ********************************************************************//
+// Education and Training-4 (Release 6) - NEW with Term Dates Play back
+// ********************************************************************//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
