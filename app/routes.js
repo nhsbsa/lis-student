@@ -5738,7 +5738,7 @@ router.get(/academicstart-iteration6-handler/, function (req, res) {
   res.redirect('course-finish-date');
 });
 
-router.get(/course-finishdate-iteration6-handler/, function (req, res) {
+router.get(/coursefinish-iteration6-handler/, function (req, res) {
   res.redirect('final-year');
 });
 
