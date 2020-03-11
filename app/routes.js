@@ -5762,22 +5762,51 @@ router.get(/finalyear-iteration6b3-handler/, function (req, res) {
 
 
 // ********************************************************************//
-// Education and Training-4 (Release 6) - NEW with Term Dates Play back
+// Release 6.2 Education and Training -  with Term Dates Play back
 // ********************************************************************//
 
+router.get(/nameofcourse-iteration6-2-handler/, function (req, res) {
+  res.redirect('../edu-and-train/term-dates-test.html');
+});
+
+router.get(/termdatesall-iteration6-2-handler/, function (req, res) {
+  if (req.query.termdatesall == 'yes') {
+    res.redirect('../edu-and-train/final-year');
+  } else if  (req.query.termdatesall == 'no') {
+    res.redirect('../edu-and-train/how-many-terms');
+  }
+});
 
 
+router.get(/howmanyterms-iteration6-2-handler/, function (req, res) {
+  if (req.query.howmanyterms == 'yes') {
+    res.redirect('term1-dates');
+  } else if  (req.query.howmanyterms == 'no') {
+    res.redirect('academic-start');
+  }
+});
+
+router.get(/term1dates-iteration6-2-handler/, function (req, res) {
+  res.redirect('term2-dates.html');
+});
+
+router.get(/term2dates-iteration6-2-handler/, function (req, res) {
+  res.redirect('term3-dates.html');
+});
+
+router.get(/term3dates-iteration6-2-handler/, function (req, res) {
+  res.redirect('final-year.html');
+});
 
 
+router.get(/finalyear-iteration6-2-handler/, function (req, res) {
+  res.redirect('overseas-student.html');
+});
 
-
-
-
-
-
-
-
-
+router.get(/overseas-iteration6-2-handler/, function (req, res) {
+  res.redirect('cya.html');
+  
+});
 
 
 

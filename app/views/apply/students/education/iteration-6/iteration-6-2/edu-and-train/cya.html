@@ -53,7 +53,7 @@ NHSBSA Prototype
             </p>
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="../edu-and-train-iteration2/name-of-establishment.html">
+            <a class="link-right" href="name-of-establishment.html">
               Change<span class="visually-hidden"> university</span>
             </a>
           </dd>
@@ -70,37 +70,36 @@ NHSBSA Prototype
             
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="../edu-and-train-iteration2/name-of-course.html">
+            <a class="link-right" href="name-of-course.html">
               Change<span class="visually-hidden"> qualification</span>
             </a>
           </dd>
         </div>
         
-      
-
-          <div>
-            
+        <!-- Term dates playback -->
+        <div>
           <dt class="cya-question">
-             Overseas student
+            Confirm term dates
           </dt>
           <dd class="cya-answer">
-             
-            <p>
-            {% if data['overseas'] == "no" %}
+                
+            {% if data['termdatesall'] == "no" %}
             No
             {% endif %}
-            {% if data['overseas'] == "yes" %}
+            {% if data['termdatesall'] == "yes" %}
             Yes
             {% endif %}
+            
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="../edu-and-train-iteration3/overseas-student.html">
-              Change<span class="visually-hidden"> studying overseas</span>
+            <a class="link-right" href="term-dates-test.html">
+              Change<span class="visually-hidden"> qualification</span>
             </a>
           </dd>
-        
         </div>
+
        
+        {% if data['termdatesall'] == "no" %}
 
         <div>
             
@@ -116,12 +115,12 @@ NHSBSA Prototype
                 {% endif %}
             </dd>
             <dd class="cya-change">
-              <a class="link-right" href="../edu-and-train-iteration3/">
+              <a class="link-right" href="how-many-terms.html">
                 Change<span class="visually-hidden">Uni</span>
               </a>
             </dd>
           </div>
-          
+          {% endif %}
       
           {% if data['howmanyterms'] == "yes" %}
 
@@ -138,13 +137,13 @@ NHSBSA Prototype
                  
                   </dd>
                   <dd class="cya-change">
-                    <a class="link-right" href="../edu-and-train-iteration2/term1-dates.html">
+                    <a class="link-right" href="term1-dates.html">
                       Change<span class="visually-hidden">Uni</span>
                     </a>
                   </dd>
                 
                 </div>
-
+                
                 <div>
             
                     <dt class="cya-question">
@@ -158,7 +157,7 @@ NHSBSA Prototype
                       
                     </dd>
                     <dd class="cya-change">
-                      <a class="link-right" href="../edu-and-train-iteration2/term2-dates.html">
+                      <a class="link-right" href="term2-dates.html">
                         Change<span class="visually-hidden">Uni</span>
                       </a>
                     </dd>
@@ -177,7 +176,7 @@ NHSBSA Prototype
                     
                       </dd>
                       <dd class="cya-change">
-                        <a class="link-right" href="../edu-and-train-iteration2/term3-dates.html">
+                        <a class="link-right" href="term3-dates.html">
                           Change<span class="visually-hidden">Uni</span>
                         </a>
                       </dd>
@@ -185,7 +184,47 @@ NHSBSA Prototype
                     </div>
                   {% endif %}
 
-        
+                  {% if data['howmanyterms'] == "no" %}
+                  <div>
+            
+                    <dt class="cya-question">
+                        Course start date
+                    </dt>
+                    <dd class="cya-answer">
+                        
+                    28 September 2019 <br>
+                      
+                   
+                    </dd>
+                    <dd class="cya-change">
+                      <a class="link-right" href="academic-start.html">
+                        Change<span class="visually-hidden">Uni</span>
+                      </a>
+                    </dd>
+                  
+                  </div>
+
+                  <div>
+            
+                    <dt class="cya-question">
+                        Course end date
+                    </dt>
+                    <dd class="cya-answer">
+                        
+                    18 June 2020 <br>
+                      
+                   
+                    </dd>
+                    <dd class="cya-change">
+                      <a class="link-right" href="course-finish-date.html">
+                        Change<span class="visually-hidden">Uni</span>
+                      </a>
+                    </dd>
+                  
+                  </div>
+
+                  {% endif %}
+
 
                 <div>
             
@@ -202,12 +241,34 @@ NHSBSA Prototype
                   {% endif %} 
                   </dd>
                   <dd class="cya-change">
-                    <a class="link-right" href="#">
+                    <a class="link-right" href="final-year.html">
                       Change<span class="visually-hidden"> if it's your final year</span>
                     </a>
                   </dd>
                 </div>
     
+                <div>
+            
+                  <dt class="cya-question">
+                     Overseas student
+                  </dt>
+                  <dd class="cya-answer">
+                     
+                    <p>
+                    {% if data['overseas'] == "no" %}
+                    No
+                    {% endif %}
+                    {% if data['overseas'] == "yes" %}
+                    Yes
+                    {% endif %}
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="overseas-student.html">
+                      Change<span class="visually-hidden"> studying overseas</span>
+                    </a>
+                  </dd>
+                
+                </div>
                 
                 </dl>
             </div>
