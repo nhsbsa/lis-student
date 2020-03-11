@@ -78,28 +78,7 @@ NHSBSA Prototype
         
       
 
-          <div>
-            
-          <dt class="cya-question">
-             Overseas student
-          </dt>
-          <dd class="cya-answer">
-             
-            <p>
-            {% if data['overseas'] == "no" %}
-            No
-            {% endif %}
-            {% if data['overseas'] == "yes" %}
-            Yes
-            {% endif %}
-          </dd>
-          <dd class="cya-change">
-            <a class="link-right" href="../edu-and-train-iteration3/overseas-student.html">
-              Change<span class="visually-hidden"> studying overseas</span>
-            </a>
-          </dd>
-        
-        </div>
+    
        
 
         <div>
@@ -248,6 +227,29 @@ NHSBSA Prototype
                       Change<span class="visually-hidden"> if it's your final year</span>
                     </a>
                   </dd>
+                </div>
+
+                <div>
+            
+                  <dt class="cya-question">
+                     Overseas student
+                  </dt>
+                  <dd class="cya-answer">
+                     
+                    <p>
+                    {% if data['overseas'] == "no" %}
+                    No
+                    {% endif %}
+                    {% if data['overseas'] == "yes" %}
+                    Yes
+                    {% endif %}
+                  </dd>
+                  <dd class="cya-change">
+                    <a class="link-right" href="../edu-and-train-iteration3/overseas-student.html">
+                      Change<span class="visually-hidden"> studying overseas</span>
+                    </a>
+                  </dd>
+                
                 </div>
     
                 

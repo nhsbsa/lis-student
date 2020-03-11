@@ -5717,11 +5717,11 @@ router.get(/finalyear-iteration6b2-handler/, function (req, res) {
 //Edu and training - Iteration 3 with Term dates
 
 router.get(/nameofcourse-iteration6b3-handler/, function (req, res) {
-  res.redirect('../edu-and-train-iteration3/overseas-student.html');
+  res.redirect('../edu-and-train-iteration3/how-many-terms.html');
 });
 
 router.get(/overseas6b3-handler/, function (req, res) {
-  res.redirect('../edu-and-train-iteration3/how-many-terms.html');
+  res.redirect('../edu-and-train-iteration3/cya.html');
   
 });
 
@@ -5757,7 +5757,7 @@ router.get(/term3dates-iteration6b3-handler/, function (req, res) {
 });
 
 router.get(/finalyear-iteration6b3-handler/, function (req, res) {
-  res.redirect('../edu-and-train-iteration3/cya.html');
+  res.redirect('../edu-and-train-iteration3/overseas-student.html');
 });
 
 
