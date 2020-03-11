@@ -5730,10 +5730,20 @@ router.get(/howmanyterms-iteration6b3-handler/, function (req, res) {
   if (req.query.howmanyterms == 'yes') {
     res.redirect('term1-dates');
   } else if  (req.query.howmanyterms == 'no') {
-    res.redirect('/kickouts/students-developed');
+    res.redirect('academic-start');
   }
 });
 
+router.get(/academicstart-iteration6-handler/, function (req, res) {
+  res.redirect('course-finish-date');
+});
+
+router.get(/course-finishdate-iteration6-handler/, function (req, res) {
+  res.redirect('final-year');
+});
+
+
+academicstart-iteration6-handler
 router.get(/term1dates-iteration6b3-handler/, function (req, res) {
   res.redirect('../edu-and-train-iteration3/term2-dates.html');
 });

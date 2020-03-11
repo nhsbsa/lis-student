@@ -1,0 +1,277 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+  #capitalize::first-letter {
+    text-transform: uppercase;
+  }
+  .no-border {
+    border-bottom: 0 !important;
+  }
+</style>
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Money to support your education
+      </h2>
+<br>
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+              <dt class="cya-question">
+                Who pays your tuition fees
+              </dt>
+              <dd class="cya-answer">
+                <p> 
+                    {% if 'myself-pay' in data['tuitionfee'] %}
+                    I pay for my tuition fees<br>
+                    {% endif %}
+                    
+                    {% if 'sfe-pay' in data['tuitionfee'] %}
+                    Student Finance England (SFE)<br>
+                    {% endif %}
+    
+                    {% if 'sfw-pay' in data['tuitionfee'] %}
+                    Student Finance Wales (SFW)<br>
+                    {% endif %}
+    
+                    {% if 'saas-pay' in data['tuitionfee'] %}
+                    Student Awards Agency for Scotland (SAAS)<br>
+                    {% endif %}
+    
+                    {% if 'nhs-pay' in data['tuitionfee'] %}
+                    National Health Service (NHS)<br>
+                    {% endif %}
+    
+                    {% if 'none-pay' in data['tuitionfee'] %}
+                    My course is free<br>
+                    {% endif %}
+    
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="who-pays.html">
+                  Change<span class="visually-hidden"> who pays your tution fee</span>
+                </a>
+              </dd>
+            </div>
+
+            
+
+
+
+            {% if data['tuitionfee'] == "myself-pay" %}
+        
+            <div>
+              <dt class="cya-question">
+                Tution fee amount this academic year 
+              </dt>
+              <dd class="cya-answer">
+                <p>£ {{ data['tuitionfeehowmuch'] }}
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="tuition-fee-how-much.html">
+                  Change<span class="visually-hidden"> tution fee amount</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+
+            <div class="no-border">
+              <dt class="cya-question">
+                Get money from
+              </dt>
+              <dd class="cya-answer">
+                <p> 
+                  {% if 'parents' in data['contributiontype'] %}
+                  Parents<br>
+                  {% endif %}
+  
+                  {% if 'relatives' in data['contributiontype'] %}
+                  Other family members<br>
+                  {% endif %}
+  
+                  {% if 'friends' in data['contributiontype'] %}
+                  Friends<br>
+                  {% endif %}
+  
+                  {% if 'none' in data['contributiontype'] %}
+                  I do not get any money to help with my day-to-day living costs<br>
+                  {% endif %}</p>
+                   
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="contribution-type.html">
+                  Change<span class="visually-hidden"> where you get money from</span>
+                </a>
+              </dd>
+            </div>
+          <!-- Money from Parents -->
+        {% if 'parents' in data['contributiontype']  %}
+       
+        <div>
+            <dt class="cya-question no-border">
+              How often you get money from your parents
+            </dt>
+            <dd class="cya-answer no-border">
+                {% if data['parentshowoften'] == "every week" %}
+                Every week
+                {% endif %}
+                {% if data['parentshowoften'] == "every month" %}
+                Every month
+                {% endif %}
+            </dd>
+            <dd class="cya-change no-border">
+              <a class="link-right" href="parents-how-often.html">
+                Change<span class="visually-hidden"> how often your parents give you money</span>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">
+                Amount from parents
+            </dt>
+            <dd class="cya-answer">
+                <p> £{{ data['parentshowmuch']}}</p>
+            </dd>
+            <dd class="cya-change">
+              <a class="link-right" href="parents-how-much.html">
+                Change<span class="visually-hidden"> how much parents give you</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+        <!-- /. -->
+
+
+
+
+        <!-- Money from family members -->
+        {% if 'relatives' in data['contributiontype']  %}
+        <div>
+            <dt class="cya-question no-border">
+              How often you get money from family members
+            </dt>
+            <dd class="cya-answer no-border">
+                {% if data['relativeshowoften'] == "every week" %}
+                Every week
+                {% endif %}
+                {% if data['relativeshowoften'] == "every month" %}
+                Every month
+                {% endif %}
+            </dd>
+            <dd class="cya-change no-border">
+              <a class="link-right" href="relatives-how-often.html">
+                Change<span class="visually-hidden"> how often other family members give you money</span>
+              </a>
+            </dd>
+          </div>
+          <div class="no-border">
+            <dt class="cya-question">
+                Amount from family members
+            </dt>
+            <dd class="cya-answer">
+                <p> £{{ data['relativeshowmuch']}}</p>
+            </dd>
+            <dd class="cya-change">
+              <a class="link-right" href="relatives-how-much.html">
+                Change<span class="visually-hidden"> how much other family members give you</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+        <!-- /. -->
+
+        <!-- Money from friends -->
+        {% if 'friends' in data['contributiontype'] %}
+        <div>
+            <dt class="cya-question no-border">
+              How often you get money from friends
+            </dt>
+            <dd class="cya-answer no-border">
+                {% if data['friendshowoften'] == "every week" %}
+                Every week
+                {% endif %}
+                {% if data['friendshowoften'] == "every month" %}
+                Every month
+                {% endif %}
+            </dd>
+            <dd class="cya-change no-border">
+              <a class="link-right" href="friends-how-often.html">
+                Change<span class="visually-hidden"> how often your friends give you money</span>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="cya-question">
+              Amount from friends
+            </dt>
+            <dd class="cya-answer">
+                <p> £{{ data['friendshowmuch']}}</p>
+            </dd>
+            <dd class="cya-change">
+              <a class="link-right" href="friends-how-much.html">
+                Change<span class="visually-hidden"> how much your friends give you</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+        <!-- /. -->
+           
+
+
+        <div>
+            
+          <dt class="cya-question">
+            Get any money from anyone else
+          </dt>
+          <dd class="cya-answer">
+            {% if data['moneyanother'] == "yes" %}
+             Yes
+            {% endif %}
+            {% if data['moneyanother'] == "no" %}
+              No
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="money-another-1.html">
+              Change<span class="visually-hidden"> if you get money from anyone else</span>
+            </a>
+          </dd>
+        </div>
+    
+       
+      
+    </div>
+    <div class="column-two-thirds">
+      <div class="form-group" style="margin-top:50px;">
+        <a class="button" href="../where-you-live/task-list.html" >Next</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
