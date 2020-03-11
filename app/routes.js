@@ -5743,7 +5743,7 @@ router.get(/coursefinish-iteration6-handler/, function (req, res) {
 });
 
 
-academicstart-iteration6-handler
+
 router.get(/term1dates-iteration6b3-handler/, function (req, res) {
   res.redirect('../edu-and-train-iteration3/term2-dates.html');
 });
