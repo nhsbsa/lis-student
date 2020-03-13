@@ -6121,17 +6121,15 @@ router.get(/wheredoyoulive-iteration7-handler/, function (req, res) {
 
   if (req.query.typeproperty == 'someoneelse-prop') {
     res.redirect('../where-you-live/cya');
-  } else if (req.query.typeproperty.includes('rentprop')) {
-    res.redirect('tenancy-start-end');
-  } else if (req.query.typeproperty.includes('own-prop')) {
+  } else if (req.query.typeproperty == 'rentprop') {
+    res.redirect('../where-you-live/tenancy-start-end');
+  } else if (req.query.typeproperty =='own-prop') {
     res.redirect('#');
-  } else if (req.query.typeproperty.includes('shared-prop')) {
+  } else if (req.query.typeproperty == 'shared-prop') {
     res.redirect('#');
-  } else if (req.query.typeproperty.toString() == 'noadd-prop') {
+  } else if (req.query.typeproperty == 'noadd-prop') {
     res.redirect('#');
-  }  else {
-    res.redirect('../where-you-live/type-of-property');
-  }
+  }  
 });
 
 
