@@ -1,0 +1,223 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary">Education and training</p>
+          <h1 class="heading-large">What are your term dates? </h1>
+          
+        </header>
+        
+        <form action="term1dates-iteration6b3-handler" class="form" method="get">
+
+            <p style="color:#6f777b">If you’re not sure what your term dates are, visit your student portal online, college or university website. 
+               </p>
+
+               
+
+          <fieldset class="form-group">
+              
+              <label class="form-label-bold" for="start-date" id="start-date-label" >Term 1 </label>
+              <p>Start date</p>
+             
+            <legend class="visuallyhidden">Term 1 start date</legend>
+            <p class="form-hint">For example, 23 9 2019 </p>
+
+
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="term1-day">Day</label> <input class="form-control" id="term1-day" max="31" min="0" name="term1-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="term1-month">Month</label> <input class="form-control" id="term1-month" max="12" min="0" name="term1-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="term1-year">Year</label> <input class="form-control" id="term1-year" max="" min="0" name="term1-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+          </fieldset>
+
+          
+          <fieldset class="form-group">
+
+              
+            <label class="form-label-bold" for="end-date" id="end-date-label">Term 1 </label>
+            <p>End date</p><td>
+            <legend class="visuallyhidden">Term 1 end date</legend>
+            <p class="form-hint">For example, 20 12 2019 </p>
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="term1-end-day">Day</label> <input class="form-control" id="term1-end-day" max="31" min="0" name="term1-end-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="term1-end-month">Month</label> <input class="form-control" id="term1-end-month" max="12" min="0" name="term1-end-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="term1-end-year">Year</label> <input class="form-control" id="term1-end-year" max="" min="0" name="term1-end-year" pattern="[0-9]*" type="number">
+              </div>
+            </td>
+            </div>
+          </fieldset> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          <fieldset class="form-group">
+              
+              <label class="form-label-bold" for="start-date" id="start-date-label" >Term 2 start date</label>
+             
+            <legend class="visuallyhidden">Term 2 start date</legend>
+            <p class="form-hint">For example, 23 9 2019 </p>
+
+
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="term1-day">Day</label> <input class="form-control" id="term1-day" max="31" min="0" name="term1-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="term1-month">Month</label> <input class="form-control" id="term1-month" max="12" min="0" name="term1-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="term1-year">Year</label> <input class="form-control" id="term1-year" max="" min="0" name="term1-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+              
+              <label class="form-label-bold" for="start-date" id="start-date-label" >Term 2 end date</label>
+             
+            <legend class="visuallyhidden">Term 1 end date</legend>
+            <p class="form-hint">For example, 23 9 2019 </p>
+
+
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="term1-day">Day</label> <input class="form-control" id="term1-day" max="31" min="0" name="term1-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="term1-month">Month</label> <input class="form-control" id="term1-month" max="12" min="0" name="term1-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="term1-year">Year</label> <input class="form-control" id="term1-year" max="" min="0" name="term1-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+              
+              <label class="form-label-bold" for="start-date" id="start-date-label" >Term 3 start date</label>
+             
+            <legend class="visuallyhidden">Term 3 start date</legend>
+            <p class="form-hint">For example, 23 9 2019 </p>
+
+
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="term1-day">Day</label> <input class="form-control" id="term1-day" max="31" min="0" name="term1-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="term1-month">Month</label> <input class="form-control" id="term1-month" max="12" min="0" name="term1-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="term1-year">Year</label> <input class="form-control" id="term1-year" max="" min="0" name="term1-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+              
+              <label class="form-label-bold" for="start-date" id="start-date-label" >Term 3  date</label>
+             
+            <legend class="visuallyhidden">Term 3 end date</legend>
+            <p class="form-hint">For example, 23 9 2019 </p>
+
+
+
+            
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label for="term1-day">Day</label> <input class="form-control" id="term1-day" max="31" min="0" name="term1-day" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label for="term1-month">Month</label> <input class="form-control" id="term1-month" max="12" min="0" name="term1-month" pattern="[0-9]*" type="number">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label for="term1-year">Year</label> <input class="form-control" id="term1-year" max="" min="0" name="term1-year" pattern="[0-9]*" type="number">
+              </div>
+
+            </div>
+          </fieldset>
+          <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+</main>
+
+{% endblock %}

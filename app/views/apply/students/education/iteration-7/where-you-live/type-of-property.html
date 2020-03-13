@@ -1,0 +1,87 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Where you live</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Where do you live?</h1>
+      </header>
+
+      <form action="wheredoyoulive-iteration7-handler" class="form" method="get">
+
+        <fieldset class="form-group">
+
+          <div class="multiple-choice multiple-radio">
+            <input id="someoneelse" name="typeproperty" value="someoneelse-prop" type="checkbox">
+            <label for="someoneelse"><span class="bold">In someone else's home <p hint>You live with your parents,
+              friends or relatives in their home</span>
+              
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="rent" name="typeproperty" value="rent-prop" type="checkbox">
+            <label for="rent"><span class ='bold'>In a property or room I rent<p hint>You have a tenancy agreement.
+              This includes student accomodation or rent paid to a council or landlord</p></span></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="own" name="typeproperty" value="own-prop" type="checkbox">
+            <label for="own"><strong class = 'bold'>In a property I own</strong><p hint>You own your property, either with or without mortgage</p></label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="shared" name="typeproperty" value="shared-prop" type="checkbox">
+            <label for="shared"><strong class ='bold'>In a shared ownership property<p hint>This is where you pay mortgage and rent</p></strong></label>
+          </div>   
+
+          <div class="multiple-choice multiple-radio">
+            <input id="noadd" name="typeproperty" value="noadd-prop" type="checkbox">
+            <label for="noadd"><strong class ='bold'>I do not have a permanent address <p hint>This could be because you're homeless or 
+              live in a shelter or hostel</p></strong></label>
+          </div>
+
+          
+
+        
+        </fieldset>
+        
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

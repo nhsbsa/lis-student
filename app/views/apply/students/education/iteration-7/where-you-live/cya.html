@@ -1,0 +1,133 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+<style>
+  #capitalize::first-letter {
+    text-transform: uppercase;
+  }
+  .no-border {
+    border-bottom: 0 !important;
+  }
+</style>
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Where you live
+      </h2>
+<br>
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+              <dt class="cya-question">
+                Been in hospital over a year
+              </dt>
+              <dd class="cya-answer">
+                <p> 
+                    {{ data['hospital'] }}
+                    </p>
+    
+              </dd>
+              <dd class="cya-change">
+                <a class="link-right" href="hospital.html">
+                  Change<span class="visually-hidden"> been in hospital over a year</span>
+                </a>
+              </dd>
+            </div>
+
+
+        
+            <div>
+              <dt class="cya-question">
+                Live with parents during term time
+              </dt>
+              <dd class="cya-answer">
+                {{ data['livewithparents'] }} 
+              </dd>
+
+              <dd class="cya-change">
+                <a class="link-right" href="live-with-parents.html">
+                  Change<span class="visually-hidden"> live with parents during term time</span>
+                </a>
+              </dd>
+            </div>
+           
+            {% if data['livewithparents'] == "no" %}
+
+            <div class="no-border">
+              <dt class="cya-question">
+                Where you live
+              </dt>
+              <dd class="cya-answer">
+                 
+
+                    {% if data['typeproperty'] == "someoneelse-prop" %}
+                    <span class="bold">In someone else's home <p hint>If you live with your parents,
+                        friends or relatives in their home</span>
+                    {% endif %}
+
+                    {% if data['typeproperty'] == "rent-prop" %}
+                    <span class ='bold'>A property or room I rent<p hint>This is where you have a tenancy agreement.
+                        It includes student accomodation or rent paid to a council or landlord</p></span>
+                    {% endif %}
+
+                    {% if data['typeproperty'] == "own-prop" %}
+                    <strong class = 'bold'>A property I own</strong>
+                    <p hint>This could be with or without a mortgage</p>
+                    {% endif %}
+                    
+                    {% if data['typeproperty'] == "shared-prop" %}
+                    <strong class ='bold'>A shared ownership property<p hint>This is where you pay mortgage and rent</p></strong>
+                    {% endif %}
+
+                    {% if data['typeproperty'] == "noadd-prop" %}
+                    <strong class ='bold'>I do not have a permanent address <p hint>This could be because you're homeless or 
+                        live in a shelter or hostel</p></strong>
+                    {% endif %}
+
+                   
+              </dd>
+              
+              
+              <dd class="cya-change">
+                <a class="link-right" href="type-of-property.html">
+                  Change<span class="visually-hidden"> where you get money from</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+       
+       
+      
+    </div>
+    <div class="column-two-thirds">
+      <div class="form-group" style="margin-top:50px;">
+        <a class="button" href="task-list-complete.html" >Next</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

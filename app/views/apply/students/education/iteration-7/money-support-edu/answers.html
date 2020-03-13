@@ -1,0 +1,305 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% set benefitCount = data['benefitList'] | length %}
+
+{% block content %}
+<style>
+#capitalize::first-letter {
+    text-transform: uppercase;
+}
+</style>
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Income from state benefits
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+            <dt class="cya-question">
+              <h2 class="heading-small">Receive universal credit</h2>
+            </dt>
+            <dd class="cya-answer">
+              <p id="capitalize">
+                  {% if data['universalcredit'] == "yes" %}
+                  Yes
+                  {% endif %}
+                  {% if data['universalcredit'] == "no" %}
+                  No
+                  {% endif %}
+                  {% if data['universalcredit'] == "not-yet" %}
+                  Not yet, but I have applied
+                  {% endif %}                          
+            </p>
+            </dd>
+            <dd class="cya-change">
+              <a href="#">
+                Change
+              </a>
+            </dd>
+          </div>
+        <div>
+          <dt class="cya-question">
+            <h2 class="heading-small">Receive tax credits</h2>
+          </dt>
+          <dd class="cya-answer">
+            <p id="capitalize">
+                {% if data['taxcredits'] == "yes" %}
+                Yes
+                {% endif %}
+                {% if data['taxcredits'] == "no" %}
+                No
+                {% endif %}
+            </p>
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        {% if data['taxcredits'] == "yes" %}
+        <div>
+          <dt class="cya-question">
+            <h2 class="heading-small">Type of tax credits</h2>
+          </dt>
+          <dd class="cya-answer">
+              <p id="capitalize">
+                  {% if data['taxcredittype'] == "WTCCTC" %}
+                  Working Tax Credit and Child Tax Credit together
+                  {% endif %}
+                  {% if data['taxcredittype'] == "WTCDisability" %}
+                  Working Tax Credit on its own, including a disability element
+                  {% endif %}
+                  {% if data['taxcredittype'] == "CTC" %}
+                  Child Tax Credit on its own
+                  {% endif %}
+                  {% if data['taxcredittype'] == "WTC" %}
+                  Working Tax Credit on its own
+                  {% endif %}                     
+              </p>
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['anyotherbenefits'] == "yes" %}
+        <div>
+          <dt class="cya-question">
+            <h2 class="heading-small">Other benefits received</h2>
+          </dt>
+          <dd class="cya-answer">
+            <p id="capitalize">
+              
+                <table>
+                    <tbody>
+          {% for benefitName in data['benefitList'] %}
+          
+          {{ benefitName}}{% if benefitCount > 1 %},{% endif %}<br>
+          
+          {% endfor %}
+              </tbody>
+              </table>
+
+
+            </p>
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+
+{% if "JSA (Jobseeker's allowance)" in data['benefitList'] %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">JSA type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['jobseekerstype'] == "income" %}
+          Income-based JSA
+          {% endif %}
+          {% if data['jobseekerstype'] == "contribution" %}
+          Contribution-based JSA
+          {% endif %}        
+      </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if "ESA (Employment and support allowance)" in data['benefitList'] %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">ESA type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+
+          {% if data['employmentsupporttype'] == "income" %}
+          Income-related ESA
+          {% endif %}
+          {% if data['employmentsupporttype'] == "contribution" %}
+          Contribution-based ESA
+          {% endif %}
+        
+        </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if "Pension credit" in data['benefitList'] %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">Pension credit type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['pensioncredittype'] == "GC" %}
+          Guarantee Credit only
+          {% endif %}
+          {% if data['pensioncredittype'] == "GCwithSC" %}
+          Guarantee Credit with Savings Credit
+          {% endif %}   
+          {% if data['pensioncredittype'] == "SC" %}
+          Savings Credit
+          {% endif %}         
+      </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if "PIP (Personal independence payment)" in data['benefitList'] %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">PIP type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['dailyliving'] == "daily-living" %}
+          Daily living part
+          {% endif %}
+          {% if data['dailylivingtype'] == "enhanced" %}
+          <br>Enhanced rate
+          {% else %}
+          <br>Standard rate
+          {% endif %}
+          {% if data['mobility'] == "mobility" %}
+          <br>Mobility part
+          {% endif %}        
+      </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if "Pension credit" in data['benefitList'] %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">Pension credit type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['pensioncredittype'] == "GC" %}
+          Guarantee Credit only
+          {% endif %}
+          {% if data['pensioncredittype'] == "GCwithSC" %}
+          Guarantee Credit with Savings Credit
+          {% endif %}   
+          {% if data['pensioncredittype'] == "SC" %}
+          Savings Credit
+          {% endif %}         
+      </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+
+
+            <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Looking after someone but can't get Carer's allowance</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p id="capitalize">{{ data['carersallowanceother'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
+
+      </dl>
+
+      <br>
+
+      <div class="form-group">
+        <a href="task-list-complete"><input class="button" type="submit" value="Next"></a>
+      </div>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

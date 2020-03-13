@@ -6093,3 +6093,48 @@ res.redirect('../money-support-edu/contribution-type.html');
 router.get(/moneyanotheriteration6b-handler/, function (req, res) {
     res.redirect('../money-support-edu/cya');
 });
+
+
+//*******************************//
+// Iteration 7 - Where you live  //
+//*******************************//
+
+router.get(/hospital-iteration7-handler/, function (req, res) {
+  if (req.query.hospital == 'yes') {
+    res.redirect('../where-you-live/live-with-parents');
+  } else if (req.query.hospital == 'no') {
+    res.redirect('../where-you-live/live-with-parents');
+  }
+});
+
+router.get(/liveparents-iteration7-handler/, function (req, res) {
+  if (req.query.livewithparents == 'yes') {
+    res.redirect('../where-you-live/cya');
+  } else if (req.query.livewithparents == 'no') {
+    res.redirect('../where-you-live/type-of-property');
+  }
+});
+
+
+router.get(/wheredoyoulive-iteration7-handler/, function (req, res) {
+
+
+  if (req.query.typeproperty == 'someoneelse-prop') {
+    res.redirect('../where-you-live/cya');
+  } else if (req.query.typeproperty.includes('rentprop')) {
+    res.redirect('tenancy-start-end');
+  } else if (req.query.typeproperty.includes('own-prop')) {
+    res.redirect('#');
+  } else if (req.query.typeproperty.includes('shared-prop')) {
+    res.redirect('#');
+  } else if (req.query.typeproperty.toString() == 'noadd-prop') {
+    res.redirect('#');
+  }  else {
+    res.redirect('../where-you-live/type-of-property');
+  }
+});
+
+
+router.get(/tenancydate-iteration7-handler/, function (req, res) {
+  res.redirect('accomodation-type.html');
+});
