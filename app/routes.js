@@ -6118,19 +6118,19 @@ router.get(/liveparents-iteration7-handler/, function (req, res) {
 
 router.get(/wheredoyoulive-handler/, function (req, res) {
 
-
-  if (req.query.typeproperty == 'someoneelse-prop') {
+   if (req.query.typeproperty.includes('rentprop')) {
+    res.redirect('../where-you-live/tenancy-start-end');
+ } else if (req.query.typeproperty.includes('someoneelse-prop')) {
     res.redirect('../where-you-live/cya');
-  } else if (req.query.typeproperty.includes ('rentprop')) {
-    res.redirect('../tenancy-start-end');
-  } else if (req.query.typeproperty =='own-prop') {
+  } else if (req.query.typeproperty.includes('own-prop')){
     res.redirect('#');
-  } else if (req.query.typeproperty == 'shared-prop') {
+  } else if (req.query.typeproperty.includes('shared-prop')) {
     res.redirect('#');
-  } else if (req.query.typeproperty == 'noadd-prop') {
+  } else if (req.query.typeproperty.includes('noadd-prop')) {
     res.redirect('#');
   }  
 });
+
 
 
 router.get(/tenancydate-iteration7-handler/, function (req, res) {
