@@ -6116,13 +6116,13 @@ router.get(/liveparents-iteration7-handler/, function (req, res) {
 });
 
 
-router.get(/wheredoyoulive-iteration7-handler/, function (req, res) {
+router.get(/wheredoyoulive-handler/, function (req, res) {
 
 
   if (req.query.typeproperty == 'someoneelse-prop') {
     res.redirect('../where-you-live/cya');
-  } else if (req.query.typeproperty == 'rentprop') {
-    res.redirect('../where-you-live/tenancy-start-end');
+  } else if (req.query.typeproperty.includes ('rentprop')) {
+    res.redirect('../tenancy-start-end');
   } else if (req.query.typeproperty =='own-prop') {
     res.redirect('#');
   } else if (req.query.typeproperty == 'shared-prop') {
