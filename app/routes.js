@@ -6118,7 +6118,7 @@ router.get(/liveparents-iteration7-handler/, function (req, res) {
 
 router.get(/wheredoyoulive-handler/, function (req, res) {
 
-   if (req.query.typeproperty.includes('rentprop')) {
+   if (req.query.typeproperty.includes('rent-prop')) {
     res.redirect('../where-you-live/tenancy-start-end');
  } else if (req.query.typeproperty.includes('someoneelse-prop')) {
     res.redirect('../where-you-live/cya');

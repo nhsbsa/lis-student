@@ -31,7 +31,7 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Where you live</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you in hospital and have been for over a year?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you in a privately rented or university accomodation?</h1>
       </header>
 
       
@@ -45,13 +45,15 @@ NHSBSA Prototype
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="hospital" value="yes">
-              <label for="yes">Yes</label>
+              <input id="yes" type="radio" name="accomodation" value="private">
+              <label for="yes"><span class ='bold'>Privately rented accomodation</span><p hint>This includes private 
+                halls of residence and private landlord</p>
             </div>
-
+          
+<br> <br>
             <div class="multiple-choice">
-              <input id="no" type="radio" name="hospital" value="no">
-              <label for="no">No</label>
+              <input id="no" type="radio" name="accomodation" value="unihalls">
+              <label for="no"><span class ='bold'>University accomodation<p hint>University halls of residence</p></span>
             </div>
 
           </fieldset>
