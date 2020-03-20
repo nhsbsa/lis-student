@@ -27,12 +27,20 @@ NHSBSA Prototype
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
+        {% if data['renthowoften'] == "academicyear" %}
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Where you live</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you pay for rent in total for the tenancy period?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you pay for rent per academic year?</h1>
+        {% endif %}
       </header>
-
+      
+      {% if data['renthowoften'] != "academicyear" %}
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Where you live</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you pay for rent {{ data['renthowoften'] }} ?</h1>
+        {% endif %}
+      </header>
+      
       <form action="rentcostuni-handler" method="get" class="form">
 
         <div class="form-group">
