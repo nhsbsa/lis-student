@@ -1,21 +1,18 @@
 {% extends "layout_bsa.html" %}
-
 {% block page_title %}
 NHSBSA Prototype
 {% endblock %}
-
 {% block proposition_header %}
 <!-- blank to remove the proposition header -->
 {% endblock %}
-
 {% block header_class %}
 <!-- blank to remove the proposition header -->
 {% endblock %}
-
 {% block content %}
 
-<main id="content" role="main">
 
+
+<main id="content" role="main">
   <div class="phase-banner">
     <p>
       <strong class="phase-tag">BETA</strong>
@@ -23,51 +20,38 @@ NHSBSA Prototype
       <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
     </p>
   </div>
-
   <a href="javascript:history.go(-1)" class="link-back">Back</a>
-
   <div class="grid-row">
     <div class="column-two-thirds">
-
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Where you live</p>
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you in a privately rented or university accomodation?</h1>
       </header>
-
       
-
       <form action="accomodation-iteration7-handler" method="get" class="form">
-
         <div class="form-group">
-
           <fieldset class="inline">
             <legend class="visually-hidden">
             </legend>
-
             <div class="multiple-choice">
               <input id="yes" type="radio" name="accomodation" value="private">
-              <label for="yes"><span class ='bold'>Privately rented accomodation</span><p hint>This includes private 
-                halls of residence and private landlord</p>
+              <label for="yes" style="line-height:1.3157894737;">
+                <span class ='bold'>Privately rented accomodation</span><br />
+                <span>This includes private halls of residence and private landlord</span>
             </div>
           
-<br> <br>
-            <div class="multiple-choice">
+            <div class="multiple-choice" style="margin-top:15px;">
               <input id="no" type="radio" name="accomodation" value="unihalls">
-              <label for="no"><span class ='bold'>University accomodation<p hint>University halls of residence</p></span>
+              <label for="no" style="line-height:1.3157894737;"><span class ='bold'>University accomodation</span><br /><span hint>University halls of residence</span>
             </div>
-
           </fieldset>
-
         </div>
-
         <div class="form-group">
           <input class="button" type="submit" value="Next">
         </div>
-
       </form>
     </div>
   </div>
 </main>
 </main>
-
 {% endblock %}

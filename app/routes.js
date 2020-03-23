@@ -6146,7 +6146,7 @@ router.get(/accomodation-iteration7-handler/, function (req, res) {
 });
 
 router.get(/rentcostuni-handler/, function (req, res) {
-  res.redirect('#');
+  res.redirect('gas-electricity');
 });
 
 router.get(/renthowoften-iteration7-handler/, function (req, res) {
