@@ -6170,5 +6170,38 @@ router.get(/gaselectricity-iteration7-handler/, function (req, res) {
 });
 
 router.get(/mealterm-iteration7-handler/, function (req, res) {
-  res.redirect('type-meal');
+  res.redirect('meal-type');
+});
+
+
+
+
+router.get(/mealtype-iteration7-handler/, function (req, res) {
+  var gaselectricity = req.session.data['gaselectricity'];
+
+  if (req.query.mealtype && gaselectricity == 'meal-energy-bill') {
+    res.redirect('energy-term');
+  } else  if (req.query.mealtype){
+    res.redirect('rent-one-room');
+  
+  }
+});
+
+router.get(/energyterm-iteration7-handler/, function (req, res) {
+  res.redirect('meal-type');
+});
+router.get(/energytype-iteration7-handler/, function (req, res) {
+  res.redirect('rent-one-room');
+});
+
+
+router.get(/rentoneroom-iteration7-handler/, function (req, res) {
+  var accomodation = req.session.data['accomodation'];
+  if (req.query.rentoneroom && accomodation == 'private') {
+    res.redirect('council-tax');
+    
+  } else  if (req.query.mealtype){
+    res.redirect('cya');
+  
+  }
 });
