@@ -6152,3 +6152,19 @@ router.get(/rentcostuni-handler/, function (req, res) {
 router.get(/renthowoften-iteration7-handler/, function (req, res) {
   res.redirect('rent-how-much');
 });
+
+
+
+router.get(/gaselectricity-iteration7-handler/, function (req, res) {
+  
+  if (req.query.gaselectricity.includes('meal-only')) {
+   res.redirect('meal-term');
+ } else if (req.query.gaselectricity.includes('energy-bill')) {
+   res.redirect('#');
+ } else if (req.query.gaselectricity.includes('meal-energy-bill')) {
+   res.redirect('meal-term');
+ } else if (req.query.gaselectricity.includes('none-bill')) {
+   res.redirect('#');
+ 
+ }
+});
