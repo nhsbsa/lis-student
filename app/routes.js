@@ -6168,3 +6168,7 @@ router.get(/gaselectricity-iteration7-handler/, function (req, res) {
  
  }
 });
+
+router.get(/mealterm-iteration7-handler/, function (req, res) {
+  res.redirect('type-meal');
+});
