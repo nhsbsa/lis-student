@@ -185,7 +185,7 @@ NHSBSA Prototype
             
                 <dd class="cya-change">
                   <a class="link-right" href="type-of-property.html">
-                    Change<span class="visually-hidden"> where you get money from</span>
+                    Change<span class="visually-hidden">rent paid in total</span>
                   </a>
                 </dd>
               </div>
@@ -197,15 +197,35 @@ NHSBSA Prototype
 
               <div class="no-border">
                 <dt class="cya-question">
-                  
+                  Rent paid
                 </dt>
                 <dd class="cya-answer">
                    
-                    {{ data['rentcostuni'] }}
-                      
-                </dd>
+                    {{ data['rentcostuni'] }
           
               </dd>
+            </div>
+            {% endif %}  
+            {% endif %} 
+
+
+
+
+              {% if data['livewithparents'] == "no" %}
+              {% if data['accomodation'] == "private" %}
+
+              <div class="no-border">
+                <dt class="cya-question">
+                  Rent amount
+                </dt>
+                <dd class="cya-answer">
+                   
+                    {{ data['renthowoften'] }}
+                      
+                  </dd>
+                </div>
+                {% endif %}  
+                {% endif %} 
             
           
               <dd class="cya-change">
