@@ -110,7 +110,7 @@ NHSBSA Prototype
                    
               </dd>
               
-              
+            
               <dd class="cya-change">
                 <a class="link-right" href="type-of-property.html">
                   Change<span class="visually-hidden"> where you get money from</span>
@@ -119,7 +119,117 @@ NHSBSA Prototype
             </div>
             {% endif %}
        
-       
+            {% if data['livewithparents'] == "no" %}
+            <div>
+                <dt class="cya-question">
+                  Tenancy agreement date
+                </dt>
+                <dd class="cya-answer">
+                  Start date: 12 September 2019 <br>
+                  End date: 12 July 2020
+                </dd>
+  
+                <dd class="cya-change">
+                  <a class="link-right" href="tenancy-start-end.html">
+                    Change<span class="visually-hidden"> tenancy agreement date</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}
+
+
+              {% if data['livewithparents'] == "no" %}
+              
+              <div>
+                  <dt class="cya-question">
+                    Type of rented accomodation
+                  </dt>
+                  <dd class="cya-answer">
+
+
+                      {% if data['accomodation'] == "private" %}
+                      <span class="bold">Privately rented accomodation <p hint>This includes private halls
+                          of residence and private landlord</span>
+                      {% endif %}
+                   
+                      {% if data['accomodation'] == "unihalls" %}
+                      <span class="bold">University accomodation <p hint>University halls of 
+                          residence</span>
+                      {% endif %}
+                  </dd>
+    
+                  <dd class="cya-change">
+                    <a class="link-right" href="accomodation-type.html">
+                      Change<span class="visually-hidden"> type of accomodation</span>
+                    </a>
+                  </dd>
+                </div>
+              {% endif %}
+
+
+                {% if data['livewithparents'] == "no" %}
+                {% if data['accomodation'] == "unihalls" %}
+
+                <div class="no-border">
+                  <dt class="cya-question">
+                    Rent in total
+                  </dt>
+                  <dd class="cya-answer">
+                     
+                      {{ data['rentcostuni'] }}
+                        
+                  </dd>
+            
+                </dd>
+              
+            
+                <dd class="cya-change">
+                  <a class="link-right" href="type-of-property.html">
+                    Change<span class="visually-hidden"> where you get money from</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}  
+              {% endif %}             
+    
+              {% if data['livewithparents'] == "no" %}
+              {% if data['accomodation'] == "private" %}
+
+              <div class="no-border">
+                <dt class="cya-question">
+                  
+                </dt>
+                <dd class="cya-answer">
+                   
+                    {{ data['rentcostuni'] }}
+                      
+                </dd>
+          
+              </dd>
+            
+          
+              <dd class="cya-change">
+                <a class="link-right" href="type-of-property.html">
+                  Change<span class="visually-hidden"> where you get money from</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}  
+            {% endif %}             
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
       
     </div>
     <div class="column-two-thirds">

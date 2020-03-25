@@ -5790,6 +5790,15 @@ router.get(/term3dates-iteration6-2-handler/, function (req, res) {
 });
 
 
+
+router.get(/academicstart-iteration6-2-handler/, function (req, res) {
+  res.redirect('course-finish-date.html');
+});
+
+router.get(/ourse-finishdate-iteration6-2-handler/, function (req, res) {
+  res.redirect('final-year.html');
+});
+
 router.get(/finalyear-iteration6-2-handler/, function (req, res) {
   res.redirect('overseas-student.html');
 });
@@ -6160,11 +6169,11 @@ router.get(/gaselectricity-iteration7-handler/, function (req, res) {
   if (req.query.gaselectricity.includes('meal-only')) {
    res.redirect('meal-term');
  } else if (req.query.gaselectricity.includes('energy-bill')) {
-   res.redirect('#');
+   res.redirect('energy-term');
  } else if (req.query.gaselectricity.includes('meal-energy-bill')) {
    res.redirect('meal-term');
  } else if (req.query.gaselectricity.includes('none-bill')) {
-   res.redirect('#');
+   res.redirect('rent-one-room');
  
  }
 });
@@ -6188,7 +6197,7 @@ router.get(/mealtype-iteration7-handler/, function (req, res) {
 });
 
 router.get(/energyterm-iteration7-handler/, function (req, res) {
-  res.redirect('meal-type');
+  res.redirect('energy-type');
 });
 router.get(/energytype-iteration7-handler/, function (req, res) {
   res.redirect('rent-one-room');
@@ -6197,11 +6206,16 @@ router.get(/energytype-iteration7-handler/, function (req, res) {
 
 router.get(/rentoneroom-iteration7-handler/, function (req, res) {
   var accomodation = req.session.data['accomodation'];
+
   if (req.query.rentoneroom && accomodation == 'private') {
     res.redirect('council-tax');
-    
-  } else  if (req.query.mealtype){
+
+  } else  if (req.query.rentoneroom){
     res.redirect('cya');
   
   }
+});
+
+router.get(/counciltax-iteration7-handler/, function (req, res) {
+  res.redirect('cya');
 });
