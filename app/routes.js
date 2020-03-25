@@ -5757,7 +5757,7 @@ router.get(/finalyear-iteration6b3-handler/, function (req, res) {
 // ********************************************************************//
 
 router.get(/nameofcourse-iteration6-2-handler/, function (req, res) {
-  res.redirect('../edu-and-train/term-dates-test.html');
+  res.redirect('../edu-and-train/term-dates-playback.html');
 });
 
 router.get(/termdatesall-iteration6-2-handler/, function (req, res) {
