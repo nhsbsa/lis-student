@@ -77,27 +77,37 @@ NHSBSA Prototype
         </div>
         
         <!-- Term dates playback -->
+        {% if data['termdatesall'] == "yes" %}
         <div>
           <dt class="cya-question">
             Confirm term dates
           </dt>
           <dd class="cya-answer">
                 
-            {% if data['termdatesall'] == "no" %}
-            No
-            {% endif %}
+          
             {% if data['termdatesall'] == "yes" %}
-            Yes
+            Yes <br>
+            Term 1: <br>
+            Start date: 29 September 2019 <br>
+            End date: 18 December 2019 <br>
+<br>
+            Term 2: <br>
+            Start date: 11 January 2020 <br>
+            End date: 26 March 2020 <br>
+<br>
+            Term 3: <br>
+            Start date: 26 April 2020 <br>
+            End date: 20 July 2020<br>
             {% endif %}
             
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="term-dates-test.html">
+            <a class="link-right" href="term-dates-playback.html">
               Change<span class="visually-hidden"> qualification</span>
             </a>
           </dd>
         </div>
-
+        {% endif %}
        
         {% if data['termdatesall'] == "no" %}
 
