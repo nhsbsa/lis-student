@@ -180,11 +180,8 @@ NHSBSA Prototype
                         
                   </dd>
             
-                </dd>
-              
-            
                 <dd class="cya-change">
-                  <a class="link-right" href="type-of-property.html">
+                  <a class="link-right" href="rent-cost-uni.html">
                     Change<span class="visually-hidden">rent paid in total</span>
                   </a>
                 </dd>
@@ -201,12 +198,18 @@ NHSBSA Prototype
                 </dt>
                 <dd class="cya-answer">
                    
-                    {{ data['rentcostuni'] }
+                    {{ data['renthowoften'] } 
           
               </dd>
-            </div>
-            {% endif %}  
-            {% endif %} 
+              <dd class="cya-change">
+                  <a class="link-right" href="rent-how-often.html">
+                    Change<span class="visually-hidden">rent frequency</span>
+                  </a>
+                </dd>
+              </div>
+              {% endif %}  
+              {% endif %} 
+            
 
 
 
@@ -220,13 +223,11 @@ NHSBSA Prototype
                 </dt>
                 <dd class="cya-answer">
                    
-                    {{ data['renthowoften'] }}
+                    £{{ data['rentcostprivate'] }} 
                       
                   </dd>
-                </div>
-                {% endif %}  
-                {% endif %} 
-            
+                
+                            
           
               <dd class="cya-change">
                 <a class="link-right" href="type-of-property.html">
