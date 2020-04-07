@@ -6143,14 +6143,14 @@ router.get(/wheredoyoulive-handler/, function (req, res) {
 
 
 router.get(/tenancydate-iteration7-handler/, function (req, res) {
-  res.redirect('rent-cost-uni.html');
+  res.redirect('accomodation-type.html');
 });
 
 router.get(/accomodation-iteration7-handler/, function (req, res) {
   if (req.query.accomodation == 'private') {
     res.redirect('rent-how-often');
   } else if (req.query.accomodation == 'unihalls') {
-    res.redirect('../where-you-live/tenancy-start-end');
+    res.redirect('rent-cost-uni');
   }
 });
 
