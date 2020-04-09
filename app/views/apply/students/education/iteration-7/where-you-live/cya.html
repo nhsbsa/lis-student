@@ -176,7 +176,7 @@ NHSBSA Prototype
                   </dt>
                   <dd class="cya-answer">
                      
-                      {{ data['rentcostuni'] }}
+                      £ {{ data['rentcostuni'] }}
                         
                   </dd>
             
@@ -198,49 +198,283 @@ NHSBSA Prototype
                 </dt>
                 <dd class="cya-answer">
                    
-                    {{ data['renthowoften'] } 
-          
-              </dd>
-              <dd class="cya-change">
-                  <a class="link-right" href="rent-how-often.html">
-                    Change<span class="visually-hidden">rent frequency</span>
-                  </a>
-                </dd>
-              </div>
-              {% endif %}  
-              {% endif %} 
-            
-
-
-
-
-              {% if data['livewithparents'] == "no" %}
-              {% if data['accomodation'] == "private" %}
-
-              <div class="no-border">
-                <dt class="cya-question">
-                  Rent amount
-                </dt>
-                <dd class="cya-answer">
-                   
-                    £{{ data['rentcostprivate'] }} 
+                  {% if data['renthowoften'] == "weekly" %}
+                  <span>Weekly</span>
+                  {% endif %}
+               
+                  {% if data['renthowoften'] == "monthly" %}
+                  <span>Monthly</span>
+                  {% endif %}
                       
-                  </dd>
-                
-                            
+                  {% if data['renthowoften'] == "termly" %}
+                  <span>Termly</span>
+                  {% endif %}
+
+                  {% if data['renthowoften'] == "academicyear" %}
+                  <span>Per academic year</span>
+                  {% endif %}
+                </dd>
           
               <dd class="cya-change">
-                <a class="link-right" href="type-of-property.html">
-                  Change<span class="visually-hidden"> where you get money from</span>
+                <a class="link-right" href="rent-how-often.html">
+                  Change<span class="visually-hidden">rent frequency</span>
                 </a>
               </dd>
             </div>
             {% endif %}  
-            {% endif %}             
+            {% endif %} 
+
+
+
+            {% if data['livewithparents'] == "no" %}
+            {% if data['accomodation'] == "private" %}
+
+            <div class="no-border">
+              <dt class="cya-question">
+                Rent amount paid {{ data['renthowoften'] }}
+              </dt>
+              <dd class="cya-answer">
+                 
+                  £{{ data['rentcostprivate'] }} 
+                    
+                </dd>
+              
+                          
+        
+            <dd class="cya-change">
+              <a class="link-right" href="type-of-property.html">
+                Change<span class="visually-hidden"> where you get money from</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}  
+          {% endif %}  
+
+
+              {% if data['livewithparents'] == "no" %}
+            
+
+              <div class="no-border">
+                <dt class="cya-question">
+                 Are meals and energy bills included
+                </dt>
+                <dd class="cya-answer">
+                   
+                  {% if data['gaselectricity'] == "meal-only" %}
+                  <span>Meals</span>
+                  {% endif %}
+               
+                  {% if data['gaselectricity'] == "energy-bill" %}
+                  <span>Energy bills</span>
+                  {% endif %}
+
+                  {% if data['gaselectricity'] == "meal-energy-bill" %}
+                  <span>Both meal and energy bills</span>
+                  {% endif %}
+                     
+                  {% if data['gaselectricity'] == "none-bill" %}
+                  <span>No, these aren't included</span>
+                  {% endif %}
+                </dd>
+          
+              <dd class="cya-change">
+                <a class="link-right" href="gas-electricity.html">
+                  Change<span class="visually-hidden">Gas and electricity bills</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}  
+            
+
+            {% if data['livewithparents'] == "no" %}
+           {% if data['gaselectricity'] != "energy-bill" %}
+           {% if data['gaselectricity'] != "none-bill" %}
+
+            <div class="no-border">
+              <dt class="cya-question">
+                Meals during term time or holidays
+              </dt>
+              <dd class="cya-answer">
+                 
+                {% if data['mealterm'] == "termtime" %}
+                <span>Term time only</span>
+                {% endif %}
+             
+                {% if data['mealterm'] == "termholidays" %}
+                <span>Term time and holidays</span>
+                {% endif %}
+
+              </dd>
+        
+            <dd class="cya-change">
+              <a class="link-right" href="meal-term.html">
+                Change<span class="visually-hidden">Meal term</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %} 
+          {% endif %}  
+          {% endif %} 
+          
+          
+             
+
+          {% if data['livewithparents'] == "no" %}
+          {% if data['gaselectricity'] != "energy-bill" %}
+          {% if data['gaselectricity'] != "none-bill" %}
+          <div class="no-border">
+            <dt class="cya-question">
+             Meals which are included
+            </dt>
+            <dd class="cya-answer">
+               
+              {% if data['mealtype'] == "breakfast" %}
+              <span>Breakfast</span>
+              {% endif %}
+           
+              {% if data['mealtype'] == "midevening" %}
+              <span>Any midday or evening meals</span>
+              {% endif %}
+
+              {% if data['mealtype'] == "3meals" %}
+              <span>3 meals a day</span>
+              {% endif %}
+
+              {% if data['mealtype'] == "meal-plan" %}
+              <span>I have got a meal plan / flexible</span>
+              {% endif %}
+            </dd>
+      
+          <dd class="cya-change">
+            <a class="link-right" href="meal-type.html">
+              Change<span class="visually-hidden">Meal type</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %} 
+        {% endif %}  
+        {% endif %}  
+           
+          {% if data['livewithparents'] == "no" %}
+          {% if data['gaselectricity'] != "meal-only" %}
+          {% if data['gaselectricity'] != "none-bill" %}
+          <div class="no-border">
+            <dt class="cya-question">
+              Energy during term time or holidays
+            </dt>
+            <dd class="cya-answer">
+               
+              {% if data['energyterm'] == "termtime" %}
+              <span>Term time only</span>
+              {% endif %}
+           
+              {% if data['energyterm'] == "termholidays" %}
+              <span>Term time and holidays</span>
+              {% endif %}
+
+            </dd>
+      
+          <dd class="cya-change">
+            <a class="link-right" href="energy-term.html">
+              Change<span class="visually-hidden">Energy term</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %} 
+        {% endif %}  
+        {% endif %}  
+           
+
+        {% if data['livewithparents'] == "no" %}
+        {% if data['gaselectricity'] != "meal-only" %}
+        {% if data['gaselectricity'] != "none-bill" %}
+
+        <div class="no-border">
+          <dt class="cya-question">
+           Energy which are included
+          </dt>
+          <dd class="cya-answer">
+             
+            {% if data['energytype'] == "gas-bill" %}
+            <span>Gas</span>
+            {% endif %}
+         
+            {% if data['energytype'] == "electricity-bill" %}
+            <span>Electricity</span>
+            {% endif %}
+
+            {% if data['energytype'] == "gaselectricity-bill" %}
+            <span>Gas and electricity</span>
+            {% endif %}
+
+          </dd>
+    
+        <dd class="cya-change">
+          <a class="link-right" href="energy-type.html">
+            Change<span class="visually-hidden">Energy type</span>
+          </a>
+        </dd>
+      </div>
+      {% endif %} 
+      {% endif %}  
+      {% endif %}  
+
+
+      {% if data['livewithparents'] == "no" %}
+
+      <div class="no-border">
+        <dt class="cya-question">
+         Rent for only one room
+        </dt>
+        <dd class="cya-answer">
+           
+          {% if data['rentoneroom'] == "yes" %}
+          <span>Yes</span>
+          {% endif %}
+       
+          {% if data['rentoneroom'] == "no" %}
+          <span>No</span>
+          {% endif %}
+
+
+        </dd>
   
+      <dd class="cya-change">
+        <a class="link-right" href="rent-one-room.html">
+          Change<span class="visually-hidden">Rent one room</span>
+        </a>
+      </dd>
+    </div>
+    {% endif %} 
+   
+    {% if data['livewithparents'] == "no" %}
+    {% if data['accomodation'] == "private" %}
+
+    <div class="no-border">
+      <dt class="cya-question">
+       Council tax
+      </dt>
+      <dd class="cya-answer">
+         
+        {% if data['counciltax'] == "yes" %}
+        <span>Yes</span>
+        {% endif %}
+     
+        {% if data['counciltax'] == "no" %}
+        <span>No</span>
+        {% endif %}
 
 
+      </dd>
 
+    <dd class="cya-change">
+      <a class="link-right" href="council-tax.html">
+        Change<span class="visually-hidden">do you pay council tax</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %} 
+  {% endif %} 
 
 
 
