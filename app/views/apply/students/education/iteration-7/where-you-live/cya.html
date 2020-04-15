@@ -477,6 +477,73 @@ NHSBSA Prototype
   {% endif %} 
 
 
+  {% if data['livewithparents'] == "no" %}
+  {% if data['counciltax'] == "yes" %}
+
+  <div class="no-border">
+    <dt class="cya-question">
+     Council tax frequency
+    </dt>
+    <dd class="cya-answer">
+       
+      {% if data['counciltaxfrequency'] == "10" %}
+      <span>Over 10 months</span>
+      {% endif %}
+   
+      {% if data['counciltaxfrequency'] == "12" %}
+      <span>Over 12 months</span>
+      {% endif %}
+
+      {% if data['counciltaxfrequency'] == "yearly" %}
+      <span>I know my yearly amount</span>
+      {% endif %}
+
+
+    </dd>
+
+  <dd class="cya-change">
+    <a class="link-right" href="council-tax-frequency.html">
+      Change<span class="visually-hidden">How frequent do you pay your council tax</span>
+    </a>
+  </dd>
+</div>
+{% endif %} 
+{% endif %} 
+
+
+{% if data['livewithparents'] == "no" %}
+  {% if data['counciltax'] == "yes" %}
+
+  <div class="no-border">
+    <dt class="cya-question">
+     Council tax amount
+    </dt>
+    <dd class="cya-answer">
+       
+      £{{ data['counciltaxmonth'] }} 
+
+    </dd>
+
+  <dd class="cya-change">
+    <a class="link-right" href="council-tax-month.html">
+      Change<span class="visually-hidden">How much do you pay for your council tax</span>
+    </a>
+  </dd>
+</div>
+{% endif %} 
+{% endif %} 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

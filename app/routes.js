@@ -6202,6 +6202,7 @@ router.get(/mealtype-iteration7-handler/, function (req, res) {
 router.get(/energyterm-iteration7-handler/, function (req, res) {
   res.redirect('energy-type');
 });
+
 router.get(/energytype-iteration7-handler/, function (req, res) {
   res.redirect('rent-one-room');
 });
@@ -6220,5 +6221,19 @@ router.get(/rentoneroom-iteration7-handler/, function (req, res) {
 });
 
 router.get(/counciltax-iteration7-handler/, function (req, res) {
+if (req.query.counciltax == 'yes') {
+  res.redirect('council-tax-frequency');
+} else if (req.query.counciltax == 'no') {
+  res.redirect('cya');
+}
+});
+
+router.get(/counciltaxfrequency-iteration7-handler/, function (req, res)  {
+
+  res.redirect('council-tax-month');
+});
+
+router.get(/counciltaxmonth-iteration7-handler/, function (req, res)  {
+
   res.redirect('cya');
 });

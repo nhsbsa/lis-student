@@ -1,0 +1,99 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Where you live</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do you pay your Council Tax?</h1>
+      </header>
+
+      <form action="counciltaxfrequency-iteration7-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+                <input id="10" type="radio" name="counciltaxfrequency" value="10">
+                <label for="10"><p style="margin-bottom: 7px;">Over 10 months</p></label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="12" type="radio" name="counciltaxfrequency" value="12">
+              <label for="12"><p style="margin-bottom: 7px;">Over 12 months</p></label>
+          </div>
+
+          <p class="form-block">or</p>
+
+
+            <div class="multiple-choice">
+                <input id="year" type="radio" name="counciltaxfrequency" value="yearly">
+                <label for="year"><p style="margin-bottom: 7px;">I know my yearly amount</p></label>
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        <details role="group">
+          <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">I pay an irregular amount or a different amount each week</span></summary> 
+
+
+
+
+
+                <p>If you pay an irregular amount or a different amount each week, you'll need to tell us the amount of Council Tax you pay for the full year.</p>
+                <p>You can find this on your latest Council Tax bill or by contacting your local council.</p>
+                <p>Select 'I know my yearly amount' to enter this.</p>
+          
+
+          
+
+                  
+                  
+ 
+            
+              
+      </details>
+
+
+        <br>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
