@@ -1,0 +1,304 @@
+{% extends "layout_bsa.html" %}
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+{% block content %}
+<style>
+  #capitalize::first-letter {
+    text-transform: uppercase;
+  }
+  .date-cell {
+    text-align: right;
+  }
+</style>
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Education and training</p>
+    
+        <h1 class="heading-large">Are your term dates correct? </h1>
+        <div class="notice">
+            <i class="icon icon-important">
+              <span class="visually-hidden">Warning</span>
+            </i>
+            <strong class="bold-small">
+              The term dates you give us help us to calculate what help you’re entitled to, so it is important that they are accurate.
+              
+            </strong>
+          </div>
+        <br>
+          <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+      <h3 class="heading-medium">As you're studying at The University of Northumbria, we think your term dates are:</h2>
+   </div>
+      
+   
+       
+        <br>
+      <table>
+          <tbody>
+              <span style="font-weight: bold;">Term 1</span>
+              <tr>
+                  <td>Start date</td>
+                  <td></td>
+                  <td class="date-cell">28 September 2019</td>
+              </tr>
+              <tr>
+                  <td>End date</td>
+                  <td></td>
+                  <td class="date-cell">18 December 2019</td>
+              </tr>
+              
+          </tbody>
+      </table>
+      <br>
+      <br>
+      <table>
+          <tbody>
+              <span style="font-weight: bold;">Term 2</span>
+              <tr>
+                  <td>Start date</td>
+                  <td></td>
+                  <td class="date-cell">11 January 2020</td>
+              </tr>
+              <tr>
+                  <td>End date</td>
+                  <td></td>
+                  <td class="date-cell">26 March 2020</td>
+              </tr>
+              
+          </tbody>
+      </table>
+ <br>
+ <br>
+      <table>
+          <tbody>
+              <span style="font-weight: bold;">Term 3</span>
+              <tr>
+                  <td>Start date</td>
+                  <td></td>
+                  <td class="date-cell">26 April 2020</td>
+              </tr>
+              <tr>
+                  <td>End date</td>
+                  <td></td>
+                  <td class="date-cell">20 July 2020</td>
+              </tr>
+              
+          </tbody>
+      </table>
+<!-- blank to remove the proposition header 
+      <dl class="govuk-check-your-answers cya-questions-short">
+        Term 1 <br>
+        
+        <div>
+           
+          <dt class="cya-question">
+            Start date <br>
+            End date
+          </dt>
+          <dd class="cya-answer">
+            <p> 
+                
+             28 September 2019 <br>
+           18 December 2019
+            </p>
+          </dd>
+          <dd class="cya-change">
+   
+          </dd>
+        
+      </div>
+    
+     
+    <br>
+    <br>
+       Term 2
+        <div>
+          <dt class="cya-question">
+            Start date <br>
+            End date
+          </dt>
+          <dd class="cya-answer">
+                
+               11 January 2020 <br>
+              26 March 2020
+            
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="../edu-and-train-iteration2/name-of-course.html">
+              Change<span class="visually-hidden"> qualification</span>
+            </a>
+          </dd>
+        </div>
+        
+      <br>
+      Term 3
+          <div>
+            
+          <dt class="cya-question">
+      
+             Start date <br>
+             End date
+          </dt>
+          <dd class="cya-answer">
+             
+            <p>
+             26 April 2020 <br>
+            18 June 2020
+          </dd>
+          <dd class="cya-change">
+            <a class="link-right" href="../edu-and-train-iteration3/overseas-student.html">
+              Change<span class="visually-hidden"> studying overseas</span>
+            </a>
+          </dd>
+        
+        </div>
+       </dl>
+        
+            </div>
+  </div>
+<br>
+<br>
+  <table>
+ 
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Term 1</th>
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Start date</th>
+          <td class="govuk-table__cell">29 September 2019</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">End date</th>
+          <td class="govuk-table__cell">18 December 2019</td>
+        </tr>
+        
+        
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <div class="column-two-thirds">
+    <table>
+        <tbody>
+            <span style="font-weight: bold;">Term 1</span>
+            <tr>
+                <td>Start date</td>
+                <td></td>
+                <td>28 September 2019</td>
+            </tr>
+            <tr>
+                <td>End date</td>
+                <td></td>
+                <td>18 December 2019</td>
+            </tr>
+            
+        </tbody>
+    </table>
+  </div>
+    <table class="govuk-table">
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Term 2</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Start date</th>
+            <td class="govuk-table__cell">29 September 2019</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">End date</th>
+            <td class="govuk-table__cell">18 December 2019</td>
+          </tr>
+  
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <table class="govuk-table">
+          
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Term 3</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Start date</th>
+              <td class="govuk-table__cell">29 September 2019</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">End date</th>
+              <td class="govuk-table__cell">18 December 2019</td>
+            </tr>
+    
+            
+            
+          </tbody>
+        </table>
+  -->
+
+  <br>
+  <details>
+      <summary><span class="summary">Where to check your term dates</span></summary>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+  
+        <p>You can find your term dates:</p>
+        <ul class="list-bullet">
+          <li>on your university or college’s online portal or website</li>
+          <li>in your offer or acceptance letter</li>
+          <li>by contacting Student Services at your college or university </li>
+          
+        </ul>
+      </div>
+  
+  
+    </details>
+
+
+  <form action="termdatesall-iteration6-2-handler" method="get" class="form">
+      <div class="form-group">
+        <br>
+          <br>
+        
+          <legend class="visually-hidden">
+          </legend>
+          <div class="multiple-choice">
+            <input id="yes" type="radio" name="termdatesall" value="yes">
+            <label for="yes">Yes</label>
+          </div>
+          <div class="multiple-choice">
+            <input id="no" type="radio" name="termdatesall" value="no">
+            <label for="no">No</label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-group">
+        <input class="button" type="submit" value="Next">
+      </div>
+    </form>
+ 
+    
+</main>
+{% endblock %}
+Collapse
+
+
+
