@@ -1304,13 +1304,15 @@ router.get(/fundingiteration6-handler/, function (req, res) {
   } 
 });
 
+//Note to self : else if (req.query.liveparents == 'no' && fulltimeedu == 'pt') - change this to 'ft' for Iteration 6
+
 router.get(/livewithparentsiteration6-handler/, function (req, res) {
   
   var fulltimeedu = req.session.data['fulltimeedu'];
 
   if (req.query.liveparents == 'yes' ) {
     res.redirect('/beforeyoustart/student/iteration-6/money-coming-in-single');
-  } else if (req.query.liveparents == 'no' && fulltimeedu == 'ft'){
+  } else if (req.query.liveparents == 'no' && fulltimeedu == 'pt'){
     res.redirect('/kickouts/students-developed');
 
   } else 
