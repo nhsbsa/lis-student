@@ -1,0 +1,117 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Where you live</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How often do you pay your rent?</h1>
+      </header>
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+         
+          
+
+          <p>If you pay an irregular amount or a different amount each time you pay your rent. <br>
+          Select <span style="font-weight:bold">Per academic year</span> to enter this amount.</p>
+    
+
+    
+       </div>
+          
+      <form action="renthowoften-iteration7b-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+                <input id="weekly" type="radio" name="renthowoften" value="each week">
+                <label for="10"><p style="margin-bottom: 7px;">Weekly</p></label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="monthly" type="radio" name="renthowoften" value="each month">
+              <label for="12"><p style="margin-bottom: 7px;">Monthly</p></label>
+          </div>
+
+         
+
+
+            <div class="multiple-choice">
+                <input id="termly" type="radio" name="renthowoften" value="each term">
+                <label for="year"><p style="margin-bottom: 7px;">Termly</p></label>
+            </div>
+
+            <p class="form-block">or</p>
+
+            <div class="multiple-choice">
+                <input id="academicyear" type="radio" name="renthowoften" value="academicyear">
+                <label for="12"><p style="margin-bottom: 7px;">Per academic year</p></label>
+            </div>
+
+          </fieldset>
+
+        </div>
+
+       <!--  <details role="group">
+          <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">I pay an irregular amount or a different amount each time I pay rent</span></summary> 
+
+
+
+
+
+                <p>If you pay an irregular amount or a different amount each time you opay your rent, you'll need to tell us the total amount of rent you pay for the full year.</p>
+               
+                <p>Select <span style="font-weight:bold">Per academic year</span> to enter this amount.</p>
+          
+
+          
+
+                  
+                  
+ 
+            
+              
+      </details>  -->
+
+
+        <br>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

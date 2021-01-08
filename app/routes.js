@@ -6239,3 +6239,171 @@ router.get(/counciltaxmonth-iteration7-handler/, function (req, res)  {
 
   res.redirect('cya');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //*******************************//
+// Iteration 7 - Where you live_iteration_1 //
+//*******************************//
+
+router.get(/hospital-iteration7b-handler/, function (req, res) {
+  if (req.query.hospital == 'yes') {
+    res.redirect('../where-you-live_iteration_1/live-with-parents');
+  } else if (req.query.hospital == 'no') {
+    res.redirect('../where-you-live_iteration_1/live-with-parents');
+  }
+});
+
+router.get(/liveparents-iteration7b-handler/, function (req, res) {
+  if (req.query.livewithparents == 'yes') {
+    res.redirect('../where-you-live_iteration_1/cya');
+  } else if (req.query.livewithparents == 'no') {
+    res.redirect('../where-you-live_iteration_1/type-of-property');
+  }
+});
+
+
+router.get(/wheredoyoulive-iteration7b-handler/, function (req, res) {
+
+   if (req.query.typeproperty.includes('rent-prop')) {
+    res.redirect('../where-you-live_iteration_1/accomodation-type');
+ } else if (req.query.typeproperty.includes('someoneelse-prop')) {
+    res.redirect('../where-you-live_iteration_1/cya');
+  } else if (req.query.typeproperty.includes('own-prop')){
+    res.redirect('#');
+  } else if (req.query.typeproperty.includes('shared-prop')) {
+    res.redirect('#');
+  } else if (req.query.typeproperty.includes('noadd-prop')) {
+    res.redirect('#');
+  }  
+});
+
+
+
+router.get(/tenancydate-iteration7b-handler/, function (req, res) {
+  res.redirect('rent-cost-uni');
+});
+
+router.get(/accomodation-iteration7b-handler/, function (req, res) {
+  if (req.query.accomodation == 'private') {
+    res.redirect('tenancy-start');
+  } else if (req.query.accomodation == 'unihalls') {
+    res.redirect('tenancy-start-end');
+  }
+});
+
+
+router.get(/tenancystartdate-iteration7b-handler/, function (req, res) {
+  res.redirect('type-enddate');
+});
+
+router.get(/typeenddate-iteration7b-handler/, function (req, res) {
+  if (req.query.typeenddate == 'yes') {
+    res.redirect('tenancy-end');
+  } else if (req.query.typeenddate == 'no') {
+    res.redirect('rent-how-often');
+  }
+  });
+
+
+  router.get(/tenancyend-iteration7b-handler/, function (req, res) {
+    res.redirect('rent-how-often');
+  });
+
+
+
+router.get(/rentcostuni-iteration7b-handler/, function (req, res) {
+  res.redirect('gas-electricity');
+});
+
+router.get(/rentcostprivate-iteration7b-handler/, function (req, res) {
+  res.redirect('gas-electricity');
+});
+router.get(/renthowoften-iteration7b-handler/, function (req, res) {
+  res.redirect('rent-how-much');
+});
+
+
+
+router.get(/gaselectricity-iteration7b-handler/, function (req, res) {
+  
+  if (req.query.gaselectricity.includes('meal-only')) {
+   res.redirect('meal-term');
+ } else if (req.query.gaselectricity.includes('energy-bill')) {
+   res.redirect('energy-term');
+ } else if (req.query.gaselectricity.includes('meal-energy-bill')) {
+   res.redirect('meal-term');
+ } else if (req.query.gaselectricity.includes('none-bill')) {
+   res.redirect('rent-one-room');
+ 
+ }
+});
+
+router.get(/mealterm-iteration7b-handler/, function (req, res) {
+  res.redirect('meal-type');
+});
+
+
+
+
+router.get(/mealtype-iteration7b-handler/, function (req, res) {
+  var gaselectricity = req.session.data['gaselectricity'];
+
+  if (req.query.mealtype && gaselectricity == 'meal-energy-bill') {
+    res.redirect('energy-term');
+  } else  if (req.query.mealtype){
+    res.redirect('rent-one-room');
+  
+  }
+});
+
+router.get(/energyterm-iteration7b-handler/, function (req, res) {
+  res.redirect('energy-type');
+});
+
+router.get(/energytype-iteration7b-handler/, function (req, res) {
+  res.redirect('rent-one-room');
+});
+
+
+router.get(/rentoneroom-iteration7b-handler/, function (req, res) {
+  var accomodation = req.session.data['accomodation'];
+
+  if (req.query.rentoneroom && accomodation == 'private') {
+    res.redirect('council-tax');
+
+  } else  if (req.query.rentoneroom){
+    res.redirect('cya');
+  
+  }
+});
+
+router.get(/counciltax-iteration7b-handler/, function (req, res) {
+if (req.query.counciltax == 'yes') {
+  res.redirect('council-tax-frequency');
+} else if (req.query.counciltax == 'no') {
+  res.redirect('cya');
+}
+});
+
+router.get(/counciltaxfrequency-iteration7b-handler/, function (req, res)  {
+
+  res.redirect('council-tax-month');
+});
+
+router.get(/counciltaxmonth-iteration7b-handler/, function (req, res)  {
+
+  res.redirect('cya');
+});
+
