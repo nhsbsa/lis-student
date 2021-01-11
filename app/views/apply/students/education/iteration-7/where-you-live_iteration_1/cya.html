@@ -90,7 +90,7 @@ NHSBSA Prototype
 
                     {% if data['typeproperty'] == "rent-prop" %}
                     <span class ='bold'>A property or room I rent<p hint>This is where you have a tenancy agreement.
-                        It includes student accomodation or rent paid to a council or landlord</p></span>
+                        It includes student accommodation or rent paid to a council or landlord</p></span>
                     {% endif %}
 
                     {% if data['typeproperty'] == "own-prop" %}
@@ -113,29 +113,13 @@ NHSBSA Prototype
             
               <dd class="cya-change">
                 <a class="link-right" href="type-of-property.html">
-                  Change<span class="visually-hidden"> where you get money from</span>
+                  Change<span class="visually-hidden"> Where you get money from</span>
                 </a>
               </dd>
             </div>
             {% endif %}
        
-            {% if data['livewithparents'] == "no" %}
-            <div>
-                <dt class="cya-question">
-                  Tenancy agreement date
-                </dt>
-                <dd class="cya-answer">
-                  Start date: 12 September 2019 <br>
-                  End date: 12 July 2020
-                </dd>
-  
-                <dd class="cya-change">
-                  <a class="link-right" href="tenancy-start-end.html">
-                    Change<span class="visually-hidden"> tenancy agreement date</span>
-                  </a>
-                </dd>
-              </div>
-              {% endif %}
+       
 
 
               {% if data['livewithparents'] == "no" %}
@@ -148,23 +132,126 @@ NHSBSA Prototype
 
 
                       {% if data['accomodation'] == "private" %}
-                      <span class="bold">Privately rented accomodation <p hint>This includes private halls
-                          of residence and private landlord</span>
+                      <span class="bold">Privately rented accommodation <p hint>This is when you pay rent to a private landlord or letting agency.</span>
                       {% endif %}
                    
                       {% if data['accomodation'] == "unihalls" %}
-                      <span class="bold">University accomodation <p hint>University halls of 
-                          residence</span>
+                      <span class="bold">University accommodation <p hint>This includes both university and private halls of residence.</span>
                       {% endif %}
                   </dd>
     
                   <dd class="cya-change">
                     <a class="link-right" href="accomodation-type.html">
-                      Change<span class="visually-hidden"> type of accomodation</span>
+                      Change<span class="visually-hidden"> type of accommodation</span>
                     </a>
                   </dd>
                 </div>
               {% endif %}
+
+
+
+              {% if data['livewithparents'] == "no" %}
+              {% if data['accomodation'] == "unihalls" %}
+              <div>
+                  <dt class="cya-question">
+                    Tenancy agreement date
+                  </dt>
+                  <dd class="cya-answer">
+                    Start date: 12 September 2020 <br>
+                    End date: 12 July 2021
+                  </dd>
+    
+                  <dd class="cya-change">
+                    <a class="link-right" href="tenancy-start-end.html">
+                      Change<span class="visually-hidden"> tenancy agreement date</span>
+                    </a>
+                  </dd>
+                </div>
+                {% endif %}
+                {% endif %}
+
+
+
+                {% if data['livewithparents'] == "no" %}
+                {% if data['accomodation'] == "private" %}
+                <div>
+                    <dt class="cya-question">
+                      Tenancy start date
+                    </dt>
+                    <dd class="cya-answer">
+                      Start date: 12 September 2020 
+                     
+                    </dd>
+      
+                    <dd class="cya-change">
+                      <a class="link-right" href="tenancy-start.html">
+                        Change<span class="visually-hidden"> tenancy start date</span>
+                      </a>
+                    </dd>
+                  </div>
+                  {% endif %}
+                  {% endif %}
+
+
+
+                  {% if data['livewithparents'] == "no" %}
+                  {% if data['accomodation'] == "private" %}
+                  <div>
+                      <dt class="cya-question">
+                        Know your tenancy end date
+                      </dt>
+                      <dd class="cya-answer">
+
+                         {% if data['typeenddate'] == "yes" %}
+                    <span>Yes, I know my tenancy end date </span>
+                    {% endif %} 
+                       
+                    {% if data['typeenddate'] == "no" %}
+                    <span>No, I have a roll on contract</span>
+                    {% endif %} 
+
+                      </dd>
+        
+                      <dd class="cya-change">
+                        <a class="link-right" href="type-enddate">
+                          Change<span class="visually-hidden"> Do you know your tenancy end date</span>
+                        </a>
+                      </dd>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+
+
+                    {% if data['livewithparents'] == "no" %}
+                    {% if data['accomodation'] == "private" %}
+                    {% if data['typeenddate'] == "yes" %}
+                    <div>
+                        <dt class="cya-question">
+                         Tenancy end date
+                        </dt>
+                        <dd class="cya-answer">
+                            End date: 12 July 2021
+                         
+                        </dd>
+          
+                        <dd class="cya-change">
+                          <a class="link-right" href="tenancy-end">
+                            Change<span class="visually-hidden"> Tenancy end date</span>
+                          </a>
+                        </dd>
+                      </div>
+                      {% endif %}
+                      {% endif %}
+                      {% endif %}
+
+
+
+
+
+
+
+
+
 
 
                 {% if data['livewithparents'] == "no" %}
@@ -187,7 +274,9 @@ NHSBSA Prototype
                 </dd>
               </div>
               {% endif %}  
-              {% endif %}             
+              {% endif %}         
+              
+              
     
               {% if data['livewithparents'] == "no" %}
               {% if data['accomodation'] == "private" %}
@@ -198,15 +287,15 @@ NHSBSA Prototype
                 </dt>
                 <dd class="cya-answer">
                    
-                  {% if data['renthowoften'] == "weekly" %}
+                  {% if data['renthowoften'] == "each week" %}
                   <span>Weekly</span>
                   {% endif %}
                
-                  {% if data['renthowoften'] == "monthly" %}
+                  {% if data['renthowoften'] == "each month" %}
                   <span>Monthly</span>
                   {% endif %}
                       
-                  {% if data['renthowoften'] == "termly" %}
+                  {% if data['renthowoften'] == "each term" %}
                   <span>Termly</span>
                   {% endif %}
 
