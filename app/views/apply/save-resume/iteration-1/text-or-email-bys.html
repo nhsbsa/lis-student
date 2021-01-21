@@ -1,0 +1,104 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Save an application</p>
+
+{% if thirdparty %}
+<h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do they want to save this application?</h1>
+<p>We'll need to send them a 6 digit code to save this application.</p>
+{% else %}
+<h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do you want to save this application?</h1>
+<p>We'll need to send you a 6 digit code to save this application.</p>
+{% endif %}
+        
+      </header>
+
+
+      <form action="textemailmethodBYSSaveRestoreiteration2-handler" method="get" class="form">
+
+
+          <fieldset class="form-group">
+
+              <div class="multiple-choice" data-target="email">
+                <input id="yes" name="textemail" type="radio" value="email">
+                <label for="yes" style="line-height: 195%;">Email</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="email">
+                  <label class="form-label-bold" for="nhsno">Email address</label>
+{% if thirdparty %}
+<p class="form-hint">We'll only use this email address to send them their save code</p>
+{% else %}
+<p class="form-hint">We'll only use this email address to send you your save code</p>
+{% endif %}
+                  <div>
+                    <input class="form-control" id="saveforlateremail" name="saveforlateremail" type="text">
+                  </div>
+                  <br>
+                </div>
+
+              <div class="multiple-choice" data-target="textmessage">
+                <input id="no" name="textemail" type="radio" value="textmessage">
+                <label for="no" style="line-height: 195%;">Mobile</label>
+              </div>
+
+
+
+              <div class="panel panel-border-narrow js-hidden" id="textmessage">
+                  <label class="form-label-bold" for="nhsno">Mobile phone number</label>
+                  {% if thirdparty %}
+<p class="form-hint">We'll only use this number to send them their save code</p>
+{% else %}
+<p class="form-hint">We'll only use this number to send you your save code</p>
+{% endif %}
+                  <div>
+                    <input class="form-control" id="saveforlatermobile" name="saveforlatermobile" type="text">
+                  </div>
+                  <br>
+                </div>
+
+                
+
+            </fieldset>
+
+            <div class="form-group">
+                <input class="button" type="submit" value="Continue">
+            </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
