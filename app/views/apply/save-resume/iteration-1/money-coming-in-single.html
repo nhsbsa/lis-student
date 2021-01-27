@@ -49,11 +49,23 @@ NHSBSA Prototype
           {% endif %}
       </header>
 
-      <form action="whatissingleincomeSaveRestoreiteration2-handler" class="form" method="get">
+      <form action="whatissingleincomeSave-handler" class="form" method="get">
 
         <p style="color:grey">Select all that apply for yourself</p>
 
         <fieldset class="form-group">
+            <div class="multiple-choice multiple-radio">
+                <input id="pension" name="incomesingle" value="pension-income" type="checkbox">
+                <label for="pension">Pensions (state, work, private)</label>
+              </div>
+
+
+              <div class="multiple-choice multiple-radio">
+                  <input id="benefits" name="incomesingle" value="benefits-income" type="checkbox">
+                  <label for="benefits"> Benefits</label>
+                </div>
+               
+
           <div class="multiple-choice multiple-radio">
             <input id="wages" name="incomesingle" value="earned-income" type="checkbox">
             <label for="wages">Wages from a job</label>
@@ -67,14 +79,7 @@ NHSBSA Prototype
               <input id="apprenticeship" name="incomesingle" value="apprenticeship-income" type="checkbox">
               <label for="apprenticeship">Apprenticeships</label>
             </div>
-          <div class="multiple-choice multiple-radio">
-            <input id="benefits" name="incomesingle" value="benefits-income" type="checkbox">
-            <label for="benefits">State benefits</label>
-          </div>
-          <div class="multiple-choice multiple-radio">
-            <input id="pension" name="incomesingle" value="pension-income" type="checkbox">
-            <label for="pension">Pensions (state, work, private)</label>
-          </div>
+         
           <div class="multiple-choice multiple-radio">
             <input id="maintenance" name="incomesingle" value="maintenance-income" type="checkbox">
             <label for="maintenance">Maintenance payments from an ex-partner</label>

@@ -14,15 +14,6 @@ NHSBSA Prototype
 
 {% block content %}
 
-<style>
-    @media screen and (max-width: 640px) {
-    .save-restore-mobile {
-        display: block;
-        text-align: center;
-    }
-    }
-</style>
-
 <main id="content" role="main">
 
   <div class="phase-banner">
@@ -40,30 +31,28 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you want to save your progress as you go?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you have more than &pound;6,000 in savings, investments or property?</h1>
       </header>
-      
 
-      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-          <p>If you select yes, we'll ask an email address or a mobile number and date of birth and we'll save your progress as you go. <br> You can return 
-            at any point over the next 7 days to pick up where you left off.
-          </p>
-                  </div>
-      <form action="saveprogressSave-handler" method="get" class="form">
+      <p>Do not include the property you live in.</p>
+
+      <form action="savingsSave-handler" method="get" class="form">
 
         <div class="form-group">
 
+          
+            <br>
           <fieldset class="inline">
             <legend class="visually-hidden">
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="saveprogress" value="yes">
+              <input id="yes" type="radio" name="savings" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="saveprogress" value="no">
+              <input id="no" type="radio" name="savings" value="no">
               <label for="no">No</label>
             </div>
 
@@ -72,7 +61,7 @@ NHSBSA Prototype
         </div>
 
         <div class="form-group">
-            <div style="line-height: 225%;"><input class="button" type="submit" value="Continue">
+          <input class="button" type="submit" value="Next">
         </div>
 
       </form>

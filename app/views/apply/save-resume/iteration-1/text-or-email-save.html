@@ -37,10 +37,13 @@ NHSBSA Prototype
 <p>We'll need to send them a 6 digit code to save this application.</p>
 {% else %}
 <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do you want to save this application?</h1>
-<p>We'll need to send you a 6 digit code to save this application.</p>
+
 {% endif %}
         
       </header>
+
+
+
 
 
       <form action="textemailmethodBYSSaveRestoreiteration2-handler" method="get" class="form">
@@ -56,9 +59,9 @@ NHSBSA Prototype
               <div class="panel panel-border-narrow js-hidden" id="email">
                   <label class="form-label-bold" for="nhsno">Email address</label>
 {% if thirdparty %}
-<p class="form-hint">We'll only use this email address to send them their save code</p>
+<p class="form-hint">We need this to send them a link to save this application</p>
 {% else %}
-<p class="form-hint">We'll only use this email address to send you your save code</p>
+<p class="form-hint">We need this to send you a link to save this application</p>
 {% endif %}
                   <div>
                     <input class="form-control" id="saveforlateremail" name="saveforlateremail" type="text">
@@ -76,9 +79,9 @@ NHSBSA Prototype
               <div class="panel panel-border-narrow js-hidden" id="textmessage">
                   <label class="form-label-bold" for="nhsno">Mobile phone number</label>
                   {% if thirdparty %}
-<p class="form-hint">We'll only use this number to send them their save code</p>
+<p class="form-hint">We need this to send them a 6 digit code to save their application</p>
 {% else %}
-<p class="form-hint">We'll only use this number to send you your save code</p>
+<p class="form-hint">We need this to send you a 6 digit code to save this application.</p>
 {% endif %}
                   <div>
                     <input class="form-control" id="saveforlatermobile" name="saveforlatermobile" type="text">
