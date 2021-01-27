@@ -6407,3 +6407,90 @@ router.get(/counciltaxmonth-iteration7b-handler/, function (req, res)  {
   res.redirect('cya');
 });
 
+//SAVE AND RESUME
+//RESUME APPLICATION
+// Myself or someone else
+
+router.get(/whoapply-handler/, function (req, res) {
+  if (req.query.whoapply == 'myself') {
+    res.redirect('email-mobile-resume');
+  } else if (req.query.whoapply == 'someonelese') {
+    res.redirect('#');
+  }
+  });
+
+  //email-mobile-resume
+
+router.get(/emailmobile-handler/, function (req, res) {
+  if (req.query.emailmobile == 'email') {
+    res.redirect('dob_resume');
+  } else if (req.query.emailmobile == 'textmessage') {
+    res.redirect('dob_resume');
+  }
+  });
+
+//enter mobile code
+
+router.get(/resume-code-handler/, function (req, res) {
+  res.redirect('task-list');
+});
+
+//SAVE APPPLICATION
+
+//Myself or someone else
+router.get(/applyingforsave-handler/, function (req, res) {
+  if (req.query.applyingfor == 'myself') {
+    res.redirect('country-split');
+  } else if (req.query.applyingfor == 'someonelese') {
+    res.redirect('#');
+  }
+  });
+
+  //Country Split
+  router.get(/countrysave-handler/, function (req, res) {
+    if (req.query.country == 'England') {
+      res.redirect('care-home');
+    } else if (req.query.country == 'Scotland') {
+      res.redirect('care-home');
+    } else if (req.query.country == 'Wales') {
+      res.redirect('care-home');
+    } else if (req.query.country == 'Northern Ireland') {
+      res.redirect('#');
+    } else {
+      res.redirect('country-split');
+    }
+  });
+
+  router.get(/carehomeSave-handler/, function (req, res) {
+    if (req.query.carehome == 'yes') {
+      res.redirect('#');
+    } else if (req.query.carehome == 'no') {
+      res.redirect('partner');
+    } else {
+      res.redirect('care-home');
+    }
+  });
+
+  //Partner
+
+  router.get(/partnerSave-handler/, function (req, res) {
+    if (req.query.partner == 'yes') {
+      res.redirect('#');
+    } else if (req.query.partner == 'no') {
+      res.redirect('claimed-asylum-single');
+    } else {
+      res.redirect('partner');
+    }
+  });
+
+  //Asylum
+
+  router.get(/asylumsingleSave-handler/, function (req, res) {
+    if (req.query.asylumsingle == 'yes') {
+      res.redirect('#');
+    } else if (req.query.asylumsingle == 'no') {
+      res.redirect('education');
+    } else {
+      res.redirect('claimed-asylum-single');
+    }
+  });

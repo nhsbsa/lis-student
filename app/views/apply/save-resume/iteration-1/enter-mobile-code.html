@@ -39,12 +39,14 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Continue an application</p>
+        <p class="page-header--sub heading-secondary">Continue a saved application</p>
         <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Check your phone</h1>
         <p>We've sent a 6 digit code to <strong style="font-weight: bold;">07700 900796</strong>. Enter the code to continue this application.</p>
+
+        <p>The code may take a few minutes to arrive.</p>
       </header>
 
-      <form action="resumeapplicationtextiteration2-handler" method="get" class="form">
+      <form action="resume-code-handler" method="get" class="form">
 
         <div class="form-group">
           <label style="font-weight: bold;" class="form-label" for="code">Enter your code</label>
@@ -57,27 +59,21 @@ NHSBSA Prototype
 
       </form>
 
-      <details role="group">
-          <summary role="button" aria-controls="details-content-0" aria-expanded="false">
-              <span class="summary">I haven't got a text</span>
-          </summary>
+          
+              <span>No code after 10 minutes?</span> <a href="#">Resend code</a>
+        
           <br>
-          <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-              <p>The text message could take up to 10 minutes to arrive.</p>
-              <p>If you do not get a text message from us after 10 minutes, <a href="return-simple">try again</a>.</p>
-          </div>
-      </details>
 
-      <details role="group">
-          <summary role="button" aria-controls="details-content-1" aria-expanded="false">
-              <span class="summary">Entered the wrong mobile phone number?</span>
-          </summary>
+  
+<br>
+
+      
+         
+              <span >I do not have access to this number. </span><a href="#">Start a new appplication</a>
+      
           <br>
-          <div class="panel panel-border-narrow" id="details-content-1" aria-hidden="true">
-              <p>The message we send does not contain any personal data.</p>
-              <p>If you've entered the wrong mobile phone number, <a href="return-simple">try again</a>.</p>
-          </div>
-      </details>
+          
+  
 
 
 
