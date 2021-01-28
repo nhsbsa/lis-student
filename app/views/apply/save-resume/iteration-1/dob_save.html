@@ -30,13 +30,12 @@ NHSBSA Prototype
         <div class="column-two-thirds">
 
             <header class="page-header">
-                <p class="page-header--sub heading-secondary">Before you start</p>
-                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is the main applicants date of
-                    birth?</h1>
+                <p class="page-header--sub heading-secondary">Save an application</p>
+                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your date of birth date of birth?</h1>
             </header>
 
 
-            <form action="jobtitle-handler" method="get" class="form">
+            <form action="dob-save-handler" method="get" class="form">
 
                 <fieldset>
                     <!--     <legend class="form-label-bold">Date of birth</legend> -->
@@ -67,9 +66,19 @@ NHSBSA Prototype
 
             </form>
             <br>
+            {% if data['emailmobile'] == "textmessage" %}
             <div class="form-group">
-                    <a href="saved-textmessage-bys"><input class="button" type="submit" value="Continue"></a>
+                    <a href="enter-mobile-code"><input class="button" type="submit" value="Continue"></a>
+                 
                 </div>
+                {% else %}
+              
+                <div class="form-group">
+                        <a href="email-sent-resume"><input class="button" type="submit" value="Continue"></a>
+                      
+                    </div>
+                      
+                    {% endif %}
 
         </div>
     </div>

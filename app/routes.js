@@ -6578,3 +6578,14 @@ router.get(/applyingforsave-handler/, function (req, res) {
       res.redirect('save-application');
     }
   });
+
+  //Text or mobile
+
+
+router.get(/textoremailSave-handler/, function (req, res) {
+  if (req.query.textemail == 'email') {
+    res.redirect('dob_save');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('dob_save');
+  }
+  });
