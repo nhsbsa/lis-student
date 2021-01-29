@@ -35,7 +35,7 @@ NHSBSA Prototype
             </header>
 
 
-            <form action="dob-save-handler" method="get" class="form">
+            <form action="save-details-handler" method="get" class="form">
 
                     <!--<legend class="form-label-bold">What email address should we send the link to?</legend>-->
                     <legend class="form-label-bold">Email address</legend>
@@ -45,17 +45,6 @@ NHSBSA Prototype
                             <input class="form-control" id="emailaddress" name="emailaddress" type="text">
                           </div>
                   
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <fieldset>
@@ -90,7 +79,7 @@ NHSBSA Prototype
             
             {% if data['textemail'] == "textmessage" %}
             <div class="form-group">
-                    <a href="#"><input class="button" type="submit" value="Continue"></a>
+                    <a href="enter-code-save"><input class="button" type="submit" value="Continue"></a>
                  
                 </div>
                 {% else %}

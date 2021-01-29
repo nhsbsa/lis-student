@@ -6584,11 +6584,13 @@ router.get(/applyingforsave-handler/, function (req, res) {
 
 router.get(/textoremailSave-handler/, function (req, res) {
   if (req.query.textemail == 'email') {
-    res.redirect('dob_save');
+    res.redirect('save_details_email');
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('dob_save');
+    res.redirect('save_details_mobile');
   }
   });
 
 
-
+  router.get(save-code-handler/, function (req, res) {
+    res.redirect('application-saved');
+  });
