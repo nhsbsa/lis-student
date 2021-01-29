@@ -31,16 +31,24 @@ NHSBSA Prototype
 
             <header class="page-header">
                 <p class="page-header--sub heading-secondary">Continue a saved application</p>
-                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your date of
-                        birth?</h1>
+                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Enter your details</h1>
                         
             </header>
 
 
-            <form action="dob-resume-handler" method="get" class="form">
+            <form action="resume-details-email-handler" method="get" class="form">
+
+
+                    <legend class="form-label-bold">Email address</legend>
+
+                    <div class="form-group">
+                            <label class="form-label" for="emailaddress"></label>
+                            <input class="form-control" id="emailaddress" name="emailaddress" type="text">
+                          </div>
+
 
                 <fieldset>
-                    <!--     <legend class="form-label-bold">Date of birth</legend> -->
+                        <legend class="form-label-bold">Date of birth</legend> 
                     <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
                     <p class="form-hint" id="dob-hint" style="margin-bottom: 0px">For example, 31 07 1961</p>
 

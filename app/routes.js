@@ -6413,19 +6413,19 @@ router.get(/counciltaxmonth-iteration7b-handler/, function (req, res)  {
 
 router.get(/whoapply-handler/, function (req, res) {
   if (req.query.whoapply == 'myself') {
-    res.redirect('email-mobile-resume');
+    res.redirect('text-or-email-resume');
   } else if (req.query.whoapply == 'someonelese') {
     res.redirect('#');
   }
   });
 
-  //email-mobile-resume
+  //text or email resume
 
-router.get(/emailmobile-handler/, function (req, res) {
+router.get(/emailmobileResume-handler/, function (req, res) {
   if (req.query.emailmobile == 'email') {
-    res.redirect('dob_resume');
+    res.redirect('resume_details_email');
   } else if (req.query.emailmobile == 'textmessage') {
-    res.redirect('dob_resume');
+    res.redirect('resume_details_mobile');
   }
   });
 
