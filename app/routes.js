@@ -1693,11 +1693,11 @@ router.get(/fundingiteration7-handler/, function (req, res) {
   }else if (req.query.funding.includes('grant-help')) {
       res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.includes('none-help')) {
-    res.redirect('/beforeyoustart/student/iteration-7/live-with-parents.html');
+    res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single.html');
   }else if (req.query.funding.includes('SL-help')) {
-      res.redirect('/beforeyoustart/student/iteration-7/live-with-parents.html');
+      res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single.html');
 }else if (req.query.funding.includes('family-help')) {
-      res.redirect('/beforeyoustart/student/iteration-7/live-with-parents.html');
+      res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single.html');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
     res.redirect('/kickouts/students-developed');
   } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
@@ -5962,6 +5962,10 @@ router.get(/finalyear-iteration6b3-handler/, function (req, res) {
 // ********************************************************************//
 // Release 6.2 Education and Training -  with Term Dates Play back
 // ********************************************************************//
+
+router.get(/fulltimeedu6-2-handler/, function (req, res) {
+  res.redirect('../edu-and-train/name-of-establishment.html');
+});
 
 router.get(/nameofcourse-iteration6-2-handler/, function (req, res) {
   res.redirect('../edu-and-train/term-dates-playback.html');
