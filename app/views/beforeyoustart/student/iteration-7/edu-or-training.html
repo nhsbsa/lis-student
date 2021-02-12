@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you in education or training?</h1>
+      </header>
+
+      <form action="educationtrainingiteration6-handler" method="get" class="form">
+
+        <div class="form-group">
+
+          
+            <br>
+          <fieldset class="inline">
+            <legend class="visually-hidden">Are you in education or training?</legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="educationtraining" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="educationtraining" value="no">
+              <label for="no">No</label>
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

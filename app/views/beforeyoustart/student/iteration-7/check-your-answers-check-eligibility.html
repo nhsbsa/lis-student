@@ -1,0 +1,291 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Check eligibility
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+          <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Country you live in</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">{{ data['country'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="/beforeyoustart/student/iteration-6/country-split">
+                  Change<span class="visually-hidden"> country you live in</span>
+                </a>
+              </dd>
+            </div>
+          <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Live permanently in a care home</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">{{ data['carehome'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="/beforeyoustart/student/iteration-6/care-home-split">
+                  Change<span class="visually-hidden"> if you live in a care home</span>
+                </a>
+              </dd>
+            </div>
+    
+            <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Live with a partner</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">{{ data['partner'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="/beforeyoustart/student/iteration-6/partner">
+                  Change<span class="visually-hidden"> if you live with a partner</span>
+                </a>
+              </dd>
+            </div>
+    
+            <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Claimed asylum</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">
+                    {% if data['partner'] == "yes" %}
+                    {{ data['asylumPartner'] }}
+                    {% endif %}
+                    {% if data['partner'] == "no" %}
+                    {{ data['asylumsingle'] }}
+                    {% endif %}</p>
+              </dd>
+              <dd class="cya-change">
+                  {% if data['partner'] == "yes" %}
+                  <a href="/beforeyoustart/asylum/claimed-asylum-partner">
+                    Change <span class="visually-hidden"> if you and your partner claimed asylum</span>
+                  </a>
+                  {% endif %}
+                  {% if data['partner'] == "no" %}
+                  <a href="/beforeyoustart/student/iteration-6/claimed-asylum-single">
+                    Change<span class="visually-hidden"> if you claimed asylum</span>
+                  </a>
+                  {% endif %}
+              </dd>
+            </div>
+
+
+           
+    
+            <div>
+                <dt class="cya-question">
+                  <h2 class="heading-small">In education or training</h2>
+                </dt>
+                <dd class="cya-answer">
+                    <p style="text-transform: capitalize;">{{ data['educationtraining'] }}</p>
+                </dd>
+                <dd class="cya-change">
+                  <a href="/beforeyoustart/student/iteration-6/edu-or-training">
+                    Change<span class="visually-hidden"> education or training</span>
+                  </a>
+                </dd>
+              </div>
+    
+              <div>
+                  <dt class="cya-question">
+                    <h2 class="heading-small">Full-time or part-time education</h2>
+                  </dt>
+                  <dd class="cya-answer">
+                      <p>
+                      {% if data['fulltimeedu'] == "ft" %}
+                      Full-time education
+                      {% endif %}
+                      {% if data['fulltimeedu'] == "pt" %}
+                      Part-time education
+                      {% endif %}
+                      </p>
+                  </dd>
+                  <dd class="cya-change">
+                    <a href="/beforeyoustart/student/iteration-6/full-time-edu">
+                      Change<span class="visually-hidden"> full-time or part-time education</span>
+                    </a>
+                  </dd>
+                </div>
+
+                
+
+                                  <div>
+                                      <dt class="cya-question">
+                                        <h2 class="heading-small">Get financial support for education</h2>
+                                      </dt>
+                                      <dd class="cya-answer">
+                                          <p>
+                                          {% if data['funding'] == "SL-help" %}
+                                          Support from Student Finance England (SFE), Student Finance Wales (SFW), or the Student Awards Agency for Scotland (SAAS)
+                                          {% endif %}
+                                          {% if data['funding'] == "NHS-help" %}
+                                          NHS Bursary
+                                          {% endif %}
+                                          {% if data['funding'] == "HEI-help" %}
+                                          Bursary from your higher education institution (HEI)
+                                          {% endif %}
+                                          {% if data['funding'] == "scholarship-help" %}
+                                          Other scholarship, sponsorship, award or bursary
+                                          {% endif %}
+                                          {% if data['funding'] == "grant-help" %}
+                                          Grant or loan from overseas
+                                          {% endif %}
+                                          {% if data['funding'] == "none-help" %}
+                                          No, I do not get financial support from any of these
+                                          {% endif %}
+                                          </p>
+                                      </dd>
+                                      <dd class="cya-change">
+                                        <a href="/beforeyoustart/student/iteration-6/student-funding">
+                                          Change<span class="visually-hidden"> financial support</span>
+                                        </a>
+                                      </dd>
+                                    </div>
+
+                                    {% if data['fulltimeedu'] == "ft" %}
+                                    
+                                      <div>
+                                          <dt class="cya-question">
+                                            <h2 class="heading-small">You live with your parents, relatives or friends </h2>
+                                          </dt>
+                                          <dd class="cya-answer">
+                                              <p style="text-transform: capitalize;">{{ data['liveparents'] }}</p>
+                                          </dd>
+                                          <dd class="cya-change">
+                                            <a href="/beforeyoustart/student/iteration-6/live-with-parents">
+                                              Change<span class="visually-hidden"> if you live with parents, relatives or friends</span>
+                                            </a>
+                                          </dd>
+                                        </div>
+                                        {% endif %}
+
+
+                 
+
+                    <div>
+                        <dt class="cya-question">
+                          <h2 class="heading-small">Get money from</h2>
+                        </dt>
+                        <dd class="cya-answer">
+                          <p>
+                              {% if 'pension-income' in data['incomesingle'] %}
+                              Pensions (state, work, private)<br>
+                              {% endif %}
+                              {% if 'earned-income' in data['incomesingle'] %}
+                              Wages from a job<br>
+                              {% endif %}
+                              {% if 'benefits-income' in data['incomesingle'] %}
+                              State benefits<br>
+                              {% endif %}
+                              {% if 'nil-income' in data['incomesingle'] %}
+                              No, I do not get money from any of these<br>
+                              {% endif %}
+
+
+                          </p>
+                        </dd>
+                        <dd class="cya-change">
+                          <a href="/beforeyoustart/student/iteration-6/money-coming-in-single">
+                            Change<span class="visually-hidden"> where you get money from</span>
+                          </a>
+                        </dd>
+                      </div>
+
+                      {% if data['partner'] == "yes" %}
+                      <div>
+                          <dt class="cya-question">
+                            <h2 class="heading-small">Your partner receives income from</h2>
+                          </dt>
+                          <dd class="cya-answer">
+                            <p>
+                                {% if 'pension-income' in data['incomepartner'] %}
+                                Pensions (state, work, private)<br>
+                                {% endif %}
+                                {% if 'earned-income' in data['incomepartner'] %}
+                                Wages from a job<br>
+                                {% endif %}
+                                {% if 'benefits-income' in data['incomepartner'] %}
+                                State benefits<br>
+                                {% endif %}
+                                {% if 'nil-income' in data['incomepartner'] %}
+                                Money from somewhere else<br>
+                                {% endif %}
+                              
+                              
+                            </p>
+                          </dd>
+                          <dd class="cya-change">
+                            <a href="/beforeyoustart/student/iteration-6/money-coming-in-single">
+                              Change<span class="visually-hidden"> your partner's income</span>
+                            </a>
+                          </dd>
+                        </div>
+                      {% endif %}
+    
+                      <div>
+                          <dt class="cya-question">
+                            <h2 class="heading-small">Have more than &pound;6000 in savings</h2>
+                          </dt>
+                          <dd class="cya-answer">
+                              <p style="text-transform: capitalize;">{{ data['savings'] }}</p>
+                          </dd>
+                          <dd class="cya-change">
+                            <a href="/beforeyoustart/student/iteration-6/more-than-6000">
+                              Change<span class="visually-hidden"> if you have more than &pound;6000 in savings</span>
+                            </a>
+                          </dd>
+                        </div>
+    
+
+
+
+
+      </dl>
+
+      <br>
+
+      <div class="form-group">
+        <a class="button" href="/../../../apply/students/education/iteration-6/iteration-6-2/edu-and-train/task-list">Next</a>
+      </div>
+
+     
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

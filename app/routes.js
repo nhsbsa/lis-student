@@ -1587,10 +1587,215 @@ router.get(/savingssplititeration6b-handler/, function (req, res) {
   }
 });
 
+// *****************************************
+// BEFORE YOU START - STUDENT - ITERATION 7
+// *****************************************
+
+router.get(/applyonlineiteration7-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-7/what-you-will-need.html');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplititeration7-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/student/iteration-7/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/student/iteration-7/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/student/iteration-7/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-7/country-split');
+  }
+});
+
+router.get(/carehomesplititeration7-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-7/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-7/partner');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-7/care-home-split');
+  }
+});
+
+router.get(/partneriteration7-handler/, function (req, res) {
+  if (req.query.partner == 'yes') {
+    applicant.partner = true;
+    res.redirect('/beforeyoustart/student/iteration-7/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/beforeyoustart/student/iteration-7/claimed-asylum-single');
+  }
+});
+
+
+router.get(/asylumsingleiteration7-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-7/edu-or-training');
+  }
+});
+
+router.get(/asylumPartneriteration7-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-7/edu-or-training-partner');
+  }
+});
+router.get(/educationtrainingiteration7-handler/, function (req, res) {
+ 
+  if (req.query.educationtraining == 'yes') {
+    res.redirect('/beforeyoustart/student/iteration-7/full-time-edu');
+  } else if (req.query.educationtraining == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single');
+  }
+});
+
+router.get(/educationtrainingPartneriteration7-handler/, function (req, res) {
+ 
+  if (req.query.educationtrainingPartner == 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.educationtrainingPartner == 'no') {
+    res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-partner');
+  }
+});
+
+
+router.get(/fulltimeeduiteration7-handler/, function (req, res) {
+ 
+  if (req.query.fulltimeedu == 'ft') {
+    res.redirect('/beforeyoustart/student/iteration-7/student-funding');
+  } else if  (req.query.fulltimeedu == 'pt') {
+    res.redirect('/beforeyoustart/student/iteration-7/student-funding');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-7/full-time-edu');
+  }
+});
 
 
 
 
+router.get(/fundingiteration7-handler/, function (req, res) {
+  
+ if (req.query.funding.includes('NHS-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('HEI-help')) {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('scholarship-help')) {
+    res.redirect('/kickouts/students-developed');
+  }else if (req.query.funding.includes('grant-help')) {
+      res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.includes('none-help')) {
+    res.redirect('/beforeyoustart/student/iteration-7/live-with-parents.html');
+  }else if (req.query.funding.includes('SL-help')) {
+      res.redirect('/beforeyoustart/student/iteration-7/live-with-parents.html');
+}else if (req.query.funding.includes('family-help')) {
+      res.redirect('/beforeyoustart/student/iteration-7/live-with-parents.html');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'SL-help,NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,HEI-help,scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'NHS-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,scholarship-help.grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'HEI-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.funding.toString() == 'scholarship-help,grant-help') {
+    res.redirect('/kickouts/students-developed');
+  } 
+});
+
+router.get(/livewithparentsiteration7-handler/, function (req, res) {
+  
+  var fulltimeedu = req.session.data['fulltimeedu'];
+
+  if (req.query.liveparents == 'yes' ) {
+    res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single');
+  } else if (req.query.liveparents == 'no' && fulltimeedu == 'ft'){
+    res.redirect('/kickouts/students-developed');
+
+  } else 
+  res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single')
+});
+
+
+router.get(/whatissingleincomeiteration7-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle == 'earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle == 'benefits-income') {
+      res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle == 'nil-income') {
+      res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single');
+  }
+});
+
+router.get(/savingssplititeration7-handler/, function (req, res) {
+  if (req.query.savings== 'yes') {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.savings== 'no') {
+    res.redirect('/beforeyoustart/student/iteration-7/check-your-answers-check-eligibility.html');
+  } else {
+    res.redirect('/beforeyoustart/student/iteration-7/more-than-6000');
+  }
+});
 
 // ************************
 // PAYE
