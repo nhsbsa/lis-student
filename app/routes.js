@@ -1221,7 +1221,7 @@ router.get(/asylumPartneriteration6-handler/, function (req, res) {
 router.get(/educationtrainingiteration6-handler/, function (req, res) {
  
   if (req.query.educationtraining == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-6/full-time-edu');
+    res.redirect('/beforeyoustart/student/iteration-6/student-funding');
   } else if (req.query.educationtraining == 'no') {
     res.redirect('/beforeyoustart/student/iteration-6/money-coming-in-single');
   }
@@ -1652,7 +1652,7 @@ router.get(/asylumPartneriteration7-handler/, function (req, res) {
 router.get(/educationtrainingiteration7-handler/, function (req, res) {
  
   if (req.query.educationtraining == 'yes') {
-    res.redirect('/beforeyoustart/student/iteration-7/full-time-edu');
+    res.redirect('/beforeyoustart/student/iteration-7/student-funding');
   } else if (req.query.educationtraining == 'no') {
     res.redirect('/beforeyoustart/student/iteration-7/money-coming-in-single');
   }
