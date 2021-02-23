@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            This is a new service
+            <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary">Continue a saved application</p>
+                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Enter your details</h1>
+                <p>We’ll use this information to find your saved application and send you a 6 digit code so you can continue it. </p>        
+            </header>
+
+
+            <form action="resume-details-mobile-handler" method="get" class="form">
+
+                    <legend class="form-label-bold">Mobile phone number</legend>
+
+                    <div class="form-group">
+                            <label class="form-label" for="mobilenumber"></label>
+                            <input class="form-control" id="mobilenumber" name="mobilenumber" type="text">
+                          </div>
+                  
+
+
+
+
+                <fieldset>
+                        <legend class="form-label-bold">Date of birth</legend>
+                    <!-- <p>We only use this to check if your age entitles you to any help.</p> -->
+                    <p class="form-hint" id="dob-hint" style="margin-bottom: 0px">For example, 31 07 1961</p>
+
+                    <div class="form-date">
+                        <div class="form-group form-group-day">
+                            <label class="form-label" for="dob-day">Day</label>
+                            <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0"
+                                max="31" aria-describedby="dob-hint">
+                        </div>
+
+                        <div class="form-group form-group-month">
+                            <label class="form-label" for="dob-month">Month</label>
+                            <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0"
+                                max="12">
+                        </div>
+
+                        <div class="form-group form-group-year">
+                            <label class="form-label" for="dob-year">Year</label>
+                            <input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0"
+                                max="2016">
+                        </div>
+                    </div>
+                </fieldset>
+
+
+            </form>
+           <br>
+            {% if data['emailmobile'] == "textmessage" %}
+            <div class="form-group">
+                    <a href="enter-mobile-code"><input class="button" type="submit" value="Continue"></a>
+                 
+                </div>
+                {% else %}
+              
+                <div class="form-group">
+                        <a href="email-sent-resume"><input class="button" type="submit" value="Continue"></a>
+                      
+                    </div>
+                      
+                    {% endif %}
+        
+
+
+
+
+
+
+
+        </div>
+    </div>
+</main>
+</main>
+
+{% endblock %}

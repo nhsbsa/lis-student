@@ -1,0 +1,75 @@
+{% extends "layout_bsa.html" %} {% block page_title %} NHSBSA Prototype {% endblock %} {% block content %}
+<main id="content" role="main">
+
+        <div class="grid-row">
+      
+                <div class="column-two-thirds">
+      
+                <div class="phase-banner">
+      
+                    <p>
+                        <strong class="phase-tag">BETA</strong>
+                        <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+                    </p>
+      
+                </div>
+      
+                <div class="done-panel" style="
+                margin-bottom: 0;
+              ">
+                        <h1 class="heading-xlarge" style="margin: 15px 0px 15px 0px;">
+                           
+        
+                            We've saved this application for 7 days</h1>
+                           <!-- <h2 class="heading-large"><span class="heading-secondary" style="
+                                color: white;
+                            ">Reference number</span> K5G-V78</h2> -->
+        
+                        
+        
+        
+                    </div>
+                    
+                    <h2 class="heading-medium">What happens next</h2>
+        
+                    {% if thirdparty %}
+                    
+            <p>You can now save this application as you go or you can close this window. <br> <br>
+              We've sent a message to your email on how to come back to continue your application later.</p>
+
+                     {% else %}
+                    
+                  <!--   <p>You can now save this application as you go or you can close this window. <br><br>
+                      We've sent a message to your email on how to come back to continue your application later.-->
+
+                      <p>You can continue your application and save as you go, or you can close this window and return later. <br><br>
+
+                          
+                          </p>
+
+                    {% endif %}
+        
+
+
+                    <p><a href="what-is your-name" onclick="javascript:history.back(-5); location.reload(true)"><input class="button" type="submit" value="Continue this application"></a></p>
+
+
+                        
+
+                
+              
+      
+      
+            </div>
+      
+      
+      
+        </div>
+        
+
+      
+      
+      
+      
+      </main>
+{% endblock %}

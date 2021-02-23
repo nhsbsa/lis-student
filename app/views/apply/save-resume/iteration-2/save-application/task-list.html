@@ -1,0 +1,107 @@
+{% extends "layout_bsa.html" %}
+<style>
+  ol.steps .instruction-list-item-extra-information {
+  margin-left: 1.57895em;
+}
+</style>
+
+{% block page_title %}
+Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .task-in-progress {
+    background: #6F777B !important;
+  }
+  .secondary-button {
+    background-color: #005EA5;
+}
+.secondary-button:hover, .secondary-button:focus {
+    background-color: #00458C;
+}
+.secondary-button.disabled:hover, .secondary-button[disabled="disabled"]:hover, .secondary-button[disabled]:hover {
+  background-color: #005EA5;
+}
+</style>
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds column-minimum">
+
+      <div class="heading-group">
+        <p>Apply for help to pay NHS costs</p>
+        <h1 class="heading-medium" style="margin: 20px 0 0 0;">Welcome back to</h1>
+        <h1 class="heading-xlarge">Your application</h1>
+      </div>
+
+      <p>You can’t send the application until you have completed all the sections.</p>
+
+      <ol class="task-list">
+
+        <h2 class="task-list-section"><span class="task-list-section-number">1.</span> Check before you start</h2>
+        <ul class="task-list-items">
+          <li class="task-list-item" style="border-top: 1px solid #bfc1c3;">
+            <a aria-describedby="eligibility-completed" class="task-name" href="#">Check eligibility</a> <strong class="task-completed"
+              id="eligibility-completed">Completed</strong>
+          </li>
+        </ul>
+
+
+
+        <h2 class="task-list-section"><span class="task-list-section-number">2.</span> About you</h2>
+        <ul class="task-list-items">
+          <li style="list-style: none; display: inline">
+          </li>
+          <li class="task-list-item">
+            <a aria-describedby="personal-details-completed" class="task-name" href="applying-for">Personal details</a> 
+            <strong  class="task-completed" id="eligibility-completed" style="background-color: #dee0e2; color: #626262;">To do</strong></a>  </li>
+
+          <li class="task-list-item">
+            <a class="task-name" href=#>Contact details</a> <strong class="task-completed"
+            style="background-color: #dee0e2; color: #626262;">Can't start yet</strong>
+          </li>
+        </ul>
+
+        <h2 class="task-list-section"><span class="task-list-section-number">3.</span> About your income</h2>
+        <ul class="task-list-items">
+          <li class="task-list-item">
+            <a class="task-name" href="#">Wages from a job</a> <strong class="task-completed"
+            style="background-color: #dee0e2; color: #626262;">Can't start yet</strong>
+          </li>
+        </ul>
+
+
+        <h2 class="task-list-section"><span class="task-list-section-number">4.</span> About your home</h2>
+        <ul class="task-list-items">
+
+          <li class="task-list-item">
+            <a class="task-name" href="#">Where you live</a> <strong class="task-completed"
+            style="background-color: #dee0e2; color: #626262;">Can't start yet</strong>
+          </li>
+          <li class="task-list-item">
+            <a class="task-name" href="#">People who live with you</a> <strong class="task-completed"
+            style="background-color: #dee0e2; color: #626262;">Can't start yet</strong>
+          </li>
+        </ul>
+
+
+
+        <h2 class="task-list-section"><span class="task-list-section-number">5.</span> Submit application</h2>
+        <div style="padding-left: 35px; margin-top: 1em">
+            <a href="/apply/submit/iteration-2/declaration"><input class="button" disabled type="submit" value="Send"></a>
+            
+         
+
+        </div>
+
+      </ol>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

@@ -3331,77 +3331,9 @@ router.get(/textemailmethodBYSSaveRestoreiteration2-handler/, function (req, res
   }
 });
 
-router.get(/applyingforSaveRestoreiteration2-handler/, function (req, res) {
-  if (req.query.applyingfor == 'myself' ) {
-    benificiary.thirdParty = false;
-    res.render('apply/save-restore/iteration-2/care-home', {
-      thirdparty : benificiary.thirdParty
-    }); 
-  } else if (req.query.applyingfor == 'someoneelse' ) {
-    benificiary.thirdParty = false;
-    res.redirect('/apply/save-restore/iteration-2/applying-for');
-  } else if (req.query.applyingfor.includes('understand') ) {
-    benificiary.thirdParty = true;
-    res.render('apply/save-restore/iteration-2/care-home', {
-      thirdparty : benificiary.thirdParty
-    });
-  }
-});
 
 
-router.get(/answersSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/answers-saved', {
-    thirdparty : benificiary.thirdParty
-  });
-});
 
-router.get(/tasklistSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/task-list', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/beneficiarySaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/details/name-of-beneficiary', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/nameSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/details/date-of-birth', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/dobSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/details/address', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/addressSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/details/nhs-number', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/nhsnumberSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/details/sight-impaired', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/sightimpairedSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/details/answers', {
-    thirdparty : benificiary.thirdParty
-  });
-});
-
-router.get(/detailsSaveRestoreiteration2-handler/, function (req, res) {
-  res.render('apply/save-restore/iteration-2/text-or-email', {
-    thirdparty : benificiary.thirdParty
-  });
-});
 
 // ************************
 // BENEFITS (Iteration 1)
@@ -6644,7 +6576,11 @@ router.get(/resume-code-handler/, function (req, res) {
   res.redirect('task-list');
 });
 
-//SAVE APPPLICATION
+//*******************************/
+//SAVE APPPLICATION - ITERATION 1
+//********************************/
+
+
 
 //Myself or someone else
 router.get(/applyingforsave-handler/, function (req, res) {
@@ -6803,3 +6739,45 @@ router.get(/textoremailSave-handler/, function (req, res) {
   router.get(/save-code-handler/, function (req, res) {
     res.redirect('application-saved');
   });
+
+
+
+//*******************************/
+//SAVE APPPLICATION - ITERATION 2
+//********************************/
+
+//Myself or someone else
+router.get(/applyingforsave-iteration2-handler/, function (req, res) {
+  if (req.query.applyingfor == 'myself') {
+    res.redirect('save-application');
+  } else if (req.query.applyingfor == 'someonelese') {
+    res.redirect('#');
+  }
+  });
+
+
+//Do you want to save application
+
+    router.get(/saveprogressSave-iteration2-handler/, function (req, res) {
+      if (req.query.saveprogress == 'yes') {
+        res.redirect('text-or-email-save');
+      } else if (req.query.saveprogress == 'no') {
+        res.redirect('#');
+      } else {
+        res.redirect('save-application');
+      }
+    });
+
+    router.get(/textoremailSave-iteration2-handler/, function (req, res) {
+      if (req.query.textemail == 'email') {
+        res.redirect('save_details_email');
+      } else if (req.query.textemail == 'textmessage') {
+        res.redirect('save_details_mobile');
+      }
+      });
+
+
+      router.get(/save-code-iteration2-handler/, function (req, res) {
+        res.redirect('application-saved');
+      });
+    

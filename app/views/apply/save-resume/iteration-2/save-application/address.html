@@ -1,0 +1,133 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+    .save-restore-mobile:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }   
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Personal details</p>
+{% if thirdparty %}
+<h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is their address?</h1>
+                     {% else %}
+ <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your address?</h1>    
+{% endif %}
+        
+      </header>
+
+
+      <form action="addressSaveRestoreiteration2-handler" method="get" class="form">
+
+            <div class="form-group">
+                <label class="form-label" for="firstname">Address line 1</label>
+                <input class="form-control" id="firstname" name="firstname" type="text">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="middlename">Address line 2</label>
+                <input class="form-control" id="middlename" name="middlename" type="text">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="lastname">Town or city</label>
+                <input class="form-control" id="lastname" name="lastname" type="text">
+            </div>
+
+            <div class="form-group">
+                    <label class="form-label" for="lastname">Postcode</label>
+                    <input class="form-control" id="lastname" name="lastname" type="text">
+                </div>
+
+
+        
+
+        <details>
+                <summary><span class="summary">I don't know what address to use</span></summary>
+                <br>
+                <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+        
+                  <p style="font-weight: bold;">If you have more than one address</p>
+                  <p>You should use the address that your GP or dentist holds for you. For example, if you’re a student living away from home, this could be your home or term time address.</p>
+    
+                  <p style="font-weight: bold;">If you don't have a permanent address</p>
+                  <p>If you're homeless and living in temporary accommodation (for example, a long term hostel), you should use the address that your GP or dentist holds for you.</p>
+    
+    
+                </div>
+        
+        
+              </details>
+              <br>
+
+
+              <div class="form-group">
+                  <div style="line-height: 225%;">
+
+                      {% if data['memorableword']  %}
+                      <input class="button" type="submit" value="Save and Continue">
+                      {% else %}
+    
+                      <input class="button" type="submit" value="Continue">
+                  </form>
+    
+                      {% endif %}
+
+                      {% if not data['memorableword']  %}
+                      <span class="save-restore-mobile" style="margin: 0 20px;">or</span>
+                      <form action="detailsSaveRestoreiteration2-handler" method="get" class="form" style="display: inline-block;">
+                          <input class="save-restore-mobile" type="submit" value="Save and continue later" style="background: none!important;
+                          border: none;
+                          padding: 0!important;
+                          text-align: left;
+                          color: #005ea5;">
+                      </form>
+
+                      {% endif %}
+    
+                    </div>                    </div>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
