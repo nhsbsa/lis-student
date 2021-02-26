@@ -6757,10 +6757,9 @@ router.get(/applyingforsave-iteration2-handler/, function (req, res) {
 
 
 //Do you want to save application
-
-    router.get(/saveprogressSave-iteration2-handler/, function (req, res) {
-      if (req.query.saveprogress == 'yes') {
-        res.redirect('text-or-email-save');
+ router.get(/saveprogressSave-iteration2-handler/, function (req, res) {
+   if (req.query.saveprogress == 'yes') {
+      res.redirect('text-or-email-save');
       } else if (req.query.saveprogress == 'no') {
         res.redirect('#');
       } else {
@@ -6768,16 +6767,23 @@ router.get(/applyingforsave-iteration2-handler/, function (req, res) {
       }
     });
 
-    router.get(/textoremailSave-iteration2-handler/, function (req, res) {
-      if (req.query.textemail == 'email') {
+router.get(/textoremailSave-iteration2-handler/, function (req, res) {
+    if (req.query.textemail == 'email') {
         res.redirect('save_details_email');
-      } else if (req.query.textemail == 'textmessage') {
+    } else if (req.query.textemail == 'textmessage') {
         res.redirect('save_details_mobile');
-      }
+    }
       });
 
 
-      router.get(/save-code-iteration2-handler/, function (req, res) {
-        res.redirect('application-saved');
-      });
-    
+router.get(/save-code-iteration2-handler/, function (req, res) {
+  res.redirect('application-saved');
+   });
+
+   router.get(/nameSave-iteration2-handler/, function (req, res) {
+    res.render('#');
+  });
+
+router.get(/addressSave-iteration2-handler/, function (req, res) {
+    res.render('#');
+  });

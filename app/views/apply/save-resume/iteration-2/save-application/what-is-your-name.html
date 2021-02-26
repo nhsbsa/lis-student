@@ -55,7 +55,7 @@ NHSBSA Prototype
             </header>
 
 
-            <form action="nameSave-itearation2-handler" method="get" class="form">
+            <form action="nameSave-iteration2-handler" method="get" class="form">
 
                 <div class="form-group">
                     <label class="form-label" for="firstname">First name</label>
@@ -80,33 +80,32 @@ NHSBSA Prototype
                 <div class="form-group">
                     <div style="line-height: 225%;">
 
-                        {% if data['memorableword']  %}
-                        <input class="button" type="submit" value="Save and Continue">
-                        {% else %}
+                        {% if data['saveprogress']  %}
+                       <input class="button" type="submit" value="Save and Continue">
+
+
+                       <br>
+                       <br>
+                       <p><a href="#">Exit and return later</a></p>
+                      {% else %}
       
                         <input class="button" type="submit" value="Continue">
                     </form>
       
                         {% endif %}
 
-                        {% if not data['memorableword']  %}
-                        <span class="save-restore-mobile" style="margin: 0 20px;">or</span>
-                        <form action="detailsSaveRestoreiteration2-handler" method="get" class="form" style="display: inline-block;">
-                            <input class="save-restore-mobile" type="submit" value="Save and continue later" style="background: none!important;
-                            border: none;
-                            padding: 0!important;
-                            text-align: left;
-                            color: #005ea5;">
-                        </form>
+                     <br>
+                     <br>
 
-                        {% endif %}
+                 
       
-                      </div>                    </div>
+                      </div>              
+                          </div>
 
                     
 
-        </div>
-    </div>
+        
+    
 </main>
 
 {% endblock %}
