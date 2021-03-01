@@ -6745,13 +6745,77 @@ router.get(/textoremailSave-handler/, function (req, res) {
 //*******************************/
 //SAVE APPPLICATION - ITERATION 2
 //********************************/
+//BEFORE YOU START
+
+  //Country Split
+  router.get(/countrysave-iteration2-handler/, function (req, res) {
+    if (req.query.country == 'England') {
+      res.redirect('../before-you-start/care-home');
+    } else if (req.query.country == 'Scotland') {
+      res.redirect('../before-you-start/care-home');
+    } else if (req.query.country == 'Wales') {
+      res.redirect('../before-you-start/care-home');
+    } else if (req.query.country == 'Northern Ireland') {
+      res.redirect('#');
+    } else {
+      res.redirect('country-split');
+    }
+  });
+
+//care home
+
+router.get(/carehomeSave-iteration2-handler/, function (req, res) {
+  if (req.query.carehome == 'yes' ) {
+    res.redirect('partner');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('partner');
+  }
+});
+
+  //Partner
+
+  router.get(/partnerSave-iteration2-handler/, function (req, res) {
+    if (req.query.partner == 'yes') {
+      res.redirect('#');
+    } else if (req.query.partner == 'no') {
+      res.redirect('claimed-asylum-single');
+    } else {
+      res.redirect('partner');
+    }
+  });
+
+  //Asylum
+
+  router.get(/asylumsingleSave-handler/, function (req, res) {
+    if (req.query.asylumsingle == 'yes') {
+      res.redirect('#');
+    } else if (req.query.asylumsingle == 'no') {
+      res.redirect('education');
+    } else {
+      res.redirect('claimed-asylum-single');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SAVE APPLICATION
 
 //Myself or someone else
 router.get(/applyingforsave-iteration2-handler/, function (req, res) {
   if (req.query.applyingfor == 'myself') {
     res.redirect('save-application');
   } else if (req.query.applyingfor == 'someonelese') {
-    res.redirect('#');
+    res.redirect('task-list');
   }
   });
 
@@ -6761,7 +6825,7 @@ router.get(/applyingforsave-iteration2-handler/, function (req, res) {
    if (req.query.saveprogress == 'yes') {
       res.redirect('text-or-email-save');
       } else if (req.query.saveprogress == 'no') {
-        res.redirect('#');
+        res.redirect('task-list');
       } else {
         res.redirect('save-application');
       }

@@ -14,15 +14,6 @@ NHSBSA Prototype
 
 {% block content %}
 
-<style>
-    @media screen and (max-width: 640px) {
-    .save-restore-mobile {
-        display: block;
-        text-align: center;
-    }
-    }
-</style>
-
 <main id="content" role="main">
 
   <div class="phase-banner">
@@ -40,28 +31,26 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        {% if thirdparty %}
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do they live permanently in a care home?</h1>
-        {% else %}
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you live permanently in a care home?</h1>
-        {% endif %}
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Have you claimed asylum to stay in the UK?</h1>
       </header>
 
-      <form action="carehomeSave-handler" method="get" class="form">
+      <form action="asylumsingleSave-handler" method="get" class="form">
 
         <div class="form-group">
 
+          
+            <br>
           <fieldset class="inline">
             <legend class="visually-hidden">
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="carehome" value="yes">
+              <input id="yes" type="radio" name="asylumsingle" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="carehome" value="no">
+              <input id="no" type="radio" name="asylumsingle" value="no">
               <label for="no">No</label>
             </div>
 
@@ -70,7 +59,7 @@ NHSBSA Prototype
         </div>
 
         <div class="form-group">
-           <input class="button" type="submit" value="Continue">
+          <input class="button" type="submit" value="Next">
         </div>
 
       </form>

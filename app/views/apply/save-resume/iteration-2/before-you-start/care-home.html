@@ -14,7 +14,6 @@ NHSBSA Prototype
 
 {% block content %}
 
-
 <style>
     @media screen and (max-width: 640px) {
     .save-restore-mobile {
@@ -22,10 +21,6 @@ NHSBSA Prototype
         text-align: center;
     }
     }
-    .save-restore-mobile:hover {
-        cursor: pointer;
-        text-decoration: underline;
-    }   
 </style>
 
 <main id="content" role="main">
@@ -44,18 +39,15 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Personal details</p>
+        <p class="page-header--sub heading-secondary">Before you start</p>
         {% if thirdparty %}
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are they severely sight impaired or registered blind?</h1>
-
-                     {% else %}
-                     <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you severely sight impaired or registered blind?</h1>
-
-                     {% endif %}
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do they live permanently in a care home?</h1>
+        {% else %}
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you live permanently in a care home?</h1>
+        {% endif %}
       </header>
-      <br>
 
-      <form action="sightimpairedSave-handler" method="get" class="form">
+      <form action="carehomeSave-iteration2-handler" method="get" class="form">
 
         <div class="form-group">
 
@@ -64,12 +56,12 @@ NHSBSA Prototype
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="saveapplication" value="yes">
+              <input id="yes" type="radio" name="carehome" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="saveapplication" value="no">
+              <input id="no" type="radio" name="carehome" value="no">
               <label for="no">No</label>
             </div>
 
@@ -77,28 +69,14 @@ NHSBSA Prototype
 
         </div>
 
-
-
-      
-
-
         <div class="form-group">
-            <div style="line-height: 225%;">
-                <input class="button" type="submit" value="Save and Continue">
-                       
-                <br>
-                <br>
-                <p><a href="#">Exit and return later</a></p>
-               
-            
+           <input class="button" type="submit" value="Continue">
+        </div>
 
-  
-
-              </div>                    </div>
-            </form>
-               
+      </form>
     </div>
   </div>
+</main>
 </main>
 
 {% endblock %}
