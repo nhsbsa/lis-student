@@ -44,18 +44,15 @@ NHSBSA Prototype
 
             <header class="page-header">
                 <p class="page-header--sub heading-secondary">Personal details</p>
-                {% if thirdparty %}
-                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is their name?</h1>
-                <p class="form-hint">Use their full name. For example, Susan not Sue.</p>
-                 {% else %}
+                
                  <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your name?</h1>
                 <p class="form-hint">Use your full name. For example, Susan not Sue.</p>
 
-                {% endif %}
+             
             </header>
 
 
-            <form action="nameSave-iteration2-handler" method="get" class="form">
+            <form action="whatisyournameSave-handler" method="get" class="form">
 
                 <div class="form-group">
                     <label class="form-label" for="firstname">First name</label>
@@ -72,7 +69,7 @@ NHSBSA Prototype
                     <input class="form-control" id="lastname" name="lastname" type="text">
                 </div>
 
-
+            
             
 
 
@@ -80,24 +77,21 @@ NHSBSA Prototype
                 <div class="form-group">
                     <div style="line-height: 225%;">
 
-                        {% if data['saveprogress']  %}
+                    
                        <input class="button" type="submit" value="Save and Continue">
-
-
-                       <br>
+                         <br>
                        <br>
                        <p><a href="#">Exit and return later</a></p>
-                      {% else %}
-      
-                        <input class="button" type="submit" value="Continue">
-                    </form>
-      
-                        {% endif %}
-
-                     <br>
-                     <br>
-
                  
+      
+                 
+                 
+      
+                      
+                    
+                   
+</div> </div>
+</form>
       
                       </div>              
                           </div>

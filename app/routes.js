@@ -6780,10 +6780,19 @@ router.get(/save-code-iteration2-handler/, function (req, res) {
   res.redirect('application-saved');
    });
 
-   router.get(/nameSave-iteration2-handler/, function (req, res) {
-    res.render('#');
-  });
+router.get(/whatisyournameSave-handler/, function (req, res) {
+res.redirect('address');
+     });
 
-router.get(/addressSave-iteration2-handler/, function (req, res) {
-    res.render('#');
-  });
+router.get(/addressSave-handler/, function (req, res) {
+res.redirect('nhs-number');
+       });
+
+router.get(/whatisyournhsSave-handler/, function (req, res) {
+res.redirect('what-is-your-dob');
+ });
+
+
+ router.get(/whatisyourdobSave-handler/, function (req, res) {
+  res.redirect('sight-impaired');
+   });

@@ -45,35 +45,33 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Personal details</p>
-{% if thirdparty %}
-<h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is their address?</h1>
-                     {% else %}
+
  <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your address?</h1>    
-{% endif %}
+
         
       </header>
 
 
-      <form action="addressSave-iteration2-handler" method="get" class="form">
+      <form action="addressSave-handler" method="get" class="form">
 
             <div class="form-group">
-                <label class="form-label" for="firstname">Address line 1</label>
-                <input class="form-control" id="firstname" name="firstname" type="text">
+                <label class="form-label" for="add1">Address line 1</label>
+                <input class="form-control" id="add1" name="add1" type="text">
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="middlename">Address line 2</label>
-                <input class="form-control" id="middlename" name="middlename" type="text">
+                <label class="form-label" for="add2">Address line 2</label>
+                <input class="form-control" id="add2" name="add2" type="text">
             </div>
 
             <div class="form-group">
-                <label class="form-label" for="lastname">Town or city</label>
-                <input class="form-control" id="lastname" name="lastname" type="text">
+                <label class="form-label" for="town">Town or city</label>
+                <input class="form-control" id="town" name="town" type="text">
             </div>
 
             <div class="form-group">
-                    <label class="form-label" for="lastname">Postcode</label>
-                    <input class="form-control" id="lastname" name="lastname" type="text">
+                    <label class="form-label" for="postcode">Postcode</label>
+                    <input class="form-control" id="postcode" name="postcode" type="text">
                 </div>
 
 
@@ -101,17 +99,19 @@ NHSBSA Prototype
               <div class="form-group">
                   <div style="line-height: 225%;">
 
-                      {% if data['memorableword']  %}
+                     
                       <input class="button" type="submit" value="Save and Continue">
-                      {% else %}
+                    
     
-                      <input class="button" type="submit" value="Continue">
-                  </form>
+                      <br>
+                      <br>
+                      <p><a href="#">Exit and return later</a></p>
+                  
     
-                 
+           
     
                     </div>                    </div>
-
+                  </form>
 
 
     </div>
