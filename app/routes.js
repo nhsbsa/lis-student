@@ -6786,7 +6786,7 @@ router.get(/carehomeSave-iteration2-handler/, function (req, res) {
 
   //Asylum
 
-  router.get(/asylumsingleSave-handler/, function (req, res) {
+  router.get(/asylumsingleSave-iteration2-handler/, function (req, res) {
     if (req.query.asylumsingle == 'yes') {
       res.redirect('#');
     } else if (req.query.asylumsingle == 'no') {
@@ -6797,10 +6797,77 @@ router.get(/carehomeSave-iteration2-handler/, function (req, res) {
   });
 
 
+  //Education
 
+  router.get(/educationSave-iteration2-handler/, function (req, res) {
+    if (req.query.education == 'yes') {
+      res.redirect('#');
+    } else if (req.query.education == 'no') {
+      res.redirect('money-coming-in-single');
+    } else {
+      res.redirect('education');
+    }
+  });
 
+//Money coming in Single
 
+//Money-coming-in
 
+router.get(/whatissingleincomeSave-iteration2-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle == 'earned-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle == 'benefits-income') {
+      res.redirect('more-than-6000');
+  } else if (req.query.incomesingle == 'nil-income') {
+      res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
+    res.redirect('more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('more-than-6000');
+  } else {
+    res.redirect('money-coming-in-single');
+  }
+});
+
+//More-than -6000 savngs
+
+router.get(/savingsSave-iteration2-handler/, function (req, res) {
+  if (req.query.savings == 'yes') {
+    res.redirect('#');
+  } else if (req.query.savings == 'no') {
+    res.redirect('check-your-answers');
+  } else {
+    res.redirect('more-than-6000');
+  }
+});
 
 
 
