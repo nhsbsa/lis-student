@@ -6481,10 +6481,12 @@ router.get(/gaselectricity-iteration7b-handler/, function (req, res) {
   
   if (req.query.gaselectricity.includes('meal-only')) {
    res.redirect('meal-term');
- } else if (req.query.gaselectricity.includes('energy-bill')) {
-   res.redirect('energy-term');
  } else if (req.query.gaselectricity.includes('meal-energy-bill')) {
-   res.redirect('meal-term');
+  res.redirect('meal-term');
+ }
+ else if (req.query.gaselectricity.includes('energy-bill')) {
+   res.redirect('energy-term');
+ 
  } else if (req.query.gaselectricity.includes('none-bill')) {
    res.redirect('rent-one-room');
  
