@@ -6941,3 +6941,9 @@ res.redirect('what-is-your-dob');
     }
     });
   
+
+
+    router.get(/resume-code-iteration2-handler/, function (req, res) {
+      res.redirect('../save-application/task-list');
+    });
+    
