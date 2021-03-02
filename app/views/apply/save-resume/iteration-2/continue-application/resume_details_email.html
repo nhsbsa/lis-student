@@ -36,7 +36,7 @@ NHSBSA Prototype
             </header>
 
 
-            <form action="resume-details-email-handler" method="get" class="form">
+            
 
 
                     <legend class="form-label-bold">Email address</legend>
@@ -74,21 +74,16 @@ NHSBSA Prototype
                 </fieldset>
 
 
-            </form>
+            
            <br>
-            {% if data['emailmobile'] == "textmessage" %}
-            <div class="form-group">
-                    <a href="enter-mobile-code"><input class="button" type="submit" value="Continue"></a>
-                 
-                </div>
-                {% else %}
+           
               
                 <div class="form-group">
                         <a href="email-sent-resume"><input class="button" type="submit" value="Continue"></a>
                       
                     </div>
                       
-                    {% endif %}
+                 
         
 
 

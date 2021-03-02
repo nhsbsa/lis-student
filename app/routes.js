@@ -6927,3 +6927,17 @@ res.redirect('what-is-your-dob');
  router.get(/whatisyourdobSave-handler/, function (req, res) {
   res.redirect('sight-impaired');
    });
+
+
+
+
+   //RESUME APPLICATION
+
+   router.get(/emailmobileResume-iteration2-handler/, function (req, res) {
+    if (req.query.emailmobile == 'email') {
+      res.redirect('resume_details_email');
+    } else if (req.query.emailmobile == 'textmessage') {
+      res.redirect('resume_details_mobile');
+    }
+    });
+  
