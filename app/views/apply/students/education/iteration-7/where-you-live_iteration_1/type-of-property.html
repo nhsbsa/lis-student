@@ -36,18 +36,21 @@ NHSBSA Prototype
 
       <form action="wheredoyoulive-iteration7b-handler" class="form" method="get">
 
-        <fieldset class="form-group">
+        <div class="form-group">
+
+            <fieldset>
+                <legend class="visually-hidden">
+                </legend>
 
 
-
-          <div class="multiple-choice multiple-radio">
+          <div class="multiple-choice">
             <input id="rent" name="typeproperty" value="rent-prop" type="checkbox">
             <label for="rent"><span class ='bold'>In a property or room I rent<p hint>You have a tenancy agreement.
               This includes student accommodation or rent paid to a council or landlord</p></span></label>
           </div>
 
           
-          <div class="multiple-choice multiple-radio">
+          <div class="multiple-choice">
             <input id="someoneelse" name="typeproperty" value="someoneelse-prop" type="checkbox">
             <label for="someoneelse"><span class="bold">In someone else's home <p hint>You live with your parents,
               friends or relatives in their home</span>
@@ -56,17 +59,17 @@ NHSBSA Prototype
 
          
 
-          <div class="multiple-choice multiple-radio">
+          <div class="multiple-choice">
             <input id="own" name="typeproperty" value="own-prop" type="checkbox">
             <label for="own"><strong class = 'bold'>In a property I own</strong><p hint>You own your property, either with or without a mortgage</p></label>
           </div>
 
-          <div class="multiple-choice multiple-radio">
+          <div class="multiple-choice">
             <input id="shared" name="typeproperty" value="shared-prop" type="checkbox">
             <label for="shared"><strong class ='bold'>In a shared ownership property<p hint>This is where you pay mortgage and rent</p></strong></label>
           </div>   
 
-          <div class="multiple-choice multiple-radio">
+          <div class="multiple-choice">
             <input id="noadd" name="typeproperty" value="noadd-prop" type="checkbox">
             <label for="noadd"><strong class ='bold'>I do not have a permanent address <p hint>This could be because you're homeless or 
               live in a shelter or hostel</p></strong></label>
@@ -76,7 +79,7 @@ NHSBSA Prototype
 
         
         </fieldset>
-        
+      </div>
         <div class="form-group">
           <input class="button" type="submit" value="Next">
         </div>
@@ -88,5 +91,5 @@ NHSBSA Prototype
     </div>
   </div>
 </main>
-
+</main>
 {% endblock %}

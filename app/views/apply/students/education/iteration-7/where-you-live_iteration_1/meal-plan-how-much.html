@@ -30,7 +30,7 @@ NHSBSA Prototype
         {% if data['renthowoften'] == "academicyear" %}
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Where you live</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you pay for rent per academic year?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you pay for your meal per academic year?</h1>
         {% endif %}
       </header>
       
@@ -51,22 +51,16 @@ NHSBSA Prototype
       </header>
       
      
-      
-      
 
-
-
-
-
-      <form action="mealplan-how-much-iteration7b-handler" method="get" class="form">
+      <form action="mealplan-how-much-handler" method="get" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
-            <legend class="visually-hidden">How much you pay for rent in total?</legend>
+            <legend class="visually-hidden">How much do you pay for your meal plan? </legend>
               
               <span class="heading-medium">£</span>
-              <input class="form-control form-control-1-4" id="pay" name="mealplancost" type="text" aria-label="Money amount">
+              <input class="form-control form-control-1-4" id="pay" name="mealplancost" type="text" aria-label="Meal amount">
 
           </fieldset>
 

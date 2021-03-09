@@ -4250,7 +4250,7 @@ router.get(/payslip-loop-iteration-3-handler/, function (req, res) {
 // ************************
 
 router.get(/coursetype-handler/, function (req, res) {
-  if (req.query.coursetype == 'yes') {
+  if (req.query.Coursetype == 'yes') {
     res.redirect('name-of-establishment');
   } else if (req.query.coursetype == 'no') {
     res.redirect('name-of-establishment');
@@ -6453,13 +6453,26 @@ router.get(/typeenddate-iteration7b-handler/, function (req, res) {
   if (req.query.typeenddate == 'yes') {
     res.redirect('tenancy-end');
   } else if (req.query.typeenddate == 'no') {
-    res.redirect('rent-how-often');
+    res.redirect('return-to-accomodation');
   }
   });
 
 
+  router.get(/return-iteration7b-handler/, function (req, res) {
+    if (req.query.return == 'yes') {
+      res.redirect('return-date');
+    } else if (req.query.return == 'no') {
+      res.redirect('rent-how-often');
+    }
+    });
+
+    router.get(/return-date-iteration7b-handler/, function (req, res) {
+      res.redirect('rent-how-often');
+    });
+
+
   router.get(/tenancyend-iteration7b-handler/, function (req, res) {
-    res.redirect('rent-how-often');
+    res.redirect('return-to-accomodation');
   });
 
 
@@ -6516,19 +6529,20 @@ router.get(/mealtype-iteration7b-handler/, function (req, res) {
   }
 });
 
+//HAVE A LOOK AT THIS ------ PROBLEM!!!!
 
 
 
-
-router.get(/mealplan-how-much-iteration7b-handler/, function (req, res) {
+router.get(/mealplan-how-much-handler/, function (req, res) {
   var gaselectricity = req.session.data['gaselectricity'];
 
- if (req.query.mealcostplan && gaselectricity == 'meal-energy-bill') {
+  if (req.query.mealcostplan && gaselectricity == 'meal-energy-bill') {
     res.redirect('energy-term');
-  } else  if (req.query.mealcostplan){
-    res.redirect('rent-one-room');
+
+  } else if (req.query.mealcostplan) {
+    res.redirect ('rent-one-room');
   }
-});
+}) ;
 
 
 
