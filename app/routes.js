@@ -6529,20 +6529,21 @@ router.get(/mealtype-iteration7b-handler/, function (req, res) {
   }
 });
 
-//HAVE A LOOK AT THIS ------ PROBLEM!!!!
 
 
-
-router.get(/mealplan-how-much-handler/, function (req, res) {
+router.get(/mealplan-howmuch-handler/, function (req, res) {
   var gaselectricity = req.session.data['gaselectricity'];
 
-  if (req.query.mealcostplan && gaselectricity == 'meal-energy-bill') {
+  if (req.query.mealplancost && gaselectricity == 'meal-energy-bill') {
     res.redirect('energy-term');
 
-  } else if (req.query.mealcostplan) {
-    res.redirect ('rent-one-room');
+  } else  if (req.query.mealplancost){
+    res.redirect('rent-one-room');
+  
   }
-}) ;
+});
+
+
 
 
 
