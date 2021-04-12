@@ -5645,6 +5645,7 @@ router.get(/friendshowoften-handler/, function (req, res) {
   }
 });
 
+
 router.get(/friendshowmuch-handler/, function (req, res) {
   if (req.query.friendshowmuch) {
     res.redirect('money-another-1');
@@ -6985,4 +6986,37 @@ res.redirect('what-is-your-dob');
     router.get(/resume-code-iteration2-handler/, function (req, res) {
       res.redirect('../save-application/task-list');
     });
+
+
+
+
     
+
+    //PAIGE DOUTEL TEST
+
+    router.get(/dogsdoyoulike-handler/, function (req, res) {
+      if (req.query.dogsdoyoulike == 'yes') {
+        res.redirect('like-dogs-yes');
+      } else {
+        res.redirect('like-dogs-no');
+      }
+    });
+
+    router.get(/whatisyourname-handler/, function (req, res) {
+      res.redirect('../dogs-survey/do-you-like');
+    });
+
+
+        //PAIGE DOUTEL UX CODE CLUB
+
+        router.get(/pineapplepizza-handler/, function (req, res) {
+          if (req.query.pineapplepizza == 'yes') {
+            res.redirect('animalq');
+          } else {
+            res.redirect('animalq');
+          }
+        });
+    
+        router.get(/whatisyourname-handler/, function (req, res) {
+          res.redirect('../dogs-survey/do-you-like');
+        });
