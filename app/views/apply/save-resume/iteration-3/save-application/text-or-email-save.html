@@ -29,56 +29,68 @@ NHSBSA Prototype
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <header class="page-header">
-        <p class="page-header--sub heading-secondary">Save an application</p>
-
-{% if thirdparty %}
-<h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do they want to save their application and return to it later?</h1>
-
-{% else %}
-<h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do you want to save your application and return to it later?</h1>
-
-{% endif %}
-        
-      </header>
-
-
+        <header class="page-header">
+            <p class="page-header--sub heading-secondary">Saving your application for later</p>
+            {% if thirdparty %}
+            <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How would you like to save their application?</h1>
+           
+            {% else %}
+            <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How would you like to save your application?</h1>
+            <p hint>You will need access to the option you choose.</p>
+            
+            {% endif %}
+            
+          </header>
 
 
+        <form action="textoremailsave-handler" method="get" class="form">
 
-      <form action="textoremailSave-iteration2-handler" method="get" class="form">
+          <div class="form-group">
+              <fieldset>
+                <legend class="visually-hidden">How would you like to save your application?</legend>
+      
+                <div class="multiple-choice">
+                  <input id="yes" type="radio" name="textoremailsave" value="yes">
+                  <label for="yes" id="yes-label" class=" block-label" style="line-height: 195%;">With an email address</label>
+              </div>
+      
+                  <div class="multiple-choice">
+                      <input id="no" type="radio" name="textoremailsave" value="no">
+                      <label for="no" id="no-label" class=" block-label" style="line-height: 195%;">With a phone number</label>
+                  </div>  
+      
+              </fieldset>
+          </div>
+      
+          <br>
+      
+          <div class="form-group">
+              <input class="button" type="submit" value="Next">
+          </div>
+      
+      </form>
 
 
-          <fieldset class="form-group">
+          <!--<fieldset class="form-group">
 
               <div class="multiple-choice">
-                <input id="email" name="textemail" type="radio" value="email">
-                <label for="email"> <span class ='bold'>Email<p hint>
-                    We’ll send you a link to your email address to confirm you have access</p></span></label>
+                <input id="yes" name="emailmobile" type="radio" value="email">
+                <label for="yes"> <span class ='bold'>Email<p hint>
+                  We’ll send you a link to confirm you have access to the email address you used to save your application. </p></span></label>
+
+                   
               </div>
 
-             
-              
-         
+           
 
-              <div class="multiple-choice" >
-                <input id="textmessage" name="textemail" type="radio" value="textmessage">
-                <label for="textmessage"> <span class ='bold'>Mobile number<p hint>
-                  We'll send you 6 digit code to confirm you have access</p></span></label>
-              </div>
-
-
-
-                  <br>
+              <div class="multiple-choice">
+                <input id="no" name="emailmobile" type="radio" value="textmessage">
+                <label for="no"> <span class ='bold'>Mobile number<p hint>
+                  We’ll send you a 6-digit code to confirm you have access to the phone number you used to save your application.</p></span></label>
                 </div>
-              </div>
-                
 
-            </fieldset>
+            </fieldset> -->
 
-            <div class="form-group">
-                <input class="button" type="submit" value="Continue">
-            </div>
 
       </form>
 

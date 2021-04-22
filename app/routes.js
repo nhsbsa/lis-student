@@ -6816,7 +6816,7 @@ router.get(/carehomeSave-iteration2-handler/, function (req, res) {
 
   router.get(/partnerSave-iteration2-handler/, function (req, res) {
     if (req.query.partner == 'yes') {
-      res.redirect('#');
+      res.redirect('claimed-asylum-single');
     } else if (req.query.partner == 'no') {
       res.redirect('claimed-asylum-single');
     } else {
@@ -6828,11 +6828,9 @@ router.get(/carehomeSave-iteration2-handler/, function (req, res) {
 
   router.get(/asylumsingleSave-iteration2-handler/, function (req, res) {
     if (req.query.asylumsingle == 'yes') {
-      res.redirect('#');
+      res.redirect('usehc1');
     } else if (req.query.asylumsingle == 'no') {
       res.redirect('education');
-    } else {
-      res.redirect('claimed-asylum-single');
     }
   });
 
@@ -6841,11 +6839,9 @@ router.get(/carehomeSave-iteration2-handler/, function (req, res) {
 
   router.get(/educationSave-iteration2-handler/, function (req, res) {
     if (req.query.education == 'yes') {
-      res.redirect('#');
+      res.redirect('money-coming-in-single');
     } else if (req.query.education == 'no') {
       res.redirect('money-coming-in-single');
-    } else {
-      res.redirect('education');
     }
   });
 
@@ -6864,7 +6860,7 @@ router.get(/whatissingleincomeSave-iteration2-handler/, function (req, res) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
-  } else if (req.query.incomesingle == 'pension-income') {
+  } else if (req.query.incomesingle == 'pension') {
     res.redirect('more-than-6000');
   } else if (req.query.incomesingle == 'earned-income') {
     res.redirect('more-than-6000');
@@ -6872,19 +6868,19 @@ router.get(/whatissingleincomeSave-iteration2-handler/, function (req, res) {
       res.redirect('more-than-6000');
   } else if (req.query.incomesingle == 'nil-income') {
       res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,earned-income,benefits-income,nil-income') {
     res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,earned-income,benefits-income') {
     res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,earned-income,nil-income') {
     res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,benefits-income,nil-income') {
     res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,earned-income') {
     res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,benefits-income') {
     res.redirect('more-than-6000');
-  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+  } else if (req.query.incomesingle.toString() == 'pension,nil-income') {
     res.redirect('more-than-6000');
   } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
     res.redirect('more-than-6000');
@@ -6901,7 +6897,7 @@ router.get(/whatissingleincomeSave-iteration2-handler/, function (req, res) {
 
 router.get(/savingsSave-iteration2-handler/, function (req, res) {
   if (req.query.savings == 'yes') {
-    res.redirect('#');
+    res.redirect('usehc1');
   } else if (req.query.savings == 'no') {
     res.redirect('check-your-answers');
   } else {
@@ -6920,8 +6916,8 @@ router.get(/savingsSave-iteration2-handler/, function (req, res) {
 //Myself or someone else
 router.get(/applyingforsave-iteration2-handler/, function (req, res) {
   if (req.query.applyingfor == 'myself') {
-    res.redirect('save-application');
-  } else if (req.query.applyingfor == 'someonelese') {
+    res.redirect('task-list');
+  } else if (req.query.applyingfor == 'understand') {
     res.redirect('task-list');
   }
   });
@@ -6964,9 +6960,14 @@ res.redirect('what-is-your-dob');
  });
 
 
- router.get(/whatisyourdobSave-handler/, function (req, res) {
+router.get(/whatisyourdobSave-handler/, function (req, res) {
   res.redirect('sight-impaired');
    });
+
+
+router.get(/sightimpairedSave-handler/, function (req, res) {
+    res.redirect('answers');
+     });
 
 
 
@@ -7020,3 +7021,56 @@ res.redirect('what-is-your-dob');
         router.get(/whatisyourname-handler/, function (req, res) {
           res.redirect('../dogs-survey/do-you-like');
         });
+
+
+// PAIGE DOUTEL PROJECT
+
+//router.get(/emailmobileResume-iteration3-handler/, function (req, res) {
+  // if (req.query.contact-by-email == 'yes') {
+  //  res.redirect('verification-code-email');
+  //} else if (req.query.contact-by-email == 'no') {
+  //  res.redirect('verification-code-phone');
+  //}
+  //});
+
+
+
+  router.get(/textoremailresume-handler/, function (req, res) {
+    if (req.query.textoremailresume == 'yes') {
+      res.redirect('enter-email-address');
+    } else {
+      res.redirect('enter-phone-number');
+    }
+  });
+
+  router.get(/enteremailaddress-handler/, function (req, res) {
+    res.redirect('../continue-application/verification_code_email');
+  });
+
+  router.get(/enterphonenumber-handler/, function (req, res) {
+    res.redirect('../continue-application/verification-code-phone');
+  });
+
+  router.get(/verificationcodephone-handler/, function (req, res) {
+    res.redirect('/apply/students/education/iteration-7/where-you-live/task-list');
+  });
+
+
+  router.get(/textoremailsave-handler/, function (req, res) {
+    if (req.query.textoremailsave == 'yes') {
+      res.redirect('enter-email-address');
+    } else {
+      res.redirect('enter-phone-number');
+    }
+  });
+
+
+  router.get(/enteremailaddresssave-handler/, function (req, res) {
+    res.redirect('email-link-sent');
+  });
+
+  router.get(/enterphonenumbersave-handler/, function (req, res) {
+    res.redirect('phone-link-sent');
+  });
+
+

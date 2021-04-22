@@ -1,0 +1,102 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA  Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+}
+.form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+@media (min-width: 641px) {
+.form-group {
+    margin-bottom: 30px;
+}
+}
+.secondary-button {
+    background-color: #005EA5;
+}
+.secondary-button:hover, .secondary-button:focus {
+    background-color: #00458C;
+}
+</style>
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span>&nbsp;- your <a target="" href="#"> feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+
+        <h1 class="page-header--lede heading-large">
+          Apply online for help with NHS costs
+        </h1>
+
+<p>You will now be asked 7 questions to make sure that you are eligible to apply online.<br>
+  <br>
+
+    If you are not eligible to apply online, you can apply using the paper form, called a HC1.</p>
+
+
+
+    <details class="noprint mb">
+      <summary><span class="summary">How do I get a HC1 form?</span></summary>
+        <div class="panel panel-border-narrow">
+          <p class="bold">You can get a HC1 form from any of the following places:</p>
+          <ul class="list list-bullet">
+            <li>your local pharmacy</li>
+            <li>your GP practice</li>
+          </ul>
+          <p class="bold">Alternatively, you can:</p>
+          <ul class="list list-bullet">
+            <li><a target="_blank" rel="noopener" href="https://www.nhs.uk/NHSEngland/Healthcosts/Documents/2016/HC1-April-2016.pdf">download <span class="visuallyhidden"> (opens in a new tab)</span></a>a printable version of the form.</li>
+          </ul>
+        </div>
+      </details>
+      <br>
+
+
+
+          <div class="form-group">
+              <a href="country-split.html"><input class="button" type="submit" value="Next"></a> 
+
+           
+          </div>
+          
+  
+    </div>
+ 
+  </div>
+
+</main>
+
+{% endblock %}

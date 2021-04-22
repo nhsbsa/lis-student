@@ -43,7 +43,7 @@ NHSBSA Prototype
           </header>
 
 
-      <form action="emailmobileResume-iteration2-handler" method="get" class="form">
+      <!--<form action="emailmobileResume-iteration3-handler" method="get" class="form">
 
 
         <form>
@@ -53,7 +53,7 @@ NHSBSA Prototype
               <legend class="visually-hidden">How did you save your applicaton?</legend>
         
               <div class="multiple-choice" data-target="contact-by-email">
-                <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+                <input id="example-contact-by-email" type="radio" name="radio-email" value="Yes">
                 <label for="example-contact-by-email">Email</label>
               </div>
               <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
@@ -63,7 +63,7 @@ NHSBSA Prototype
 
         
               <div class="multiple-choice" data-target="contact-by-phone">
-                <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+                <input id="example-contact-by-phone" type="radio" name="radio-phone" value="No">
                 <label for="example-contact-by-phone">Phone</label>
               </div>
               <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
@@ -74,7 +74,35 @@ NHSBSA Prototype
         
             </fieldset>
           </div>
-        </form>
+        </form>-->
+
+
+        <form action="textoremailresume-handler" method="get" class="form">
+
+          <div class="form-group">
+              <fieldset>
+                <legend class="visually-hidden">How did you save your application?</legend>
+      
+                <div class="multiple-choice">
+                  <input id="yes" type="radio" name="textoremailresume" value="yes">
+                  <label for="yes" id="yes-label" class=" block-label" style="line-height: 195%;">With an email address</label>
+              </div>
+      
+                  <div class="multiple-choice">
+                      <input id="no" type="radio" name="textoremailresume" value="no">
+                      <label for="no" id="no-label" class=" block-label" style="line-height: 195%;">With a phone number</label>
+                  </div>  
+      
+              </fieldset>
+          </div>
+      
+          <br>
+      
+          <div class="form-group">
+              <input class="button" type="submit" value="Next">
+          </div>
+      
+      </form>
 
 
           <!--<fieldset class="form-group">
@@ -97,9 +125,6 @@ NHSBSA Prototype
 
             </fieldset> -->
 
-            <div class="form-group">
-                <input class="button" type="submit" value="Continue">
-            </div>
 
       </form>
 
