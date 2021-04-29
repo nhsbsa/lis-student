@@ -6828,7 +6828,7 @@ router.get(/carehomeSave-iteration2-handler/, function (req, res) {
 
   router.get(/asylumsingleSave-iteration2-handler/, function (req, res) {
     if (req.query.asylumsingle == 'yes') {
-      res.redirect('usehc1');
+      res.redirect('education');
     } else if (req.query.asylumsingle == 'no') {
       res.redirect('education');
     }
