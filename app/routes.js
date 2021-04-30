@@ -5900,6 +5900,10 @@ router.get(/fulltimeedu6-2-handler/, function (req, res) {
   res.redirect('../edu-and-train/name-of-establishment.html');
 });
 
+router.get(/qualificationlevel-iteration6-2-handler/, function (req, res) {
+  res.redirect('../edu-and-train/term-dates-playback.html');
+});
+
 router.get(/nameofcourse-iteration6-2-handler/, function (req, res) {
   res.redirect('../edu-and-train/term-dates-playback.html');
 });

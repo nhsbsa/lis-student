@@ -59,19 +59,36 @@ NHSBSA Prototype
           </dd>
         </div>
     
-        <!-- What qualification -->
+        <!-- Course details -->
+        <div>
+          <dt class="cya-question">
+            Level of qualification
+          </dt>
+          <dd class="cya-answer">
+                
+             <p>{{ data['qualificationlevel'] }}BA Hons</p>
+            
+          </dd>
+
+          <dd class="cya-change">
+            <a class="link-right" href="course-details.html">
+              Change<span class="visually-hidden"> qualification</span>
+            </a>
+          </dd>
+        </div>
+
         <div>
           <dt class="cya-question">
             Name of course
           </dt>
           <dd class="cya-answer">
                 
-             {{ data['course'] }} 
+             <p>{{ data['coursename'] }}English Literature</p>
             
           </dd>
           <dd class="cya-change">
-            <a class="link-right" href="name-of-course.html">
-              Change<span class="visually-hidden"> qualification</span>
+            <a class="link-right" href="course-details.html">
+              Change<span class="visually-hidden"> coursename</span>
             </a>
           </dd>
         </div>
@@ -286,7 +303,7 @@ NHSBSA Prototype
 
     <div class="column-two-thirds">
       <div class="form-group" style="margin-top:50px;">
-        <a class="button" href="task-list-r6.html">Next</a>
+        <a class="button" href="task-list-r6.html">Continue</a>
       </div>
     </div>
  
