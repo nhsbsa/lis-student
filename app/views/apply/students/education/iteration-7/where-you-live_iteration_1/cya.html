@@ -484,16 +484,24 @@ NHSBSA Prototype
           </dt>
           <dd class="cya-answer">
              
-            {% if data['energytype'] == "gas-bill" %}
-            <span>Gas</span>
+            {% if data['energytype'] == "heating" %}
+            <span>Heating</span>
             {% endif %}
          
-            {% if data['energytype'] == "electricity-bill" %}
-            <span>Electricity</span>
+            {% if data['energytype'] == "lighting" %}
+            <span>Lighting</span>
             {% endif %}
 
-            {% if data['energytype'] == "gaselectricity-bill" %}
-            <span>Gas and electricity</span>
+            {% if data['energytype'] == "cooking" %}
+            <span>Cooking</span>
+            {% endif %}
+
+            {% if data['energytype'] == "hotwater" %}
+            <span>Hot water</span>
+            {% endif %}
+
+            {% if data['energytype'] == "none" %}
+            <span>None</span>
             {% endif %}
 
           </dd>

@@ -50,24 +50,28 @@ NHSBSA Prototype
         <fieldset class="form-group">
 
           <div class="multiple-choice multiple-radio">
-            <input id="gas" name="energytype" value="heating" type="checkbox">
-            <label for="gas"><span style="font-weight:100;">Heating 
+            <input id="heating" name="energytype" value="heating" type="checkbox">
+            <label for="heating"><span class ='bold'>Heating 
           </div>
 
           <div class="multiple-choice multiple-radio">
-            <input id="electricity" name="energytype" value="lighting" type="checkbox">
-            <label for="electricity"><span style="font-weight:100;">Lighting</span><br></label>
+            <input id="lighting" name="energytype" value="lighting" type="checkbox">
+            <label for="lighting"><span class ='bold'>Lighting</span><br></label>
           </div>
 
           <div class="multiple-choice multiple-radio">
-            <input id="gaselectricity" name="energytype" value="cooking" type="checkbox">
-            <label for="gaselectricity"><span style="font-weight:100;">Cooking</span><br></label>
+            <input id="cooking" name="energytype" value="cooking" type="checkbox">
+            <label for="cooking"><span class ='bold'>Cooking<br><p hint>This is the energy used to cook food. For example, in a microwave or oven.</p></span></label>
           </div>
 
           <div class="multiple-choice multiple-radio">
-            <input id="gaselectricity" name="energytype" value="hotwater" type="checkbox">
-            <label for="gaselectricity"><span class ='bold'>Electricity<p hint>This includes xxx</p></span></label>
-            
+            <input id="hotwater" name="energytype" value="hotwater" type="checkbox">
+            <label for="hotwater"><span class ='bold'>Hot water</span></label>            
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="none" name="energytype" value="none" type="checkbox">
+            <label for="none"><span class ='bold'>None of these are included</span><br></label>
           </div>
           <span class="bold">
          

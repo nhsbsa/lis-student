@@ -6554,7 +6554,7 @@ router.get(/mealplan-howmuch-handler/, function (req, res) {
 
 
 router.get(/energyterm-iteration7b-handler/, function (req, res) {
-  res.redirect('energy-type');
+  res.redirect('energy-type-new');
 });
 
 router.get(/energytype-iteration7b-handler/, function (req, res) {
