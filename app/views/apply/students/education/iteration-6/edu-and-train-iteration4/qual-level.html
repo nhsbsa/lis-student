@@ -1,0 +1,84 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Education and training</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What level of qualification is your course?</h1>
+      </header>
+
+      <span class="form-hint">
+        We will ask what subject you are studying on the next screen.
+      </span>
+
+          <p>
+            For example, BA (Hons) or NVQ Level 3.
+          </p>
+     
+      
+          <form action="qualificationlevel-iteration6-2-handler" method="get" class="form">
+            
+              <div class="form-group">
+                <input class="form-control" id="qualificationlevel" name="qualificationlevel" type="text" aria-label="Qualification level">
+              </div>
+
+          </form>
+
+
+          
+      <br>
+
+
+
+      <!--<header class="page-header">
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Full name of course</h1>
+      </header>
+
+          <p class="form-hint">
+            For example, English Literature or Health and Social Care.
+          </p>
+
+          <form action="nameofcourse-iteration6-2-handler" method="get" class="form">
+          
+              <div class="form-group">
+                <input class="form-control" id="coursename" name="coursename" type="text" aria-label="Course name">
+              </div>
+
+          </form>-->
+
+      <div class="form-group">
+        <a class="button" href="../edu-and-train-iteration4/subject-name.html">Continue</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

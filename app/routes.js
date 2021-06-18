@@ -5957,6 +5957,60 @@ router.get(/overseas-iteration6-2-handler/, function (req, res) {
 });
 
 
+// ********************************************************************//
+// Release 7 Education and Training -  course details split
+// ********************************************************************//
+
+router.get(/fulltimeeduit4-handler/, function (req, res) {
+  res.redirect('../edu-and-train-iteration4/name-of-establishment.html');
+});
+
+router.get(/termdatesall-it4-handler/, function (req, res) {
+  if (req.query.termdatesall == 'yes') {
+    res.redirect('../edu-and-train-iteration4/final-year');
+  } else if  (req.query.termdatesall == 'no') {
+    res.redirect('../edu-and-train-iteration4/how-many-terms');
+  }
+});
+
+router.get(/howmanyterms-it4-handler/, function (req, res) {
+  if (req.query.howmanyterms == 'yes') {
+    res.redirect('term1-dates');
+  } else if  (req.query.howmanyterms == 'no') {
+    res.redirect('academic-start');
+  }
+});
+
+router.get(/term1dates-it4-handler/, function (req, res) {
+  res.redirect('term2-dates.html');
+});
+
+router.get(/term2dates-it4-handler/, function (req, res) {
+  res.redirect('term3-dates.html');
+});
+
+router.get(/term3dates-it4-handler/, function (req, res) {
+  res.redirect('final-year.html');
+});
+
+router.get(/academicstart-it4-handler/, function (req, res) {
+  res.redirect('course-finish-date.html');
+});
+
+router.get(/course-finishdate-it4-handler/, function (req, res) {
+  res.redirect('final-year.html');
+});
+
+router.get(/finalyear-it4-handler/, function (req, res) {
+  res.redirect('overseas-student.html');
+});
+
+router.get(/overseas-it4-handler/, function (req, res) {
+  res.redirect('cya.html');
+  
+});
+
+
 
 // ************************************
 // Education and Training (Iteration 6b)

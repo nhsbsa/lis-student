@@ -1,0 +1,72 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service - your <a href="#">feedback</a> will help us to improve it.
+      </p> 
+    </div>
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary">Education and training</p>
+          <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">When does your course start for this academic year?</h1>
+          
+        </header>
+
+        <form action="academicstart-it4-handler" class="form" method="get">
+        
+          
+              <p class="form-hint">If you’re not sure what your term dates are, visit your student portal, or your college or university’s website.</p>
+         
+              <fieldset class="form-group">
+
+              <!-- start date label
+              <label class="form-label-bold" for="start-date" id="start-date-label">Start date</label>
+              -->
+             
+            <legend class="visuallyhidden">Date</legend>
+            <p class="form-hint">For example, 16 9 2019 </p>
+
+            
+            <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="dob-day">Day</label> <input class="form-control" id="dob-day" max="31" min="0" name="sum-end-day" pattern="[0-9]*" type="number">
+                </div>
+
+                <div class="form-group form-group-month">
+                    <label for="dob-month">Month</label> <input class="form-control" id="dob-month" max="12" min="0" name="sum-end-month" pattern="[0-9]*" type="number">
+                  </div>
+
+                  <div class="form-group form-group-year">
+                      <label for="dob-year">Year</label> <input class="form-control" id="dob-year" min="0" name="sum-end-year" pattern="[0-9]*" type="number">
+                    </div>
+              </div>
+          </fieldset>
+
+          
+
+            <div class="form-group">
+                <input class="button" type="submit" value="Next">
+                
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+
+</main>
+
+{% endblock %}
