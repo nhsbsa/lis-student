@@ -1,0 +1,92 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA  Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+}
+.form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+@media (min-width: 641px) {
+.form-group {
+    margin-bottom: 30px;
+}
+}
+.secondary-button {
+    background-color: #005EA5;
+}
+.secondary-button:hover, .secondary-button:focus {
+    background-color: #00458C;
+}
+</style>
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span>&nbsp;- your <a target="" href="#"> feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Cannot apply online</p>
+
+        <h1 class="page-header--lede heading-large">
+          Based on your answers, you are not able to apply online yet
+        </h1> </header>
+
+        <p>You can still apply using the paper form, called an HC1.</p>
+
+
+          <p class="bold">You can get an HC1 form your:</p>
+          <ul class="list list-bullet">
+            <li>local pharmacy</li>
+            <li>GP practice</li>
+            <li>local Jobcentre</li>
+            <li>Citizens Advice</li>
+          </ul>
+          <p class="bold">Or, you can:</p>
+          <ul class="list list-bullet">
+            <li><a target="_blank" rel="noopener" href="https://www.nhs.uk/NHSEngland/Healthcosts/Documents/2016/HC1-April-2016.pdf">download an HC1 form (PDF: 452KB)<span class="visuallyhidden"> (opens in a new tab)</span></a> and print it off.</li>
+          </ul>
+        </div>
+      </details>
+      <br>
+
+           
+          </div>
+          
+  
+    </div>
+ 
+  </div>
+
+</main>
+
+{% endblock %}

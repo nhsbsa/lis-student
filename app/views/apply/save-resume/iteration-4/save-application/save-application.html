@@ -1,0 +1,90 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Saving your application for later</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">
+          Save your application so you can come back to it later</h1>
+      </header>
+      
+
+      
+          <!--<p>If you select yes, we'll ask an email address or a mobile number and date of birth and we'll save your application as you go.--> 
+            <br><p> You will need to give us either an email address or mobile number which you have access to. </p>
+              <br>
+              <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                We will save your application for 7 days. If you do not complete it within 7 days, you will need to start again. </p>
+                  </div><br>
+      <form action="saveprogressSave-iteration2-handler" method="get" class="form">
+
+       <!-- <div class="form-group">
+
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="saveprogress" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="saveprogress" value="no">
+              <label for="no">No</label>
+            </div>
+
+          </fieldset>-->
+
+
+          <!--<div class="form-group">
+            <div style="line-height: 225%;"><input class="button" type="submit" value="Continue">
+        </div>-->
+
+        </div>
+      </form>
+    </div>
+
+
+    <a href="/apply/save-resume/iteration-3/save-application/text-or-email-save.html"><input class="button" type="submit" value="Continue"></a>
+  </div>
+</main>
+</main>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Continue a saved application</p>
+        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Check your phone</h1>
+        <p>We've sent a 6-digit code to <strong style="font-weight: bold;">{{ data['enterphonenumber'] }}</strong>. Enter this code to continue your application.</p>
+
+        <p>The code may take a few minutes to arrive.</p>
+      </header>
+
+      <form action="verificationcodephone-handler" method="get" class="form">
+
+        <div class="form-group">
+          <label style="font-weight: bold;" class="form-label" for="phonecode">Enter the 6-digit code</label>
+          <input class="form-control" id="phonecode" name="phonecode" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+        </div>
+
+        <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+          
+              <span>No code after 10 minutes?</span> <a href="#">Resend code</a>
+        
+          <br>
+
+  
+<br>
+
+      
+         
+              <span >If you do not have access to this mobile number, you will need to </span><a href="#">start a new appplication</a>
+      
+          <br>
+          
+  
+
+
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
