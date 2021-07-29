@@ -7110,7 +7110,7 @@ router.get(/sightimpairedSave-handler/, function (req, res) {
   });
 
   router.get(/verificationcodephone-handler/, function (req, res) {
-    res.redirect('/apply/students/education/iteration-7/where-you-live/task-list');
+    res.redirect('/apply/save-resume/iteration-4/continue-application/enter-dob-to-resume.html');
   });
 
 
