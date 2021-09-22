@@ -7131,4 +7131,479 @@ router.get(/sightimpairedSave-handler/, function (req, res) {
     res.redirect('phone-link-sent');
   });
 
+// **********************************************************************************
+// **********************************************************************************
+// ********************** ELIGIBILITY CHECKER WORK SEPT 2021 ************************
+// **********************************************************************************
+// **********************************************************************************
 
+
+  router.get(/EC-which-country-live-handler/, function (req, res) {
+    if (req.query.country == 'England') {
+      res.redirect('/eligibility-checker/September-2021/GP-practice-location');
+    } else if (req.query.country == 'Scotland') {
+      res.redirect('/eligibility-checker/September-2021/highlands-islands');
+    } else if (req.query.country == 'Wales') {
+      res.redirect('/eligibility-checker/September-2021/GP-practice-location');
+    } else if (req.query.country == 'Northern Ireland') {
+      res.redirect('/kickouts/northern-ireland-split');
+    } else {
+      res.redirect('/beforeyoustart/student/iteration-3/country-split');
+    }
+  });
+
+  router.get(/EC-single-handler/, function (req, res) {
+    if (req.query.single == 'yes') {
+      applicant.single = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-benefits-or-tax-credits.html');
+    } else if (req.query.single == 'no') {
+      applicant.single = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-benefits-or-tax-credits.html');
+    }
+  });
+
+  /////////////////////// PARTNER ROUTE ///////////////////////
+
+  router.get(/EC-partnertaxcreditshandler/, function (req, res) {
+    if (req.query.partnertaxcredits == 'yes') {
+      applicant.partnertaxcredits = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-universal-credit.html');
+    } else if (req.query.partnertaxcredits == 'no') {
+      applicant.partnertaxcredits = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  router.get(/EC-partnerpregnanthandler/, function (req, res) {
+    if (req.query.partnerpregnant == 'yes') {
+      applicant.partnerpregnant = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-armed-forces.html');
+    } else if (req.query.partnerpregnant == 'no') {
+      applicant.partnerpregnant = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-armed-forces.html');
+    }
+  });
+
+  router.get(/EC-partnerarmedforceshandler/, function (req, res) {
+    if (req.query.partnerarmedforces == 'yes') {
+      applicant.partnerarmedforces = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-diabetes.html');
+    } else if (req.query.partnerarmedforces == 'no') {
+      applicant.partnerarmedforces = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-diabetes.html');
+    }
+  });
+
+  router.get(/EC-partnerdiabeteshandler/, function (req, res) {
+    if (req.query.partnerdiabetes == 'yes') {
+      applicant.partnerdiabetes = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-blood-sugar-stable.html');
+    } else if (req.query.partnerdiabetes == 'no') {
+      applicant.partnerdiabetes = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-condition-checker.html');
+    }
+  });
+
+  router.get(/EC-partnerbloodsugarhandler/, function (req, res) {
+    if (req.query.partnerbloodsugar == 'yes') {
+      applicant.partnerbloodsugar = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-live-care-home.html');
+    } else if (req.query.partnerbloodsugar == 'no') {
+      applicant.partnerbloodsugar = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-condition-checker-yes-no-route.html');
+    }
+  });
+
+  router.get(/EC-partnerconditioncheckerhandler/, function (req, res) {
+    if (req.query.partnerconditionchecker == 'yes') {
+      applicant.partnerconditionchecker = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-glaucoma.html');
+    } else if (req.query.partnerconditionchecker == 'no') {
+      applicant.partnerconditionchecker = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-glaucoma.html');
+    }
+  });
+
+  router.get(/EC-partnerglaucomahandler/, function (req, res) {
+    if (req.query.partnerglaucoma == 'yes') {
+      applicant.partnerglaucoma = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-live-care-home.html');
+    } else if (req.query.partnerglaucoma == 'no') {
+      applicant.partnerglaucoma = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-live-care-home.html');
+    }
+  });
+
+  router.get(/EC-partnercarehomehandler/, function (req, res) {
+    if (req.query.partnercarehome == 'yes') {
+      applicant.partnercarehome = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-help-from-council.html');
+    } else if (req.query.partnercarehome == 'no') {
+      applicant.partnercarehome = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-16000-savings.html');
+    }
+  });
+
+  router.get(/EC-partnerhelpfromcouncilhandler/, function (req, res) {
+    if (req.query.partnerhelpfromcouncil == 'yes') {
+      applicant.partnerhelpfromcouncil = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-help-from-council.html');
+    } else if (req.query.partnerhelpfromcouncil == 'no') {
+      applicant.partnerhelpfromcouncil = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-23250-savings.html');
+    }
+  });
+
+  router.get(/EC-partneruniversalcredithandler/, function (req, res) {
+    if (req.query.partneruniversalcredit == 'yes') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-uc-do-you-get.html');
+    } else if (req.query.partneruniversalcredit == 'notyet') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-awaiting-uc-decision.html');
+    } else if (req.query.partneruniversalcredit == 'no') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-benefits-list.html');
+    } 
+  });
+
+  router.get(/EC-partnerbenefitslisthandler/, function (req, res) {
+  
+    if (req.query.benefitslist.toString() == 'tax-credits') {
+     res.redirect('/eligibility-checker/September-2021/partner-route/partner-tax-credit-type.html');
+    } else if (req.query.benefitslist.toString() == 'income-support') {
+     res.redirect('/eligibility-checker/September-2021/partner-route/partner-benefits-list.html');
+    } else if (req.query.benefitslist.toString() == 'employment-support-allowance') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-esa-type.html');
+    } else  if (req.query.benefitslist.includes('jobseekers-allowance')) {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-jsa-type.html');
+    } else if (req.query.benefitslist.includes('pension-credit')) {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pension-credit-type.html');
+    } else if (req.query.benefitslist.includes('none-benefit')) {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    } else if (req.query.benefitslist.includes('nhs-pay')) {
+      res.redirect('/kickouts/students-developed');
+    } else if (req.query.benefitslist.includes('none-pay')) {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.includes('myself-pay')) {
+      res.redirect('../money-support-edu/tuition-fee-how-much');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay') {
+      res.redirect('../money-support-edu/tuition-fee-how-much');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay') {
+      res.redirect('../money-support-edu/tuition-fee-how-much');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay,saas-pay') {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay') {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,saas-pay,nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,saas-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,saas-pay') {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.toString() == 'nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'saas-pay,nhs-pay,') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else {
+      res.redirect('partner-benefits-list.html');
+    }
+   });
+
+   router.get(/EC-partnerucdoyougethandler/, function (req, res) {
+    if (req.query.partnerucdoyouget == 'yes') {
+      applicant.partnerucdoyouget = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-935-uc.html');
+    } else if (req.query.partnerucdoyouget == 'no') {
+      applicant.partnerucdoyouget = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-435-uc.html');
+    }
+  });
+
+  router.get(/EC-partner935uchandler/, function (req, res) {
+    if (req.query.partner935uc == 'yes') {
+      applicant.partner935uc = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-935-uc.html');
+    } else if (req.query.partner935uc == 'no') {
+      applicant.partner935uc = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  router.get(/EC-partner435uchandler/, function (req, res) {
+    if (req.query.partner435uc == 'yes') {
+      applicant.partner435uc = true;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-435-uc.html');
+    } else if (req.query.partner435uc == 'no') {
+      applicant.partner435uc = false;
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  router.get(/EC-partnertaxcredittypehandler/, function (req, res) {
+    if (req.query.partnertaxcredittype == 'workingchild') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-income-15276-or-less.html');
+    } else if (req.query.partnertaxcredittype == 'workingdisability') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-income-15276-or-less.html');
+    } else if (req.query.partnertaxcredittype == 'childalone') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-income-15276-or-less.html');
+    } else if (req.query.partnertaxcredittype == 'workingalone') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  router.get(/EC-partneresatypehandler/, function (req, res) {
+    if (req.query.partneresatype == 'incomebasedesa') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-esa-type.html');
+    } else if (req.query.partneresatype == 'contributionbasedesa') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  router.get(/EC-partnerjsatypehandler/, function (req, res) {
+    if (req.query.partnerjsatype == 'incomebasedjsa') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-jsa-type.html');
+    } else if (req.query.partnerjsatype == 'contributionbasedjsa') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  router.get(/EC-partnerpensioncredittypehandler/, function (req, res) {
+    if (req.query.pensioncredittype == 'guaranteeonly') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pension-credit-type.html');
+    } else if (req.query.pensioncredittype == 'guaranteeandsavings') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pension-credit-type.html');
+    } else if (req.query.pensioncredittype == 'savingsonly') {
+      res.redirect('/eligibility-checker/September-2021/partner-route/partner-pregnant.html');
+    }
+  });
+
+  /////////////////////// SINGLE ROUTE ///////////////////////
+
+  router.get(/EC-singletaxcreditshandler/, function (req, res) {
+    if (req.query.singletaxcredits == 'yes') {
+      applicant.singletaxcredits = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-universal-credit.html');
+    } else if (req.query.singletaxcredits == 'no') {
+      applicant.singletaxcredits = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });
+
+  router.get(/EC-singlepregnanthandler/, function (req, res) {
+    if (req.query.singlepregnant == 'yes') {
+      applicant.singlepregnant = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-armed-forces.html');
+    } else if (req.query.singlepregnant == 'no') {
+      applicant.singlepregnant = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-armed-forces.html');
+    }
+  });
+
+  router.get(/EC-singlearmedforceshandler/, function (req, res) {
+    if (req.query.singlearmedforces == 'yes') {
+      applicant.singlearmedforces = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-diabetes.html');
+    } else if (req.query.singlearmedforces == 'no') {
+      applicant.singlearmedforces = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-diabetes.html');
+    }
+  });
+
+  router.get(/EC-singlediabeteshandler/, function (req, res) {
+    if (req.query.singlediabetes == 'yes') {
+      applicant.singlediabetes = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-blood-sugar-stable.html');
+    } else if (req.query.singlediabetes == 'no') {
+      applicant.singlediabetes = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-condition-checker.html');
+    }
+  });
+
+  router.get(/EC-singlebloodsugarhandler/, function (req, res) {
+    if (req.query.singlebloodsugar == 'yes') {
+      applicant.singlebloodsugar = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-live-care-home.html');
+    } else if (req.query.singlebloodsugar == 'no') {
+      applicant.singlebloodsugar = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-condition-checker-yes-no-route.html');
+    }
+  });
+
+  router.get(/EC-singleconditioncheckerhandler/, function (req, res) {
+    if (req.query.singleconditionchecker == 'yes') {
+      applicant.singleconditionchecker = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-glaucoma.html');
+    } else if (req.query.singleconditionchecker == 'no') {
+      applicant.singleconditionchecker = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-glaucoma.html');
+    }
+  });
+
+  router.get(/EC-singleglaucomahandler/, function (req, res) {
+    if (req.query.singleglaucoma == 'yes') {
+      applicant.singleglaucoma = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-live-care-home.html');
+    } else if (req.query.singleglaucoma == 'no') {
+      applicant.singleglaucoma = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-live-care-home.html');
+    }
+  });
+
+  router.get(/EC-singlecarehomehandler/, function (req, res) {
+    if (req.query.singlecarehome == 'yes') {
+      applicant.singlecarehome = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-help-from-council.html');
+    } else if (req.query.singlecarehome == 'no') {
+      applicant.singlecarehome = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-16000-savings.html');
+    }
+  });
+
+  router.get(/EC-singlehelpfromcouncilhandler/, function (req, res) {
+    if (req.query.singlehelpfromcouncil == 'yes') {
+      applicant.singlehelpfromcouncil = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-help-from-council.html');
+    } else if (req.query.singlehelpfromcouncil == 'no') {
+      applicant.singlehelpfromcouncil = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-23250-savings.html');
+    }
+  });
+
+  router.get(/EC-singleuniversalcredithandler/, function (req, res) {
+    if (req.query.singleuniversalcredit == 'yes') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-uc-do-you-get.html');
+    } else if (req.query.singleuniversalcredit == 'notyet') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-awaiting-uc-decision.html');
+    } else if (req.query.singleuniversalcredit == 'no') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-benefits-list.html');
+    } 
+  });
+
+  router.get(/EC-singlebenefitslisthandler/, function (req, res) {
+  
+    if (req.query.benefitslist.toString() == 'tax-credits') {
+     res.redirect('/eligibility-checker/September-2021/single-route/single-tax-credit-type.html');
+    } else if (req.query.benefitslist.toString() == 'income-support') {
+     res.redirect('/eligibility-checker/September-2021/single-route/single-benefits-list.html');
+    } else if (req.query.benefitslist.toString() == 'employment-support-allowance') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-esa-type.html');
+    } else  if (req.query.benefitslist.includes('jobseekers-allowance')) {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-jsa-type.html');
+    } else if (req.query.benefitslist.includes('pension-credit')) {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pension-credit-type.html');
+    } else if (req.query.benefitslist.includes('none-benefit')) {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    } else if (req.query.benefitslist.includes('nhs-pay')) {
+      res.redirect('/kickouts/students-developed');
+    } else if (req.query.benefitslist.includes('none-pay')) {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.includes('myself-pay')) {
+      res.redirect('../money-support-edu/tuition-fee-how-much');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay,saas-pay') {
+      res.redirect('../money-support-edu/tuition-fee-how-much');
+    } else if (req.query.benefitslist.toString() == 'myself-pay,sfe-pay,sfw-pay') {
+      res.redirect('../money-support-edu/tuition-fee-how-much');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay,saas-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay,saas-pay') {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.toString() == 'sfe-pay,sfw-pay') {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,saas-pay,nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,saas-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,saas-pay') {
+      res.redirect('../money-support-edu/contribution-type');
+    } else if (req.query.benefitslist.toString() == 'nhs-pay,none-help') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'saas-pay,nhs-pay,') {
+      res.redirect('kickouts/students-developed');
+    } else if (req.query.benefitslist.toString() == 'sfw-pay,nhs-pay') {
+      res.redirect('kickouts/students-developed');
+    } else {
+      res.redirect('single-benefits-list.html');
+    }
+   });
+
+   router.get(/EC-singleucdoyougethandler/, function (req, res) {
+    if (req.query.singleucdoyouget == 'yes') {
+      applicant.singleucdoyouget = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-935-uc.html');
+    } else if (req.query.singleucdoyouget == 'no') {
+      applicant.singleucdoyouget = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-435-uc.html');
+    }
+  });
+
+  router.get(/EC-single935uchandler/, function (req, res) {
+    if (req.query.single935uc == 'yes') {
+      applicant.single935uc = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-935-uc.html');
+    } else if (req.query.single935uc == 'no') {
+      applicant.single935uc = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });
+
+  router.get(/EC-single435uchandler/, function (req, res) {
+    if (req.query.single435uc == 'yes') {
+      applicant.single435uc = true;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-435-uc.html');
+    } else if (req.query.single435uc == 'no') {
+      applicant.single435uc = false;
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });
+
+  router.get(/EC-singletaxcredittypehandler/, function (req, res) {
+    if (req.query.singletaxcredittype == 'workingchild') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-income-15276-or-less.html');
+    } else if (req.query.singletaxcredittype == 'workingdisability') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-income-15276-or-less.html');
+    } else if (req.query.singletaxcredittype == 'childalone') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-income-15276-or-less.html');
+    } else if (req.query.singletaxcredittype == 'workingalone') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });
+
+  router.get(/EC-singleesatypehandler/, function (req, res) {
+    if (req.query.singleesatype == 'incomebasedesa') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-esa-type.html');
+    } else if (req.query.singleesatype == 'contributionbasedesa') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });
+
+  router.get(/EC-singlejsatypehandler/, function (req, res) {
+    if (req.query.singlejsatype == 'incomebasedjsa') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-jsa-type.html');
+    } else if (req.query.singlejsatype == 'contributionbasedjsa') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });
+
+  router.get(/EC-singlepensioncredittypehandler/, function (req, res) {
+    if (req.query.pensioncredittype == 'guaranteeonly') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pension-credit-type.html');
+    } else if (req.query.pensioncredittype == 'guaranteeandsavings') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pension-credit-type.html');
+    } else if (req.query.pensioncredittype == 'savingsonly') {
+      res.redirect('/eligibility-checker/September-2021/single-route/single-pregnant.html');
+    }
+  });

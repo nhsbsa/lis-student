@@ -1,0 +1,134 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA  Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+}
+.form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+@media (min-width: 641px) {
+.form-group {
+    margin-bottom: 30px;
+}
+}
+.secondary-button {
+    background-color: #005EA5;
+}
+.secondary-button:hover, .secondary-button:focus {
+    background-color: #00458C;
+}
+</style>
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span>&nbsp;- your <a target="" href="#"> feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+          Apply online for help with NHS costs
+      </h1>
+
+<p>If you find it difficult to pay for your NHS costs you could get help depending on your financial circumstances. <br>
+  <br>
+
+    You do not have to be claiming benefits to apply. If you're employed with a low income you may be eligible for help. We'll take your total household income, Council Tax and housing costs into account.</p>
+
+
+
+
+
+
+    <strong class="bold-small">If you apply online you will:</strong>
+<br> <br>
+      <ul class="list list-bullet">
+          <li>complete your application in around 20 minutes</li>
+          <li>be asked personalised questions based on your circumstances</li>
+          <li>get instant confirmation that we've received your application</li>
+          <li>get a reference number that you can use if you have any queries</li>
+      </ul>
+
+      <br>
+   
+     
+      <details class="noprint mb">
+          <summary><span class="summary">When you do not need to apply</span></summary>
+            <div class="panel panel-border-narrow">
+              <p class="bold">You already get full help with health costs, and do not need to apply online, if you or your partner get:</p>
+              <ul class="list list-bullet">
+                <li><a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/getting-benefits#jumplink0">Income Support<span class="visuallyhidden"> (opens in a new tab)</span></a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/getting-benefits#jumplink0">Income-based JSA<span class="visuallyhidden"> (opens in a new tab)</span></a> (Jobseeker's Allowance)</li>
+                <li><a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/getting-benefits#jumplink0">Income-related ESA<span class="visuallyhidden"> (opens in a new tab)</span></a> (Employment and Support Allowance)</li>
+                <li><a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/getting-benefits#jumplink3">Pension Credit Guarantee Credit<span class="visuallyhidden"> (opens in a new tab)</span></a></li>
+                <li>Universal Credit (if your earnings during your last complete assessment period were <a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/getting-benefits#jumplink2">£435 or less<span class="visuallyhidden"> (opens in a new tab)</span></a>, or <a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/getting-benefits#jumplink2">£935 or less<span class="visuallyhidden"> (opens in a new tab)</span></a> if you had a child element or had limited capability for work)</li>
+              </ul>
+              <p class="bold">You also get partial help with health costs if you are:</p>
+              <ul class="list list-bullet">
+                <li><a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/aged-19-and-under">under 16 years old<span class="visuallyhidden"> (opens in a new tab)</span></a></li>
+                <li><a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/aged-19-and-under">aged 18 and under and in full-time education<span class="visuallyhidden"> (opens in a new tab)</span></a></li>
+              </ul>
+              <p>If you're still not sure if you should apply, <a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start">check what help you can get</a> by using our eligibility checker.</p>
+            </div>
+          </details>
+
+
+          <br>
+          <p>Once you have started your application, you can save it and continue it later. </p>
+          <br>
+
+          <div class="form-group">
+              <a href="before-you-start"><input class="button" type="submit" value="Start now"></a> 
+
+                <br><br> <p>
+                  If you have already saved an application, you can continue it now. 
+                  To do this, you will need the email address or mobile number you used to save it. 
+              </p>
+
+              
+              <a href="../continue-application/text-or-email-resume"><input class="button secondary-button" type="submit" value="Continue an application"
+                <!--style="margin-left: 25px;"--></a>
+
+
+              
+
+           
+          </div>
+          
+    
+     
+  
+    </div>
+ 
+  </div>
+
+</main>
+
+{% endblock %}

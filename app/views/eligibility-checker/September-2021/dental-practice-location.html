@@ -1,0 +1,99 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <!-- <div class="panel panel-border-wide" id="details-content-1" aria-hidden="false" style="
+        margin-top: 1.8em;
+        background-color: #E5EFF7;
+        border-color: #005EB8;
+    ">
+    
+              <p>If you’re applying on behalf of someone else, answer these questions with their details rather than your own.</p>
+              
+            </div> -->
+
+      <header class="page-header">
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which country is your dental practice in?</h1>
+      </header>
+
+        <div class="form-group">
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="england" type="radio" name="country" value="England">
+              <label for="england"><p style="margin-bottom: 7px;">England</p></label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="scotland" type="radio" name="country" value="Scotland">
+              <label for="scotland"><p style="margin-bottom: 7px;">Scotland</p></label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="wales" type="radio" name="country" value="Wales">
+                <label for="wales"><p style="margin-bottom: 7px;">Wales</p></label>
+            </div>          
+
+            <div class="multiple-choice">
+              <input id="northern-ireland" type="radio" name="country" value="Northern Ireland">
+              <label for="northern-ireland"><p style="margin-bottom: 7px;">Northern Ireland</p></label>
+          </div>  
+
+          </fieldset>
+
+          <br>
+          <p>or</p>
+
+          <fieldset>
+            <legend class="visually-hidden">
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="none" type="radio" name="country" value="None">
+              <label for="none"><p style="margin-bottom: 7px;">I am not registered with a dental practice</p></label>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <div class="form-group">
+          <a href="DOB.html"><input class="button" type="submit" value="Next" id="next-button"></a> 
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

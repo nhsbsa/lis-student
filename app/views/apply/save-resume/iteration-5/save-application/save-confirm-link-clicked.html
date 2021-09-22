@@ -1,0 +1,62 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <!--<a href="javascript:history.go(-1)" class="link-back">Back</a>-->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Your application has been saved</h1>
+
+        <br>
+        <p>You can now close your browser. Or, you can continue your application.
+        <br>
+        <br>
+            Your application will be saved for 14 days. If you do not complete it within 14 days, you will need to start again.   
+        </p>
+        <br>
+  
+        <div class="form-group">
+          <a href="/apply/save-resume/iteration-4/continue-application/text-or-email-resume.html"><input class="button" type="submit" value="Continue application"></a>
+        </div>
+
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
