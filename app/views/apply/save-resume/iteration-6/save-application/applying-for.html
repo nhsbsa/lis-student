@@ -1,0 +1,118 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <header class="page-header">
+            
+            <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Who are you applying for?</h1>
+            <p>If you’re just helping someone to complete the form, select 
+              <strong style="font-weight: bold;">Myself</strong> 
+              and answer the questions with their details.
+              <br>
+              <br>
+               If you’re responsible for someone else’s financial affairs and are applying for them, select 
+               <strong style="font-weight: bold;">Someone else</strong>.
+            </p>
+          </header>
+
+
+      <form action="applyingforsave-iteration2-handler" method="get" class="form">
+
+
+          <fieldset class="form-group">
+
+              <div class="multiple-choice">
+                <input id="yes" name="applyingfor" type="radio" value="myself">
+                <label for="yes" style="line-height: 195%;">Myself</label>
+              </div>
+
+              <div class="multiple-choice" data-target="understand">
+                <input id="no" name="applyingfor" type="radio" value="someoneelse">
+                <label for="no" style="line-height: 195%;">Someone else</label>
+              </div>
+
+
+
+              <div class="panel panel-border-narrow js-hidden" id="understand" style="padding-bottom: 20px;">
+                  <label class="form-label-bold" for="nhsno" style="margin-bottom: 15px;">By applying on behalf of someone else you agree you are responsible for their financial affairs</label>
+                  <div class="multiple-choice multiple-radio">
+                        <input id="applyingfor" name="applyingfor" value="understand" type="checkbox">
+                        <label for="applyingfor" style="margin-bottom: 5px;">I understand and want to continue this application</label>
+                      </div>
+                  <br>
+                </div>
+
+                
+
+            </fieldset>
+
+            <details>
+                    <summary><span class="summary">When can I apply for someone else?</span></summary>
+                    <br>
+                    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+            
+                      <p style="font-weight: bold;">If you're responsible for their financial affairs</p>
+                      <p>You can complete the form on behalf of someone else if you are responsible for their financial affiars because they have either:</p>
+        
+                      <ul class="list-bullet">
+                        <li>learning difficulties</li>
+                        <li>a condition which prevents them from managing their own affairs</li>
+                      </ul>
+        
+                      <br>
+                      <div class="notice">
+                            <i style="bottom: 25%; top: 25%;" class="icon icon-important"><span class="visually-hidden">Warning</span></i>
+                            <strong class="bold-small">You are responsible for making sure the information entered is correct and complete.</strong>
+                      </div>
+                      <br>
+        
+                      <p style="font-weight: bold;">If you are just helping to complete the form</p>
+                      <p>You should select the 'myself' option.</p>
+                      <p>You can help to complete the form, but they are responsible for the information given.</p>
+        
+        
+                    </div>
+            
+            
+                  </details>
+            <br>        
+
+            <div class="form-group">
+                <input class="button" type="submit" value="Continue">
+            </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
