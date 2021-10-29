@@ -1,0 +1,51 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <header class="page-header">
+            <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+            <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">You will need to start application again</h1>
+            <p>It was not possible to confirm you were the person who started the original application.</p>
+            <p>To protect your data, you will need to start the application again by clicking "Continue".</p>
+          </header>
+
+
+      <br>
+
+      <a href="apply-online-invite"><input class="button" type="submit" value="Continue"></a>
+
+
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

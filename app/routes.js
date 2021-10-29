@@ -7102,7 +7102,7 @@ router.get(/sightimpairedSave-handler/, function (req, res) {
   });
 
   router.get(/enteremailaddress-handler/, function (req, res) {
-    res.redirect('../continue-application/verification_code_email');
+    res.redirect('../continue-application/enter-dob-to-resume');
   });
 
   router.get(/enterphonenumber-handler/, function (req, res) {
