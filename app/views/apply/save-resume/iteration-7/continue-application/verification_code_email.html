@@ -41,9 +41,11 @@ NHSBSA Prototype
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Continue a saved application</p>
         <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Check your email</h1>
-        <p>We've sent a 6-digit code to <strong style="font-weight: bold;">{{ data['enteremailaddress'] }}</strong>. Enter this code to continue your application.</p>
-
-        <p>The code may take a few minutes to arrive. Check your junk folder if you cannot see the email in your inbox. </p>
+        <p>We've sent a 6-digit code to <strong style="font-weight: bold;">{{ data['enteremailaddress'] }}</strong>. You have 30 
+          minutes to enter this code to continue your application. 
+          <br><br>
+          The code may take a few minutes to arrive. Check your junk folder if you cannot see the email in your inbox.
+        </p>
       </header>
 
       <form action="verificationcodeemail-handler" method="get" class="form">

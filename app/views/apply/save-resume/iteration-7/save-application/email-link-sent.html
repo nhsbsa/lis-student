@@ -39,17 +39,33 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Check your email</h1>
+        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Your application has been saved</h1>
 
         <br>
         <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-        <p>We've sent an email to <strong style="font-weight: bold;">{{ data['enteremailaddresssave'] }}</strong>. </p>
-            <p>Follow the link in the email to complete saving your application.</p></div>
+        <p>We have sent an email confirming this to <strong style="font-weight: bold;">{{ data['enteremailaddresssave'] }}</strong>. </p>
+            <p>The email also tells you how to return to your application.</p></div>
 
             <br>
+            <br>
 
-        <p>The email may take a few minutes to arrive. Check your junk folder if you cannot see the email in your inbox. </p> <hr>
+        <p><strong style="font-weight: bold;">Application status</strong></p>
+        <p>Your application has been saved, but has not been submitted.
+          <br><br>
+          For privacy reasons, your application can only be saved for 14 days.
+          <br><br>
+          If you do not complete and submit it by 27 September 2021 at 11:23am, you will need to start again.
+          <br><br>
+          You can now close your browser. Or, you can continue your application now.</p>
       </header>
+
+      <br>
+
+      <div class="form-group">
+        <a href="/apply/save-resume/iteration-7/continue-application/enter-email-address.html"><input class="button" type="submit" value="Continue application"></a>
+      </div>
+
+      <br>
 
 
         <!--<a href="/apply/students/education/iteration-7/where-you-live/task-list"><input class="button" type="submit"
