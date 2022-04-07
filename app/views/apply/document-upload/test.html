@@ -1,0 +1,337 @@
+<!-- 
+ADDING CUSTOM CSS
+Add your custom CSS/Sass to /app/assets/sass/main.scss
+-->
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+ Homepage
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #F1F1F1;
+}
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+.header h1 {
+  font-size: 50px;
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color:   #005EB8;
+}
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #F2F2F2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #F1F1F1;
+  padding-left: 20px;
+}
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+</div>
+<div class="topnav">
+  <a href="http://192.168.1.145:3000/practice-run/V3/homepage-V3">Home</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/about-us">Our people</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/projects-2">Projects</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/service-design">Service Design</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/knowledge-base">Knowledge Base</a>
+</div>
+</body>
+</html>
+<div class="nhsuk-grid-row">      
+  <div class="nhsuk-grid-column-full">
+    <figure class="nhsuk-image">
+      <img src="/images/homepage.png" alt="Homepage" sizes="(min-width: 990px),642px, (min-width: 642px)" srcset="/images/homepage.png">
+    </figure>
+      <p>We aim to be an organisation that delivers by focusing on users, introducing new ways of working and using technology & insight as an enabler for change.</h3>        
+    <h3 class="nhsuk-heading-m">NHS BSA Values</h3>
+    <p>Collaborative</p>
+    <p>Adventurous</p>
+    <p>Reliable</p>
+    <p>Energetic</p>
+  <div class="nhsuk-grid-column-one-third">
+                  <div class="avatar-box"> 
+                     <img class="avatar img" src="/images/new.png" alt="new-starters" style="height: 150px; width: 150px; align-content: center">
+                     <div class="nhsuk-grid-column-one-third">
+                        <a class="box-wrapper" href="new-starters">
+                           <span class="boxes">
+                              <span class="box-text">New starters</span> 
+                           </span>                                    
+                        </a>
+                     </div>
+                 </div>  
+               </div>
+               <div class="nhsuk-grid-column-one-third">
+                <div class="avatar-box"> 
+                 <img class="avatar img" src="/images/tools.png" alt="our-tools" style="height: 150px; width: 150px; align-content: center">
+                 <div class="nhsuk-grid-column-one-third">
+                    <a class="box-wrapper" href="our-tools">
+                       <span class="boxes">
+                          <span class="box-text">Our tools</span> 
+                       </span>                                    
+                    </a>
+                 </div>
+             </div>  
+           </div>  
+           <div class="nhsuk-grid-column-one-third">
+            <div class="avatar-box"> 
+             <img class="avatar img" src="/images/community.png" alt="communities-of-practice" style="height: 150px; width: 150px; align-content: center">
+             <div class="nhsuk-grid-column-one-third">
+                <a class="box-wrapper" href="communities-of-practice">
+                   <span class="boxes">
+                      <span class="box-text">Communities of practice</span> 
+                   </span>                                    
+                </a>
+             </div>
+         </div>  
+       </div> 
+</div> 
+</div>
+{% endblock %}<!-- 
+ADDING CUSTOM CSS
+Add your custom CSS/Sass to /app/assets/sass/main.scss
+-->
+<!-- Extends the layout from /app/views/layouts/layout.html -->
+{% extends 'layouts/layout.html' %}
+<!-- Set the page title inside this block -->
+{% block pageTitle %}
+ Homepage
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #F1F1F1;
+}
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+.header h1 {
+  font-size: 50px;
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color:   #005EB8;
+}
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #F2F2F2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #F1F1F1;
+  padding-left: 20px;
+}
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+</div>
+<div class="topnav">
+  <a href="http://192.168.1.145:3000/practice-run/V3/homepage-V3">Home</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/about-us">Our people</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/projects-2">Projects</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/service-design">Service Design</a>
+  <a href="http://192.168.1.145:3000/practice-run/V3/knowledge-base">Knowledge Base</a>
+</div>
+</body>
+</html>
+<div class="nhsuk-grid-row">      
+  <div class="nhsuk-grid-column-full">
+    <figure class="nhsuk-image">
+      <img src="/images/homepage.png" alt="Homepage" sizes="(min-width: 990px),642px, (min-width: 642px)" srcset="/images/homepage.png">
+    </figure>
+      <p>We aim to be an organisation that delivers by focusing on users, introducing new ways of working and using technology & insight as an enabler for change.</h3>        
+    <h3 class="nhsuk-heading-m">NHS BSA Values</h3>
+    <p>Collaborative</p>
+    <p>Adventurous</p>
+    <p>Reliable</p>
+    <p>Energetic</p>
+  <div class="nhsuk-grid-column-one-third">
+                  <div class="avatar-box"> 
+                     <img class="avatar img" src="/images/new.png" alt="new-starters" style="height: 150px; width: 150px; align-content: center">
+                     <div class="nhsuk-grid-column-one-third">
+                        <a class="box-wrapper" href="new-starters">
+                           <span class="boxes">
+                              <span class="box-text">New starters</span> 
+                           </span>                                    
+                        </a>
+                     </div>
+                 </div>  
+               </div>
+               <div class="nhsuk-grid-column-one-third">
+                <div class="avatar-box"> 
+                 <img class="avatar img" src="/images/tools.png" alt="our-tools" style="height: 150px; width: 150px; align-content: center">
+                 <div class="nhsuk-grid-column-one-third">
+                    <a class="box-wrapper" href="our-tools">
+                       <span class="boxes">
+                          <span class="box-text">Our tools</span> 
+                       </span>                                    
+                    </a>
+                 </div>
+             </div>  
+           </div>  
+           <div class="nhsuk-grid-column-one-third">
+            <div class="avatar-box"> 
+             <img class="avatar img" src="/images/community.png" alt="communities-of-practice" style="height: 150px; width: 150px; align-content: center">
+             <div class="nhsuk-grid-column-one-third">
+                <a class="box-wrapper" href="communities-of-practice">
+                   <span class="boxes">
+                      <span class="box-text">Communities of practice</span> 
+                   </span>                                    
+                </a>
+             </div>
+         </div>  
+       </div> 
+</div> 
+</div>
+{% endblock %}

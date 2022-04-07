@@ -1,0 +1,76 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Upload Documents</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Please upload 6 months worth of payslips</h1>
+        <p class="form-hint">Based on your answers in previous sections, we need to see evidence of your payslips for the last 6 months.
+          <br><br>
+          This is will help us process your claim quicker.
+        </p>
+
+      </header>
+
+
+      <form action="emailaddressSaveRestoreiteration2-handler" method="get" class="form">
+
+
+        <div class="form-group">
+          <label class="form-label" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="file-upload" id="documents" name="documents" type="file" multiple="">
+        </div>
+
+        
+
+
+      </form>
+
+      <div class="form-group">
+          <a href="task-list-pdcomplete-payslips-uploaded.html"><input class="button" type="submit" value="Continue"></a>
+      </div>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
