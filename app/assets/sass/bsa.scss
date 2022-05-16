@@ -1135,5 +1135,53 @@ border-bottom: 1px solid #bfc1c3;
 
 
 
-
+/* Details component */
+summary:before {
+  bottom: 0;
+  content: '';
+  left: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  border-width: 7px 0 7px 12.124px;
+  border-left-color: inherit;
+}
+details[open] > summary:before {
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+  border-width: 12.124px 7px 0 7px;
+  border-top-color: inherit;
+}
+/*
+  Fix for spacing within NHS toolkit.
+  If you hit a specific length within a paragraph it won't wrap punctuation with the previous word.
+*/
+.details-text-width {
+  width:99.5%;
+}
+span.summary {
+  display: inline-block;
+  -webkit-padding-start: 24px;
+}
+/* firefox styles */
+@-moz-document url-prefix() { 
+  summary {
+      display:inline-block !important;
+      padding-left: 24px;
+  }
+  summary::marker, details[open] > summary::marker  {
+      display: none;
+      content: "";
+  }
+}
 
