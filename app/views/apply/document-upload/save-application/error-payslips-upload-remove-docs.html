@@ -74,29 +74,14 @@
           <p>You need to upload copies of:</p>
           <ul class="list list-bullet">
             <li>your last 2 consecutive payslips for your 'Shop assistant' job, leading up to 22 April</li>
-          
+            
           </ul>
           <p>You can use a digital camera, smartphone, or tablet to take a photo, or use a scanner. If you already have a digital version of your payslips, they will need to be:</p>
           <ul class="list list-bullet">
             <li>a PNG or PDF file</li>
             <li>no larger than 5MB</li>
           </ul>
-          <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
-            <h2 class="govuk-error-summary__title" id="error-summary-title">
-              There were problems with some documents
-            </h2>
-            <div class="govuk-error-summary__body">
-              <ul class="govuk-list govuk-error-summary__list">
-                <li>
-                  <p>You need to remove the documents to continue</p>
-                </li>
-                <li>
-                  <a href="error-payslips-upload-remove-docs">Remove all failed documents</a>
-                </li>
-                
-              </ul>
-            </div>
-          </div>
+          
           
           <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
             <div class="moj-multi-file-upload">
@@ -120,17 +105,7 @@
             </div>
             
             <div id="file-list-error" class="form-group">
-              <dl class="govuk-summary-list govuk-summary-list--no-border">
-                  <div class="govuk-summary-list__row">
-                    <div id="row-1" class="border-red doc-upload-file-container">
-                      <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Payslip 1.PDF</dd>
-                      <dd class="govuk-summary-list__value">13MB</dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="error-payslips-upload-remove-docs">Remove<span class="govuk-visually-hidden"> name</span></a>
-                      </dd>
-                      <div class="upload-error__text">Your document will not upload because it's too large</div>
-                    </div>
-                  </div>
+              <dl class="govuk-summary-list govuk-summary-list--no-border">   
                   <div class="govuk-summary-list__row">
                     <div id="row-1" class="border-grey doc-upload-file-container">
                       <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Payslip 2.PDF</dd>
@@ -142,6 +117,7 @@
                   </div>
               </dl>
             </div>
+          
           </form>
             
           <details class="noprint mb">
