@@ -84,7 +84,7 @@
               <li>no larger than 5MB</li>
           </ul>
           </p>
-
+        
         
               
           <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
@@ -108,6 +108,24 @@
                 </button>
               </div>
             </div>
+            <div id="file-list-error" class="form-group">
+              <dl class="govuk-summary-list govuk-summary-list--no-border">
+                  <div class="govuk-summary-list__row">
+                   
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <div id="row-1" class="border-grey doc-upload-file-container">
+                      <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Universal credit certificate 2.PDF</dd>
+                      <dd class="govuk-summary-list__value">1.5MB</dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a>
+                      </dd>
+                    </div>
+                  </div>
+                  
+              </dl>
+            </div>
+          </form>
             
 </form>
 
@@ -119,7 +137,7 @@
                 
                 <br><br><br><br>
 
-              <a href="uc-upload-error-copy.html" button class="govuk-button" data-module="govuk-button" >
+              <a href="task-list-subsections-doc-upload-uc-complete.html" button class="govuk-button" data-module="govuk-button" >
                 Continue
               </button></a>
           
@@ -396,7 +414,45 @@
   }
   </style>
   <style>
-    
+
+.govuk-error-summary {
+margin-bottom: 50px;
+
+}
+
+@media (min-width: 40.0625em) {
+.govuk-error-summary {
+padding: 20px;
+}
+}
+.govuk-error-summary {
+color: #0b0c0c;
+padding: 15px;
+font-size: 1.8rem;
+margin-bottom: 30px;
+border: 5px solid #b10e1e;
+}
+.govuk-error-summary__list {
+color: #b10e1e;
+font-weight: 1000;
+font-size: 1.8rem;
+}
+.govuk-error-summary__title {
+color: #0b0c0c;
+font-weight: 700;
+font-size: 1.8rem;
+}
+.govuk-error-summary__list a {
+font-weight: 700;
+font-size: 1.7rem;
+font-family: "GDS Transport",arial,sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-decoration: underline;
+text-decoration-thickness: max(1px, .0625rem);
+text-underline-offset: .1em;
+}
+
   </style>
 
           </form>

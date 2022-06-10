@@ -80,8 +80,8 @@
               If you already have a digital version of your Universal Credit award notice, it will need to be:
             </p>
             <ul class="list list-bullet">
-              <li>a PNG, GIF, or PDF file</li>
-              <li>no larger than 2MB</li>
+              <li>a PNG or PDF file</li>
+              <li>no larger than 5MB</li>
           </ul>
           </p>
           <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
@@ -130,9 +130,18 @@
                       <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Universal credit certificate.docx</dd>
                       <dd class="govuk-summary-list__value">3MB</dd>
                       <dd class="govuk-summary-list__actions">
-                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="error-payslips-upload-remove-docs">Remove<span class="govuk-visually-hidden"> name</span></a>
+                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="uc-upload-error-remove">Remove<span class="govuk-visually-hidden"> name</span></a>
                       </dd>
-                      <div class="upload-error__text">Your document will not upload because it's too large</div>
+                      <div class="upload-error__text">The selected file must be a PNG or PDF</div>
+                    </div>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <div id="row-1" class="border-grey doc-upload-file-container">
+                      <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Universal credit certificate 2.PDF</dd>
+                      <dd class="govuk-summary-list__value">1.5MB</dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="uc-upload-error-remove">Remove<span class="govuk-visually-hidden"> name</span></a>
+                      </dd>
                     </div>
                   </div>
                   
@@ -432,7 +441,7 @@
 margin-bottom: 50px;
 
 }
-}
+
 @media (min-width: 40.0625em) {
 .govuk-error-summary {
 padding: 20px;
