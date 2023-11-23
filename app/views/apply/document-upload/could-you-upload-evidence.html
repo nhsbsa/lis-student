@@ -1,0 +1,102 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Could you upload your evidence online?</h1>
+      </header>
+      <p>As part of your application, we may ask for evidence of your household income. This could be payslips or benefit award letters.</p>
+      <p>We will let you know if this is the case and what you need to provide.</p>
+      <p>We will ask you to upload an image of the document at the end of the application. We will provide instructions on how to do this.</p>
+      <p>If you do not have digital versions of the document, you can take a photo, scan or screenshot of them. If you're taking a photo, you'll need to use a smartphone or digital camera.</p>
+      <details>
+        <summary><span class="summary">I am employed but do not receive payslips</span></summary>
+        <br>
+        <p>You can't apply online yet. You need to apply using a paper form called an HC1. Your employer should also complete a proof of income form (LIS82) which can be sent with your application.</p>
+        <a href="">Both forms are available to download from the NHS Low Income Scheme website (opens in a new window)</a>.
+    <p>Select no for more details on how to apply.</p>
+    </div>
+  </details>
+  </div>
+    
+
+        <div class="form-group">
+          <h2 class="page-header--lede heading-medium" style="margin-bottom: 0.5555555556em;">Could you upload evidence online if needed?</h2>
+          
+          <form action="applyonlineiteration7-handler" method="get" class="form">
+
+            <div class="form-group">
+  
+              <fieldset class="nhsuk-fieldset">
+                <legend class="visually-hidden">Do you want to apply online?</legend>
+  
+                <div class="multiple-choice">
+                  <input id="yes" type="radio" name="applyonline" value="yes">
+                  <label for="yes">Yes</label>
+                </div>
+  
+                <div class="multiple-choice">
+                  <input id="no" type="radio" name="applyonline" value="no">
+                  <label for="no">No</label>
+                </div>
+  
+            </fieldset>  
+  
+            </div>
+  
+           
+          </form>
+    
+          </form>
+          </div>
+          
+
+      </form>
+
+      <div class="form-group">
+          <a href="saved"><input class="button" type="submit" value="Next"></a>
+      </div>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

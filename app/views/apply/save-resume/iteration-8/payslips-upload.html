@@ -45,7 +45,7 @@
       <div id="header-logo">
         <div class="header-wrapper">
           <a id="bsa-logo" href="/index.html">
-            <img src="https://lis-student.herokuapp.com/public/images/bsa/bsa_logo.svg" alt="NHS Business Service Authority">
+            <img src="/public/images/bsa/bsa_logo.svg" alt="NHS Business Service Authority">
           </a>
         </div>
       </div>
@@ -66,51 +66,83 @@
 
       <div class="grid-row">
         <div class="column-two-thirds">
-          <h1 class="heading-large">Upload tax credits award notice</h1>
+          <h1 class="heading-large">Upload payslips</h1>
 
           <p>
-            We need confirmation of your household income to assess your application.
+            We need confirmation of your household income to assess your application. 
             <br><br>
-            Make sure you upload everything we have asked for to avoid delays to your application. We will email you if we need further information after you have submitted your application.
+            Make sure you upload everything you need to, or it could delay your application. 
+            We may still need to email you asking for more information after you have uploaded 
+            your payslips and submitted your application. 
 
             <br>
             <h2 class="heading-medium">What you need to upload</h2> 
-            <p>Upload a copy of each page of your tax credits award notice for the period immediately before 22 April 2022.
-              <br><br>
-              If you do not have a digital version of your award notice, you can take a photo, scan or screenshot of the pages. If you’re taking a photo use a smartphone or digital camera.
-            </p>
-            <p>Check that the image is clear, and you can read the information on it.</p>
-            <p>The image needs to be:</p>
+            <p>You need to upload copies of:</p>
             <ul class="list list-bullet">
-              <li>a PNG, JPEG or PDF file</li>
-              <li>no larger than 10MB</li>
+            <li>your last 4 consecutive payslips for your ‘Cleaner’ job, leading up to 22 April</li>
+            <li>your last 2 consecutive payslips for your ‘Shop assistant’ job, leading up to 22 April</li>
+            <li>your last payslip for your ‘Nurse’ job, leading up to 22 April</li>
           </ul>
+          <br> 
+          <p>You can use a digital camera, smartphone, or tablet to take a photo, or use a scanner. If you 
+            already have a digital version of your payslips, they will need to be:</p>
+            <ul class="list list-bullet">
+              <li>a PNG, GIF, or PDF file</li>
+              <li>no larger than 2MB</li>
+            </ul>
           </p>
 
-        
-              
-          <form action="/components/multi-file-upload/examples/default" method="post" enctype="multipart/form-data">
-            <div class="moj-multi-file-upload">
-              <div class="moj-multi-file__uploaded-files ">
-                <!--<h2 class="heading-medium">Files added</h2>-->
-                <div class="govuk-summary-list moj-multi-file-upload__list">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+          
+              <h1 class="govuk-heading-xl">Upload files</h1>
+          
+              <form action="" method="post" enctype="multipart/form-data">
+          
+                <div class="moj-multi-file-upload">
+                  <div class="moj-multi-file__uploaded-files moj-hidden">
+                    <h2 class="govuk-heading-m">Files added</h2>
+                    <div class="govuk-summary-list moj-multi-file-upload__list">
+          
+                    </div>
+                  </div>
+          
+                  <div class="moj-multi-file-upload__upload">
+          
+                    
+          
+                      <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
+                    </div>
+          
+                    <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+                      Upload file
+                    </button>
+          
+                  </div>
                 </div>
-              </div>
-
-              <div class="moj-multi-file-upload__upload">
-                <div class="govuk-form-group">
-                  <label class="form-label" for="documents">
-                    Upload tax credits award notice
-                  </label>
-                  <br>
-                  <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
-                </div>
-                <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
-                  Upload file
-                </button>
-              </div>
+          
+               
+              </form>
             </div>
+          </div>
+          
+            <details class="noprint mb">
+              <summary><span class="summary">If you cannot upload the payslips we have asked for </span></summary>
+                <div class="panel panel-border-narrow">
+                  <p>Your employer should complete a <a target="_blank" rel="noopener" href="https://www.nhsbsa.nhs.uk/check-if-youre-eligible-help/aged-19-and-under">proof of income form (LIS82)<span class="visuallyhidden"> (opens in a new tab)</span></a>
+                  and send it to:
+                  <br><br>
+                  LIS Returns (Ref: j48gxtm9) <br>
+                  Bridge House <br>
+                  152 Pilgrim Street <br>
+                  Newcastle upon Tyne <br>
+                  NE1 6SN
+                  </p>
+                </div>
+              </details>
 
+
+              <br>
 
             <fieldset class="form-group">
               <div class="multiple-choice multiple-radio">
@@ -120,7 +152,7 @@
                 
                 <br><br><br><br>
 
-              <a href="task-list-subsections-doc-upload-all-complete.html" button class="govuk-button" data-module="govuk-button" >
+              <a href="task-list-subsections-doc-upload-pasylips-complete.html" button class="govuk-button" data-module="govuk-button" >
                 Continue
               </button></a>
           
@@ -190,15 +222,15 @@
       </div>
     </footer>
     <div id="global-app-error" class="app-error hidden"></div>
-    <script src="https://lis-student.herokuapp.com/public/javascripts/govuk-template.js?0.18.3" type="text/javascript"></script>
+    <script src="/public/javascripts/govuk.js" type="text/javascript"></script>
     <!-- Javascript -->
     <!--[if lte IE 8]><script src="/public/javascripts/bind.js"></script><![endif]-->
-    <script src="https://lis-student.herokuapp.com/public/javascripts/details.polyfill.js"></script>
+    <script src="/public/javascripts/details.polyfill.js"></script>
     
-    <script src="https://lis-student.herokuapp.com/public/javascripts/govuk/shim-links-with-button-role.js"></script>
-    <script src="https://lis-student.herokuapp.com/public/javascripts/govuk/show-hide-content.js"></script>
-    <script src="https://lis-student.herokuapp.com/public/javascripts/application.js"></script>
-    <script src="https://lis-student.herokuapp.com/public/javascripts/auto-store-data.js"></script>
+    <script src="/public/javascripts/govuk/shim-links-with-button-role.js"></script>
+    <script src="/public/javascripts/govuk/show-hide-content.js"></script>
+    <script src="/public/javascripts/extra.js"></script>
+    <script src="/public/javascripts/autostore.js"></script>
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
   </body>
 </html>

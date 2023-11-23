@@ -68,7 +68,7 @@
           <h1 class="heading-large">Upload Payslips</h1>
 
           <p>We need confirmation of your household income to assess your application.</p>
-          <p>Make sure you upload everything you need to, or it could delay your application. We may still need to email you asking for more information after you have uploaded syour payslips and submitted your application.</p>
+          <p>Make sure you upload everything we have asked for to avoid delays to your application. We will email you if we need further information after you have submitted your application.</p>
           
           <h2 class="heading-medium">What you need to upload</h2> 
           <p>You need to upload copies of:</p>
@@ -76,22 +76,26 @@
             <li>your last 2 consecutive payslips for your 'Shop assistant' job, leading up to 22 April</li>
           
           </ul>
-          <p>You can use a digital camera, smartphone, or tablet to take a photo, or use a scanner. If you already have a digital version of your payslips, they will need to be:</p>
+          <p>
+            If you do not have digital versions of your payslips, you can take a photo, scan or screenshot of them. If you’re taking a photo use a smartphone or digital camera.
+            </p>
+            <p>Check that the image is clear, and you can read the information on it.</p>
+            <p>The image needs to be:</p>
           <ul class="list list-bullet">
-            <li>a PNG or PDF file</li>
-            <li>no larger than 5MB</li>
+            <li>a PNG, JPEG PDF file</li>
+            <li>no larger than 10MB</li>
           </ul>
           <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
             <h2 class="govuk-error-summary__title" id="error-summary-title">
-              There were problems with some documents
+              There were problems with uploading some documents
             </h2>
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <p>You need to remove the documents to continue</p>
+                  
                 </li>
                 <li>
-                  <a href="error-payslips-upload-remove-docs">Remove all failed documents</a>
+                  <a href="#error">The selected file must be smaller than 10MB</a>
                 </li>
                 
               </ul>
@@ -107,10 +111,10 @@
               </div>
               <div class="moj-multi-file-upload__upload">
                 <div class="govuk-form-group">
-                  <label class="heading-medium" for="documents">
+                  <label class="form-label" for="documents">
                     Upload payslips
                   </label>
-                  
+                  <br>
                   <input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple="">
                 </div>
                 <button class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
@@ -123,21 +127,66 @@
               <dl class="govuk-summary-list govuk-summary-list--no-border">
                   <div class="govuk-summary-list__row">
                     <div id="row-1" class="border-red doc-upload-file-container">
-                      <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Payslip 1.PDF</dd>
-                      <dd class="govuk-summary-list__value">13MB</dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="error-payslips-upload-remove-docs">Remove<span class="govuk-visually-hidden"> name</span></a>
-                      </dd>
-                      <div class="upload-error__text">The selected file must be smaller than 5MB</div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="pl-lg-20 pl-sm-0 govuk-summary-list__key">
+                          <a target="_blank" rel="noopener" id="error">Payslip 1.PDF</a>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <a href="/public/pdfs/payslip-template.pdf" target="_blank" rel="noopener">Preview</a>
+                          <span class="file-size-text">13MB</span>
+                        </dd>
+                        <style>
+                          .file-size-text{
+                            display: block;
+                            margin-left: 0px;
+                            margin-top:20px;
+                          }
+                          @media only screen and (min-width:641px) {
+                            .file-size-text {
+                              display: inline-block;
+                              margin-left: 0px;
+                              margin-top:0px;
+                            }
+                          }
+                        </style>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="pr-lg-20 pr-sm-0 govuk-link" href="error-payslips-upload-remove-docs">Remove<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      
+                      <div class="upload-error__text">The selected file must be smaller than 10MB</div>
+                    
                     </div>
                   </div>
                   <div class="govuk-summary-list__row">
                     <div id="row-1" class="border-grey doc-upload-file-container">
-                      <dd class="pl-lg-20 pl-sm-0 govuk-summary-list__key">Payslip 2.PDF</dd>
-                      <dd class="govuk-summary-list__value">1.5MB</dd>
-                      <dd class="govuk-summary-list__actions">
-                        <a class="pr-lg-20 pr-sm-0 govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a>
-                      </dd>
+                      <div class="govuk-summary-list__row">
+                        <dt class="pl-lg-20 pl-sm-0 govuk-summary-list__key">
+                          <a target="_blank" rel="noopener" id="error">Payslip 1.PDF</a>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <a href="/public/pdfs/payslip-template-copy.pdf" target="_blank" rel="noopener">Preview</a>
+                          <span class="file-size-text">1.5MB</span>
+                        </dd>
+                        <style>
+                          .file-size-text{
+                            display: block;
+                            margin-left: 0px;
+                            margin-top:20px;
+                          }
+                          @media only screen and (min-width:641px) {
+                            .file-size-text {
+                              display: inline-block;
+                              margin-left: 0px;
+                              margin-top:0px;
+                            }
+                          }
+                        </style>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="pr-lg-20 pr-sm-0 govuk-link" href="error-payslips-upload-remove-docs">Remove<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                        
                     </div>
                   </div>
               </dl>
