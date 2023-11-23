@@ -1,4 +1,4 @@
-# The NHSBSA prototype template
+# NHSBSA prototype template
 
 
 ## About the prototype kit
@@ -12,7 +12,7 @@ https://www.gov.uk/service-manual/design
 
 ## Security
 
-If you publish your prototypes online, they **must** be protected by a [username and password](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
+If you published your prototypes online, they **must** be protected by a [username and password](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
 
 ## Installation instructions
 
