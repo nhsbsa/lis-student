@@ -1,0 +1,112 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    @media screen and (max-width: 640px) {
+        .save-restore-mobile {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .save-restore-mobile:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+</style>
+
+<main id="content" role="main">
+
+    <div class="phase-banner">
+        <p>
+            <strong class="phase-tag">BETA</strong>
+            This is a new service
+            <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+        </p>
+    </div>
+
+    <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <header class="page-header">
+                <p class="page-header--sub heading-secondary">Personal details</p>
+
+                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">
+                    What is your address?
+                </h1>
+
+                <span class="form-hint">
+                    Your address will be used for verification of your details. Your help with help costs certificate,
+                    if you are eligible, will be sent by email.
+                </span>
+                <br>
+            </header>
+
+            <form action="#" class="form">
+                <div class="form-group">
+                    <label class="form-label" for="add1">Address line 1</label>
+                    <input class="form-control" id="add1" name="add1" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="add2">Address line 2 (optional)</label>
+                    <input class="form-control" id="add2" name="add2" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="town">Town or city (optional)</label>
+                    <input class="form-control" id="town" name="town" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="postcode">Postcode</label>
+                    <input class="form-control" id="postcode" name="postcode" type="text">
+                </div>
+
+                <details>
+                    <summary><span class="summary">I don't know what address to use</span></summary>
+                    <br>
+                    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+                        <p style="font-weight: bold;">If you have more than one address</p>
+                        <p>
+                            You should use the address that your GP or dentist holds for you. For example, if you're a
+                            student living away from home, this could be your home or term time address.
+                        </p>
+
+                        <p style="font-weight: bold;">If you don't have a permanent address</p>
+
+                        <p>
+                            If you're homeless and living in temporary accommodation (for example, a long term hostel),
+                            you should use the address that your GP or dentist holds for you.
+                        </p>
+                    </div>
+
+
+                </details>
+                <br>
+                <button class="button" type="submit">
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
