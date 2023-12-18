@@ -1,0 +1,60 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Contact details</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your email address?</h1>
+      </header>
+
+      
+
+      <form action="#" method="get" class="form">
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email address</label>
+          <p class="form-hint">For example, myname@example.com</p>
+          <input class="form-control" id="email" name="email" type="text" value="{{ data['email'] }}">
+        </div>
+
+
+        <div class="form-group">
+            <input class="button" type="submit" value="Continue">
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}
