@@ -1,0 +1,148 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block header_content %}
+{% endblock %}
+
+{% block content %}
+<link href="/public/css/moj.css" media="screen" rel="stylesheet" type="text/css">
+<style>
+    .govuk-inset-text {
+        border-left: 10px solid #005EB8;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 1.25;
+        padding: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        clear: both;
+    }
+
+    #global-header,
+    footer {
+        display: none;
+    }
+
+    .email-border {
+        border: 1px solid #ddd;
+        margin: 20px 0px;
+    }
+
+    .email-logo {
+        height: auto;
+        width: 110px;
+        margin-top: 20px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+</style>
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds email-border">
+            <img src="/public/images/nhs-logo.png" alt="NHS Logo" class="email-logo">
+            
+            <h1 class="heading-large">HC3 Certificate for limited help with health costs</h1>
+
+            <div class="govuk-inset-text">
+                <span>Certificate number:</span> 3-23456789<br><br>
+                You will need to quote your certificate number if you have to contact us.<br><br>
+                <span>Valid from:</span> DATE<br>
+                <span>Valid to:</span> DATE<br>
+                <span>For:</span> NAME, NAME (partner's name, if applicable)
+            </div>
+
+            <p>Dear NAMEHERE,</p>
+
+            <p>This email is your HC3 certificate for limited help with health costs.</p>
+            <p>Using the information you gave us in your HC1 claim for help with health costs, we have worked out that you will have to pay the following when using these health services:</p>
+            
+            <ul class="list list-bullet">
+                <li>a maximum of £28.56 towards a private sight test</li>
+                <li>£57.12 towards an optical voucher for glasses or contact lenses</li>
+                <li>£28.56 towards the cost of travel to receive NHS treatment in any one week</li>
+                <li>a maximum of £85.68 per course of NHS dental treatment or prescribed wigs and fabric supports</li>
+            </ul>
+
+            <p>Please read the notes below before you go to the optician, go for treatment, or travel for NHS treatment.</p>
+            <p>Your partner is also covered if they are named on the certificate. It also covers any dependent children under 19 who normally live with you.</p>
+            <p><strong>You should keep this email available on your phone or print it out. You need to show it when you need any of the things listed above.</strong></p>
+            <p>Note that this certificate does not affect any entitlement you have for other reasons, such as age or a medical condition. For example, if you are 60 or over, you still get free NHS sight tests and NHS prescriptions.</p>
+            
+            <h2 class="heading-large">Using this certificate</h2>
+            <p>This certificate does not entitle you to NHS treatment. It entitles you to limited help with health costs if you have been accepted for NHS treatment.</p>
+
+            <h3 class="heading-medium">Sight tests</h3>
+            <p>Show this certificate to the person who tests your sight and ask if you are entitled to any help with the cost. If you are, ask for a form to apply for this help. You then pay whichever is less:</p>
+            
+            <ul class="list list-bullet">
+                <li>the amount given at the top of this certificate plus any difference between the NHS fee and the private sight test cost, or</li>
+                <li>the actual sight test cost.</li>
+            </ul>
+
+            <p>The person who tests your sight can tell you how much the NHS sight test fee is.</p>
+            <p>Eye examinations are free to all in Scotland.</p>
+
+            <h3 class="heading-medium">Glasses and contact lenses</h3>
+            <p>If you need new glasses or contact lenses, help towards the cost is provided through optical vouchers. The value of the voucher depends on your optical prescription. Ask the person who tests your sight the value of the voucher that matches your prescription. The value of your voucher will be reduced by the amount given at the top of this certificate for optical vouchers.</p>
+            <p>When you order your glasses or contact lenses, show this certificate and ask if you are entitled to any help. If you are, ask for a form to apply for an optical voucher.</p>
+            <p>If your glasses or contact lenses cost more than the value of your voucher, you will have to pay the extra amount. If you are prescribed complex lenses you can get a special voucher, if that would give you more help than the value of your ordinary optical voucher.</p>
+            <p>If you lose or damage your glasses or contact lenses:</p>
+
+            <ul class="list list-bullet">
+                <li>children under 16 are entitled to a voucher for replacement or repair</li>
+                <li>you and anyone aged 16 or over might be entitled to a voucher for replacement or repair. Details are in leaflet HC11 (HCS1 in Scotland) available to download from: <a href="www.nhsbsa.nhs.uk/nhs-low-income-scheme">www.nhsbsa.nhs.uk/nhs-low-income-scheme</a>.</li>
+            </ul>
+
+            <h3 class="heading-medium">Travel to receive NHS treatment</h3>
+            <p>You can get help with the cost of your journey if you need to travel:</p>
+
+            <ul class="list list-bullet">
+                <li>in England and Wales to receive NHS treatment under the care of a consultant, or through a referral by a doctor or dentist</li>
+                <li>in Scotland to a hospital to receive NHS treatment</li>
+            </ul>
+
+            <p>In England and Wales, if you are referred by a doctor or dentist to the same premises but on a different day you can claim for that travel cost.</p>
+            <p>You must pay the amount given at the top of this certificate towards the cost of travel in any week. Tell someone at the place you are treated that you want to claim back the rest of the cost of your journey and show this certificate. In some cases, you may need to claim using form HC5. If for medical reasons you need someone to travel with you, their travel costs are counted with yours.</p>
+            <p>You can only get money back for costs that are necessary for your journey. If you are not sure, check before you travel. See leaflet HC11 'Help with health costs' to find out more. You can download one from <a href="www.nhsbsa.nhs.uk/nhs-low-income-scheme">www.nhsbsa.nhs.uk/nhs-low-income-scheme</a>.</p>
+
+            <h3 class="heading-medium">NHS dental treatment and NHS wigs and fabric supports</h3>
+
+            <h4 class="heading-small">NHS dental treatment</h4>
+            <p>For each course of treatment you will be asked to pay whichever is less:</p>
+
+            <ul class="list list-bullet">
+                <li>the actual NHS charge - ask your dentist how much this is, or</li>
+                <li>the amount given at the top of this certificate, or</li>
+                <li>in Scotland the maximum patient's charge - your dentist will be able to tell you how much this is.</li>
+            </ul>
+
+            <p>On the form your dentist asks you to sign, write your certificate number and the amount for dental treatment given at the top of this certificate.</p>
+            <p>Dental examinations are free to all in Scotland.</p>
+
+            <h4 class="heading-small">NHS wigs and fabric supports</h4>
+            <p>For each wig or fabric support the most you have to pay is given at the top of this certificate.</p>
+            <p>The amount you have to pay could be lower than the cost of the wig or fabric support if the NHS charge is less. The person fitting the wig or fabric support can tell you how much this is.</p>
+            <p>NHS wigs and fabric supports are free where prescribed and dispensed in Scotland.</p>
+
+            <h2 class="heading-large">Renew your certificate</h2>
+            <p>To renew your certificate, reapply online by visiting <a href="www.nhsbsa.nhs.uk/nhs-low-income-scheme">www.nhsbsa.nhs.uk/nhs-low-income-scheme</a>. Alternatively, complete another paper HC1 form. They are available from a Job Centre Plus office, NHS hospital or from the web page above. Some dentists, opticians or doctor's surgeries also have them.</p>
+            <p>Send us your application about 4 weeks before this certificate runs out. Check the 'valid to' date at the top of this certificate to see when it runs out.</p>
+            <p>If you apply for and receive a new certificate before this one runs out, you can use whichever one gives you most help. You don't have to use the new one straight away.</p>
+        
+            <h2 class="heading-large">Contact us</h2>
+            <p>If you need to contact us, always quote your current certificate number and the 'valid from' date above.</p>
+            <p>If you have any queries about your claim, call us on 0300 330 1343 or use our online form at <a href="https://faq.nhsbsa.nhs.uk/contact-us/">https://faq.nhsbsa.nhs.uk/contact-us/</a></p>
+            <p><strong>We can only give information about your claim to another person with your permission.</strong></p>
+            <p><strong>Improper use of this certificate may lead to prosecution.</strong></p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
